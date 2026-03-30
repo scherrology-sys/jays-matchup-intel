@@ -1,1 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Jays vs. Sugano, Matchup Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #003E7E;
+    --navy-dark: #002050;
+    --navy-mid: #004fa3;
+    --red: #E8002D;
+    --red-dark: #b5001f;
+    --white: #FFFFFF;
+    --cream: #f0f4f8;
+    --gold: #C4A24B;
+    --panel: #071e3d;
+    --panel-light: #0d2b55;
+    --text-dim: #7a9cc0;
+    --border: rgba(255,255,255,0.08);
+    --success: #2dd4a0;
+    --warning: #f4b942;
+    --danger: #ff4f6a;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--navy-dark);
+    color: var(--white);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, #001a40 50%, var(--navy-dark) 100%);
+    border-bottom: 2px solid var(--red);
+    padding: 20px 32px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      90deg, transparent, transparent 60px,
+      rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px
+    );
+    pointer-events: none;
+  }
+  .header-left { display: flex; flex-direction: column; gap: 2px; }
+  .header-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .header-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--white);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+  }
+  .badge {
+    background: var(--red);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .date-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  /* TABS */
+  .tab-bar {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0;
+    padding: 0 20px;
+    overflow-x: auto;
+  }
+  .tab-bar::-webkit-scrollbar { height: 0; }
+  .tab {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    color: var(--text-dim);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .tab:hover { color: var(--white); }
+  .tab.active { color: var(--white); border-bottom-color: var(--red); }
+
+  /* PANELS */
+  .panel-wrap { padding: 24px 24px 32px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: normal; color: var(--red); }
+
+  /* GRID LAYOUTS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* CARD */
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px;
+  }
+  .card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ===================== TAB 1: ARSENAL ===================== */
+  .pitch-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 11px;
+  }
+  .pitch-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--cream);
+    width: 130px;
+    flex-shrink: 0;
+  }
+  .pitch-bar-track {
+    flex: 1;
+    height: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pitch-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .pitch-pct {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    width: 38px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .pitch-velo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    width: 52px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+  }
+  .stat-val {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+  }
+  .stat-lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  /* Movement plot canvas */
+  #movementCanvas { display: block; margin: 0 auto; }
+
+  /* Pitch type legend dot */
+  .dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  .legend-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--text-dim);
+  }
+
+  /* ===================== TAB 2: TENDENCIES ===================== */
+  .hand-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hand-tag {
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--navy-mid);
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--cream);
+  }
+
+  .zone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    max-width: 220px;
+    margin: 0 auto 12px;
+  }
+  .zone-cell {
+    height: 56px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    transition: background 0.3s;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .zone-note {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--text-dim);
+    margin-top: 8px;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 220px;
+    margin: 8px auto 0;
+  }
+
+  /* ===================== TAB 3: HEAD-TO-HEAD ===================== */
+  .matchup-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+  .matchup-name {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    width: 160px;
+    flex-shrink: 0;
+    color: var(--cream);
+  }
+  .matchup-pa {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    width: 40px;
+    flex-shrink: 0;
+  }
+  .matchup-bar-track {
+    flex: 1;
+    height: 16px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .matchup-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+  }
+  .matchup-woba {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    width: 50px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .matchup-outcomes {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--text-dim);
+    width: 90px;
+    flex-shrink: 0;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .no-data-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--warning);
+    background: rgba(244,185,66,0.1);
+    padding: 2px 6px;
+    border-radius: 2px;
+    width: auto;
+    text-align: center;
+  }
+
+  /* ===================== TAB 4: BAYESIAN ===================== */
+  .bayes-canvas-wrap { position: relative; width: 100%; }
+  #bayesCanvas { display: block; width: 100%; }
+
+  .model-note {
+    background: rgba(196,162,75,0.08);
+    border: 1px solid rgba(196,162,75,0.25);
+    border-radius: 3px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--cream);
+  }
+  .model-note strong { color: var(--gold); font-weight: 600; }
+
+  /* ===================== TAB 5: TONIGHT ===================== */
+  .callout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .callout-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+  }
+  .callout-card.green::before { background: var(--success); }
+  .callout-card.red::before { background: var(--red); }
+  .callout-card.gold::before { background: var(--gold); }
+  .callout-card.blue::before { background: var(--navy-mid); }
+  .callout-card.full-width { grid-column: 1 / -1; }
+
+  .callout-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .callout-card.green .callout-eyebrow { color: var(--success); }
+  .callout-card.red .callout-eyebrow { color: var(--red); }
+  .callout-card.gold .callout-eyebrow { color: var(--gold); }
+  .callout-card.blue .callout-eyebrow { color: #7ab8f5; }
+
+  .callout-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+  .callout-body {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #b8cfe6;
+  }
+  .callout-body strong { color: var(--white); font-weight: 600; }
+
+  .social-caption {
+    background: linear-gradient(135deg, rgba(0,62,126,0.3) 0%, rgba(0,32,80,0.3) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cream);
+    font-style: italic;
+    position: relative;
+  }
+  .social-caption::before {
+    content: '"';
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: rgba(232,0,45,0.2);
+    position: absolute;
+    top: -5px;
+    left: 8px;
+    line-height: 1;
+  }
+  .social-caption-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 18px 0; }
+
+  /* ACA CORNER TAG */
+  .panel { position: relative; }
+  .aca-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(7,30,61,0.94);
+    border: 1px solid rgba(232,0,45,0.35);
+    border-left: 3px solid var(--red);
+    border-radius: 3px;
+    padding: 9px 13px 9px 10px;
+    pointer-events: none;
+  }
+  .aca-icon { flex-shrink: 0; }
+  .aca-text { display: flex; flex-direction: column; gap: 3px; }
+  .aca-monogram {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    line-height: 1;
+  }
+  .aca-handle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    line-height: 1.3;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-eyebrow">Blue Jays Matchup Intelligence · Statcast Analysis</div>
+    <div class="header-title">TOMOYUKI <span>SUGANO</span></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);margin-top:3px;">RHP · BAL 2025 · 2,573 pitches analyzed</div>
+  </div>
+  <div class="header-meta">
+    <div class="badge">Game Day</div>
+    <div class="date-tag">March 30, 2026</div>
+    <div class="aca-tag" style="margin-top:8px;">
+      <svg class="aca-icon" width="36" height="36" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/>
+      </svg>
+      <div class="aca-text">
+        <div class="aca-monogram">Arm Chair Analyst</div>
+        <div class="aca-handle">@scherrology</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab active" onclick="switchTab(0)">01 Arsenal</div>
+  <div class="tab" onclick="switchTab(1)">02 Tendencies</div>
+  <div class="tab" onclick="switchTab(2)">03 Head-to-Head</div>
+  <div class="tab" onclick="switchTab(3)">04 Bayes Model</div>
+  <div class="tab" onclick="switchTab(4)">05 Tonight's Call</div>
+</div>
+
+<div class="panel-wrap">
+
+  <!-- TAB 1: ARSENAL -->
+  <div class="panel active" id="tab0">
+    <div class="section-label">Pitch Arsenal · 2025 Season</div>
+    <div class="section-title">Six pitches. <em>Two weapons.</em></div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card">
+        <div class="card-title">Usage Mix (All Batters)</div>
+        <div id="pitchBars"></div>
+        <div class="legend-wrap" id="pitchLegend"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Movement Profile (Pitcher POV)</div>
+        <canvas id="movementCanvas" width="280" height="240"></canvas>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">Best Whiff Pitch</div>
+        <div class="stat-box">
+          <span class="stat-val" style="color:var(--success)">25.0%</span>
+          <span class="stat-lbl">Split-Finger Whiff Rate</span>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text-dim);line-height:1.5;">
+          Splits at 87.3 mph average with sharp fade. Primary weapon vs LHH (33% usage).
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">RHH Weapon</div>
+        <div class="stat-box">
+          <span class="stat-val" style="color:var(--warning)">34.9%</span>
+          <span class="stat-lbl">Sweeper vs RHH</span>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text-dim);line-height:1.5;">
+          Sweeper + Sinker = 59% of RHH diet. Nearly zero curveball vs RHH (3%).
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Hittable Pitch</div>
+        <div class="stat-box">
+          <span class="stat-val" style="color:var(--danger)">.529</span>
+          <span class="stat-lbl">Curveball xwOBA Allowed</span>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text-dim);line-height:1.5;">
+          Curve is rare vs RHH (3%) but gets hammered. Patience pays if you see it.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: TENDENCIES -->
+  <div class="panel" id="tab1">
+    <div class="section-label">Pitch Sequencing · Zone Command</div>
+    <div class="section-title">He knows what <em>side you hit from.</em></div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="hand-label">vs. LHH <span class="hand-tag">LEFT-HANDED</span></div>
+        <div class="card-title">Pitch Mix</div>
+        <div id="lhhBars"></div>
+        <div class="divider"></div>
+        <div class="card-title" style="margin-top:12px;">Zone Heat Map</div>
+        <div class="zone-grid" id="lhhZoneGrid"></div>
+        <div class="zone-note">Attacks the low-away corner aggressively. Zone 13 is his home base vs LHH.</div>
+      </div>
+      <div class="card">
+        <div class="hand-label">vs. RHH <span class="hand-tag">RIGHT-HANDED</span></div>
+        <div class="card-title">Pitch Mix</div>
+        <div id="rhhBars"></div>
+        <div class="divider"></div>
+        <div class="card-title" style="margin-top:12px;">Zone Heat Map</div>
+        <div class="zone-grid" id="rhhZoneGrid"></div>
+        <div class="zone-note">Zone 14 (low-away ball) is his primary setup pitch vs RHH. Sweeper expands off the plate right.</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 14px;background:rgba(0,79,163,0.15);border:1px solid rgba(0,79,163,0.3);border-radius:3px;font-size:12px;line-height:1.6;color:var(--cream);">
+      <strong style="color:var(--white);">Key insight:</strong> Sugano is a fundamentally different pitcher depending on which side you bat from. Against the <strong style="color:var(--white);">Blue Jays roster (mostly RHH)</strong>, expect heavy Sweeper volume early in counts, Sinker for contact management, and the Split reserved for LHH only. Right-handed Blue Jays hitters should discipline on anything off the plate right early — that's his setup sequence, not his finishing pitch.
+    </div>
+  </div>
+
+  <!-- TAB 3: HEAD-TO-HEAD -->
+  <div class="panel" id="tab2">
+    <div class="section-label">2025 Season · Toronto vs. Sugano (BAL)</div>
+    <div class="section-title">137 pitches. <em>What the data says.</em></div>
+    <div class="model-note">
+      <strong>Context:</strong> These are sparse samples (2–7 PA per hitter). Use as directional signal, not ground truth. The Bayesian model on Tab 04 accounts for this uncertainty properly.
+    </div>
+    <div id="matchupRows"></div>
+    <div class="divider"></div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Top Performer vs Sugano</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;">
+          <span style="font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--success);">.435</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">wOBA</span>
+        </div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px;">Guerrero Jr.</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">7 PA · 3H · 0K · .429 AVG</div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text-dim);line-height:1.5;">Best qualified sample. Made consistent contact; no strikeouts in 7 PA.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Watch Out</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;">
+          <span style="font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--danger);">100%</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">K-rate</span>
+        </div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px;">Varsho</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">2 PA · 0H · 2K · .000 wOBA</div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text-dim);line-height:1.5;">Small sample but both PAs ended in strikeout. Posterior appropriately pulls back toward career numbers.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: BAYESIAN MODEL -->
+  <div class="panel" id="tab3">
+    <div class="section-label">Empirical Bayes · Beta-Binomial wOBA Model</div>
+    <div class="section-title">Prior meets evidence. <em>Posterior speaks.</em></div>
+    <div class="model-note">
+      <strong>Model:</strong> Beta(α₀, β₀) prior anchored to each hitter's full 2025 wOBA (k=60 PA equivalent). Updated via wOBA-weighted observations from 2025 vs-Sugano plate appearances. Posterior mean and 90% credible interval displayed. Hitters without Sugano exposure (Sánchez) carry forward the prior unchanged — honest uncertainty, not fabricated data.
+    </div>
+    <canvas id="bayesCanvas" width="820" height="460"></canvas>
+    <div style="margin-top:12px;display:flex;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--success);"></div> Posterior (with Sugano data)
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--warning);"></div> Prior only (no Sugano exposure)
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">
+        <div style="width:2px;height:12px;background:var(--text-dim);"></div> 90% Credible Interval
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim);">
+        <div style="width:20px;height:1px;background:var(--red);"></div> League avg wOBA (.320)
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: TONIGHT'S CALL -->
+  <div class="panel" id="tab4">
+    <div class="section-label">Game Day Intelligence · March 30, 2026</div>
+    <div class="section-title">The narrative <em>for tonight.</em></div>
+    <div class="callout-grid">
+      <div class="callout-card green">
+        <div class="callout-eyebrow">Watch #1 · Highest Posterior</div>
+        <div class="callout-headline">Springer owns the highest ceiling</div>
+        <div class="callout-body">
+          Despite going 2-for-7 vs Sugano in 2025, George Springer carries the <strong>highest posterior wOBA (.404)</strong> because his talent floor is simply that high. When your prior is .421, a 7-PA underperformance barely moves the needle. The model trusts his underlying quality.
+        </div>
+      </div>
+      <div class="callout-card green">
+        <div class="callout-eyebrow">Watch #2 · Evidence + Prior</div>
+        <div class="callout-headline">Vlad is the confirmed threat</div>
+        <div class="callout-body">
+          Vladimir Guerrero Jr. is the only hitter whose <strong>observed data pushed his posterior UP</strong> (.376 → .382). In 7 PA, he produced 3 hits and zero strikeouts. He sees Sugano well. That's a meaningful signal even at n=7.
+        </div>
+      </div>
+      <div class="callout-card gold">
+        <div class="callout-eyebrow">Wild Card · No Prior Exposure</div>
+        <div class="callout-headline">Sánchez is the unknown variable</div>
+        <div class="callout-body">
+          Jesus Sánchez never faced Sugano with BAL. His posterior is <strong>entirely his prior (.312)</strong> — a solid but below-average mark from his Miami days. The question is: does a LHH bat change the matchup calculus? Sugano goes <strong>Split-heavy vs LHH</strong> (33%), and his splits show elevated xwOBA allowed on that pitch (.293). Sánchez could be a neutralizer.
+        </div>
+      </div>
+      <div class="callout-card red">
+        <div class="callout-eyebrow">Danger Zone · Model Concern</div>
+        <div class="callout-headline">Giménez flagged by the model</div>
+        <div class="callout-body">
+          Despite a .333 average vs Sugano in 2025, Andrés Giménez carries the <strong>lowest posterior (.289)</strong>, because his prior quality (.282) was already below average, and 6 PA of moderate evidence can't overcome a full-season prior. His defensive value is unquestioned, but offensively, the model is cautious.
+        </div>
+      </div>
+      <div class="callout-card blue full-width">
+        <div class="callout-eyebrow">Pitch-Level Takeaway · For RHH</div>
+        <div class="callout-headline">Take the Sweeper. Hunt the Sinker.</div>
+        <div class="callout-body">
+          Sugano feeds RHH a <strong>Sweeper (34.9%) + Sinker (23.8%)</strong> diet, nearly 60% of the menu. The Sweeper expands off the plate to the glove side, and its xwOBA allowed (.296) says hitters struggle when they chase it. The Sinker (.398 xwOBA allowed) is the hittable pitch, elevated in the zone, it can be driven. The curveball is his most dangerous by xwOBA (.529 allowed) but comes only 3% of the time vs RHH. Be disciplined early, sit Sinker, let the Sweeper travel through.
+        </div>
+      </div>
+    </div>
+    <div class="social-caption-label">Social Caption (Twitter/X)</div>
+    <div class="social-caption">
+      Sugano takes the mound vs Toronto tonight, but the data says Vlad is ready.<br>
+      In 7 PA last year: 3 hits, zero strikeouts, .435 wOBA. The model agrees, George Springer (.404 posterior wOBA) and Vlad (.382) are the threats. New Jay Jesús Sánchez is the wild card, no history, LHH bat, and Sugano's Split-Finger gets hit harder by lefties. Could be a factor.<br><br>
+      Pitch to watch: The <strong>Sweeper is his RHH weapon</strong> (35% usage). Take it early. Sit on the Sinker. 🔵🔴 #ForTheFront | @scherrology-sys
+    </div>
+  </div>
+
+</div><!-- end panel-wrap -->
+
+<div class="footer">Statcast data via Baseball Savant · Bayesian model: Beta-Binomial, k=60 prior equivalent · Arm Chair Analyst @scherrology</div>
+
+<script>
+// ===================================================
+// DATA
+// ===================================================
+const PITCH_COLORS = {
+  '4-Seam Fastball': '#E8002D',
+  'Sinker': '#f4b942',
+  'Sweeper': '#2dd4a0',
+  'Split-Finger': '#7ab8f5',
+  'Cutter': '#c084fc',
+  'Curveball': '#fb923c'
+};
+
+const arsenal = [
+  { name: 'Split-Finger', pct: 23.5, velo: 87.3, whiff: 25.0, xwoba: 0.293 },
+  { name: 'Sweeper', pct: 19.8, velo: 83.6, whiff: 19.3, xwoba: 0.296 },
+  { name: '4-Seam Fastball', pct: 18.9, velo: 92.7, whiff: 12.4, xwoba: 0.419 },
+  { name: 'Sinker', pct: 16.1, velo: 92.9, whiff: 9.0, xwoba: 0.398 },
+  { name: 'Cutter', pct: 12.0, velo: 88.2, whiff: 10.3, xwoba: 0.431 },
+  { name: 'Curveball', pct: 9.7, velo: 78.2, whiff: 15.3, xwoba: 0.529 }
+];
+
+const lhhMix = [
+  { name: 'Split-Finger', pct: 33.3 },
+  { name: '4-Seam Fastball', pct: 22.2 },
+  { name: 'Curveball', pct: 15.3 },
+  { name: 'Cutter', pct: 12.3 },
+  { name: 'Sinker', pct: 9.6 },
+  { name: 'Sweeper', pct: 7.3 }
+];
+
+const rhhMix = [
+  { name: 'Sweeper', pct: 34.9 },
+  { name: 'Sinker', pct: 23.8 },
+  { name: '4-Seam Fastball', pct: 14.9 },
+  { name: 'Cutter', pct: 11.7 },
+  { name: 'Split-Finger', pct: 11.7 },
+  { name: 'Curveball', pct: 3.0 }
+];
+
+// Zone data: zones 1-9 in row order [7,8,9],[4,5,6],[1,2,3] (top to bottom)
+const lhhZones = { 1:51,2:61,3:31, 4:106,5:80,6:65, 7:122,8:90,9:51 };
+const rhhZones = { 1:24,2:43,3:49, 4:57,5:91,6:114, 7:38,8:79,9:88 };
+
+const matchups = [
+  { name: 'Guerrero Jr., V.', pa:7, h:3, bb:0, k:0, woba:0.435, hasData:true },
+  { name: 'Giménez, A.', pa:6, h:2, bb:0, k:0, woba:0.360, hasData:true },
+  { name: 'Springer, G.', pa:7, h:2, bb:0, k:0, woba:0.254, hasData:true },
+  { name: 'Schneider, D.', pa:2, h:1, bb:0, k:1, woba:0.444, hasData:true },
+  { name: 'Barger, A.', pa:2, h:1, bb:0, k:1, woba:1.050, hasData:true, note:'HR' },
+  { name: 'Heineman, T.', pa:4, h:1, bb:0, k:0, woba:0.222, hasData:true },
+  { name: 'Kirk, A.', pa:2, h:0, bb:1, k:0, woba:0.348, hasData:true },
+  { name: 'Lukes, N.', pa:5, h:0, bb:1, k:0, woba:0.139, hasData:true },
+  { name: 'Varsho, D.', pa:2, h:0, bb:0, k:2, woba:0.000, hasData:true },
+  { name: 'Clement, E.', pa:2, h:0, bb:0, k:0, woba:0.000, hasData:true },
+  { name: 'Straw, M.', pa:2, h:0, bb:0, k:0, woba:0.000, hasData:true },
+  { name: 'Sánchez, J.', pa:0, h:0, bb:0, k:0, woba:null, hasData:false }
+];
+
+const bayesData = [
+  { name: 'Springer', prior: 0.421, posterior: 0.404, lo: 0.307, hi: 0.503, pa: 7, hasData: true },
+  { name: 'Guerrero Jr.', prior: 0.376, posterior: 0.382, lo: 0.287, hi: 0.481, pa: 7, hasData: true },
+  { name: 'Schneider', prior: 0.364, posterior: 0.367, lo: 0.269, hi: 0.469, pa: 2, hasData: true },
+  { name: 'Barger', prior: 0.329, posterior: 0.353, lo: 0.256, hi: 0.454, pa: 2, hasData: true },
+  { name: 'Heineman', prior: 0.360, posterior: 0.351, lo: 0.257, hi: 0.451, pa: 4, hasData: true },
+  { name: 'Varsho', prior: 0.353, posterior: 0.342, lo: 0.246, hi: 0.443, pa: 2, hasData: true },
+  { name: 'Kirk', prior: 0.341, posterior: 0.341, lo: 0.245, hi: 0.442, pa: 2, hasData: true },
+  { name: 'Sánchez', prior: 0.312, posterior: 0.312, lo: 0.218, hi: 0.413, pa: 0, hasData: false },
+  { name: 'Lukes', prior: 0.323, posterior: 0.309, lo: 0.219, hi: 0.406, pa: 5, hasData: true },
+  { name: 'Clement', prior: 0.315, posterior: 0.305, lo: 0.213, hi: 0.404, pa: 2, hasData: true },
+  { name: 'Straw', prior: 0.307, posterior: 0.297, lo: 0.206, hi: 0.395, pa: 2, hasData: true },
+  { name: 'Giménez', prior: 0.282, posterior: 0.289, lo: 0.202, hi: 0.384, pa: 6, hasData: true }
+];
+
+// ===================================================
+// TAB SWITCH
+// ===================================================
+function switchTab(i) {
+  document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.panel').forEach((p,j) => p.classList.toggle('active', i===j));
+  if (i===0) drawMovementPlot();
+  if (i===3) drawBayesChart();
+}
+
+// ===================================================
+// TAB 1: ARSENAL BARS
+// ===================================================
+function buildArsenalBars() {
+  const container = document.getElementById('pitchBars');
+  arsenal.forEach(p => {
+    const color = PITCH_COLORS[p.name] || '#666';
+    const row = document.createElement('div');
+    row.className = 'pitch-row';
+    row.innerHTML = `
+      <div class="pitch-name">${p.name}</div>
+      <div class="pitch-bar-track">
+        <div class="pitch-bar-fill" style="width:${p.pct/35*100}%;background:${color};opacity:0.85;"></div>
+      </div>
+      <div class="pitch-pct" style="color:${color}">${p.pct}%</div>
+      <div class="pitch-velo">${p.velo.toFixed(1)} mph</div>
+    `;
+    container.appendChild(row);
+  });
+
+  const legend = document.getElementById('pitchLegend');
+  arsenal.forEach(p => {
+    const item = document.createElement('div');
+    item.className = 'legend-item';
+    item.innerHTML = `<span class="dot" style="background:${PITCH_COLORS[p.name]}"></span>${p.name}`;
+    legend.appendChild(item);
+  });
+}
+
+// ===================================================
+// TAB 1: MOVEMENT PLOT
+// ===================================================
+function drawMovementPlot() {
+  const canvas = document.getElementById('movementCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  // Background
+  ctx.fillStyle = 'rgba(0,0,0,0.15)';
+  ctx.fillRect(0,0,W,H);
+
+  // Axes
+  const cx = W/2, cy = H/2;
+  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,H); ctx.stroke();
+
+  // Axis labels
+  ctx.fillStyle = 'rgba(255,255,255,0.25)';
+  ctx.font = '9px IBM Plex Mono';
+  ctx.textAlign = 'center';
+  ctx.fillText('HB →', W-25, cy-6);
+  ctx.fillText('← HB', 25, cy-6);
+  ctx.textAlign = 'left';
+  ctx.fillText('↑ VB', cx+5, 12);
+
+  // Movement data (pfx_x, pfx_z) in inches
+  const movements = [
+    { name: '4-Seam Fastball', x: -0.48, z: 1.40, size: 18.9 },
+    { name: 'Sinker', x: -1.18, z: 1.00, size: 16.1 },
+    { name: 'Sweeper', x: 0.94, z: 0.21, size: 19.8 },
+    { name: 'Split-Finger', x: -0.99, z: 0.46, size: 23.5 },
+    { name: 'Cutter', x: 0.13, z: 0.48, size: 12.0 },
+    { name: 'Curveball', x: 0.76, z: -1.01, size: 9.7 }
+  ];
+
+  const scale = 60; // pixels per foot of movement
+  movements.forEach(p => {
+    const px = cx + p.x * scale;
+    const py = cy - p.z * scale;
+    const r = Math.sqrt(p.size) * 2.2;
+    const color = PITCH_COLORS[p.name] || '#aaa';
+
+    ctx.beginPath();
+    ctx.arc(px, py, r, 0, Math.PI*2);
+    ctx.fillStyle = color + 'cc';
+    ctx.fill();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Label
+    ctx.fillStyle = '#fff';
+    ctx.font = '8px IBM Plex Mono';
+    ctx.textAlign = 'center';
+    const abbr = { '4-Seam Fastball':'FF','Sinker':'SI','Sweeper':'ST','Split-Finger':'FS','Cutter':'FC','Curveball':'CU' };
+    ctx.fillText(abbr[p.name]||p.name[0], px, py+3);
+  });
+
+  // Scale note
+  ctx.fillStyle = 'rgba(255,255,255,0.2)';
+  ctx.font = '8px IBM Plex Mono';
+  ctx.textAlign = 'left';
+  ctx.fillText('Circle size = usage %', 8, H-8);
+}
+
+// ===================================================
+// TAB 2: TENDENCY BARS & ZONE GRIDS
+// ===================================================
+function buildTendencyBars(data, containerId) {
+  const container = document.getElementById(containerId);
+  data.forEach(p => {
+    const color = PITCH_COLORS[p.name] || '#666';
+    const row = document.createElement('div');
+    row.className = 'pitch-row';
+    row.innerHTML = `
+      <div class="pitch-name" style="font-size:10px;">${p.name}</div>
+      <div class="pitch-bar-track" style="height:16px;">
+        <div class="pitch-bar-fill" style="width:${p.pct/40*100}%;background:${color};opacity:0.85;"></div>
+      </div>
+      <div class="pitch-pct" style="color:${color};font-size:10px;">${p.pct}%</div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+function buildZoneGrid(zoneData, containerId) {
+  // Zone order (top-left to bottom-right, catcher view): 7,8,9 / 4,5,6 / 1,2,3
+  const order = [7,8,9,4,5,6,1,2,3];
+  const counts = order.map(z => zoneData[z] || 0);
+  const maxCount = Math.max(...counts);
+
+  const grid = document.getElementById(containerId);
+  counts.forEach(c => {
+    const intensity = c / maxCount;
+    const r = Math.round(3 + intensity * 229);
+    const g = Math.round(62 + intensity * (intensity > 0.5 ? -62 : 100));
+    const b = Math.round(126 + intensity * (intensity > 0.5 ? -126 : 0));
+    const cell = document.createElement('div');
+    cell.className = 'zone-cell';
+    cell.style.background = `rgba(${r},${g},${b},${0.3 + intensity * 0.6})`;
+    cell.style.color = intensity > 0.5 ? '#fff' : 'rgba(255,255,255,0.6)';
+    cell.textContent = c;
+    grid.appendChild(cell);
+  });
+}
+
+// ===================================================
+// TAB 3: MATCHUP ROWS
+// ===================================================
+function buildMatchupRows() {
+  const container = document.getElementById('matchupRows');
+  const maxWoba = 1.05;
+
+  // Sort by wOBA desc (nulls last)
+  const sorted = [...matchups].sort((a,b) => {
+    if (a.woba === null) return 1;
+    if (b.woba === null) return -1;
+    return b.woba - a.woba;
+  });
+
+  sorted.forEach(m => {
+    const row = document.createElement('div');
+    row.className = 'matchup-row';
+
+    if (!m.hasData) {
+      row.innerHTML = `
+        <div class="matchup-name">${m.name}</div>
+        <div style="flex:1;display:flex;align-items:center;gap:8px;">
+          <div class="no-data-label">NEW JAY · NO SUGANO HISTORY</div>
+        </div>
+      `;
+    } else {
+      const fillPct = m.woba / maxWoba * 100;
+      const clampedPct = Math.min(fillPct, 100);
+      let color = '#7a9cc0';
+      if (m.woba >= 0.400) color = '#2dd4a0';
+      else if (m.woba >= 0.320) color = '#f4b942';
+      else if (m.woba < 0.150) color = '#ff4f6a';
+
+      const noteBadge = m.note ? `<span style="background:rgba(232,0,45,0.2);color:var(--red);font-size:8px;padding:1px 5px;border-radius:2px;font-family:'IBM Plex Mono',monospace;">${m.note}</span>` : '';
+
+      row.innerHTML = `
+        <div class="matchup-name">${m.name} ${noteBadge}</div>
+        <div class="matchup-pa">${m.pa} PA</div>
+        <div class="matchup-bar-track">
+          <div class="matchup-bar-fill" style="width:${clampedPct}%;background:${color};opacity:0.85;"></div>
+        </div>
+        <div class="matchup-woba" style="color:${color}">${m.woba.toFixed(3)}</div>
+        <div class="matchup-outcomes">${m.h}H ${m.bb}BB ${m.k}K</div>
+      `;
+    }
+    container.appendChild(row);
+  });
+}
+
+// ===================================================
+// TAB 4: BAYESIAN CHART
+// ===================================================
+function drawBayesChart() {
+  const canvas = document.getElementById('bayesCanvas');
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.parentElement.clientWidth || 820;
+  const H = 460;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0,0,W,H);
+
+  const marginL = 110, marginR = 80, marginT = 30, marginB = 40;
+  const plotW = W - marginL - marginR;
+  const plotH = H - marginT - marginB;
+  const n = bayesData.length;
+  const rowH = plotH / n;
+
+  const xMin = 0.15, xMax = 0.56;
+  const xScale = x => marginL + (x - xMin) / (xMax - xMin) * plotW;
+
+  // Background
+  ctx.fillStyle = 'rgba(0,0,0,0.15)';
+  ctx.fillRect(marginL, marginT, plotW, plotH);
+
+  // Alternating row backgrounds
+  bayesData.forEach((d, i) => {
+    const y = marginT + i * rowH;
+    ctx.fillStyle = i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent';
+    ctx.fillRect(marginL, y, plotW, rowH);
+  });
+
+  // League avg line (.320)
+  const leagueX = xScale(0.320);
+  ctx.strokeStyle = 'rgba(232,0,45,0.5)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 4]);
+  ctx.beginPath();
+  ctx.moveTo(leagueX, marginT);
+  ctx.lineTo(leagueX, marginT + plotH);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = 'rgba(232,0,45,0.7)';
+  ctx.font = `9px IBM Plex Mono`;
+  ctx.textAlign = 'center';
+  ctx.fillText('Lg Avg', leagueX, marginT - 6);
+
+  // X-axis ticks
+  [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55].forEach(v => {
+    const x = xScale(v);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, marginT);
+    ctx.lineTo(x, marginT + plotH);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.3)';
+    ctx.font = '9px IBM Plex Mono';
+    ctx.textAlign = 'center';
+    ctx.fillText(v.toFixed(2), x, marginT + plotH + 16);
+  });
+
+  // X axis label
+  ctx.fillStyle = 'rgba(255,255,255,0.3)';
+  ctx.font = '9px IBM Plex Mono';
+  ctx.textAlign = 'center';
+  ctx.fillText('Posterior wOBA', W/2, H - 6);
+
+  // Draw each hitter
+  bayesData.forEach((d, i) => {
+    const cy = marginT + i * rowH + rowH / 2;
+    const dotColor = d.hasData ? '#2dd4a0' : '#f4b942';
+
+    // CI bar
+    const loX = xScale(d.lo);
+    const hiX = xScale(d.hi);
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(loX, cy);
+    ctx.lineTo(hiX, cy);
+    ctx.stroke();
+
+    // CI end caps
+    [loX, hiX].forEach(x => {
+      ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(x, cy - 5);
+      ctx.lineTo(x, cy + 5);
+      ctx.stroke();
+    });
+
+    // Prior ghost dot
+    const priorX = xScale(d.prior);
+    ctx.beginPath();
+    ctx.arc(priorX, cy, 4, 0, Math.PI*2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Posterior dot
+    const postX = xScale(d.posterior);
+    ctx.beginPath();
+    ctx.arc(postX, cy, 7, 0, Math.PI*2);
+    ctx.fillStyle = dotColor;
+    ctx.fill();
+    ctx.strokeStyle = d.hasData ? '#1aaa80' : '#c49030';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Posterior value label
+    ctx.fillStyle = dotColor;
+    ctx.font = `bold 10px IBM Plex Mono`;
+    ctx.textAlign = 'left';
+    ctx.fillText(d.posterior.toFixed(3), hiX + 8, cy + 4);
+
+    // Hitter name
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.font = `11px IBM Plex Sans`;
+    ctx.textAlign = 'right';
+    ctx.fillText(d.name, marginL - 8, cy + 4);
+
+    // PA label
+    ctx.fillStyle = 'rgba(255,255,255,0.25)';
+    ctx.font = '8px IBM Plex Mono';
+    ctx.textAlign = 'right';
+    ctx.fillText(d.hasData ? `${d.pa}PA` : 'new', marginL - 8, cy + 14);
+  });
+}
+
+// ===================================================
+// INIT
+// ===================================================
+buildArsenalBars();
+buildTendencyBars(lhhMix, 'lhhBars');
+buildTendencyBars(rhhMix, 'rhhBars');
+buildZoneGrid(lhhZones, 'lhhZoneGrid');
+buildZoneGrid(rhhZones, 'rhhZoneGrid');
+buildMatchupRows();
+drawMovementPlot();
+
+window.addEventListener('resize', () => {
+  const activeIdx = [...document.querySelectorAll('.panel')].findIndex(p => p.classList.contains('active'));
+  if (activeIdx === 3) drawBayesChart();
+});
+</script>
+
+</body>
+</html>

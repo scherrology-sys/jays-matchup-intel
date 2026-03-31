@@ -36,11 +36,16 @@ analysis/                   R scripts for peer review
 
 ## Model
 
-**Prior:** Each hitter's full prior-season wOBA, anchored at k=60 PA equivalent using a Beta-Binomial framework.
+**Prior (v2, Arsenal-Weighted):** Each hitter's prior is no longer anchored to their flat overall 2025 wOBA. Instead, it is weighted by the pitcher's actual pitch mix against that hitter's handedness, derived from the pitcher's Statcast file. Each hitter's wOBA against each pitch type is pulled from the batter-level Statcast data already in the pipeline, requiring no additional export. Where a hitter has fewer than 10 PA against a specific pitch type, the overall wOBA fills in as a fallback.
 
 **Likelihood:** wOBA-weighted plate appearance observations from the hitter's actual history against this specific pitcher.
 
-**Posterior:** Updated wOBA estimate with 90% credible interval. Hitters with no prior exposure to the pitcher carry the prior forward unchanged, flagged explicitly in the graphic.
+**Posterior:** Updated wOBA estimate with 90% credible interval.
+
+**Confidence tiers:**
+- **T1** — Arsenal-weighted prior + matchup history update. Tightest credible intervals.
+- **T2** — Arsenal-weighted prior only. No matchup history available. Wider intervals.
+- **T3** — No 2025 MLB data at all. Model cannot score. Flagged explicitly.
 
 **Scope:** Model is evaluated against starter plate appearances only. Relief pitchers are excluded by design, as pre-game modeling of bullpen usage is not defensible with public data.
 
@@ -67,6 +72,7 @@ Analysts who wish to reproduce or challenge the model outputs can run the R scri
 
 | Date | Opponent | Pitcher | Top Pick | Result |
 |------|----------|---------|----------|--------|
+| 3-31-26 | COL | Ryan Feltner RHP | G. Springer (.421) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) |
 | 3-30-26 | COL | Tomoyuki Sugano RHP | G. Springer (.404) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
 ## Brand

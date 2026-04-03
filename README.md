@@ -72,12 +72,14 @@ Analysts who wish to reproduce or challenge the model outputs can run the R scri
 
 | Date | Opponent | Pitcher | Top Pick | Links |
 |------|----------|---------|----------|-------|
-| 4-2-26  | CWS | Burke (bulk) / Taylor (opener) RHP | G. Springer (.410) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-02-burke-taylor/) |
+| 4-2-26  | CWS | Burke (bulk) / Taylor (opener) RHP | G. Springer (.410) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-02-burke-taylor/) · Retro pending |
 | 4-1-26  | COL | Kyle Freeland LHP    | G. Springer (.440) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-01-freeland/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-01-freeland/) |
 | 3-31-26 | COL | Ryan Feltner RHP     | G. Springer (.421) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | Tomoyuki Sugano RHP  | G. Springer (.404) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**Colorado series: TOR 1-2 · New York Yankees series begins 4-2-26**
+**Colorado series: TOR 1-2 · Chicago White Sox series begins 4-2-26**
+
+*Last updated: April 3, 2026*
 
 ## Brand
 

@@ -30,7 +30,6 @@
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
   .site-header {
     background: linear-gradient(180deg, #000d22 0%, var(--navy-dark) 100%);
     border-bottom: 2px solid var(--red);
@@ -85,8 +84,6 @@
     max-width: 520px;
     line-height: 1.5;
   }
-
-  /* ACA brand tag in header */
   .aca-lockup {
     display: flex;
     align-items: center;
@@ -116,7 +113,6 @@
     line-height: 1;
   }
 
-  /* ── SEASON BAR ── */
   .season-bar {
     background: var(--navy-panel);
     border-bottom: 1px solid var(--border);
@@ -136,15 +132,8 @@
     color: var(--text-dim);
     text-transform: uppercase;
   }
-  .season-stats {
-    display: flex;
-    gap: 24px;
-  }
-  .season-stat {
-    display: flex;
-    align-items: baseline;
-    gap: 5px;
-  }
+  .season-stats { display: flex; gap: 24px; }
+  .season-stat { display: flex; align-items: baseline; gap: 5px; }
   .season-stat-val {
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
@@ -159,13 +148,11 @@
     text-transform: uppercase;
   }
 
-  /* ── MAIN ── */
   .main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 36px 40px 60px;
   }
-
   .section-header {
     display: flex;
     align-items: baseline;
@@ -189,7 +176,6 @@
     letter-spacing: 0.1em;
   }
 
-  /* ── GAME CARDS ── */
   .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -201,12 +187,9 @@
     border: 1px solid var(--border);
     border-radius: 5px;
     overflow: hidden;
-    text-decoration: none;
-    color: inherit;
     display: flex;
     flex-direction: column;
     transition: border-color 0.2s, transform 0.15s;
-    cursor: pointer;
   }
   .game-card:hover {
     border-color: rgba(232,0,45,0.4);
@@ -221,11 +204,7 @@
     transform: none;
   }
 
-  /* Card top stripe by status */
-  .card-stripe {
-    height: 3px;
-    width: 100%;
-  }
+  .card-stripe { height: 3px; width: 100%; }
   .card-stripe.live    { background: var(--red); }
   .card-stripe.final   { background: var(--success); }
   .card-stripe.preview { background: var(--gold); }
@@ -238,8 +217,6 @@
     flex-direction: column;
     gap: 14px;
   }
-
-  /* Date + status row */
   .card-meta {
     display: flex;
     align-items: center;
@@ -266,7 +243,6 @@
   .status-badge.preview { background: rgba(196,162,75,0.12); color: var(--gold); border: 1px solid rgba(196,162,75,0.3); }
   .status-badge.upcoming { background: rgba(255,255,255,0.04); color: var(--text-dim); border: 1px solid var(--border); }
 
-  /* Matchup logos row */
   .card-matchup {
     display: flex;
     align-items: center;
@@ -301,7 +277,6 @@
     padding: 0 4px;
   }
 
-  /* Pitcher + model info */
   .card-info {
     display: flex;
     flex-direction: column;
@@ -352,7 +327,6 @@
     color: var(--text-dim);
   }
 
-  /* Card footer CTA */
   .card-footer {
     padding: 10px 18px;
     border-top: 1px solid var(--border);
@@ -361,10 +335,7 @@
     justify-content: space-between;
     gap: 8px;
   }
-  .card-footer-links {
-    display: flex;
-    gap: 10px;
-  }
+  .card-footer-links { display: flex; gap: 10px; }
   .card-cta {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 9px;
@@ -376,28 +347,8 @@
   .card-cta:hover { color: var(--white); }
   .card-cta.retro { color: var(--gold); }
   .card-cta.retro:hover { color: var(--white); }
-  .card-arrow {
-    font-size: 14px;
-    color: var(--red);
-    opacity: 0.7;
-  }
   .card-footer.disabled .card-cta { color: var(--text-dim); }
-  .card-footer.disabled .card-arrow { color: var(--text-dim); }
 
-  /* ── EMPTY STATE ── */
-  .empty-upcoming {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 40px 20px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 0.1em;
-    border: 1px dashed var(--border);
-    border-radius: 4px;
-  }
-
-  /* ── FOOTER ── */
   .site-footer {
     text-align: center;
     padding: 20px;
@@ -411,7 +362,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <div class="header-left">
@@ -434,37 +384,32 @@
   </div>
 </header>
 
-<!-- SEASON BAR -->
 <div class="season-bar">
   <div class="season-inner">
     <div class="season-label">2026 Season Tracker</div>
     <div class="season-stats">
       <div class="season-stat">
-        <span class="season-stat-val" id="statPreviews">1</span>
+        <span class="season-stat-val" id="statPreviews">—</span>
         <span class="season-stat-lbl">Previews</span>
       </div>
       <div class="season-stat">
-        <span class="season-stat-val" id="statRetros">0</span>
+        <span class="season-stat-val" id="statRetros">—</span>
         <span class="season-stat-lbl">Retrospectives</span>
       </div>
       <div class="season-stat">
-        <span class="season-stat-val" id="statStarters">1</span>
+        <span class="season-stat-val" id="statStarters">—</span>
         <span class="season-stat-lbl">Starters Scouted</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <main class="main">
-
-  <!-- ACTIVE / RECENT GAMES -->
   <div class="section-header">
     <div class="section-title">Game Log</div>
-    <div class="section-count" id="gameCount">1 game</div>
+    <div class="section-count" id="gameCount">—</div>
   </div>
   <div class="games-grid" id="gamesGrid"></div>
-
 </main>
 
 <footer class="site-footer">
@@ -472,16 +417,22 @@
 </footer>
 
 <script>
-// ================================================================
-// GAME REGISTRY
-// Add a new object here for each game. The page builds itself.
-//
-// status options: "preview" | "live" | "final" | "upcoming"
-// link: relative path to the game folder
-// pick: top Bayesian posterior hitter (fill in after model runs)
-// pickWoba: posterior wOBA for top pick
-// ================================================================
 const GAMES = [
+  {
+    date:        "2026-04-04",
+    dateLabel:   "April 4, 2026",
+    homeTeam:    "TOR",
+    awayTeam:    "CWS",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    pitcher:     "A. Kay (bulk) / G. Taylor (opener)",
+    pitcherHand: "LHP",
+    status:      "preview",
+    link:        "games/2026-04-04-kay-taylor/index.html",
+    retroLink:   null,
+    pick:        "G. Springer",
+    pickWoba:    ".429"
+  },
   {
     date:        "2026-04-03",
     dateLabel:   "April 3, 2026",
@@ -544,15 +495,12 @@ const GAMES = [
   }
 ];
 
-// ================================================================
-// BUILD CARDS
-// ================================================================
 function statusLabel(s) {
-  return { preview: "Preview", live: "Live", final: "Final", upcoming: "Upcoming" }[s] || s;
+  return { preview:"Preview", live:"Live", final:"Final", upcoming:"Upcoming" }[s] || s;
 }
 
 function buildCard(g) {
-  const isLinked  = g.link && g.status !== "upcoming";
+  const isLinked = g.link && g.status !== "upcoming";
   const card = document.createElement('div');
   card.className = `game-card${g.status === 'upcoming' ? ' upcoming' : ''}`;
 
@@ -576,20 +524,18 @@ function buildCard(g) {
       </div>
       <div class="card-matchup">
         <div class="team-block">
-          <img class="team-logo" src="${g.homeLogo}" alt="${g.homeTeam}"
-               onerror="this.style.opacity='0.3'">
+          <img class="team-logo" src="${g.homeLogo}" alt="${g.homeTeam}" onerror="this.style.opacity='0.3'">
           <div class="team-abbr">${g.homeTeam}</div>
         </div>
         <div class="vs-divider">VS</div>
         <div class="team-block">
-          <img class="team-logo" src="${g.awayLogo}" alt="${g.awayTeam}"
-               onerror="this.style.opacity='0.3'">
+          <img class="team-logo" src="${g.awayLogo}" alt="${g.awayTeam}" onerror="this.style.opacity='0.3'">
           <div class="team-abbr">${g.awayTeam}</div>
         </div>
       </div>
       <div class="card-info">
         <div class="pitcher-row">
-          <div class="pitcher-label">Starter</div>
+          <div class="pitcher-label">Pitcher</div>
           <div class="pitcher-name">${g.pitcher}</div>
           <div class="pitcher-label" style="margin-left:2px;">${g.pitcherHand}</div>
         </div>
@@ -612,16 +558,12 @@ function buildCard(g) {
 function render() {
   const grid  = document.getElementById('gamesGrid');
   const count = document.getElementById('gameCount');
-
-  const sorted = [...GAMES].sort((a, b) => b.date.localeCompare(a.date));
+  const sorted = [...GAMES].sort((a,b) => b.date.localeCompare(a.date));
   sorted.forEach(g => grid.appendChild(buildCard(g)));
-
-  const live    = GAMES.filter(g => g.status === 'preview' || g.status === 'final' || g.status === 'live').length;
   count.textContent = `${GAMES.length} game${GAMES.length !== 1 ? 's' : ''}`;
-
-  document.getElementById('statPreviews').textContent  = GAMES.filter(g => g.status === 'preview' || g.status === 'live' || g.status === 'final').length;
-  document.getElementById('statRetros').textContent    = GAMES.filter(g => g.retroLink).length;
-  document.getElementById('statStarters').textContent  = new Set(GAMES.map(g => g.pitcher)).size;
+  document.getElementById('statPreviews').textContent = GAMES.filter(g => g.status === 'preview' || g.status === 'live' || g.status === 'final').length;
+  document.getElementById('statRetros').textContent   = GAMES.filter(g => g.retroLink).length;
+  document.getElementById('statStarters').textContent = new Set(GAMES.map(g => g.pitcher)).size;
 }
 
 render();

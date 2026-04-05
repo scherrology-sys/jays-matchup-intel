@@ -1,1 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Kay · April 4</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000e20; --navy:#001a3d; --panel:#071e3d; --panel2:#0b2245;
+  --red:#E8002D; --white:#fff; --cream:#ddeaf8;
+  --gold:#C4A24B; --dim:#6a8fb5; --mid:#9ab8d4;
+  --border:rgba(255,255,255,.07); --bhi:rgba(255,255,255,.13);
+  --green:#2dd4a0; --amber:#f4b942; --rose:#ff4f6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
 
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;width:fit-content;transition:color .15s;}
+.back-link:hover{color:var(--white);}
+.back-link span{color:var(--gold);}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;overflow:hidden;border-bottom:1px solid rgba(196,162,75,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,rgba(196,162,75,.3) 50%,transparent 100%);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.hero-hed{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1;margin-bottom:8px;}
+.hero-hed .red{color:var(--red);}
+.hero-hed .role{font-size:18px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;letter-spacing:.04em;}
+.hero-dek{font-size:16px;line-height:1.6;color:var(--mid);max-width:580px;}
+.hero-dek em{font-style:normal;color:var(--cream);}
+.score-box{background:rgba(0,0,0,.5);border:1px solid rgba(196,162,75,.22);border-left:2px solid var(--gold);border-radius:3px;padding:12px 18px;text-align:center;flex-shrink:0;}
+.score-val{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:4px;}
+.score-sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(196,162,75,.2);border-left:2px solid var(--gold);border-radius:3px;padding:10px 14px 10px 12px;margin-top:10px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;line-height:1;}
+.aca-handle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+
+/* META */
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:0;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}
+.mi:last-child{border-right:none;margin-left:auto;padding-right:0;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+
+/* TABS */
+.tab-bar{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab-bar::-webkit-scrollbar{height:0;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.tab:hover{color:var(--white);}
+.tab.active{color:var(--white);border-bottom-color:var(--gold);}
+
+/* PANELS */
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}
+.panel.active{display:block;}
+
+/* LAYOUT */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.divider{height:1px;background:var(--border);margin:18px 0;}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+.pullquote{border-left:3px solid var(--gold);padding:14px 20px;margin:20px 0;font-size:16px;line-height:1.6;color:var(--cream);font-style:italic;background:rgba(255,255,255,.02);}
+
+/* VERDICT SUMMARY */
+.verdict-row{display:flex;align-items:stretch;gap:0;border:1px solid var(--border);border-radius:5px;overflow:hidden;margin-bottom:20px;}
+.vr-seg{flex:1;padding:20px 18px;text-align:center;border-right:1px solid var(--border);}
+.vr-seg:last-child{border-right:none;}
+.vr-num{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:5px;}
+.vr-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+
+/* SCORECARD ROWS */
+.sc-row{display:flex;align-items:center;gap:12px;padding:11px 18px;margin-bottom:7px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:border-color .15s;}
+.sc-row:hover{border-color:var(--bhi);}
+.sc-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.sc-row.called::before{background:var(--green);}
+.sc-row.miss::before{background:var(--rose);}
+.sc-row.none::before{background:rgba(255,255,255,.1);}
+.sr-name{font-size:13px;font-weight:600;color:var(--cream);width:150px;flex-shrink:0;}
+.sr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.sr-pa{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:28px;flex-shrink:0;text-align:center;}
+.sr-outcomes{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:180px;flex-shrink:0;}
+.sr-bar{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
+.sr-exp-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.25);z-index:2;}
+.sr-act-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
+.sr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:3;}
+.sr-exp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);width:40px;text-align:right;flex-shrink:0;}
+.sr-arrow{font-size:11px;color:var(--dim);}
+.sr-act{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;width:42px;text-align:left;flex-shrink:0;}
+.sr-verd{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;flex-shrink:0;}
+.sv-called{background:rgba(45,212,160,.08);border:1px solid rgba(45,212,160,.22);color:var(--green);}
+.sv-miss{background:rgba(255,79,106,.08);border:1px solid rgba(255,79,106,.22);color:var(--rose);}
+.sv-none{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--dim);}
+
+/* ARSENAL COMPARISON */
+.ac-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.ac-name{font-size:12px;color:var(--cream);width:128px;flex-shrink:0;}
+.ac-tracks{flex:1;display:flex;flex-direction:column;gap:3px;}
+.ac-track{display:flex;align-items:center;gap:6px;height:9px;}
+.ac-track-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--dim);width:22px;flex-shrink:0;}
+.ac-bar{flex:1;height:9px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.ac-fill{height:100%;border-radius:2px;}
+.ac-pct{font-family:'IBM Plex Mono',monospace;font-size:9px;width:30px;text-align:right;flex-shrink:0;}
+.ac-delta{font-family:'IBM Plex Mono',monospace;font-size:10px;width:44px;text-align:right;flex-shrink:0;font-weight:500;}
+
+/* ASSUMPTION CARDS */
+.asmp{background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;margin-bottom:14px;}
+.asmp:last-child{margin-bottom:0;}
+.asmp-top{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border);}
+.asmp-result{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:2px;flex-shrink:0;}
+.ar-held{background:rgba(45,212,160,.08);border:1px solid rgba(45,212,160,.22);color:var(--green);}
+.ar-failed{background:rgba(255,79,106,.08);border:1px solid rgba(255,79,106,.22);color:var(--rose);}
+.asmp-q{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--white);flex:1;}
+.asmp-numbers{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.an-exp{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);}
+.an-arrow{font-size:13px;color:var(--dim);}
+.an-act{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;}
+.asmp-body{padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.ab-col{}
+.ab-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.ab-text{font-size:13px;color:var(--mid);line-height:1.7;}
+.ab-text strong{color:var(--cream);}
+.asmp-learn{padding:12px 20px;border-top:1px solid var(--border);font-size:12px;color:var(--dim);line-height:1.6;display:flex;align-items:center;gap:10px;}
+.learn-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+
+/* CALLOUTS */
+.callout{border-radius:4px;padding:16px 18px;margin-bottom:16px;font-size:13px;line-height:1.75;color:var(--cream);}
+.callout.gold{background:rgba(196,162,75,.07);border:1px solid rgba(196,162,75,.22);}
+.callout.gold strong{color:var(--gold);}
+.callout.soft{background:rgba(255,255,255,.025);border:1px solid var(--border);}
+.callout.soft strong{color:var(--cream);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.16);}
+.callout.rose strong{color:var(--rose);}
+
+/* SOCIAL */
+.social{background:linear-gradient(135deg,rgba(0,40,100,.15) 0%,rgba(0,15,40,.15) 100%);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:24px;position:relative;}
+.social::before{content:'"';font-family:'Oswald',sans-serif;font-size:80px;color:rgba(196,162,75,.12);position:absolute;top:-12px;left:12px;line-height:1;pointer-events:none;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<nav class="back-nav">
+  <a class="back-link" href="../../index.html"><span>←</span> All games</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">Retrospective · TOR vs CWS · April 4, 2026</div>
+      <div class="hero-hed">ANTHONY <span class="red">KAY</span><span class="role">LHP · Chicago</span></div>
+      <div class="hero-dek">He was sharp. <em>All five pitches on profile, command clean, Sweeper working more than we anticipated.</em> The Jays didn't have an answer.</div>
+    </div>
+    <div>
+      <div class="score-box">
+        <div class="score-val" style="color:var(--rose);">CWS 6, TOR 3</div>
+        <div class="score-sub">Final · 9 innings · Kay 5 IP</div>
+      </div>
+      <div class="aca">
+        <svg width="26" height="26" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+        <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-handle">@scherrology</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- META -->
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi">
+      <div class="mi-lbl">Scope</div>
+      <div class="mi-val">Kay · innings 2 through 6</div>
+      <div class="mi-sub">Taylor opened inning 1, not scored</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Called / Miss</div>
+      <div class="mi-val">2 called, 6 misses</div>
+      <div class="mi-sub">Kay had a good night, plain and simple</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Assumptions</div>
+      <div class="mi-val">1 held, 1 failed</div>
+      <div class="mi-sub">Sweeper jumped way past what we projected</div>
+    </div>
+    <div class="mi" style="margin-left:auto;">
+      <div class="mi-lbl">What this analysis learns</div>
+      <div class="mi-val">Sweeper is a bigger part of his game than one start suggested</div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tab-bar">
+  <div class="tab active" onclick="go(0)">How He Pitched</div>
+  <div class="tab" onclick="go(1)">The Scorecard</div>
+  <div class="tab" onclick="go(2)">Were We Right</div>
+  <div class="tab" onclick="go(3)">The Takeaway</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══ HOW HE PITCHED ══ -->
+<div class="panel active" id="p0">
+
+  <div class="lede">Kay was good. Clean mechanics, everything where it needed to be, and the Sweeper was considerably sharper and more frequent than his first start suggested. <strong>Every pitch was on profile</strong>, meaning the movement matched his baseline. He wasn't getting away with anything. The stuff was just working.</div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">What we projected vs what he actually threw</div>
+      <div id="arsenalComp"></div>
+      <div class="divider"></div>
+      <div class="prose">The Sweeper was the big story. We had him at 17% based on his first start. He threw it 26% of the time tonight. That's not a random fluctuation — it looks like the Sweeper is a bigger weapon in his arsenal than we initially gave him credit for. The analysis notes this for next time.</div>
+    </div>
+    <div class="card">
+      <div class="card-hd">All five pitches on profile tonight</div>
+      <div id="feelItems"></div>
+      <div class="divider"></div>
+      <div class="prose">When every pitch is moving the way it's supposed to, there's no early tell for hitters. Kay wasn't tipping anything, and the shape was consistent throughout. That's a pitcher having a good night, not just getting lucky.</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">How he used the pitches by handedness</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs lefties (9 pitches)</div>
+          <div id="lhh"></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs righties (67 pitches)</div>
+          <div id="rhh"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Command check</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;">Fastball strike zone rate</div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:51.6%;background:var(--green);border-radius:2px;"></div></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);">51.6% <span style="color:var(--dim);font-size:9px;">, threshold 45%. Clean.</span></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;">Overall ball rate</div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:39.5%;background:var(--amber);border-radius:2px;"></div></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--amber);">39.5% <span style="color:var(--dim);font-size:9px;">, threshold 40%. Just inside. Borderline.</span></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;">Walk rate</div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:22%;background:var(--green);border-radius:2px;"></div></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);">10.5% <span style="color:var(--dim);font-size:9px;">, threshold 12%. In control.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCORECARD ══ -->
+<div class="panel" id="p1">
+
+  <div class="lede">The analysis called two out of eight. Kay was simply better than the projections on most nights. That happens. What matters is understanding why.</div>
+
+  <div class="verdict-row">
+    <div class="vr-seg" style="background:rgba(45,212,160,.04);">
+      <div class="vr-num" style="color:var(--green);">2</div>
+      <div class="vr-lbl">Called</div>
+    </div>
+    <div class="vr-seg" style="background:rgba(255,79,106,.04);">
+      <div class="vr-num" style="color:var(--rose);">6</div>
+      <div class="vr-lbl">Misses</div>
+    </div>
+    <div class="vr-seg">
+      <div class="vr-num" style="color:var(--dim);">1</div>
+      <div class="vr-lbl">Not scored (T3)</div>
+    </div>
+    <div class="vr-seg" style="background:rgba(255,255,255,.02);">
+      <div class="vr-num" style="color:var(--amber);font-size:24px;">.107</div>
+      <div class="vr-lbl">Avg miss size (residual)</div>
+    </div>
+  </div>
+
+  <!-- SCORECARD HEADER -->
+  <div style="display:flex;align-items:center;gap:12px;padding:3px 18px;margin-bottom:5px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:150px;flex-shrink:0;">Hitter</div>
+    <div style="width:26px;flex-shrink:0;"></div>
+    <div style="width:28px;flex-shrink:0;"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:180px;flex-shrink:0;">Outcomes</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;">Projected to actual</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:40px;text-align:right;">proj</div>
+    <div style="width:12px;"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:42px;">actual</div>
+    <div style="width:60px;flex-shrink:0;"></div>
+  </div>
+  <div id="scRows"></div>
+
+  <div class="callout soft" style="margin-top:16px;">
+    <strong>A note on the numbers:</strong> Guerrero's home run and Schneider's hit pushed their actual numbers well past projections, which counts as called. Both outperformed what we said they would. The six misses were hitters who went 0-for-2 against a lefty having a clean, sharp night. Kay's pitch sequencing, especially the Sweeper mixed into the fastball counts against righties, created problems the projections didn't fully anticipate.
+  </div>
+</div>
+
+<!-- ══ WERE WE RIGHT ══ -->
+<div class="panel" id="p2">
+
+  <div class="lede">Before the game, this analysis named two specific things it was watching. Here's how both of them came out, and what that means going forward.</div>
+
+  <div id="asmpCards"></div>
+</div>
+
+<!-- ══ THE TAKEAWAY ══ -->
+<div class="panel" id="p3">
+
+  <div class="lede">Kay was the best pitcher the Jays have faced this season. Not the most intimidating on paper going in, but the most dominant in execution. The Sweeper is better than one start suggested.</div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">What Kay showed us</div>
+      <div class="prose">The Sweeper jumped to 26% usage and was on profile all night. That, combined with the Slider elevated to 21%, gave him five distinct looks against righties. The Changeup held its role as the put-away pitch. <strong>This is a pitcher with a deep enough arsenal to be effective even when hitters know what's coming.</strong> The analysis will weight the Sweeper considerably higher for the next time we see him.</div>
+    </div>
+    <div class="card">
+      <div class="card-hd">What the Jays showed us</div>
+      <div class="prose">Springer went 0-for-2. Heineman went 0-for-2. Both were held to flyouts by a pitcher who kept the Changeup away from lefties, exactly as projected. The problem wasn't the read, it was that Kay's Sweeper made the fastball counts much harder to navigate than a 17% usage pitcher should. <strong>Guerrero's home run was the one time the lineup punished a mis-located pitch.</strong> That's the blueprint for next time.</div>
+    </div>
+  </div>
+
+  <div class="pullquote">Two games in, the analysis now knows more about Kay than it did 24 hours ago. The Sweeper is a feature, not a work in progress. It'll be weighted that way next time he takes the ball.</div>
+
+  <div class="callout gold" style="margin-bottom:20px;">
+    <strong>What changes in the next preview:</strong> The Sweeper assumption gets revised from 17% to somewhere between 20 and 25%. The Changeup-to-LHH assumption held perfectly, which gives it more weight going forward. The overall read on Kay as a legitimate arm with a deep arsenal is confirmed. He's not a one-trick pitcher and the analysis will reflect that.
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro, 4-4-26. Kay was good. CWS 6, Jays 3, and it wasn't really that close.<br><br>
+      Every pitch was on profile. Command was clean. The Sweeper showed up at 26% usage, way more than his first start suggested. That pitch gave righties a fifth look they had to account for, and it changed the whole at-bat equation.<br><br>
+      The analysis called two out of eight in Kay's innings. Guerrero's homer and Schneider's hit outperformed projections. Everyone else ran into a pitcher having a clean, sharp night.<br><br>
+      One thing we got right: Kay threw zero Changeups to lefties, exactly as projected. One thing we underestimated: how much the Sweeper would factor in.<br><br>
+      Next time Kay pitches, this read starts from a better place.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant · Model covers Kay innings 2 through 6 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+const PC={'4-Seam Fastball':'#E8002D','Changeup':'#fb923c','Sweeper':'#2dd4a0','Sinker':'#f4b942','Slider':'#c084fc'};
+const LG=.320;
+
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+  if(i===1&&!window._sc)buildSc();
+  if(i===2&&!window._as)buildAs();
+}
+
+/* ARSENAL COMPARISON */
+const AC=[
+  {n:'Sweeper',         proj:17.4,act:26.3,col:'#2dd4a0'},
+  {n:'4-Seam Fastball', proj:34.8,act:25.0,col:'#E8002D'},
+  {n:'Slider',          proj:13.0,act:21.1,col:'#c084fc'},
+  {n:'Changeup',        proj:18.5,act:11.8,col:'#fb923c'},
+  {n:'Sinker',          proj:16.3,act:15.8,col:'#f4b942'},
+];
+(function(){
+  const c=document.getElementById('arsenalComp');if(!c)return;
+  AC.forEach(p=>{
+    const delta=p.act-p.proj;
+    const dCol=Math.abs(delta)>=5?(delta>0?'var(--green)':'var(--rose)'):'var(--dim)';
+    const r=document.createElement('div');r.className='ac-row';
+    r.innerHTML=`
+      <div class="ac-name">${p.n}</div>
+      <div class="ac-tracks">
+        <div class="ac-track"><div class="ac-track-lbl" style="color:var(--dim);">proj</div><div class="ac-bar"><div class="ac-fill" style="width:${p.proj/40*100}%;background:${p.col};opacity:.35;"></div></div><div class="ac-pct" style="color:var(--dim);">${p.proj}%</div></div>
+        <div class="ac-track"><div class="ac-track-lbl" style="color:${p.col};">act</div><div class="ac-bar"><div class="ac-fill" style="width:${p.act/40*100}%;background:${p.col};opacity:.88;"></div></div><div class="ac-pct" style="color:${p.col};">${p.act}%</div></div>
+      </div>
+      <div class="ac-delta" style="color:${dCol};">${delta>=0?'+':''}${delta.toFixed(1)}%</div>`;
+    c.appendChild(r);
+  });
+})();
+
+/* FEEL ITEMS */
+(function(){
+  const data=[
+    {n:'4-Seam Fastball',ok:true,note:'pfx_z -0.01, pfx_x +0.06. Right where it should be.'},
+    {n:'Changeup',ok:true,note:'pfx_z -0.02, pfx_x -0.06. Arm-side fade intact.'},
+    {n:'Sweeper',ok:true,note:'pfx_z -0.02, pfx_x +0.03. Working.'},
+    {n:'Sinker',ok:true,note:'pfx_z +0.01. Run consistent with baseline.'},
+    {n:'Slider',ok:true,note:'pfx_z +0.08. Within normal variance.'},
+  ];
+  const c=document.getElementById('feelItems');if(!c)return;
+  data.forEach(d=>{
+    const r=document.createElement('div');
+    r.style.cssText='display:flex;align-items:center;gap:10px;margin-bottom:8px;';
+    r.innerHTML=`<div style="width:9px;height:9px;border-radius:50%;background:var(--green);flex-shrink:0;"></div><div style="font-size:12px;color:var(--cream);width:128px;flex-shrink:0;">${d.n}</div><div style="font-size:11px;color:var(--dim);">${d.note}</div>`;
+    c.appendChild(r);
+  });
+})();
+
+/* HAND BARS */
+function mkBars(data,id,mx){
+  const c=document.getElementById(id);if(!c)return;
+  data.forEach(p=>{
+    const col=PC[p.n]||'#888';
+    const r=document.createElement('div');
+    r.style.cssText='display:flex;align-items:center;gap:7px;margin-bottom:7px;';
+    r.innerHTML=`<div style="font-size:11px;color:var(--cream);width:108px;flex-shrink:0;">${p.n}</div><div style="flex:1;height:9px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;"><div style="height:100%;width:${p.p/mx*100}%;background:${col};opacity:.85;border-radius:2px;"></div></div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:${col};width:30px;text-align:right;">${p.p}%</div>`;
+    c.appendChild(r);
+  });
+}
+mkBars([{n:'Sinker',p:55.6},{n:'Sweeper',p:22.2},{n:'4-Seam',p:11.1},{n:'Slider',p:11.1}],'lhh',60);
+mkBars([{n:'4-Seam',p:26.9},{n:'Sweeper',p:26.9},{n:'Slider',p:22.4},{n:'Changeup',p:13.4},{n:'Sinker',p:10.4}],'rhh',30);
+
+/* SCORECARD */
+const SD=[
+  {n:'Springer',     h:'R',pa:2,outcomes:'fly out, fly out',   exp:.429,act:.000,cls:'miss'},
+  {n:'Heineman',     h:'L',pa:2,outcomes:'fly out, fly out',   exp:.391,act:.000,cls:'miss'},
+  {n:'Schneider',    h:'R',pa:2,outcomes:'walk, single',       exp:.372,act:.792,cls:'called'},
+  {n:'Guerrero Jr.', h:'R',pa:2,outcomes:'home run, fly out',  exp:.355,act:1.050,cls:'called'},
+  {n:'Giménez',      h:'L',pa:2,outcomes:'fly out, fly out',   exp:.301,act:.000,cls:'miss'},
+  {n:'Clement',      h:'R',pa:2,outcomes:'fly out, force out', exp:.291,act:.000,cls:'miss'},
+  {n:'Straw',        h:'R',pa:2,outcomes:'fly out, fly out',   exp:.283,act:.000,cls:'miss'},
+  {n:'Varsho',       h:'L',pa:2,outcomes:"fielder's choice, fly out",exp:.267,act:.000,cls:'miss'},
+  {n:'Okamoto',      h:'R',pa:3,outcomes:'fly out, single, walk',exp:null,act:.528,cls:'none'},
+];
+function buildSc(){
+  window._sc=true;
+  const c=document.getElementById('scRows');if(!c)return;
+  const xMn=0,xMx=1.1,xs=v=>(v/xMx*100).toFixed(1)+'%';
+  SD.forEach(d=>{
+    const row=document.createElement('div');row.className=`sc-row ${d.cls}`;
+    const bCol=d.cls==='called'?'var(--green)':(d.cls==='miss'?'var(--rose)':'var(--dim)');
+    const vLabel=d.cls==='called'?'Called':d.cls==='miss'?'Miss':'No projection';
+    const vCls=d.cls==='called'?'sv-called':d.cls==='miss'?'sv-miss':'sv-none';
+    if(d.cls==='none'){
+      row.innerHTML=`<div class="sr-name">${d.n}</div><div class="sr-hand">${d.h}</div><div class="sr-pa">${d.pa}PA</div><div class="sr-outcomes">${d.outcomes}</div><div style="flex:1;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">Not enough data to project</div><div class="sr-exp" style="color:var(--dim);">—</div><div class="sr-arrow"></div><div class="sr-act" style="color:var(--dim);">${d.act.toFixed(2)}</div><div class="sr-verd ${vCls}">${vLabel}</div>`;
+    } else {
+      row.innerHTML=`<div class="sr-name">${d.n}</div><div class="sr-hand">${d.h}</div><div class="sr-pa">${d.pa}PA</div><div class="sr-outcomes">${d.outcomes}</div><div class="sr-bar"><div class="sr-exp-line" style="left:${xs(d.exp)};"></div><div class="sr-act-fill" style="width:${xs(Math.min(d.act,xMx))};background:${bCol};"></div><div class="sr-lg" style="left:${xs(LG)};"></div></div><div class="sr-exp">${d.exp.toFixed(2)}</div><div class="sr-arrow">→</div><div class="sr-act" style="color:${bCol};">${d.act.toFixed(2)}</div><div class="sr-verd ${vCls}">${vLabel}</div>`;
+    }
+    c.appendChild(row);
+  });
+}
+
+/* ASSUMPTIONS */
+const ASMP=[
+  {
+    result:'held',
+    q:'Would Kay keep the Changeup away from left-handed hitters?',
+    exp:'0% Changeup to LHH',act:'0% — held exactly',actCol:'var(--green)',
+    what:'He threw nine pitches to left-handed hitters all night. Zero of them were Changeups. The entire LHH mix was Sinker, Sweeper, and the occasional fastball.',
+    means:'The projections for the left side of the lineup were built on this assumption. Heineman facing a fastball/sinker diet, Varsho getting no Changeup relief. That read was accurate. What hurt those hitters was simply that Kay executed well against their profiles.',
+    learn:'This assumption holds. It goes into the next preview with full confidence.',
+    learnCol:'var(--green)'
+  },
+  {
+    result:'failed',
+    q:'Would Sweeper usage stay near 17%?',
+    exp:'17% expected',act:'26% tonight',actCol:'var(--rose)',
+    what:'Kay threw the Sweeper 26.3% of the time tonight, up from 17.4% in his first start. That is not a rounding difference. Against right-handed hitters specifically, it was tied for his most-used pitch at 26.9%, level with the fastball.',
+    means:'Right-handers faced a much more complex at-bat than projected. The Sweeper mixed into fastball counts made it harder to sit on anything. Clement, the hitter flagged as most Sweeper-exposed, went 0-for-2. The sequencing problem was real, just larger than anticipated.',
+    learn:'The Sweeper gets a significant weight increase going forward. Next time Kay pitches, it is projected closer to 22 to 24%, not 17%.',
+    learnCol:'var(--rose)'
+  }
+];
+function buildAs(){
+  window._as=true;
+  const c=document.getElementById('asmpCards');if(!c)return;
+  ASMP.forEach(a=>{
+    const el=document.createElement('div');el.className='asmp';
+    const rCls=a.result==='held'?'ar-held':'ar-failed';
+    const rLabel=a.result==='held'?'Held':'Failed';
+    el.innerHTML=`
+    <div class="asmp-top">
+      <span class="asmp-result ${rCls}">${rLabel}</span>
+      <div class="asmp-q">${a.q}</div>
+      <div class="asmp-numbers">
+        <span class="an-exp">${a.exp}</span>
+        <span class="an-arrow">→</span>
+        <span class="an-act" style="color:${a.actCol};">${a.act}</span>
+      </div>
+    </div>
+    <div class="asmp-body">
+      <div class="ab-col">
+        <div class="ab-lbl">What happened</div>
+        <div class="ab-text">${a.what}</div>
+      </div>
+      <div class="ab-col">
+        <div class="ab-lbl">What it means for the read</div>
+        <div class="ab-text">${a.means}</div>
+      </div>
+    </div>
+    <div class="asmp-learn">
+      <div class="learn-dot" style="background:${a.learnCol};"></div>
+      <div style="font-size:12px;color:var(--dim);">${a.learn}</div>
+    </div>`;
+    c.appendChild(el);
+  });
+}
+
+buildSc();
+</script>
+</body>
+</html>

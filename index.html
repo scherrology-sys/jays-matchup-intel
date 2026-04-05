@@ -368,8 +368,7 @@
       <div class="site-eyebrow">Blue Jays Matchup Intelligence · 2026 Season</div>
       <div class="site-title">JAYS <span>MATCHUP</span> INTEL</div>
       <div class="site-subtitle">
-        Daily Statcast pitcher previews, Bayesian wOBA posteriors, and post-game
-        model retrospectives. Every Blue Jays starter, every night.
+        Daily Statcast matchup intelligence that learns from every game. Preview before first pitch, retrospective after the final out. The analysis builds on itself all season.
       </div>
     </div>
     <div class="aca-lockup">
@@ -419,19 +418,35 @@
 <script>
 const GAMES = [
   {
+    date:        "2026-04-05",
+    dateLabel:   "April 5, 2026",
+    homeTeam:    "CWS",
+    awayTeam:    "TOR",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    pitcher:     "TBD (bulk) / G. Taylor (opener)",
+    pitcherHand: "RHP",
+    status:      "preview",
+    link:        "games/2026-04-05/index.html",
+    retroLink:   null,
+    pick:        "TBD",
+    pickWoba:    "—"
+  },
+  {
     date:        "2026-04-04",
     dateLabel:   "April 4, 2026",
-    homeTeam:    "TOR",
-    awayTeam:    "CWS",
-    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    homeTeam:    "CWS",
+    awayTeam:    "TOR",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
     pitcher:     "A. Kay (bulk) / G. Taylor (opener)",
     pitcherHand: "LHP",
-    status:      "preview",
+    status:      "final",
+    result:      "CWS 6, TOR 3",
     link:        "games/2026-04-04-kay-taylor/index.html",
-    retroLink:   null,
+    retroLink:   "retro/2026-04-04-kay-taylor/index.html",
     pick:        "G. Springer",
-    pickWoba:    ".429"
+    pickWoba:    ".43"
   },
   {
     date:        "2026-04-03",

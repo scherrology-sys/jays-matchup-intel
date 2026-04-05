@@ -1,1 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Davis Martin · April 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000e20;--navy:#001a3d;--panel:#071e3d;--panel2:#0b2245;
+  --red:#E8002D;--white:#fff;--cream:#ddeaf8;
+  --gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;
+  --border:rgba(255,255,255,.07);--bhi:rgba(255,255,255,.13);
+  --green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
 
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;width:fit-content;transition:color .15s;}
+.back-link:hover{color:var(--white);}
+.back-link span{color:var(--red);}
+
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;overflow:hidden;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red) 0%,rgba(232,0,45,.3) 50%,transparent 100%);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hero-hed{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1;margin-bottom:8px;}
+.hero-hed .red{color:var(--red);}
+.hero-hed .role{font-size:18px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;letter-spacing:.04em;}
+.hero-dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
+.hero-dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px 10px 12px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;line-height:1;}
+.aca-handle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;align-items:stretch;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;}
+.mi:first-child{padding-left:0;}
+.mi:last-child{border-right:none;margin-left:auto;padding-right:0;align-items:flex-end;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+
+.tab-bar{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab-bar::-webkit-scrollbar{height:0;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.tab:hover{color:var(--white);}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}
+.panel.active{display:block;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.divider{height:1px;background:var(--border);margin:18px 0;}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+.pullquote{border-left:3px solid var(--red);padding:14px 20px;margin:20px 0;font-size:15px;line-height:1.65;color:var(--cream);font-style:italic;background:rgba(255,255,255,.02);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.gold{background:rgba(196,162,75,.07);border:1px solid rgba(196,162,75,.22);color:var(--cream);}
+.callout.gold strong{color:var(--gold);}
+.callout.soft{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+
+/* SAMPLE WEIGHT BAR */
+.sw-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.sw-yr{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);width:36px;flex-shrink:0;}
+.sw-bar{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.sw-fill{height:100%;border-radius:2px;}
+.sw-n{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:58px;text-align:right;flex-shrink:0;}
+.sw-eff{font-family:'IBM Plex Mono',monospace;font-size:9px;width:58px;text-align:right;flex-shrink:0;}
+
+/* ARSENAL */
+.abar{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.abar-n{font-size:12px;color:var(--cream);width:128px;flex-shrink:0;}
+.abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.abar-f{height:100%;border-radius:2px;opacity:.88;}
+.abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:32px;text-align:right;flex-shrink:0;}
+.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:52px;text-align:right;color:var(--dim);flex-shrink:0;}
+
+/* MATCHUP ROWS */
+.mu-row{display:flex;align-items:center;gap:12px;padding:11px 18px;margin-bottom:7px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:border-color .15s;}
+.mu-row:hover{border-color:var(--bhi);}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.h::before{background:var(--green);}
+.mu-row.s::before{background:var(--rose);}
+.mu-row.n::before{background:rgba(255,255,255,.1);}
+.mu-row.x::before{background:rgba(255,255,255,.06);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:128px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-track{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
+.mr-ci{position:absolute;top:20%;bottom:20%;background:rgba(255,255,255,.06);}
+.mr-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
+.mr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:2;}
+.mr-num{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:42px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:6px;line-height:1.35;}
+
+/* FLIP HIGHLIGHT */
+.flip-box{background:rgba(45,212,160,.06);border:1px solid rgba(45,212,160,.2);border-radius:5px;padding:20px;margin-bottom:18px;display:flex;gap:28px;align-items:center;}
+.flip-item{text-align:center;}
+.flip-name{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--mid);margin-bottom:4px;letter-spacing:.06em;}
+.flip-game{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);text-transform:uppercase;margin-bottom:6px;}
+.flip-val{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;line-height:1;}
+.flip-arrow{font-size:28px;color:var(--dim);flex:1;text-align:center;}
+.flip-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-top:4px;}
+
+/* WATCH FOR */
+.wf-item{margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+.wf-top{display:flex;align-items:flex-start;gap:0;}
+.wf-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:rgba(255,255,255,.1);padding:20px 22px;flex-shrink:0;border-right:1px solid var(--border);width:72px;text-align:center;line-height:1;}
+.wf-content{padding:20px 22px;flex:1;}
+.wf-q{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:6px;letter-spacing:.02em;}
+.wf-body{font-size:13px;color:var(--mid);line-height:1.75;}
+.wf-body strong{color:var(--cream);}
+.wf-footer{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.wff{padding:14px 22px;}
+.wff+.wff{border-left:1px solid var(--border);}
+.wff-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wff-val{font-size:12px;color:var(--cream);line-height:1.6;}
+
+/* EDGE */
+.edge-hero{background:rgba(0,40,100,.14);border:1px solid rgba(0,79,163,.22);border-radius:5px;padding:24px;margin-bottom:18px;}
+.eh-stats{display:flex;margin-bottom:18px;}
+.eh-s{flex:1;padding:0 22px;}
+.eh-s:first-child{padding-left:0;}
+.eh-s+.eh-s{border-left:1px solid var(--border);}
+.eh-val{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;line-height:1;margin-bottom:4px;}
+.eh-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;}
+.eh-prose{font-size:13px;color:var(--mid);line-height:1.75;border-top:1px solid var(--border);padding-top:16px;}
+.eh-prose strong{color:var(--white);}
+
+.mag{height:10px;background:rgba(255,255,255,.04);border-radius:5px;position:relative;margin:12px 0 9px;overflow:hidden;}
+.mag-z{position:absolute;top:0;bottom:0;}
+.mag-m{position:absolute;top:-3px;width:3px;height:16px;border-radius:2px;transform:translateX(-50%);z-index:3;}
+.mag-l{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+
+/* CALL */
+.tonight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.tg-card{background:var(--panel2);border:1px solid var(--border);border-radius:4px;padding:18px;}
+.tg-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.tg-name{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;}
+.tg-body{font-size:12px;color:var(--mid);line-height:1.65;}
+.tg-body strong{color:var(--cream);}
+.tg-card.best{border-color:rgba(45,212,160,.2);}
+.tg-card.best .tg-tag{color:var(--green);}
+.tg-card.worst{border-color:rgba(255,79,106,.2);}
+.tg-card.worst .tg-tag{color:var(--rose);}
+.tg-card.watch{border-color:rgba(244,185,66,.18);}
+.tg-card.watch .tg-tag{color:var(--amber);}
+.tg-card.flip{border-color:rgba(45,212,160,.3);background:rgba(45,212,160,.04);}
+.tg-card.flip .tg-tag{color:var(--green);}
+
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+
+.social{background:linear-gradient(135deg,rgba(0,40,100,.15) 0%,rgba(0,15,40,.15) 100%);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:24px;position:relative;}
+.social::before{content:'"';font-family:'Oswald',sans-serif;font-size:80px;color:rgba(232,0,45,.12);position:absolute;top:-12px;left:12px;line-height:1;pointer-events:none;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<nav class="back-nav">
+  <a class="back-link" href="../../index.html"><span>←</span> All games</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">TOR @ CWS · Guaranteed Rate Field · April 5, 2026 · 2:10 PM ET</div>
+      <div class="hero-hed">DAVIS <span class="red">MARTIN</span><span class="role">RHP · Chicago</span></div>
+      <div class="hero-dek">Thirty-seven major league starts, and a new pitch this year that changed how he attacks left-handed hitters. <em>The Changeup is the matchup story.</em> Varsho goes from the toughest projection in the lineup yesterday to one of the best tonight.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-handle">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi">
+      <div class="mi-lbl">Confidence</div>
+      <div class="mi-val">Moderate</div>
+      <div class="mi-sub">37 career starts · 3 seasons in the majors</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Jays vs Martin, career</div>
+      <div class="mi-val">0 plate appearances</div>
+      <div class="mi-sub">First time this lineup has seen him</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Opener</div>
+      <div class="mi-val">G. Taylor (RHP, ~1 inn)</div>
+      <div class="mi-sub">Third consecutive opener/bulk game for CWS</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Series record</div>
+      <div class="mi-val">CWS leads 2-0</div>
+      <div class="mi-sub">Both losses came in the last two innings</div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab active" onclick="go(0)">Who Is He</div>
+  <div class="tab" onclick="go(1)">The Matchups</div>
+  <div class="tab" onclick="go(2)">Watch For</div>
+  <div class="tab" onclick="go(3)">Is There an Edge</div>
+  <div class="tab" onclick="go(4)">Bottom Line</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══ WHO IS HE ══ -->
+<div class="panel active" id="p0">
+
+  <div class="lede">Martin has made <strong>37 starts across three seasons in the majors</strong>, so there is a real body of work to study here. He works lefties primarily with the Changeup, around a third of his pitches, and attacks righties with the Slider and fastball. Those are consistent, documented tendencies. The interesting wrinkle heading into tonight: he introduced a Cutter in his first start of 2026 that he barely threw in prior seasons. That changes things, and we will get to it.</div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">His arsenal · career through 2026</div>
+      <div id="mixBars"></div>
+      <div class="divider"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs lefties</div>
+          <div id="lhh"></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs righties</div>
+          <div id="rhh"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Career at a glance</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:13px;color:var(--cream);">2026</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);">1 start · 92 pitches · vs CWS</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:13px;color:var(--cream);">2025</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);">26 starts · full season in the rotation</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:13px;color:var(--cream);">2024</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);">11 starts · part of the year in the majors</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--border);padding-top:12px;font-size:12px;color:var(--dim);line-height:1.7;">
+        Yesterday's read on Kay was built on one start this season. Tonight we have 37 starts and over 3,200 pitches across three years to draw from. The read is more grounded. The uncertainty around the Cutter is still real, but the rest of his profile is well-established.
+      </div>
+      <div class="divider"></div>
+      <div class="card-hd">How the ball moves</div>
+      <canvas id="mv" width="256" height="188"></canvas>
+    </div>
+  </div>
+
+  <div class="pullquote">Martin pitches lefties and righties almost completely differently. Against lefties, the Changeup is the primary weapon, roughly a third of his pitches. Against righties, the Slider takes over, paired with the fastball. Two different games in the same start.</div>
+
+  <div class="callout amber">
+    <strong>The Cutter question.</strong> Martin threw a Cutter less than 2% of the time in 2024 and 2025. His first start of 2026 had the Cutter at 21%, primarily against left-handed hitters. This analysis leans heavily on what he's done across 37 starts. If the Cutter is now a genuine part of his LHH approach, that is a significantly harder at-bat for lefties than his career track record suggests. The first couple of left-handed hitters will tell you which Martin showed up.
+  </div>
+</div>
+
+<!-- ══ THE MATCHUPS ══ -->
+<div class="panel" id="p1">
+
+  <div class="lede">The Changeup-heavy approach to lefties means <strong>LHH hitters are the interesting side tonight</strong>, not RHH. Varsho goes from the lowest projection in the lineup yesterday against Kay to one of the highest tonight. That is not random. It is entirely about what Martin throws to left-handed hitters.</div>
+
+  <div class="flip-box" style="margin-bottom:20px;">
+    <div class="flip-item">
+      <div class="flip-name">Varsho</div>
+      <div class="flip-game">vs Kay (LHP, Apr 4)</div>
+      <div class="flip-val" style="color:var(--rose);">.267</div>
+      <div class="flip-label">lowest in lineup</div>
+    </div>
+    <div class="flip-arrow">→</div>
+    <div class="flip-item">
+      <div class="flip-name">Varsho</div>
+      <div class="flip-game">vs Martin (RHP, Apr 5)</div>
+      <div class="flip-val" style="color:var(--green);">.395</div>
+      <div class="flip-label">second highest tonight</div>
+    </div>
+    <div style="flex:2;padding-left:20px;border-left:1px solid var(--border);">
+      <div style="font-size:13px;color:var(--mid);line-height:1.7;">Kay kept the Changeup away from lefties entirely. Martin throws it to lefties at 32% based on his career. Varsho hits Changeups. Same hitter, completely different problem, two days apart. This is why the pitch mix matters as much as the pitcher's overall numbers.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;padding:3px 18px;margin-bottom:6px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:128px;flex-shrink:0;">Hitter</div>
+    <div style="width:26px;flex-shrink:0;"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;">Expected production tonight</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:42px;text-align:right;">exp</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;padding-left:6px;">Why</div>
+  </div>
+  <div id="muRows"></div>
+
+  <div style="margin-top:13px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--green);border-radius:2px;"></div>Lineup edge</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--rose);border-radius:2px;"></div>Tough matchup</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:20px;height:1px;background:rgba(232,0,45,.42);"></div>League average</div>
+    <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">Faded region = uncertainty range</div>
+  </div>
+</div>
+
+<!-- ══ WATCH FOR ══ -->
+<div class="panel" id="p2">
+
+  <div class="lede">Three questions to keep in mind during the game. Each one will tell you by the third inning whether the read heading in was right, and each one shapes how we approach Martin the next time he faces the Jays.</div>
+
+  <div id="wfItems"></div>
+</div>
+
+<!-- ══ THE EDGE ══ -->
+<div class="panel" id="p3">
+
+  <div class="lede">The Jays project slightly better against Martin than against a league-average pitcher. <strong>The edge is similar in size to yesterday's, but it comes from a different place</strong> — LHH hitters are the story tonight, not RHH.</div>
+
+  <div class="edge-hero">
+    <div class="eh-stats">
+      <div class="eh-s"><div class="eh-val" style="color:var(--amber);">Slight</div><div class="eh-lbl">Jays lineup advantage</div></div>
+      <div class="eh-s"><div class="eh-val" style="color:var(--amber);">+3%</div><div class="eh-lbl">Above average output expected</div></div>
+      <div class="eh-s"><div class="eh-val" style="color:var(--amber);">Moderate</div><div class="eh-lbl">Confidence in this estimate</div></div>
+    </div>
+    <div class="eh-prose">The edge comes from the LHH side of the lineup tonight. Varsho, Heineman, and Lukes all project above league average against Martin's Changeup-heavy approach to lefties. <strong>The RHH side faces a tougher problem.</strong> Martin's Slider to righties has been his go-to pitch across his career, and Clement, Straw, and Giménez project below average. If Martin is locating the Slider, the right side of the lineup is in for a long afternoon.
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px;">
+    <div class="card-hd">Where tonight's edge sits in the range of possible outcomes</div>
+    <div style="font-size:12px;color:var(--dim);margin-bottom:4px;">Night-to-night lineup performance varies. Here's context.</div>
+    <div class="mag">
+      <div class="mag-z" style="left:0;width:25%;background:rgba(255,79,106,.1);"></div>
+      <div class="mag-z" style="left:25%;width:50%;background:rgba(244,185,66,.07);"></div>
+      <div class="mag-z" style="left:75%;width:25%;background:rgba(45,212,160,.1);"></div>
+      <div class="mag-m" style="left:50%;background:rgba(255,255,255,.14);"></div>
+      <div class="mag-m" style="left:57%;background:var(--green);"></div>
+    </div>
+    <div class="mag-l"><span>Pitcher dominates</span><span>Even match</span><span>Lineup dominates</span></div>
+    <div style="margin-top:10px;font-size:12px;color:var(--dim);line-height:1.6;">White = game noise floor. <span style="color:var(--green);">Green = tonight's projection (+.033 edge).</span> Just inside meaningful territory. A Slider that's locating cuts this in half immediately.</div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">What makes the edge real</div>
+      <div class="prose">Martin throws a Changeup to lefties roughly a third of the time and it runs arm-side into them. <strong>LHH hitters who hit the Changeup well — Varsho, Sánchez, Heineman — project above average tonight</strong> because of that specific alignment. That is a real, documented tendency in his career data, not a one-start sample.</div>
+    </div>
+    <div class="card">
+      <div class="card-hd">What kills the edge</div>
+      <div class="prose">The Cutter. If he throws it at 20% to lefties the way he did in his first 2026 start, lefties face a fundamentally harder at-bat. Across his career it barely registered, so that version of Martin is unproven. <strong>Also watch the Slider command to RHH.</strong> When it's on, righties have a difficult afternoon.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BOTTOM LINE ══ -->
+<div class="panel" id="p4">
+
+  <div class="lede">Same series, completely different puzzle. Kay was velocity and Changeup suppression against righties. Martin is Changeup against lefties and Slider against righties. The lineup flips almost entirely.</div>
+
+  <div class="tonight-grid">
+    <div class="tg-card best">
+      <div class="tg-tag">Top of the list</div>
+      <div class="tg-name">Springer</div>
+      <div class="tg-body">Holds the top spot for the third consecutive game at .427. Different reasoning tonight: Martin's Slider and Changeup mix against righties lines up with Springer's approach well. He handles both. <strong>The names at the top of this lineup change by pitcher. The name at the top of the list has not.</strong></div>
+    </div>
+    <div class="tg-card flip">
+      <div class="tg-tag">The flip of the series</div>
+      <div class="tg-name">Varsho</div>
+      <div class="tg-body">Lowest projection yesterday (.267, sinker diet as a lefty). Second highest tonight (.395). <strong>Martin throws the Changeup at 32% to LHH and Varsho hits it.</strong> This is the clearest matchup story in the series. Same hitter, completely different math.</div>
+    </div>
+    <div class="tg-card watch">
+      <div class="tg-tag">The biggest unknown</div>
+      <div class="tg-name">The Cutter</div>
+      <div class="tg-body">If Martin throws the Cutter at 20% to lefties the way he did in his first start of 2026, the left side of the lineup faces a harder problem than his career suggests. Across 37 starts the Cutter barely existed. Which Martin shows up tonight matters more than anything else in this read. <strong>Watch the first LHH at-bat carefully.</strong></div>
+    </div>
+    <div class="tg-card worst">
+      <div class="tg-tag">Toughest night projected</div>
+      <div class="tg-name">Giménez</div>
+      <div class="tg-body">Lowest projection in the lineup at .262. LHH but one who does not hit the Changeup particularly well, which is exactly what Martin wants to throw at her. Giménez has had a rough week and Martin's mix does not play in her favor tonight.</div>
+    </div>
+  </div>
+
+  <div class="honest-box">
+    <div class="hb-tag">What's different about this read vs yesterday</div>
+    <div class="hb-body">Yesterday's read on Kay was built on one start this season. Tonight we have 37 starts and over 3,200 career pitches to draw from. <strong>The read is more grounded.</strong> The Cutter development is a genuine open question, but the rest of Martin's profile — Changeup to lefties, Slider to righties — is established across two full seasons. This read gets sharper every time he faces this lineup, starting tonight.</div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel 4-5-26. Series finale at Guaranteed Rate. Taylor opens, Davis Martin takes the bulk. Third consecutive opener/bulk game for the White Sox this series.<br><br>
+      Martin is a completely different puzzle than Kay. RHP who attacks lefties with the Changeup (32% of his LHH pitches across his career) and goes Slider-heavy against righties. The lineup flips almost entirely.<br><br>
+      Varsho went from our lowest projection yesterday (.267, sinker diet as a LHH facing Kay) to second-highest tonight (.395, because Martin throws the Changeup to lefties and she hits it). That is the matchup story of this series.<br><br>
+      Springer leads again at .427. He handles both pitch profiles.<br><br>
+      One watch item: Martin barely threw a Cutter in 2025. His first 2026 start had it at 21%. If that's the new version of him, the LHH read is off. First inning tells us a lot.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="footer">Statcast data via Baseball Savant · 981 effective pitches, recency-weighted · 3 seasons · Arm Chair Analyst · @scherrology</div>
+
+<script>
+const PC={'4-Seam Fastball':'#E8002D','Changeup':'#fb923c','Slider':'#c084fc','Cutter':'#38bdf8','Sinker':'#f4b942','Curveball':'#2dd4a0','Sweeper':'#a78bfa'};
+const LG=.320;
+
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+  if(i===0)drawMv();
+  if(i===1&&!window._mu)buildMu();
+  if(i===2&&!window._wf)buildWf();
+}
+
+function mkBars(data,id,mx){
+  const c=document.getElementById(id);if(!c)return;
+  data.forEach(p=>{
+    const col=PC[p.n]||'#888';
+    const r=document.createElement('div');r.className='abar';
+    r.innerHTML=`<div class="abar-n">${p.n}</div><div class="abar-t"><div class="abar-f" style="width:${p.p/mx*100}%;background:${col};"></div></div><div class="abar-p" style="color:${col};">${p.p}%</div>${p.v?`<div class="abar-v">${p.v} mph</div>`:''}`;
+    c.appendChild(r);
+  });
+}
+// Weighted mix (recency-weighted across 2024-2026)
+mkBars([
+  {n:'4-Seam Fastball',p:31.3,v:93.9},{n:'Changeup',p:23.0,v:90.0},
+  {n:'Slider',p:22.9,v:88.0},{n:'Sinker',p:11.8,v:93.0},
+  {n:'Curveball',p:5.7,v:79.3},{n:'Cutter',p:4.3,v:89.4},
+],'mixBars',36);
+mkBars([
+  {n:'4-Seam Fastball',p:34.9},{n:'Changeup',p:32.3},{n:'Slider',p:12.0},
+  {n:'Curveball',p:9.2},{n:'Cutter',p:5.9},{n:'Sinker',p:4.1},
+],'lhh',40);
+mkBars([
+  {n:'Slider',p:28.2},{n:'4-Seam Fastball',p:27.9},{n:'Sinker',p:16.7},
+  {n:'Changeup',p:14.8},{n:'Sweeper',p:9.6},{n:'Curveball',p:1.8},
+],'rhh',32);
+
+function drawMv(){
+  const cv=document.getElementById('mv');if(!cv)return;
+  const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(0,0,0,.07)';ctx.fillRect(0,0,W,H);
+  const cx=W/2,cy=H/2,sc=36;
+  ctx.strokeStyle='rgba(255,255,255,.07)';ctx.lineWidth=1;
+  [[0,cy,W,cy],[cx,0,cx,H]].forEach(l=>{ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();});
+  ctx.fillStyle='rgba(255,255,255,.16)';ctx.font='8px IBM Plex Mono';
+  ctx.textAlign='center';ctx.fillText('Runs away →',W-30,cy-5);ctx.fillText('← Runs away',30,cy-5);
+  ctx.textAlign='left';ctx.fillText('↑ Rise',cx+4,11);
+  // Weighted movement (pfx_x, pfx_z weighted)
+  [
+    {n:'4-Seam Fastball',x:-0.54,z:1.26,s:31.3},
+    {n:'Changeup',x:-1.20,z:0.11,s:23.0},
+    {n:'Slider',x:0.16,z:0.39,s:22.9},
+    {n:'Sinker',x:-1.29,z:0.71,s:11.8},
+    {n:'Curveball',x:1.09,z:-0.76,s:5.7},
+    {n:'Cutter',x:0.20,z:0.66,s:4.3},
+  ].forEach(p=>{
+    const px=cx+p.x*sc,py=cy-p.z*sc,r=Math.sqrt(p.s)*1.75,col=PC[p.n]||'#aaa';
+    ctx.beginPath();ctx.arc(px,py,r,0,Math.PI*2);ctx.fillStyle=col+'a0';ctx.fill();ctx.strokeStyle=col;ctx.lineWidth=1.5;ctx.stroke();
+    const ab={'4-Seam Fastball':'FF','Changeup':'CH','Slider':'SL','Sinker':'SI','Curveball':'CU','Cutter':'CT','Sweeper':'ST'};
+    ctx.fillStyle='#fff';ctx.font='8px IBM Plex Mono';ctx.textAlign='center';ctx.fillText(ab[p.n]||p.n.slice(0,2),px,py+3);
+  });
+  ctx.fillStyle='rgba(255,255,255,.13)';ctx.font='8px IBM Plex Mono';ctx.textAlign='left';ctx.fillText('size = weighted usage',5,H-5);
+}
+
+// Weighted expectations
+const MD=[
+  {n:'Springer',    h:'R',e:.427,lo:.324,hi:.533,cls:'h',why:'Handles both Slider and Changeup mix · leads lineup again'},
+  {n:'Varsho',      h:'L',e:.395,lo:.294,hi:.500,cls:'h',why:'Changeup at 32% to LHH · she hits it · +.042 from baseline'},
+  {n:'Schneider',   h:'R',e:.379,lo:.279,hi:.484,cls:'h',why:'RHH · Changeup exposure when it appears to righties'},
+  {n:'Guerrero Jr.',h:'R',e:.367,lo:.268,hi:.471,cls:'h',why:'RHH · holds near baseline despite Slider-heavy diet'},
+  {n:'Kirk',        h:'R',e:.350,lo:.252,hi:.454,cls:'n',why:'RHH · Slider exposure · slightly below his baseline'},
+  {n:'Heineman',    h:'L',e:.333,lo:.237,hi:.436,cls:'n',why:'LHH · Changeup mix suits her at 32% · holds near average'},
+  {n:'Lukes',       h:'L',e:.321,lo:.226,hi:.423,cls:'n',why:'LHH · close to baseline tonight'},
+  {n:'Sánchez',     h:'L',e:.307,lo:.214,hi:.408,cls:'n',why:'LHH · slight downside vs his Changeup profile'},
+  {n:'Clement',     h:'R',e:.299,lo:.206,hi:.400,cls:'n',why:'RHH · Slider-heavy approach · below baseline'},
+  {n:'Barger',      h:'L',e:.294,lo:.202,hi:.394,cls:'s',why:'LHH · does not hit the Changeup well · -0.035 from baseline'},
+  {n:'Straw',       h:'R',e:.281,lo:.190,hi:.380,cls:'s',why:'Difficult night projected vs Slider/fastball mix'},
+  {n:'Giménez',     h:'L',e:.262,lo:.174,hi:.360,cls:'s',why:'Lowest projection · LHH who does not hit Changeup · -0.020'},
+  {n:'Okamoto',     h:'R',e:null,lo:null,hi:null,cls:'x',why:'Not enough data to project'}
+];
+function buildMu(){
+  window._mu=true;
+  const c=document.getElementById('muRows');if(!c)return;
+  const xMn=.12,xMx=.62,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
+  MD.forEach(d=>{
+    const row=document.createElement('div');
+    if(d.cls==='x'){
+      row.className='mu-row x';
+      row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div style="flex:1;font-size:12px;color:var(--dim);">Not enough data to project</div><div class="mr-num" style="color:var(--dim);">—</div><div class="mr-note"></div>`;
+    } else {
+      const bCol=d.cls==='h'?'var(--green)':(d.cls==='s'?'var(--rose)':'var(--dim)');
+      row.className=`mu-row ${d.cls}`;
+      row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div class="mr-track"><div class="mr-ci" style="left:${xs(d.lo)};width:${((d.hi-d.lo)/(xMx-xMn)*100).toFixed(1)}%;"></div><div class="mr-fill" style="width:${xs(d.e)};background:${bCol};"></div><div class="mr-lg" style="left:${xs(LG)};"></div></div><div class="mr-num" style="color:${bCol};">${d.e.toFixed(2)}</div><div class="mr-note">${d.why}</div>`;
+    }
+    c.appendChild(row);
+  });
+}
+
+const WF=[
+  {num:1,
+   q:'Is the Cutter showing up against lefties?',
+   body:'This is the biggest unknown heading into tonight. Across his career in 2024 and 2025, the Cutter was essentially a non-pitch for Martin, less than 2% of his outings. His first start of 2026 had it at 21%, mostly against LHH. <strong>That is a fundamentally different pitch profile for the left side of the lineup.</strong> The Cutter from a RHP to a LHH cuts away, which is a different problem than the Changeup. If the Cutter is real this year, lefties face a harder at-bat than his career track record projects.',
+   if1:'Cutter stays near his career rate (under 10%)',
+   then1:'LHH hitters see the Changeup-heavy approach his 37 starts have established. Varsho, Heineman, and Sánchez are in a reasonable spot.',
+   if2:'Cutter at 20% or higher to LHH',
+   then2:'The at-bats are harder than projected for every LHH in the lineup. This is the version of Martin that 2026 introduced. The read adjusts after we see it.'},
+  {num:2,
+   q:'Is the Slider locating against right-handed hitters?',
+   body:'The Slider is Martin\'s primary weapon against RHH, running at 28% of his pitches to right-handed hitters across his career. <strong>When it\'s working, right-handed hitters face one of the better pitch profiles in the White Sox bullpen.</strong> Kirk and Clement in particular have seen a lot of Slider-type pitches in their careers and it tends to be a tough pitch for them. First two RHH at-bats tell you whether the Slider is a problem tonight.',
+   if1:'Slider locating down and away to RHH',
+   then1:'Right-handed hitters struggle. Martin pitches a clean game on the right side of the lineup.',
+   if2:'Slider is flat or leaking over the zone',
+   then2:'RHH get more fastballs in hittable counts. The right side of the lineup is more productive than the read projects.'},
+  {num:3,
+   q:'Is the Changeup getting LHH to chase?',
+   body:'The Changeup works against lefties because it runs arm-side away from them at 90 mph. <strong>Hitters who sit on the fastball get fooled by it.</strong> Varsho and Heineman are well-positioned against this pitch historically. But if LHH are laying off it consistently and forcing Martin into fastball counts, the at-bats become more competitive than tonight\'s read projects.',
+   if1:'LHH chasing the Changeup out of the zone',
+   then1:'Martin controls the at-bat. This is the game where the LHH side goes quiet.',
+   if2:'LHH laying off the Changeup consistently',
+   then2:'Martin has to come with the fastball or Cutter in counts he does not want. LHH work deeper counts and the left side of the lineup is more productive.'}
+];
+function buildWf(){
+  window._wf=true;
+  const c=document.getElementById('wfItems');if(!c)return;
+  WF.forEach(w=>{
+    const el=document.createElement('div');el.className='wf-item';
+    el.innerHTML=`<div class="wf-top"><div class="wf-num">${w.num}</div><div class="wf-content"><div class="wf-q">${w.q}</div><div class="wf-body">${w.body}</div></div></div><div class="wf-footer"><div class="wff"><div class="wff-tag">If yes →</div><div style="font-size:12px;color:var(--amber);font-weight:600;margin-bottom:4px;">${w.if1}</div><div class="wff-val">${w.then1}</div></div><div class="wff"><div class="wff-tag">If no →</div><div style="font-size:12px;color:var(--rose);font-weight:600;margin-bottom:4px;">${w.if2}</div><div class="wff-val">${w.then2}</div></div></div>`;
+    c.appendChild(el);
+  });
+}
+
+drawMv();
+buildMu();
+</script>
+</body>
+</html>

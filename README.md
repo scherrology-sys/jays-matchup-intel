@@ -79,49 +79,25 @@ Assumption reliability is recency-weighted (half-life 30 days). An assumption th
 
 ---
 
-## Real Limitations
+## Limitations
 
-These are honest. Some are fixable with more data or a more sophisticated statistical formulation. Some are structural to the problem.
+These are honest. Some are addressable with a more complete statistical formulation. Some are structural to the problem.
 
-### The single-game PA problem is severe
+**The point estimate is not a posterior.** exp_wOBA is a weighted average computed before inference, not a Bayesian posterior mean. The credible intervals are genuine Beta posterior quantiles, but they are placed around a frequentist point estimate. The two are not equivalent. A fully Bayesian formulation would propagate uncertainty through the pitch mix itself and produce the point estimate as a posterior mean with partial pooling across pitcher archetypes. That is the named long-term direction for this framework.
 
-This is the most important limitation. The standard error of observed wOBA in a 2-PA sample is approximately **0.337**. The retrospective's threshold for calling a result outside expected variance is a residual of 0.050. That threshold is well below one standard deviation of measurement noise at this sample size. In practical terms: most single-game misses in the scorecard are indistinguishable from random variation, regardless of whether the pre-game expectation was accurate. The scorecard is useful for identifying systematic bias across many games and for attributing assumption failures, but individual game verdicts should be interpreted with appropriate skepticism. A season-level MAE is more informative than any single game's score.
+**The prior strength K = 60 and the recency half-life of 180 days are asserted defaults, not calibrated parameters.** The correct values depend on the distributional properties of pitcher evolution and hitter variance across seasons. Neither has been validated against historical prediction accuracy. Both represent assumptions that may be meaningfully wrong.
 
-### The point estimate is not a posterior
+**Single-game scoring is dominated by measurement noise.** The standard error of observed wOBA in a 2-plate-appearance sample is approximately 0.337. The retrospective threshold for flagging an outcome as outside expected variance is a residual of 0.050, well below one standard deviation of sampling noise at this scale. Individual game verdicts are directional signals at best. Season-level mean absolute error is the appropriate unit of evaluation.
 
-As described above, exp_wOBA is a weighted average, not a Bayesian posterior mean. The credible intervals are computed correctly but they are placed around a frequentist point estimate. The practical consequence: the point estimate does not update as a pitcher accumulates 2026 starts. If Martin throws 200 pitches in 2026, his pitch mix estimate remains a career-weighted average rather than a posterior that genuinely reflects the current season. This is a known limitation of the empirical Bayes approximation. The planned resolution is a full Bayesian hierarchical formulation with partial pooling across pitcher archetypes.
+**Pitch-type wOBA does not distinguish between pitchers.** A hitter's performance against "Changeup" is aggregated across every pitcher who has thrown that pitch to them. No two pitchers throw the same Changeup. Pitch velocity, movement, and release point are not incorporated into the hitter-pitch match; only the categorical pitch type label is used.
 
-### Pitch-type wOBA does not distinguish between pitchers
+**Hitter outcomes within a game are treated as independent.** In practice they are correlated. If a pitcher's Changeup is effective on a given day, it is effective against the entire lineup, not a random subset. This correlation structure is not modeled, which inflates the apparent informativeness of single-game retrospective scores.
 
-The hitter's performance vs "Changeup" is aggregated across every pitcher who has thrown a Changeup to that hitter in the prior season. Davis Martin's Changeup moves differently from any other pitcher's Changeup. The framework treats these as interchangeable. In a more complete formulation, pitch characteristics (velocity, movement, release point) would be incorporated into the hitter-pitch match, not just the categorical pitch type label.
+**Pitch classification is not perfectly stable across seasons.** Statcast classification algorithms are periodically updated. A pitch recorded as "Cutter" in one season may have been recorded as "Slider" in another. The framework cannot distinguish a genuine repertoire change from a reclassification artifact.
 
-### No head-to-head history with this lineup
+**Assumption inputs are analyst-determined.** Named assumptions, expected values, tolerances, and importance weights are specified by the analyst before each game. There is no objective derivation process. A different analyst would make different choices. The assumption framework is the most transparent component of the system and also the most subjective.
 
-The Jays have zero career plate appearances against Davis Martin. Every number in tonight's preview is built entirely from Martin's tendencies vs all opponents and the Jays hitters' tendencies vs all pitchers of a given type. This is a structural limitation of new matchups that cannot be resolved without accumulated history.
-
-### K = 60 and the half-life of 180 days are asserted defaults
-
-The prior strength of 60 pseudo-observations and the recency decay half-life of 180 days are principled choices, not empirically derived ones. The correct values depend on the actual distributional properties of pitcher evolution and hitter variance, which require calibration against historical prediction accuracy. Neither parameter has been validated. Both represent assumptions that may be meaningfully wrong.
-
-### Pitch classification is not perfectly stable year over year
-
-Statcast pitch classification algorithms are updated periodically. A pitch labeled "Cutter" in 2026 may have been labeled "Slider" in 2025, or may be a genuinely new pitch. The framework cannot distinguish between a true repertoire change and a reclassification artifact. The Cutter emergence in Martin's 2026 start is a real analytical uncertainty that may partially reflect classification differences rather than a new pitch.
-
-### Hitter independence is assumed
-
-The framework treats each hitter's outcome as conditionally independent given the pre-game expectation. In practice, outcomes within a game are correlated: if Martin's Changeup is working well, it is working well against all hitters, not just some of them. This correlation structure inflates the apparent power of the retrospective scorecard. A hierarchical model with a game-level effect would address this correctly.
-
-### No park factor, umpire, or weather adjustment
-
-The league-average wOBA baseline of .320 is applied uniformly regardless of venue. Guaranteed Rate Field and Rogers Centre have different run environments. Umpire tendencies affect strike zone width and walk rates in ways that interact with pitcher command assumptions. Weather conditions (wind, temperature) affect batted ball outcomes. None of these are incorporated.
-
-### The opener innings are excluded by design
-
-The top of the order faces the opener before the bulk pitcher takes over. The analysis covers the bulk pitcher's plate appearances only, which means the top three hitters in the lineup may have fewer opportunities in the scoring window than the full lineup would suggest. The PA distribution across the lineup is not adjusted to account for this.
-
-### Assumption framework inputs are analyst-determined
-
-The named assumptions, their expected values, tolerances, and importance weights are specified by the analyst before each game. There is no objective process for setting these values. A different analyst would make different choices. The assumption framework is the most transparent part of the system, but also the most subjective.
+**No adjustment for run environment, umpire, or weather.** The league-average wOBA baseline of .320 is applied uniformly. Park factors, umpire strike-zone tendencies, and weather conditions (wind, temperature) affect outcomes in ways that interact with pitcher command and batted ball results. None are incorporated.
 
 ---
 
@@ -157,7 +133,7 @@ Statcast pitch-level exports sourced from [Baseball Savant](https://baseballsava
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-5-26  | @ CWS | D. Martin RHP · G. Taylor (opener) | — | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-05-martin-taylor/) |
+| 4-5-26  | @ CWS | D. Martin RHP | — | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-05-martin/) |
 | 4-4-26  | @ CWS | A. Kay LHP · G. Taylor (opener) | CWS 6, TOR 3 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-04-kay-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-04-kay-taylor/) |
 | 4-3-26  | @ CWS | S. Burke RHP · G. Taylor (opener) | CWS 5, TOR 4 F/10 | G. Springer (.41) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-03-burke-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-03-burke-taylor/) |
 | 4-1-26  | COL | K. Freeland LHP | COL 2, TOR 1 | G. Springer (.44) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-01-freeland/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-01-freeland/) |

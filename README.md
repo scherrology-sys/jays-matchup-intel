@@ -87,9 +87,36 @@ Starting with the April 5 Davis Martin game, pitch sequencing analysis is incorp
 
 This section documents what has been demonstrated, what is in progress, and what has not yet been tested. The distinction matters.
 
-### Current state
+### Current results (April 6, 2026)
 
-Seven games scored in the 2026 season (April 5 through ongoing). The retrospective memory system is accumulating hitter-level audit records and assumption audit records. In-season MAE is being tracked. No out-of-sample validation against historical data has been completed.
+**Games scored:** 7 (Feltner Apr 2024, Freeland Aug 2025, Sugano / Freeland / Burke / Kay / Martin in 2026)
+
+**Hitter-games:** 48 (hitters with ≥ 2 PA vs starter)
+
+| Metric | Framework | Naive-1 (hitter wOBA) | Naive-2 (handedness avg) |
+|--------|-----------|----------------------|--------------------------|
+| MAE | **0.278** | 0.279 | 0.259 |
+| Lift | — | +0.1% | -7.6% |
+| Win rate | — | 45.8% | 41.7% |
+| Bias | +0.019 | — | — |
+
+**The honest interpretation of these numbers:**
+
+The framework does not yet demonstrate statistically significant lift over the naive hitter-wOBA baseline. Mean PA per hitter-game is 2.9. The approximate standard error of observed wOBA at n=2.9 PA is 0.278, equal to the framework MAE. Single-game wOBA outcomes at this plate appearance count are dominated by sampling noise, not prediction quality.
+
+n=48 is insufficient to reject the null hypothesis that the framework performs identically to a naive baseline. Power analysis: approximately 200 hitter-game observations are required for 80% power at alpha=0.05 to detect a 5-10% MAE reduction. That requires roughly 25 additional scored starts.
+
+**What the current evidence supports:**
+- The framework is not obviously worse than a naive hitter-baseline
+- No systematic bias (+0.019 mean residual)
+- Framework outperformed naive-1 in 45.8% of individual hitter-games, consistent with noise
+
+**What the current evidence does not yet support:**
+- Framework demonstrably outperforms naive baselines on MAE
+- Pitch-type weighting adds signal beyond the hitter's prior overall wOBA
+- The self-learning memory layer improves accuracy vs a static prior
+
+These are open empirical questions. The backtest will accumulate through the 2026 season.
 
 ### Planned: Historical backtest notebook
 

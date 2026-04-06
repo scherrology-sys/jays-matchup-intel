@@ -81,6 +81,24 @@ Whether this layer improves forecast accuracy over a static prior is the central
 
 Starting with the April 5 Davis Martin game, pitch sequencing analysis is incorporated into retrospectives and previews where career sample size permits. The implementation uses pitch transition matrices by count state and handedness, computed from the full career Statcast file for each pitcher. Sparse cells are flagged rather than pooled. Partial pooling by pitcher archetype is a planned extension that pairs with the Bayesian hierarchical rebuild.
 
+### Hitter In-Season Updating (added April 6, 2026)
+
+The original framework used prior-season pitch-type splits for hitters and held them fixed through the current season. The model was blind to how pitchers adapt to individual hitters as 2026 data accumulates.
+
+The updated framework adds a bidirectional adaptation loop:
+
+**In-season hitter splits.** After each game, every hitter's 2026 pitch-type outcomes are accumulated with exponential recency decay (half-life 90 days, shorter than the pitcher half-life of 180 days because hitter approach adjustments happen faster than full repertoire changes).
+
+**Blended priors.** Prior-season and in-season splits are blended by effective sample size. At 6 games into the season, the prior-season signal carries roughly 85-95% of the weight. By July it carries roughly 60%. The blend is continuous and automatic.
+
+**Vulnerability detection.** A pitch type is flagged as a hitter vulnerability when the 2026 wOBA against that pitch falls 80 points or more below the prior-season baseline, with at least 3 effective plate appearances in the current season. Early-season flags are low-confidence by design.
+
+**Pitcher targeting detection.** A pitcher is flagged as targeting a vulnerability when they throw the flagged pitch type at 1.25× or more of their overall usage rate against that hitter's handedness. This closes the loop: the framework now detects not just what the hitter is struggling with, but whether tonight's pitcher is specifically exploiting it.
+
+**What this changes in the preview.** Top picks and suppressed hitters shift as in-season signals emerge. In the April 6 Wrobleski preview, Guerrero moves to the top of the lineup projection after his strong early-season Slider performance, while Springer drops based on 2026 struggles against the 4-Seam Fastball. These are low-confidence adjustments at 6 games. They are disclosed as such in the preview.
+
+**Validation plan.** The backtest will be run with and without in-season updating to measure whether blending adds MAE lift over static prior-season splits. This is the A/B test the self-learning layer requires.
+
 ---
 
 ## Validation Roadmap

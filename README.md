@@ -118,9 +118,21 @@ This section documents what has been demonstrated, what is in progress, and what
 | Win rate | — | 45.8% | 41.7% |
 | Bias | +0.019 | — | — |
 
+**Three-model comparison (added April 6, 2026):**
+
+| Model | MAE | RMSE | Bias | Lift vs A |
+|-------|-----|------|------|-----------|
+| A: Static prior | 0.278 | 0.351 | +0.019 | — |
+| B: Blended in-season | 0.275 | 0.349 | +0.015 | +1.3% |
+| C: B + exploit score (λ=0.78) | 0.275 | 0.348 | +0.022 | +1.2% |
+| Naive-1 (hitter wOBA) | 0.279 | 0.351 | +0.017 | -0.1% |
+| Naive-2 (handedness avg) | 0.259 | 0.339 | +0.005 | +7.0% |
+
 **The honest interpretation of these numbers:**
 
-The framework does not yet demonstrate statistically significant lift over the naive hitter-wOBA baseline. Mean PA per hitter-game is 2.9. The approximate standard error of observed wOBA at n=2.9 PA is 0.278, equal to the framework MAE. Single-game wOBA outcomes at this plate appearance count are dominated by sampling noise, not prediction quality.
+The framework does not yet demonstrate statistically significant lift over any baseline. Mean PA per hitter-game is 2.9. The approximate standard error of observed wOBA at n=2.9 PA is 0.278, equal to the framework MAE. Single-game wOBA outcomes at this plate appearance count are dominated by sampling noise, not prediction quality.
+
+Model C introduces a continuous exploit score: the product of a hitter's vulnerability magnitude on a given pitch type and the pitcher's usage rate of that pitch against the hitter's handedness. The exploit feature has near-zero activation at 6 games of season data, with only 6 of 48 hitter-game observations generating a non-zero score. The estimated λ=0.78 is in-sample optimized and cannot be interpreted as out-of-sample lift. This is disclosed explicitly in the backtest notebook.
 
 n=48 is insufficient to reject the null hypothesis that the framework performs identically to a naive baseline. Power analysis: approximately 200 hitter-game observations are required for 80% power at alpha=0.05 to detect a 5-10% MAE reduction. That requires roughly 25 additional scored starts.
 
@@ -229,7 +241,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-6-26  | LAD | J. Wrobleski LHP | — | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) |
+| 4-5-26  | LAD | J. Wrobleski LHP | — | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) |
 | 4-5-26  | @ CWS | D. Martin RHP | CWS 3, TOR 0 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-05-martin/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-05-martin/) |
 | 4-4-26  | @ CWS | A. Kay LHP · G. Taylor (opener) | CWS 6, TOR 3 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-04-kay-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-04-kay-taylor/) |
 | 4-3-26  | @ CWS | S. Burke RHP · G. Taylor (opener) | CWS 5, TOR 4 F/10 | G. Springer (.41) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-03-burke-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-03-burke-taylor/) |
@@ -237,7 +249,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 4-6 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: series underway**
+**2026 record: 4-5 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: series underway**
 
 *Updated: April 6, 2026*
 

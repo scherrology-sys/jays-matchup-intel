@@ -3,772 +3,586 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jays Matchup Intel · Retro · Martin · April 5</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<title>Jays Matchup Intel, Arm Chair Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#000e20;--panel:#071e3d;--panel2:#0b2245;
-  --red:#E8002D;--white:#fff;--cream:#ddeaf8;
-  --gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;
-  --border:rgba(255,255,255,.07);--bhi:rgba(255,255,255,.13);
-  --green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
+  :root {
+    --navy:       #003E7E;
+    --navy-dark:  #001a3d;
+    --navy-mid:   #004fa3;
+    --navy-panel: #071e3d;
+    --red:        #E8002D;
+    --white:      #FFFFFF;
+    --cream:      #e8f0f8;
+    --gold:       #C4A24B;
+    --text-dim:   #6a90b8;
+    --border:     rgba(255,255,255,0.07);
+    --success:    #2dd4a0;
+    --warning:    #f4b942;
+  }
 
-.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
-.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:6px;width:fit-content;transition:color .15s;}
-.back-link:hover{color:var(--white);}
-.back-link span{color:var(--gold);}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;overflow:hidden;border-bottom:1px solid rgba(196,162,75,.25);}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,rgba(196,162,75,.3) 50%,transparent 100%);}
-.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
-.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-.hero-hed{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1;margin-bottom:8px;}
-.hero-hed .red{color:var(--red);}
-.hero-hed .role{font-size:18px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;letter-spacing:.04em;}
-.hero-dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
-.hero-dek em{font-style:normal;color:var(--cream);}
-.score-box{background:rgba(0,0,0,.5);border:1px solid rgba(196,162,75,.22);border-left:2px solid var(--gold);border-radius:3px;padding:12px 18px;text-align:center;flex-shrink:0;}
-.score-val{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:4px;}
-.score-sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);}
-.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(196,162,75,.2);border-left:2px solid var(--gold);border-radius:3px;padding:10px 14px 10px 12px;margin-top:10px;}
-.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;line-height:1;}
-.aca-handle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+  body {
+    background: var(--navy-dark);
+    color: var(--white);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+  }
 
-.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
-.meta-inner{max-width:1140px;margin:0 auto;display:flex;align-items:stretch;}
-.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;}
-.mi:first-child{padding-left:0;}
-.mi:last-child{border-right:none;margin-left:auto;}
-.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
-.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
-.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+  .site-header {
+    background: linear-gradient(180deg, #000d22 0%, var(--navy-dark) 100%);
+    border-bottom: 2px solid var(--red);
+    padding: 32px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(90deg,
+        transparent, transparent 80px,
+        rgba(255,255,255,0.012) 80px, rgba(255,255,255,0.012) 81px),
+      repeating-linear-gradient(0deg,
+        transparent, transparent 80px,
+        rgba(255,255,255,0.008) 80px, rgba(255,255,255,0.008) 81px);
+    pointer-events: none;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .header-left { display: flex; flex-direction: column; gap: 6px; }
+  .site-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .site-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: var(--white);
+  }
+  .site-title span { color: var(--red); }
+  .site-subtitle {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-top: 4px;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+  .aca-lockup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(7,30,61,0.8);
+    border: 1px solid rgba(232,0,45,0.3);
+    border-left: 3px solid var(--red);
+    border-radius: 3px;
+    padding: 10px 14px 10px 11px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .aca-text { display: flex; flex-direction: column; gap: 3px; }
+  .aca-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    line-height: 1;
+  }
+  .aca-handle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    line-height: 1;
+  }
 
-.tab-bar{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
-.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
-.tab:hover{color:var(--white);}
-.tab.active{color:var(--white);border-bottom-color:var(--gold);}
-.tab.new-tab{position:relative;}
-.tab.new-tab::after{content:'NEW';font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.1em;position:absolute;top:8px;right:4px;background:var(--gold);color:#000;padding:1px 3px;border-radius:2px;}
+  .season-bar {
+    background: var(--navy-panel);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 40px;
+  }
+  .season-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .season-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .season-stats { display: flex; gap: 24px; }
+  .season-stat { display: flex; align-items: baseline; gap: 5px; }
+  .season-stat-val {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .season-stat-lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
-.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
-.panel{display:none;}
-.panel.active{display:block;}
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 40px 60px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .section-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
 
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
-.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
-.divider{height:1px;background:var(--border);margin:18px 0;}
-.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
-.lede strong{color:var(--cream);}
-.prose{font-size:13px;line-height:1.8;color:var(--mid);}
-.prose strong{color:var(--cream);}
-.pullquote{border-left:3px solid var(--gold);padding:14px 20px;margin:20px 0;font-size:15px;line-height:1.65;color:var(--cream);font-style:italic;background:rgba(255,255,255,.02);}
-.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
-.callout.gold{background:rgba(196,162,75,.07);border:1px solid rgba(196,162,75,.22);color:var(--cream);}
-.callout.gold strong{color:var(--gold);}
-.callout.soft{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
-.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.16);color:var(--cream);}
-.callout.rose strong{color:var(--rose);}
-.callout.seq{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
-.callout.seq strong{color:var(--green);}
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
 
-/* VERDICT ROW */
-.verdict-row{display:flex;align-items:stretch;gap:0;border:1px solid var(--border);border-radius:5px;overflow:hidden;margin-bottom:20px;}
-.vr-seg{flex:1;padding:20px 18px;text-align:center;border-right:1px solid var(--border);}
-.vr-seg:last-child{border-right:none;}
-.vr-num{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:5px;}
-.vr-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+  .game-card {
+    background: var(--navy-panel);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .game-card:hover {
+    border-color: rgba(232,0,45,0.4);
+    transform: translateY(-2px);
+  }
+  .game-card.upcoming {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .game-card.upcoming:hover {
+    border-color: var(--border);
+    transform: none;
+  }
 
-/* ARSENAL COMPARISON */
-.ac-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.ac-name{font-size:12px;color:var(--cream);width:128px;flex-shrink:0;}
-.ac-tracks{flex:1;display:flex;flex-direction:column;gap:3px;}
-.ac-bar{flex:1;height:9px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
-.ac-fill{height:100%;border-radius:2px;}
-.ac-pct{font-family:'IBM Plex Mono',monospace;font-size:9px;width:32px;text-align:right;flex-shrink:0;}
-.ac-delta{font-family:'IBM Plex Mono',monospace;font-size:10px;width:48px;text-align:right;flex-shrink:0;font-weight:500;}
+  .card-stripe { height: 3px; width: 100%; }
+  .card-stripe.live    { background: var(--red); }
+  .card-stripe.final   { background: var(--success); }
+  .card-stripe.preview { background: var(--gold); }
+  .card-stripe.upcoming { background: var(--border); }
 
-/* SCORECARD ROWS */
-.sc-row{display:flex;align-items:center;gap:12px;padding:11px 18px;margin-bottom:7px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:border-color .15s;}
-.sc-row:hover{border-color:var(--bhi);}
-.sc-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
-.sc-row.called::before{background:var(--green);}
-.sc-row.miss::before{background:var(--rose);}
-.sc-row.none::before{background:rgba(255,255,255,.1);}
-.sr-name{font-size:13px;font-weight:600;color:var(--cream);width:150px;flex-shrink:0;}
-.sr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
-.sr-pa{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:28px;flex-shrink:0;text-align:center;}
-.sr-outcomes{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:200px;flex-shrink:0;}
-.sr-bar{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
-.sr-exp-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.25);z-index:2;}
-.sr-act-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
-.sr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:3;}
-.sr-exp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);width:40px;text-align:right;flex-shrink:0;}
-.sr-arrow{font-size:11px;color:var(--dim);width:14px;text-align:center;flex-shrink:0;}
-.sr-act{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;width:42px;text-align:left;flex-shrink:0;}
-.sr-verd{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;flex-shrink:0;}
-.sv-called{background:rgba(45,212,160,.08);border:1px solid rgba(45,212,160,.22);color:var(--green);}
-.sv-miss{background:rgba(255,79,106,.08);border:1px solid rgba(255,79,106,.22);color:var(--rose);}
-.sv-none{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--dim);}
+  .card-body {
+    padding: 16px 18px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .status-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .status-badge.live    { background: rgba(232,0,45,0.15); color: var(--red); border: 1px solid rgba(232,0,45,0.3); }
+  .status-badge.final   { background: rgba(45,212,160,0.1); color: var(--success); border: 1px solid rgba(45,212,160,0.25); }
+  .status-badge.preview { background: rgba(196,162,75,0.12); color: var(--gold); border: 1px solid rgba(196,162,75,0.3); }
+  .status-badge.upcoming { background: rgba(255,255,255,0.04); color: var(--text-dim); border: 1px solid var(--border); }
 
-/* ASSUMPTION CARDS */
-.asmp-card{background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;margin-bottom:14px;}
-.asmp-card:last-child{margin-bottom:0;}
-.asmp-top{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border);}
-.asmp-result{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:2px;flex-shrink:0;}
-.ar-held{background:rgba(45,212,160,.08);border:1px solid rgba(45,212,160,.22);color:var(--green);}
-.ar-failed{background:rgba(255,79,106,.08);border:1px solid rgba(255,79,106,.22);color:var(--rose);}
-.asmp-q{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--white);flex:1;}
-.asmp-nums{display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.an-exp{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);}
-.an-arrow{font-size:13px;color:var(--dim);}
-.an-act{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;}
-.asmp-body{padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;border-bottom:1px solid var(--border);}
-.ab-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
-.ab-text{font-size:13px;color:var(--mid);line-height:1.7;}
-.ab-text strong{color:var(--cream);}
-.asmp-learn{padding:12px 20px;font-size:12px;color:var(--dim);line-height:1.6;display:flex;align-items:center;gap:10px;}
-.learn-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .card-matchup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .team-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .team-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+  }
+  .team-abbr {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+  }
+  .vs-divider {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.12);
+    letter-spacing: 0.05em;
+    padding: 0 4px;
+  }
 
-/* SEQUENCING */
-.seq-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:9px;}
-.seq-table th{padding:6px 10px;text-align:right;color:var(--dim);border-bottom:1px solid var(--border);font-weight:400;letter-spacing:.08em;}
-.seq-table th:first-child{text-align:left;}
-.seq-table td{padding:5px 10px;text-align:right;border-bottom:1px solid rgba(255,255,255,.04);}
-.seq-table td:first-child{text-align:left;color:var(--cream);}
-.seq-table tr:last-child td{border-bottom:none;}
-.seq-hot{color:var(--amber);font-weight:500;}
-.seq-cold{color:var(--dim);}
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pitcher-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .pitcher-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .pitcher-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .model-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .model-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .model-pick {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--success);
+  }
+  .model-woba {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
 
-.social{background:linear-gradient(135deg,rgba(0,40,100,.15) 0%,rgba(0,15,40,.15) 100%);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:24px;position:relative;}
-.social::before{content:'"';font-family:'Oswald',sans-serif;font-size:80px;color:rgba(196,162,75,.12);position:absolute;top:-12px;left:12px;line-height:1;pointer-events:none;}
-.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
-.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
-.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+  .card-footer {
+    padding: 10px 18px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .card-footer-links { display: flex; gap: 10px; }
+  .card-cta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+  .card-cta:hover { color: var(--white); }
+  .card-cta.retro { color: var(--gold); }
+  .card-cta.retro:hover { color: var(--white); }
+  .card-footer.disabled .card-cta { color: var(--text-dim); }
+
+  .site-footer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+  }
 </style>
 </head>
 <body>
 
-<nav class="back-nav">
-  <a class="back-link" href="../../index.html"><span>←</span> All games</a>
-</nav>
-
-<div class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-kicker">Retrospective · TOR @ CWS · April 5, 2026</div>
-      <div class="hero-hed">DAVIS <span class="red">MARTIN</span><span class="role">RHP · Chicago</span></div>
-      <div class="hero-dek">He abandoned the pitch the entire LHH read was built around. <em>The Changeup to lefties went from 32% projected to 6% actual.</em> Varsho never got the at-bat the preview called for.</div>
-    </div>
-    <div>
-      <div class="score-box">
-        <div class="score-val" style="color:var(--rose);">CWS 3, TOR 0</div>
-        <div class="score-sub">Final · 9 innings · Martin 6 IP · Shutout</div>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="site-eyebrow">Blue Jays Matchup Intelligence · 2026 Season</div>
+      <div class="site-title">JAYS <span>MATCHUP</span> INTEL</div>
+      <div class="site-subtitle">
+        Daily Statcast matchup intelligence that learns from every game. Preview before first pitch, retrospective after the final out. The analysis builds on itself all season.
       </div>
-      <div class="aca">
-        <svg width="26" height="26" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
-        <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-handle">@scherrology</div></div>
+    </div>
+    <div class="aca-lockup">
+      <svg width="32" height="32" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/>
+      </svg>
+      <div class="aca-text">
+        <div class="aca-name">Arm Chair Analyst</div>
+        <div class="aca-handle">@scherrology</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="season-bar">
+  <div class="season-inner">
+    <div class="season-label">2026 Season Tracker</div>
+    <div class="season-stats">
+      <div class="season-stat">
+        <span class="season-stat-val" id="statPreviews">—</span>
+        <span class="season-stat-lbl">Previews</span>
+      </div>
+      <div class="season-stat">
+        <span class="season-stat-val" id="statRetros">—</span>
+        <span class="season-stat-lbl">Retrospectives</span>
+      </div>
+      <div class="season-stat">
+        <span class="season-stat-val" id="statStarters">—</span>
+        <span class="season-stat-lbl">Starters Scouted</span>
       </div>
     </div>
   </div>
 </div>
 
-<div class="meta">
-  <div class="meta-inner">
-    <div class="mi">
-      <div class="mi-lbl">Scope</div>
-      <div class="mi-val">Martin · innings 1 through 6</div>
-      <div class="mi-sub">85 pitches · no opener tonight</div>
-    </div>
-    <div class="mi">
-      <div class="mi-lbl">Called / Miss</div>
-      <div class="mi-val">3 called, 5 misses</div>
-      <div class="mi-sub">Jays shut out · zero runs across 6 innings</div>
-    </div>
-    <div class="mi">
-      <div class="mi-lbl">Assumptions</div>
-      <div class="mi-val">0 held, 2 failed</div>
-      <div class="mi-sub">Both failed badly · Martin pitched a different game</div>
-    </div>
-    <div class="mi" style="margin-left:auto;">
-      <div class="mi-lbl">What changes next time</div>
-      <div class="mi-val">Sinker and Cutter are now primary weapons to LHH</div>
-    </div>
+<main class="main">
+  <div class="section-header">
+    <div class="section-title">Game Log</div>
+    <div class="section-count" id="gameCount">—</div>
   </div>
-</div>
+  <div class="games-grid" id="gamesGrid"></div>
+</main>
 
-<div class="tab-bar">
-  <div class="tab active" onclick="go(0)">How He Pitched</div>
-  <div class="tab" onclick="go(1)">The Scorecard</div>
-  <div class="tab" onclick="go(2)">Were We Right</div>
-  <div class="tab new-tab" onclick="go(3)">Sequencing</div>
-  <div class="tab" onclick="go(4)">The Takeaway</div>
-</div>
-
-<div class="wrap">
-
-<!-- ══ HOW HE PITCHED ══ -->
-<div class="panel active" id="p0">
-
-  <div class="lede">Martin showed up with a completely different approach than his career history projected. <strong>The Changeup, which drives the entire left-handed hitter read, was essentially put away.</strong> The Sinker and Cutter ran the game instead. Command was clean all night. No flags on anything. He just pitched a different game than the one we were expecting.</div>
-
-  <!-- ROW 1: Arsenal comparison + handedness mix -->
-  <div class="g2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-hd">What we projected vs what he actually threw</div>
-      <div id="arsenalComp"></div>
-    </div>
-    <div class="card">
-      <div class="card-hd">How he used the pitches tonight by handedness</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs lefties (47 pitches)</div>
-          <div id="lhh"></div>
-        </div>
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs righties (38 pitches)</div>
-          <div id="rhh"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROW 2: Location plots side by side -->
-  <div class="g2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-hd">Pitch location · vs left-handed hitters · catcher's view</div>
-      <div style="display:flex;justify-content:center;">
-        <canvas id="locLHH" width="280" height="300"></canvas>
-      </div>
-      <div style="margin-top:10px;font-size:12px;color:var(--dim);line-height:1.6;">
-        The Sinker ran in on lefties, low and arm-side. The Cutter occupied the inner third up. The Changeup, when it appeared at all, sat low and away. The Curveball worked the bottom of the zone and below.
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-hd">Pitch location · vs right-handed hitters · catcher's view</div>
-      <div style="display:flex;justify-content:center;">
-        <canvas id="locRHH" width="280" height="300"></canvas>
-      </div>
-      <div style="margin-top:10px;font-size:12px;color:var(--dim);line-height:1.6;">
-        The Slider ran off the plate away from righties, a consistent put-away pattern. The Sinker attacked the inner half. Fastball elevated on the outer third to set up the Slider down and away.
-      </div>
-    </div>
-  </div>
-
-  <!-- ROW 3: Movement + command -->
-  <div class="g2">
-    <div class="card">
-      <div class="card-hd">Movement profile · pitcher's view · all 85 pitches</div>
-      <div style="display:flex;justify-content:center;">
-        <canvas id="mvCanvas" width="280" height="240"></canvas>
-      </div>
-      <div style="margin-top:10px;font-size:12px;color:var(--dim);line-height:1.6;">
-        The Sinker and Changeup cluster arm-side with heavy downward run. The Cutter sits inside with modest cut. The Curveball breaks glove-side and drops sharply. Circle size reflects usage tonight.
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-hd">Command check · no flags tonight</div>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px;">
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;">Fastball zone rate</div>
-          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:56.5%;background:var(--green);border-radius:2px;"></div></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);">56.5% <span style="color:var(--dim);font-size:9px;">, threshold 45%</span></div>
-        </div>
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;">Overall ball rate</div>
-          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:32.9%;background:var(--green);border-radius:2px;"></div></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);">32.9% <span style="color:var(--dim);font-size:9px;">, threshold 40%</span></div>
-        </div>
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;">Walk rate</div>
-          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:4px;"><div style="height:100%;width:17%;background:var(--green);border-radius:2px;"></div></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);">8.7% <span style="color:var(--dim);font-size:9px;">, threshold 12%</span></div>
-        </div>
-      </div>
-      <div class="card-hd" style="margin-top:4px;">Pitch feel vs career baseline</div>
-      <div style="display:flex;flex-direction:column;gap:7px;margin-top:10px;">
-        <div style="display:flex;align-items:center;gap:10px;"><div style="width:9px;height:9px;border-radius:50%;background:var(--green);flex-shrink:0;"></div><div style="font-size:12px;color:var(--cream);width:128px;flex-shrink:0;">4-Seam Fastball</div><div style="font-size:11px;color:var(--dim);">velo +1.1 mph · on profile</div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><div style="width:9px;height:9px;border-radius:50%;background:var(--green);flex-shrink:0;"></div><div style="font-size:12px;color:var(--cream);width:128px;flex-shrink:0;">Sinker</div><div style="font-size:11px;color:var(--dim);">velo +0.4 mph · on profile</div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><div style="width:9px;height:9px;border-radius:50%;background:var(--green);flex-shrink:0;"></div><div style="font-size:12px;color:var(--cream);width:128px;flex-shrink:0;">Cutter</div><div style="font-size:11px;color:var(--dim);">velo +0.3 mph · on profile</div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><div style="width:9px;height:9px;border-radius:50%;background:var(--rose);flex-shrink:0;"></div><div style="font-size:12px;color:var(--cream);width:128px;flex-shrink:0;">Slider</div><div style="font-size:11px;color:var(--dim);">movement flatter than career · off profile</div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><div style="width:9px;height:9px;border-radius:50%;background:var(--rose);flex-shrink:0;"></div><div style="font-size:12px;color:var(--cream);width:128px;flex-shrink:0;">Curveball</div><div style="font-size:11px;color:var(--dim);">velo +3.9 mph · off profile · harder tonight</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LEGEND -->
-  <div style="margin-top:14px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:10px 0;border-top:1px solid var(--border);">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);">Pitch colours:</div>
-    <div id="pitchLegend" style="display:flex;gap:14px;flex-wrap:wrap;"></div>
-    <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);">● called strike / in-play &nbsp; ○ ball &nbsp; ✕ swinging strike</div>
-  </div>
-</div>
-
-<!-- ══ SCORECARD ══ -->
-<div class="panel" id="p1">
-
-  <div class="lede">Three called, five misses. The Jays were shut out. The misses were not close, and Varsho's story tells the whole game in one line.</div>
-
-  <div class="verdict-row">
-    <div class="vr-seg" style="background:rgba(45,212,160,.04);">
-      <div class="vr-num" style="color:var(--green);">3</div>
-      <div class="vr-lbl">Called</div>
-    </div>
-    <div class="vr-seg" style="background:rgba(255,79,106,.04);">
-      <div class="vr-num" style="color:var(--rose);">5</div>
-      <div class="vr-lbl">Misses</div>
-    </div>
-    <div class="vr-seg">
-      <div class="vr-num" style="color:var(--dim);">2</div>
-      <div class="vr-lbl">No projection</div>
-    </div>
-    <div class="vr-seg">
-      <div class="vr-num" style="color:var(--amber);font-size:24px;">.219</div>
-      <div class="vr-lbl">Mean absolute miss</div>
-    </div>
-  </div>
-
-  <div style="display:flex;align-items:center;gap:12px;padding:3px 18px;margin-bottom:5px;">
-    <div class="mi-lbl" style="width:150px;flex-shrink:0;">Hitter</div>
-    <div class="mi-lbl" style="width:26px;flex-shrink:0;"></div>
-    <div class="mi-lbl" style="width:28px;flex-shrink:0;"></div>
-    <div class="mi-lbl" style="width:200px;flex-shrink:0;">Outcomes</div>
-    <div class="mi-lbl" style="flex:1;">Projected to actual</div>
-    <div class="mi-lbl" style="width:40px;text-align:right;">proj</div>
-    <div style="width:14px;"></div>
-    <div class="mi-lbl" style="width:42px;">actual</div>
-    <div style="width:60px;"></div>
-  </div>
-  <div id="scRows"></div>
-
-  <div class="callout rose" style="margin-top:16px;">
-    <strong>Varsho in two games:</strong> Thursday vs Kay she projected at .267, our lowest, because Kay runs the Sinker in on LHH with no Changeup to balance it. Today she projected at .395, our second highest, because Martin's career says he throws the Changeup to lefties a third of the time. He threw it to her once across two plate appearances. The at-bat she was set up for never arrived. This is not a hitter failure. The pitch Martin was supposed to throw simply did not come.
-  </div>
-</div>
-
-<!-- ══ WERE WE RIGHT ══ -->
-<div class="panel" id="p2">
-
-  <div class="lede">Both assumptions failed. Not by a small margin. Martin pitched a game his career did not predict, and the entire LHH read was built on the one thing he put in his back pocket.</div>
-
-  <div id="asmpCards"></div>
-</div>
-
-<!-- ══ SEQUENCING ══ -->
-<div class="panel" id="p3">
-
-  <div class="lede">Starting with this game, we are building pitch sequencing into the analysis. Not just what he throws, but <strong>what comes next</strong>. Tonight showed exactly why it matters.</div>
-
-  <div class="callout seq">
-    <strong>The Cutter reveals itself as a setup pitch, not a primary one.</strong> Across Martin's career, when he throws a Cutter to a left-handed hitter, the Changeup follows 45% of the time. The Cutter is how he sets up the Changeup. Tonight he threw the Cutter at 21% to LHH but the Changeup at only 6%. The sequence broke down. He was using the setup without the payoff pitch.
-  </div>
-
-  <div class="g2" style="margin-bottom:18px;">
-    <div class="card">
-      <div class="card-hd">Career pitch transitions · vs LHH · what follows each pitch (%)</div>
-      <div style="overflow-x:auto;">
-        <table class="seq-table">
-          <thead>
-            <tr>
-              <th>After →</th>
-              <th>FF</th>
-              <th>CH</th>
-              <th>CT</th>
-              <th>SI</th>
-              <th>SL</th>
-              <th>CU</th>
-            </tr>
-          </thead>
-          <tbody id="seqLHH"></tbody>
-        </table>
-      </div>
-      <div style="margin-top:10px;font-size:11px;color:var(--dim);line-height:1.55;">The Cutter row is the story. Career says Cutter → Changeup 45% of the time. Tonight that sequence barely appeared. He used the setup but not the payoff.</div>
-    </div>
-    <div class="card">
-      <div class="card-hd">Career pitch transitions · vs RHH · what follows each pitch (%)</div>
-      <div style="overflow-x:auto;">
-        <table class="seq-table">
-          <thead>
-            <tr>
-              <th>After →</th>
-              <th>FF</th>
-              <th>CH</th>
-              <th>SI</th>
-              <th>SL</th>
-              <th>SW</th>
-              <th>CU</th>
-            </tr>
-          </thead>
-          <tbody id="seqRHH"></tbody>
-        </table>
-      </div>
-      <div style="margin-top:10px;font-size:11px;color:var(--dim);line-height:1.55;">Against RHH the Slider follows almost everything. His sequencing is more conventional on the right side: establish the fastball, put away with the Slider or Changeup.</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:18px;">
-    <div class="card-hd">Count-state pitch selection · career · what he throws in each count</div>
-    <div class="g2" style="gap:20px;">
-      <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">vs lefties</div>
-        <table class="seq-table">
-          <thead><tr><th>Count</th><th>1st</th><th>2nd</th><th>3rd</th></tr></thead>
-          <tbody>
-            <tr><td>0-0</td><td class="seq-hot">FF 35%</td><td>CH 24%</td><td>CU 18%</td></tr>
-            <tr><td>1-1</td><td class="seq-hot">CH 35%</td><td>FF 32%</td><td>SL 19%</td></tr>
-            <tr><td>2-2</td><td class="seq-hot">CH 35%</td><td>FF 29%</td><td>SL 13%</td></tr>
-            <tr><td>0-2</td><td class="seq-hot">FF 48%</td><td>CH 31%</td><td>SW 7%</td></tr>
-            <tr><td>3-2</td><td class="seq-hot">CH 33%</td><td>FF 25%</td><td>SL 18%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">vs righties</div>
-        <table class="seq-table">
-          <thead><tr><th>Count</th><th>1st</th><th>2nd</th><th>3rd</th></tr></thead>
-          <tbody>
-            <tr><td>0-0</td><td class="seq-hot">FF 27%</td><td>SL 26%</td><td>SW 18%</td></tr>
-            <tr><td>1-1</td><td class="seq-hot">FF 26%</td><td>SL 24%</td><td>CH 21%</td></tr>
-            <tr><td>2-2</td><td class="seq-hot">FF 29%</td><td>CH 27%</td><td>SL 22%</td></tr>
-            <tr><td>0-2</td><td class="seq-hot">FF 31%</td><td>SL 24%</td><td>SW 23%</td></tr>
-            <tr><td>3-2</td><td class="seq-hot">SL 24%</td><td>FF 23%</td><td>CH 18%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div style="margin-top:12px;font-size:12px;color:var(--dim);line-height:1.6;">Against lefties, the career pattern is clear: Changeup in almost every competitive count. Tonight he substituted the Sinker and Curveball for the Changeup in those same counts. Same count states, different pitches.</div>
-  </div>
-
-  <div class="callout gold">
-    <strong>What sequencing adds to the next Martin preview:</strong> The Cutter is a Changeup setup pitch in his career. If the Changeup is not following the Cutter, that sequence is incomplete and hitters can start to eliminate the Changeup from their look. Next time we see Martin, the preview will carry a sequencing assumption: does the Cutter → Changeup sequence appear against LHH, or is he running a Sinker/Cutter ground-ball approach without it?
-  </div>
-</div>
-
-<!-- ══ THE TAKEAWAY ══ -->
-<div class="panel" id="p4">
-
-  <div class="lede">The Jays were shut out. Martin pitched a game his career did not predict and the analysis did not anticipate. Both assumptions failed. That is worth being direct about.</div>
-
-  <div class="g2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-hd">What Martin showed us</div>
-      <div class="prose">He can win with a Sinker/Cutter/Curveball approach to lefties without using the Changeup. That is not a pitcher we had seen before in his career. <strong>The Sinker ran in on lefties all night</strong>, generating ground balls and weak contact. The Cutter complemented it with late cut away. The Changeup that drove the entire LHH read stayed in his pocket.</div>
-    </div>
-    <div class="card">
-      <div class="card-hd">What the Jays showed us</div>
-      <div class="prose">Guerrero had the one quality at-bat in Martin's innings, working a walk and a single. <strong>Clement and Giménez exceeded their projections</strong> by making contact. Everyone else was neutralized by a pitch mix they were not set up for. The Varsho at-bat is the game in miniature: projected well, faced a completely different problem than anticipated, went 0-for-2.</div>
-    </div>
-  </div>
-
-  <div class="pullquote">Three games, three different puzzle boxes. Sugano threw a knuckleball. Kay kept the Changeup away from lefties. Martin kept the Changeup away from lefties entirely. The series ends 3-0 Chicago. The analysis is sharper for it.</div>
-
-  <div class="callout gold">
-    <strong>What changes in the next Martin preview:</strong> The pitch mix prior shifts substantially. Sinker at 27%, not 7%. Cutter at 15%, not 6%. Changeup to LHH at 6%, not 32%. The entire LHH expectation structure inverts. Hitters who hit Sinkers and Cutters become the names to watch. Hitters who project well off the Changeup step back. The sequencing note is added: track whether the Cutter → Changeup sequence materializes or whether the ground-ball approach without it is now his LHH game plan.
-  </div>
-
-  <div class="social">
-    <div class="social-tag">Post · X / Twitter</div>
-    <div class="social-body">
-      Jays Matchup Intel retro, 4-5-26. Shutout. CWS 3, Jays 0, Martin goes 6 clean innings.<br><br>
-      The Changeup to lefties, the pitch the entire LHH read was built around, went from 32% projected to 6% actual. He ran a Sinker and Cutter ground-ball approach instead. Both pre-game assumptions failed.<br><br>
-      Varsho projected second-highest in the lineup because she hits Changeups. Martin threw her one across two plate appearances. The at-bat we called for never came. The read was built on the right pitch, for the wrong day.<br><br>
-      Sequencing note, now part of every retro: the Cutter is a Changeup setup pitch in Martin's career. He used the Cutter without the Changeup tonight. That sequence tells us something about what to watch for next time.<br><br>
-      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
-    </div>
-  </div>
-</div>
-
-</div>
-<div class="footer">Statcast data via Baseball Savant · Martin innings 1 through 6 · Pitch sequencing: career transition matrices · Arm Chair Analyst · @scherrology</div>
+<footer class="site-footer">
+  Statcast data via Baseball Savant · Bayesian model: Beta-Binomial, k=60 prior equivalent · Arm Chair Analyst @scherrology
+</footer>
 
 <script>
-const PC={'4-Seam Fastball':'#E8002D','Changeup':'#fb923c','Slider':'#c084fc','Cutter':'#38bdf8','Sinker':'#f4b942','Curveball':'#2dd4a0','Sweeper':'#a78bfa'};
-
-// ── ALL 85 PITCH RECORDS (plate_x, plate_z in feet, catcher's view) ──
-const PITCHES = [{"pitch": "4-Seam Fastball", "x": -0.77, "z": 3.251, "hand": "R", "desc": "swinging_strike", "pfx_x": -0.6, "pfx_z": 1.1, "velo": 95.9, "balls": 0, "strikes": 2}, {"pitch": "Cutter", "x": -0.262, "z": 2.689, "hand": "R", "desc": "called_strike", "pfx_x": 0.4, "pfx_z": 0.36, "velo": 88.6, "balls": 0, "strikes": 1}, {"pitch": "Sinker", "x": -0.874, "z": 1.676, "hand": "R", "desc": "foul", "pfx_x": -1.45, "pfx_z": 0.57, "velo": 94.6, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -0.156, "z": 3.006, "hand": "L", "desc": "hit_into_play", "pfx_x": -1.54, "pfx_z": 0.86, "velo": 93.7, "balls": 1, "strikes": 0}, {"pitch": "Sinker", "x": -0.677, "z": 1.438, "hand": "L", "desc": "ball", "pfx_x": -1.58, "pfx_z": 0.76, "velo": 93.5, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -1.231, "z": 2.419, "hand": "R", "desc": "hit_into_play", "pfx_x": -1.46, "pfx_z": 0.72, "velo": 92.9, "balls": 0, "strikes": 0}, {"pitch": "Changeup", "x": 0.376, "z": 1.184, "hand": "L", "desc": "hit_into_play", "pfx_x": -1.11, "pfx_z": 0.3, "velo": 91.3, "balls": 0, "strikes": 1}, {"pitch": "Sinker", "x": -0.748, "z": 2.708, "hand": "L", "desc": "called_strike", "pfx_x": -1.29, "pfx_z": 0.71, "velo": 94.6, "balls": 0, "strikes": 0}, {"pitch": "Cutter", "x": 0.329, "z": 2.487, "hand": "R", "desc": "hit_into_play", "pfx_x": 0.36, "pfx_z": 0.27, "velo": 89.4, "balls": 0, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": 0.45, "z": 3.096, "hand": "R", "desc": "foul_tip", "pfx_x": -0.52, "pfx_z": 1.22, "velo": 95.2, "balls": 0, "strikes": 0}, {"pitch": "Changeup", "x": 0.29, "z": 0.699, "hand": "L", "desc": "swinging_strike_blocked", "pfx_x": -1.35, "pfx_z": -0.09, "velo": 91.3, "balls": 0, "strikes": 2}, {"pitch": "Curveball", "x": 0.167, "z": 1.783, "hand": "L", "desc": "foul", "pfx_x": 1.16, "pfx_z": -0.39, "velo": 84.7, "balls": 0, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": -0.317, "z": 2.494, "hand": "L", "desc": "foul", "pfx_x": -0.46, "pfx_z": 1.16, "velo": 94.7, "balls": 0, "strikes": 2}, {"pitch": "Changeup", "x": 0.717, "z": 2.298, "hand": "L", "desc": "called_strike", "pfx_x": -1.32, "pfx_z": 0.22, "velo": 89.7, "balls": 0, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": -0.369, "z": 3.318, "hand": "L", "desc": "called_strike", "pfx_x": -0.4, "pfx_z": 1.43, "velo": 93.6, "balls": 0, "strikes": 0}, {"pitch": "Cutter", "x": 0.517, "z": 1.865, "hand": "L", "desc": "hit_into_play", "pfx_x": 0.03, "pfx_z": 0.9, "velo": 88.8, "balls": 0, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": 0.344, "z": 2.368, "hand": "R", "desc": "hit_into_play", "pfx_x": -0.39, "pfx_z": 1.41, "velo": 93.5, "balls": 1, "strikes": 0}, {"pitch": "Sinker", "x": -1.129, "z": 2.863, "hand": "R", "desc": "ball", "pfx_x": -1.31, "pfx_z": 0.48, "velo": 93.0, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -0.055, "z": 3.076, "hand": "L", "desc": "called_strike", "pfx_x": -1.45, "pfx_z": 0.62, "velo": 93.2, "balls": 2, "strikes": 2}, {"pitch": "Curveball", "x": -1.508, "z": 3.135, "hand": "L", "desc": "ball", "pfx_x": 1.28, "pfx_z": -0.93, "velo": 81.4, "balls": 1, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": -1.297, "z": 2.512, "hand": "L", "desc": "ball", "pfx_x": -0.56, "pfx_z": 1.21, "velo": 94.0, "balls": 0, "strikes": 2}, {"pitch": "Curveball", "x": 0.798, "z": 1.872, "hand": "L", "desc": "foul", "pfx_x": 1.78, "pfx_z": -0.6, "velo": 81.9, "balls": 0, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": 0.364, "z": 3.05, "hand": "L", "desc": "called_strike", "pfx_x": -0.39, "pfx_z": 1.58, "velo": 93.7, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -0.059, "z": 2.619, "hand": "R", "desc": "hit_into_play", "pfx_x": -1.28, "pfx_z": 0.76, "velo": 92.1, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -1.093, "z": 2.431, "hand": "L", "desc": "hit_into_play", "pfx_x": -1.27, "pfx_z": 0.55, "velo": 93.8, "balls": 3, "strikes": 2}, {"pitch": "Curveball", "x": 1.248, "z": 0.983, "hand": "L", "desc": "ball", "pfx_x": 1.28, "pfx_z": -0.45, "velo": 84.0, "balls": 2, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": 1.476, "z": 2.132, "hand": "L", "desc": "foul", "pfx_x": -0.18, "pfx_z": 1.19, "velo": 96.0, "balls": 2, "strikes": 2}, {"pitch": "Sinker", "x": 0.925, "z": 1.634, "hand": "L", "desc": "foul", "pfx_x": -1.15, "pfx_z": 0.59, "velo": 93.1, "balls": 2, "strikes": 1}, {"pitch": "Cutter", "x": 0.129, "z": 2.93, "hand": "L", "desc": "called_strike", "pfx_x": -0.05, "pfx_z": 0.79, "velo": 90.6, "balls": 2, "strikes": 0}, {"pitch": "Sinker", "x": 1.584, "z": 1.205, "hand": "L", "desc": "ball", "pfx_x": -1.0, "pfx_z": 0.8, "velo": 95.4, "balls": 1, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": 1.182, "z": 3.003, "hand": "L", "desc": "ball", "pfx_x": -0.75, "pfx_z": 1.19, "velo": 96.3, "balls": 0, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": -1.276, "z": 2.308, "hand": "R", "desc": "ball", "pfx_x": -0.83, "pfx_z": 1.14, "velo": 96.2, "balls": 3, "strikes": 2}, {"pitch": "Curveball", "x": -0.532, "z": 2.593, "hand": "R", "desc": "foul", "pfx_x": 0.91, "pfx_z": -0.7, "velo": 82.2, "balls": 3, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": -0.966, "z": 2.718, "hand": "R", "desc": "ball", "pfx_x": -0.55, "pfx_z": 1.2, "velo": 96.2, "balls": 2, "strikes": 2}, {"pitch": "Sinker", "x": 0.178, "z": 3.009, "hand": "R", "desc": "foul", "pfx_x": -1.0, "pfx_z": 1.11, "velo": 93.6, "balls": 2, "strikes": 1}, {"pitch": "Slider", "x": 1.603, "z": 0.61, "hand": "R", "desc": "blocked_ball", "pfx_x": 0.39, "pfx_z": 0.21, "velo": 88.1, "balls": 1, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": -0.098, "z": 1.783, "hand": "R", "desc": "called_strike", "pfx_x": -0.89, "pfx_z": 1.25, "velo": 96.8, "balls": 1, "strikes": 0}, {"pitch": "Slider", "x": 1.009, "z": 0.803, "hand": "R", "desc": "ball", "pfx_x": 0.27, "pfx_z": 0.26, "velo": 88.0, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -0.477, "z": 1.244, "hand": "L", "desc": "hit_into_play", "pfx_x": -1.34, "pfx_z": 0.41, "velo": 93.9, "balls": 0, "strikes": 0}, {"pitch": "Slider", "x": 0.621, "z": 2.009, "hand": "R", "desc": "hit_into_play", "pfx_x": 0.59, "pfx_z": 0.08, "velo": 86.4, "balls": 0, "strikes": 1}, {"pitch": "Slider", "x": 1.32, "z": 2.012, "hand": "R", "desc": "swinging_strike", "pfx_x": 0.5, "pfx_z": 0.29, "velo": 88.4, "balls": 0, "strikes": 0}, {"pitch": "Cutter", "x": -0.17, "z": 2.699, "hand": "L", "desc": "hit_into_play", "pfx_x": 0.07, "pfx_z": 0.64, "velo": 89.5, "balls": 0, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": 0.107, "z": 2.662, "hand": "L", "desc": "foul_tip", "pfx_x": -0.31, "pfx_z": 1.4, "velo": 94.8, "balls": 0, "strikes": 0}, {"pitch": "Curveball", "x": -1.346, "z": 3.735, "hand": "L", "desc": "ball", "pfx_x": 1.33, "pfx_z": -0.59, "velo": 81.2, "balls": 3, "strikes": 2}, {"pitch": "Cutter", "x": -0.422, "z": 2.912, "hand": "L", "desc": "foul", "pfx_x": 0.33, "pfx_z": 0.67, "velo": 89.8, "balls": 3, "strikes": 1}, {"pitch": "Sinker", "x": -0.616, "z": 3.1, "hand": "L", "desc": "called_strike", "pfx_x": -1.01, "pfx_z": 0.73, "velo": 91.6, "balls": 3, "strikes": 0}, {"pitch": "Cutter", "x": -1.027, "z": 3.607, "hand": "L", "desc": "ball", "pfx_x": 0.26, "pfx_z": 0.59, "velo": 89.9, "balls": 2, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": -1.109, "z": 4.014, "hand": "L", "desc": "ball", "pfx_x": -0.45, "pfx_z": 1.43, "velo": 93.3, "balls": 1, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": -0.327, "z": 3.473, "hand": "L", "desc": "ball", "pfx_x": -0.39, "pfx_z": 1.32, "velo": 93.3, "balls": 0, "strikes": 0}, {"pitch": "Slider", "x": 1.517, "z": 1.287, "hand": "R", "desc": "swinging_strike", "pfx_x": 0.39, "pfx_z": 0.05, "velo": 87.5, "balls": 0, "strikes": 2}, {"pitch": "Cutter", "x": 0.929, "z": 2.546, "hand": "R", "desc": "foul", "pfx_x": 0.5, "pfx_z": 0.38, "velo": 89.9, "balls": 0, "strikes": 1}, {"pitch": "Sinker", "x": 0.251, "z": 2.29, "hand": "R", "desc": "called_strike", "pfx_x": -1.3, "pfx_z": 0.92, "velo": 94.7, "balls": 0, "strikes": 0}, {"pitch": "Curveball", "x": -0.671, "z": 2.088, "hand": "L", "desc": "hit_into_play", "pfx_x": 1.08, "pfx_z": -0.53, "velo": 82.4, "balls": 2, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": 0.276, "z": 3.543, "hand": "L", "desc": "foul", "pfx_x": -0.22, "pfx_z": 1.34, "velo": 94.2, "balls": 2, "strikes": 1}, {"pitch": "Sinker", "x": -1.277, "z": 3.329, "hand": "L", "desc": "ball", "pfx_x": -1.08, "pfx_z": 0.53, "velo": 92.6, "balls": 1, "strikes": 1}, {"pitch": "Curveball", "x": 1.04, "z": 0.059, "hand": "L", "desc": "ball", "pfx_x": 1.08, "pfx_z": -0.67, "velo": 84.1, "balls": 0, "strikes": 1}, {"pitch": "Cutter", "x": -0.662, "z": 2.4, "hand": "L", "desc": "called_strike", "pfx_x": 0.29, "pfx_z": 0.59, "velo": 89.9, "balls": 0, "strikes": 0}, {"pitch": "Curveball", "x": 0.752, "z": 2.007, "hand": "R", "desc": "called_strike", "pfx_x": 0.92, "pfx_z": -0.5, "velo": 82.5, "balls": 3, "strikes": 2}, {"pitch": "Sinker", "x": -1.26, "z": 2.974, "hand": "R", "desc": "foul", "pfx_x": -1.29, "pfx_z": 0.75, "velo": 92.7, "balls": 3, "strikes": 1}, {"pitch": "Sinker", "x": -0.751, "z": 2.492, "hand": "R", "desc": "called_strike", "pfx_x": -1.31, "pfx_z": 0.76, "velo": 92.0, "balls": 3, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": -0.528, "z": 4.348, "hand": "R", "desc": "ball", "pfx_x": -0.12, "pfx_z": 1.22, "velo": 93.1, "balls": 2, "strikes": 0}, {"pitch": "Changeup", "x": -1.097, "z": 3.607, "hand": "R", "desc": "ball", "pfx_x": -1.09, "pfx_z": 0.58, "velo": 91.4, "balls": 1, "strikes": 0}, {"pitch": "Sinker", "x": -1.484, "z": 4.729, "hand": "R", "desc": "ball", "pfx_x": -1.15, "pfx_z": 1.3, "velo": 92.3, "balls": 0, "strikes": 0}, {"pitch": "Sinker", "x": -0.077, "z": 1.199, "hand": "L", "desc": "hit_into_play", "pfx_x": -1.26, "pfx_z": 0.82, "velo": 94.1, "balls": 3, "strikes": 1}, {"pitch": "Curveball", "x": 0.106, "z": 1.52, "hand": "L", "desc": "ball", "pfx_x": 0.98, "pfx_z": -0.57, "velo": 82.2, "balls": 2, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": 0.408, "z": 2.402, "hand": "L", "desc": "foul", "pfx_x": -0.5, "pfx_z": 1.17, "velo": 94.8, "balls": 2, "strikes": 0}, {"pitch": "Cutter", "x": 0.729, "z": 0.849, "hand": "L", "desc": "ball", "pfx_x": -0.04, "pfx_z": 0.85, "velo": 91.2, "balls": 1, "strikes": 0}, {"pitch": "Cutter", "x": -0.288, "z": 1.248, "hand": "L", "desc": "ball", "pfx_x": -0.02, "pfx_z": 0.79, "velo": 91.6, "balls": 0, "strikes": 0}, {"pitch": "Changeup", "x": -0.166, "z": 2.041, "hand": "R", "desc": "hit_into_play", "pfx_x": -1.03, "pfx_z": -0.14, "velo": 91.3, "balls": 2, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": -0.079, "z": 2.262, "hand": "R", "desc": "foul", "pfx_x": -0.54, "pfx_z": 1.29, "velo": 96.2, "balls": 2, "strikes": 2}, {"pitch": "Sinker", "x": -0.197, "z": 1.846, "hand": "R", "desc": "called_strike", "pfx_x": -1.33, "pfx_z": 0.73, "velo": 94.0, "balls": 2, "strikes": 1}, {"pitch": "Slider", "x": 0.102, "z": 1.508, "hand": "R", "desc": "ball", "pfx_x": 0.35, "pfx_z": 0.23, "velo": 88.1, "balls": 1, "strikes": 1}, {"pitch": "Sinker", "x": -0.022, "z": 2.032, "hand": "R", "desc": "swinging_strike", "pfx_x": -1.1, "pfx_z": 0.84, "velo": 93.3, "balls": 1, "strikes": 0}, {"pitch": "Slider", "x": 1.146, "z": 1.246, "hand": "R", "desc": "ball", "pfx_x": 0.42, "pfx_z": 0.18, "velo": 87.6, "balls": 0, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": -0.112, "z": 2.221, "hand": "L", "desc": "swinging_strike", "pfx_x": -0.47, "pfx_z": 1.41, "velo": 95.9, "balls": 2, "strikes": 2}, {"pitch": "4-Seam Fastball", "x": -1.198, "z": 3.214, "hand": "L", "desc": "ball", "pfx_x": -0.72, "pfx_z": 1.22, "velo": 95.8, "balls": 1, "strikes": 2}, {"pitch": "Curveball", "x": 0.253, "z": 0.502, "hand": "L", "desc": "foul", "pfx_x": 1.22, "pfx_z": -0.85, "velo": 83.1, "balls": 1, "strikes": 2}, {"pitch": "Cutter", "x": 0.103, "z": 2.392, "hand": "L", "desc": "foul", "pfx_x": 0.29, "pfx_z": 0.74, "velo": 90.7, "balls": 1, "strikes": 1}, {"pitch": "Cutter", "x": -1.21, "z": 3.104, "hand": "L", "desc": "ball", "pfx_x": 0.31, "pfx_z": 0.65, "velo": 89.4, "balls": 0, "strikes": 1}, {"pitch": "4-Seam Fastball", "x": 0.202, "z": 2.425, "hand": "L", "desc": "called_strike", "pfx_x": -0.56, "pfx_z": 1.25, "velo": 94.2, "balls": 0, "strikes": 0}, {"pitch": "4-Seam Fastball", "x": 0.207, "z": 3.239, "hand": "R", "desc": "hit_into_play", "pfx_x": -0.49, "pfx_z": 1.08, "velo": 95.1, "balls": 1, "strikes": 2}, {"pitch": "Changeup", "x": -0.567, "z": 2.411, "hand": "R", "desc": "foul", "pfx_x": -1.42, "pfx_z": 0.12, "velo": 90.9, "balls": 1, "strikes": 2}, {"pitch": "Slider", "x": 2.0, "z": 0.727, "hand": "R", "desc": "ball", "pfx_x": 0.33, "pfx_z": 0.18, "velo": 88.4, "balls": 0, "strikes": 2}, {"pitch": "Slider", "x": 0.024, "z": 2.414, "hand": "R", "desc": "called_strike", "pfx_x": 0.4, "pfx_z": 0.13, "velo": 86.3, "balls": 0, "strikes": 1}, {"pitch": "Sinker", "x": -0.569, "z": 2.35, "hand": "R", "desc": "foul", "pfx_x": -1.51, "pfx_z": 0.6, "velo": 93.5, "balls": 0, "strikes": 0}];
-
-// ── LOCATION PLOT RENDERER ──────────────────────────────────────────────────
-// Catcher's view: plate_x positive = catcher's right (pitcher's left / glove side for RHP)
-// Strike zone: x ∈ [-0.83, 0.83], z ∈ [1.50, 3.50] approximately
-// We render in catcher's POV so x is NOT flipped
-
-function drawLocation(canvasId, hand) {
-  const cv = document.getElementById(canvasId); if(!cv) return;
-  const ctx = cv.getContext('2d'), W = cv.width, H = cv.height;
-  ctx.clearRect(0,0,W,H);
-  ctx.fillStyle = 'rgba(0,0,0,.08)'; ctx.fillRect(0,0,W,H);
-
-  // Coordinate mapping: x ∈ [-2.5, 2.5], z ∈ [0, 5.5]
-  const xMin=-2.5, xMax=2.5, zMin=0, zMax=5.5;
-  const pad=24;
-  const toCanvasX = x => pad + (x - xMin) / (xMax - xMin) * (W - 2*pad);
-  const toCanvasZ = z => H - pad - (z - zMin) / (zMax - zMin) * (H - 2*pad);
-
-  // Strike zone box (~17 inches wide = 0.708 ft each side, height varies by batter)
-  const szL = toCanvasX(-0.83), szR = toCanvasX(0.83);
-  const szT = toCanvasZ(3.50),  szB = toCanvasZ(1.50);
-  ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 1.5;
-  ctx.strokeRect(szL, szT, szR - szL, szB - szT);
-
-  // Inner zone grid
-  ctx.strokeStyle = 'rgba(255,255,255,.1)'; ctx.lineWidth = 0.5;
-  const dx = (szR - szL)/3, dz = (szB - szT)/3;
-  for(let i=1;i<3;i++){
-    ctx.beginPath(); ctx.moveTo(szL+dx*i,szT); ctx.lineTo(szL+dx*i,szB); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(szL,szT+dz*i); ctx.lineTo(szR,szT+dz*i); ctx.stroke();
+const GAMES = [
+  {
+    date:        "2026-04-05",
+    dateLabel:   "April 5, 2026",
+    homeTeam:    "CWS",
+    awayTeam:    "TOR",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    pitcher:     "Davis Martin",
+    pitcherHand: "RHP",
+    status:      "final",
+    result:      "CWS 3, TOR 0",
+    link:        "games/2026-04-05-martin/index.html",
+    retroLink:   "retro/2026-04-05-martin/index.html",
+    pick:        "G. Springer",
+    pickWoba:    ".43"
+  },
+  {
+    date:        "2026-04-04",
+    dateLabel:   "April 4, 2026",
+    homeTeam:    "CWS",
+    awayTeam:    "TOR",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    pitcher:     "A. Kay (bulk) / G. Taylor (opener)",
+    pitcherHand: "LHP",
+    status:      "final",
+    result:      "CWS 6, TOR 3",
+    link:        "games/2026-04-04-kay-taylor/index.html",
+    retroLink:   "retro/2026-04-04-kay-taylor/index.html",
+    pick:        "G. Springer",
+    pickWoba:    ".43"
+  },
+  {
+    date:        "2026-04-03",
+    dateLabel:   "April 3, 2026",
+    homeTeam:    "TOR",
+    awayTeam:    "CWS",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    pitcher:     "S. Burke / G. Taylor (opener)",
+    pitcherHand: "RHP",
+    status:      "final",
+    link:        "games/2026-04-03-burke-taylor/index.html",
+    retroLink:   "retro/2026-04-03-burke-taylor/index.html",
+    pick:        "G. Springer",
+    pickWoba:    ".410"
+  },
+  {
+    date:        "2026-04-01",
+    dateLabel:   "April 1, 2026",
+    homeTeam:    "TOR",
+    awayTeam:    "COL",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/col.png",
+    pitcher:     "Kyle Freeland",
+    pitcherHand: "LHP",
+    status:      "final",
+    link:        "games/2026-04-01-freeland/index.html",
+    retroLink:   "retro/2026-04-01-freeland/index.html",
+    pick:        "G. Springer",
+    pickWoba:    ".440"
+  },
+  {
+    date:        "2026-03-31",
+    dateLabel:   "March 31, 2026",
+    homeTeam:    "TOR",
+    awayTeam:    "COL",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/col.png",
+    pitcher:     "Ryan Feltner",
+    pitcherHand: "RHP",
+    status:      "final",
+    link:        "games/2026-03-31-feltner/index.html",
+    retroLink:   "retro/2026-03-31-feltner/index.html",
+    pick:        "G. Springer",
+    pickWoba:    ".421"
+  },
+  {
+    date:        "2026-03-30",
+    dateLabel:   "March 30, 2026",
+    homeTeam:    "TOR",
+    awayTeam:    "COL",
+    homeLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+    awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/col.png",
+    pitcher:     "Tomoyuki Sugano",
+    pitcherHand: "RHP",
+    status:      "final",
+    link:        "games/2026-03-30-sugano/index.html",
+    retroLink:   "retro/2026-03-30-sugano/index.html",
+    pick:        "G. Springer",
+    pickWoba:    ".404"
   }
-
-  // Home plate triangle (bottom)
-  ctx.fillStyle = 'rgba(255,255,255,.2)';
-  const px = W/2, pz = toCanvasZ(0.3);
-  ctx.beginPath(); ctx.moveTo(px-10,pz); ctx.lineTo(px+10,pz); ctx.lineTo(px,pz+10); ctx.closePath(); ctx.fill();
-
-  // Zone label
-  ctx.fillStyle='rgba(255,255,255,.3)'; ctx.font='8px IBM Plex Mono'; ctx.textAlign='center';
-  ctx.fillText('STRIKE ZONE', (szL+szR)/2, szT-5);
-  ctx.fillText('catcher\'s view', W/2, H-6);
-
-  // Batter side label
-  ctx.textAlign = 'left'; ctx.fillStyle='rgba(255,255,255,.2)';
-  ctx.fillText(hand==='L' ? '← LHH stands' : '← RHH stands', 4, 14);
-
-  // Filter pitches
-  const subset = PITCHES.filter(p => p.hand === hand);
-
-  // Draw pitches, balls underneath, strikes on top
-  ['ball','blocked_ball','foul','foul_tip','hit_into_play','called_strike','swinging_strike','swinging_strike_blocked'].forEach(d => {
-    subset.filter(p => p.desc === d).forEach(p => {
-      const cx = toCanvasX(p.x), cz = toCanvasZ(p.z);
-      const col = PC[p.pitch] || '#888';
-      const isStrike = ['called_strike','swinging_strike','swinging_strike_blocked','foul_tip'].includes(p.desc);
-      const isBall   = ['ball','blocked_ball'].includes(p.desc);
-      const isPlay   = ['hit_into_play'].includes(p.desc);
-      const isFoul   = ['foul','foul_tip'].includes(p.desc);
-      const r = 6;
-
-      if(isBall) {
-        ctx.beginPath(); ctx.arc(cx,cz,r,0,Math.PI*2);
-        ctx.strokeStyle=col+'88'; ctx.lineWidth=1.5; ctx.stroke();
-      } else if(isStrike) {
-        ctx.beginPath(); ctx.arc(cx,cz,r,0,Math.PI*2);
-        ctx.fillStyle=col+'cc'; ctx.fill();
-        ctx.strokeStyle='#fff3'; ctx.lineWidth=0.8; ctx.stroke();
-      } else if(isPlay) {
-        ctx.beginPath(); ctx.arc(cx,cz,r+1,0,Math.PI*2);
-        ctx.fillStyle=col+'99'; ctx.fill();
-        ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke();
-      } else {
-        ctx.beginPath(); ctx.arc(cx,cz,r,0,Math.PI*2);
-        ctx.fillStyle=col+'55'; ctx.fill();
-      }
-    });
-  });
-}
-
-// ── MOVEMENT PLOT ────────────────────────────────────────────────────────────
-function drawMovement() {
-  const cv = document.getElementById('mvCanvas'); if(!cv) return;
-  const ctx = cv.getContext('2d'), W=cv.width, H=cv.height;
-  ctx.clearRect(0,0,W,H); ctx.fillStyle='rgba(0,0,0,.08)'; ctx.fillRect(0,0,W,H);
-
-  const cx=W/2, cy=H/2, sc=46;
-  ctx.strokeStyle='rgba(255,255,255,.08)'; ctx.lineWidth=1;
-  ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,H); ctx.stroke();
-
-  ctx.fillStyle='rgba(255,255,255,.2)'; ctx.font='8px IBM Plex Mono';
-  ctx.textAlign='center'; ctx.fillText('Arm-side →',W-34,cy-5);
-  ctx.fillText('← Glove-side',34,cy-5);
-  ctx.textAlign='left'; ctx.fillText('↑ Rise',cx+4,11);
-  ctx.fillText('↓ Drop',cx+4,H-6);
-
-  // Group by pitch type, compute weighted mean movement
-  const groups = {};
-  PITCHES.forEach(p => {
-    if(!groups[p.pitch]) groups[p.pitch]={sumx:0,sumz:0,n:0};
-    groups[p.pitch].sumx += p.pfx_x;
-    groups[p.pitch].sumz += p.pfx_z;
-    groups[p.pitch].n++;
-  });
-
-  // Count tonight's usage for circle size
-  const counts = {};
-  PITCHES.forEach(p => counts[p.pitch]=(counts[p.pitch]||0)+1);
-
-  Object.entries(groups).forEach(([name,g]) => {
-    const mx=g.sumx/g.n, mz=g.sumz/g.n;
-    const px=cx+mx*sc, py=cy-mz*sc;
-    const r=Math.sqrt(counts[name])*2.2;
-    const col=PC[name]||'#aaa';
-    ctx.beginPath(); ctx.arc(px,py,r,0,Math.PI*2);
-    ctx.fillStyle=col+'a0'; ctx.fill();
-    ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke();
-    const ab={'4-Seam Fastball':'FF','Changeup':'CH','Slider':'SL','Cutter':'CT','Sinker':'SI','Curveball':'CU','Sweeper':'SW'};
-    ctx.fillStyle='#fff'; ctx.font='8px IBM Plex Mono'; ctx.textAlign='center';
-    ctx.fillText(ab[name]||name.slice(0,2),px,py+3);
-  });
-  ctx.fillStyle='rgba(255,255,255,.15)'; ctx.font='8px IBM Plex Mono';
-  ctx.textAlign='left'; ctx.fillText('size = pitches tonight',5,H-5);
-}
-
-// ── LEGEND ───────────────────────────────────────────────────────────────────
-function buildLegend() {
-  const c = document.getElementById('pitchLegend'); if(!c) return;
-  const pitches = [...new Set(PITCHES.map(p=>p.pitch))];
-  pitches.forEach(name => {
-    const col = PC[name]||'#888';
-    const item = document.createElement('div');
-    item.style.cssText='display:flex;align-items:center;gap:5px;';
-    item.innerHTML=`<div style="width:10px;height:10px;border-radius:50%;background:${col};flex-shrink:0;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--mid);">${name}</span>`;
-    c.appendChild(item);
-  });
-}
-
-
-const LG=.320;
-
-function go(i){
-  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
-  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
-  if(i===0){drawLocation('locLHH','L');drawLocation('locRHH','R');drawMovement();}
-  if(i===3&&!window._sq)buildSeq();
-}
-
-/* ARSENAL COMPARISON */
-const AC=[
-  {n:'Sinker',          proj:7.6,  act:27.1, col:'#f4b942'},
-  {n:'Cutter',          proj:5.9,  act:15.3, col:'#38bdf8'},
-  {n:'Curveball',       proj:5.7,  act:12.9, col:'#2dd4a0'},
-  {n:'4-Seam Fastball', proj:31.2, act:27.1, col:'#E8002D'},
-  {n:'Slider',          proj:20.0, act:10.6, col:'#c084fc'},
-  {n:'Changeup',        proj:23.2, act:7.1,  col:'#fb923c'},
 ];
-(function(){
-  const c=document.getElementById('arsenalComp');if(!c)return;
-  AC.forEach(p=>{
-    const d=p.act-p.proj;
-    const dCol=Math.abs(d)>=6?(d>0?'var(--green)':'var(--rose)'):'var(--dim)';
-    const r=document.createElement('div');r.className='ac-row';
-    r.innerHTML=`<div class="ac-name">${p.n}</div><div class="ac-tracks"><div style="display:flex;align-items:center;gap:6px;height:9px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--dim);width:22px;flex-shrink:0;">proj</div><div class="ac-bar"><div class="ac-fill" style="width:${p.proj/32*100}%;background:${p.col};opacity:.35;"></div></div><div class="ac-pct" style="color:var(--dim);">${p.proj}%</div></div><div style="display:flex;align-items:center;gap:6px;height:9px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:7px;color:${p.col};width:22px;flex-shrink:0;">act</div><div class="ac-bar"><div class="ac-fill" style="width:${p.act/32*100}%;background:${p.col};opacity:.88;"></div></div><div class="ac-pct" style="color:${p.col};">${p.act}%</div></div></div><div class="ac-delta" style="color:${dCol};">${d>=0?'+':''}${d.toFixed(1)}%</div>`;
-    c.appendChild(r);
-  });
-})();
 
-function mkBars(data,id,mx){
-  const c=document.getElementById(id);if(!c)return;
-  data.forEach(p=>{
-    const col=PC[p.n]||'#888';
-    const r=document.createElement('div');
-    r.style.cssText='display:flex;align-items:center;gap:7px;margin-bottom:7px;';
-    r.innerHTML=`<div style="font-size:11px;color:var(--cream);width:108px;flex-shrink:0;">${p.n}</div><div style="flex:1;height:9px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;"><div style="height:100%;width:${p.p/mx*100}%;background:${col};opacity:.85;border-radius:2px;"></div></div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:${col};width:30px;text-align:right;">${p.p}%</div>`;
-    c.appendChild(r);
-  });
+function statusLabel(s) {
+  return { preview:"Preview", live:"Live", final:"Final", upcoming:"Upcoming" }[s] || s;
 }
-mkBars([{n:'4-Seam Fastball',p:29.8},{n:'Sinker',p:23.4},{n:'Cutter',p:21.3},{n:'Curveball',p:19.1},{n:'Changeup',p:6.4}],'lhh',35);
-mkBars([{n:'Sinker',p:31.6},{n:'4-Seam Fastball',p:23.7},{n:'Slider',p:23.7},{n:'Cutter',p:7.9},{n:'Changeup',p:7.9},{n:'Curveball',p:5.3}],'rhh',35);
 
-/* SCORECARD */
-const SD=[
-  {n:'Springer',    h:'R',pa:3,out:'single, fly out, fly out',   exp:.427,act:.296,cls:'miss'},
-  {n:'Varsho',      h:'L',pa:2,out:'strikeout, fly out',          exp:.395,act:.000,cls:'miss'},
-  {n:'Guerrero Jr.',h:'R',pa:3,out:'fly out, walk, single',       exp:.367,act:.528,cls:'called'},
-  {n:'Lukes',       h:'L',pa:3,out:'GIDP, force out, strikeout',  exp:.321,act:.000,cls:'miss'},
-  {n:'Clement',     h:'R',pa:2,out:'single, strikeout',           exp:.299,act:.444,cls:'called'},
-  {n:'Barger',      h:'L',pa:3,out:'fly out, fly out, fly out',   exp:.294,act:.000,cls:'miss'},
-  {n:'Giménez',     h:'L',pa:2,out:'fly out, walk',               exp:.262,act:.348,cls:'called'},
-  {n:'Okamoto',     h:'R',pa:3,out:'K, fly out, K',               exp:null,act:.000,cls:'none'},
-  {n:'Valenzuela',  h:'R',pa:2,out:'K, single',                   exp:null,act:.444,cls:'none'},
-];
-(function(){
-  const c=document.getElementById('scRows');if(!c)return;
-  const xMx=1.1,xs=v=>(v/xMx*100).toFixed(1)+'%';
-  SD.forEach(d=>{
-    const row=document.createElement('div');row.className=`sc-row ${d.cls}`;
-    const bCol=d.cls==='called'?'var(--green)':(d.cls==='miss'?'var(--rose)':'var(--dim)');
-    const vLbl=d.cls==='called'?'Called':d.cls==='miss'?'Miss':'No proj.';
-    const vCls=d.cls==='called'?'sv-called':d.cls==='miss'?'sv-miss':'sv-none';
-    if(d.cls==='none'){
-      row.innerHTML=`<div class="sr-name">${d.n}</div><div class="sr-hand">${d.h}</div><div class="sr-pa">${d.pa}PA</div><div class="sr-outcomes">${d.out}</div><div style="flex:1;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">No projection</div><div class="sr-exp" style="color:var(--dim);">—</div><div class="sr-arrow">→</div><div class="sr-act" style="color:var(--dim);font-size:12px;">${d.act.toFixed(2)}</div><div class="sr-verd ${vCls}">${vLbl}</div>`;
-    } else {
-      row.innerHTML=`<div class="sr-name">${d.n}</div><div class="sr-hand">${d.h}</div><div class="sr-pa">${d.pa}PA</div><div class="sr-outcomes">${d.out}</div><div class="sr-bar"><div class="sr-exp-line" style="left:${xs(d.exp)};"></div><div class="sr-act-fill" style="width:${xs(Math.min(d.act,xMx))};background:${bCol};"></div><div class="sr-lg" style="left:${xs(LG)};"></div></div><div class="sr-exp">${d.exp.toFixed(2)}</div><div class="sr-arrow">→</div><div class="sr-act" style="color:${bCol};">${d.act.toFixed(2)}</div><div class="sr-verd ${vCls}">${vLbl}</div>`;
-    }
-    c.appendChild(row);
-  });
-})();
+function buildCard(g) {
+  const isLinked = g.link && g.status !== "upcoming";
+  const card = document.createElement('div');
+  card.className = `game-card${g.status === 'upcoming' ? ' upcoming' : ''}`;
 
-/* ASSUMPTION CARDS */
-const ASMP=[
-  {result:'failed',
-   q:'Would the Changeup remain the primary LHH pitch at 32%?',
-   exp:'32.3% (career weighted)',act:'6.4% tonight',actCol:'var(--rose)',
-   what:'Martin threw 47 pitches to left-handed hitters. Three were Changeups. He ran the Sinker (23%), Curveball (19%), and Cutter (21%) instead. The Changeup, which the entire LHH read was built around, was essentially set aside.',
-   means:'Every LHH expectation was wrong at the source. Varsho\'s .395 projection, Heineman\'s .333, all of it was built on a pitch that did not come. This is the most consequential single failure this analysis has produced.',
-   learn:'The Changeup-to-LHH prior resets to 6% with a wide tolerance. Sinker and Cutter become the primary LHH weapons in the next Martin preview. The entire LHH expectation structure inverts.',
-   learnCol:'var(--rose)'},
-  {result:'failed',
-   q:'Would the Cutter stay near career baseline (~6%)?',
-   exp:'5.9% (career weighted)',act:'15.3% tonight',actCol:'var(--rose)',
-   what:'The Cutter appeared at 15.3%, more than double the career baseline and consistent with what his first 2026 start showed. The preview flagged this as the key unknown going in. It was right to flag it. The Cutter is real.',
-   means:'The preview named this correctly as the watch item. The Cutter ran at 21% last start, 15% tonight. The career baseline of 6% is no longer an appropriate prior. The Cutter is now an established part of his 2026 approach, particularly to LHH.',
-   learn:'Cutter prior updates to ~15-20% for LHH. Alongside the Changeup reduction, this means Martin\'s 2026 LHH approach is Sinker/Cutter/Curveball, ground-ball oriented, not Changeup setup.',
-   learnCol:'var(--rose)'},
-];
-(function(){
-  const c=document.getElementById('asmpCards');if(!c)return;
-  ASMP.forEach(a=>{
-    const el=document.createElement('div');el.className='asmp-card';
-    const rCls=a.result==='held'?'ar-held':'ar-failed';
-    const rLbl=a.result==='held'?'Held':'Failed';
-    el.innerHTML=`<div class="asmp-top"><span class="asmp-result ${rCls}">${rLbl}</span><div class="asmp-q">${a.q}</div><div class="asmp-nums"><span class="an-exp">${a.exp}</span><span class="an-arrow">→</span><span class="an-act" style="color:${a.actCol};">${a.act}</span></div></div><div class="asmp-body"><div><div class="ab-lbl">What happened</div><div class="ab-text">${a.what}</div></div><div><div class="ab-lbl">What it means</div><div class="ab-text">${a.means}</div></div></div><div class="asmp-learn"><div class="learn-dot" style="background:${a.learnCol};"></div><div style="font-size:12px;color:var(--dim);">${a.learn}</div></div>`;
-    c.appendChild(el);
-  });
-})();
+  const footerHTML = isLinked
+    ? `<div class="card-footer">
+        <div class="card-footer-links">
+          <a class="card-cta" href="${g.link}">Preview →</a>
+          ${g.retroLink ? `<a class="card-cta retro" href="${g.retroLink}">Retro →</a>` : ''}
+        </div>
+       </div>`
+    : `<div class="card-footer disabled">
+        <div class="card-cta">Coming Soon</div>
+       </div>`;
 
-/* SEQUENCING TABLES */
-function buildSeq(){
-  window._sq=true;
-  // LHH transitions (from career data)
-  const lhhData=[
-    {prev:'FF',    FF:27.0, CH:36.7, CT:3.7,  SI:2.2,  SL:16.5, CU:9.8},
-    {prev:'CH',    FF:42.1, CH:28.0, CT:3.7,  SI:2.4,  SL:16.5, CU:4.3},
-    {prev:'CT',    FF:19.0, CH:45.2, CT:11.9, SI:16.7, SL:2.4,  CU:4.8},
-    {prev:'SI',    FF:14.8, CH:44.4, CT:14.8, SI:11.1, SL:11.1, CU:3.7},
-    {prev:'SL',    FF:31.7, CH:34.4, CT:0.0,  SI:3.2,  SL:15.6, CU:5.9},
-    {prev:'CU',    FF:35.0, CH:35.0, CT:0.7,  SI:3.6,  SL:15.7, CU:8.6},
-  ];
-  const rhhData=[
-    {prev:'FF',  FF:25.5, CH:18.5, SI:7.0,  SL:28.3, SW:19.9, CU:0.8},
-    {prev:'CH',  FF:27.2, CH:13.3, SI:5.1,  SL:31.6, SW:20.3, CU:0.6},
-    {prev:'SI',  FF:28.9, CH:9.6,  SI:19.3, SL:34.8, SW:5.2,  CU:0.7},
-    {prev:'SL',  FF:30.3, CH:23.3, SI:12.3, SL:22.9, SW:8.5,  CU:2.5},
-    {prev:'SW',  FF:37.9, CH:20.3, SI:7.4,  SL:7.0,  SW:26.2, CU:1.2},
-    {prev:'CU',  FF:47.1, CH:35.3, SI:5.9,  SL:5.9,  SW:0.0,  CU:0.0},
-  ];
-  function fillTable(data,id,cols){
-    const tb=document.getElementById(id);if(!tb)return;
-    data.forEach(row=>{
-      const tr=document.createElement('tr');
-      tr.innerHTML=`<td>${row.prev}</td>`+cols.map(c=>{
-        const v=row[c]||0;
-        const cls=v>=30?'seq-hot':v<=5?'seq-cold':'';
-        return `<td class="${cls}">${v>0?v.toFixed(0)+'%':''}</td>`;
-      }).join('');
-      tb.appendChild(tr);
-    });
-  }
-  fillTable(lhhData,'seqLHH',['FF','CH','CT','SI','SL','CU']);
-  fillTable(rhhData,'seqRHH',['FF','CH','SI','SL','SW','CU']);
+  card.innerHTML = `
+    <div class="card-stripe ${g.status}"></div>
+    <div class="card-body">
+      <div class="card-meta">
+        <div class="card-date">${g.dateLabel}</div>
+        <div class="status-badge ${g.status}">${statusLabel(g.status)}</div>
+      </div>
+      <div class="card-matchup">
+        <div class="team-block">
+          <img class="team-logo" src="${g.homeLogo}" alt="${g.homeTeam}" onerror="this.style.opacity='0.3'">
+          <div class="team-abbr">${g.homeTeam}</div>
+        </div>
+        <div class="vs-divider">VS</div>
+        <div class="team-block">
+          <img class="team-logo" src="${g.awayLogo}" alt="${g.awayTeam}" onerror="this.style.opacity='0.3'">
+          <div class="team-abbr">${g.awayTeam}</div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div class="pitcher-row">
+          <div class="pitcher-label">Pitcher</div>
+          <div class="pitcher-name">${g.pitcher}</div>
+          <div class="pitcher-label" style="margin-left:2px;">${g.pitcherHand}</div>
+        </div>
+        ${g.pick ? `
+        <div class="model-row">
+          <div class="model-label">Top Pick</div>
+          <div class="model-pick">${g.pick}</div>
+          <div class="model-woba">${g.pickWoba} wOBA</div>
+        </div>` : `
+        <div class="model-row">
+          <div class="model-label" style="color:rgba(255,255,255,0.2);">Model pending</div>
+        </div>`}
+      </div>
+    </div>
+    ${footerHTML}`;
+
+  return card;
 }
-buildSeq();
 
-// Draw location plots, movement, and legend on load (panel 0 is active)
-drawLocation('locLHH','L');
-drawLocation('locRHH','R');
-drawMovement();
-buildLegend();
+function render() {
+  const grid  = document.getElementById('gamesGrid');
+  const count = document.getElementById('gameCount');
+  const sorted = [...GAMES].sort((a,b) => b.date.localeCompare(a.date));
+  sorted.forEach(g => grid.appendChild(buildCard(g)));
+  count.textContent = `${GAMES.length} game${GAMES.length !== 1 ? 's' : ''}`;
+  document.getElementById('statPreviews').textContent = GAMES.filter(g => g.status === 'preview' || g.status === 'live' || g.status === 'final').length;
+  document.getElementById('statRetros').textContent   = GAMES.filter(g => g.retroLink).length;
+  document.getElementById('statStarters').textContent = new Set(GAMES.map(g => g.pitcher)).size;
+}
+
+render();
 </script>
 </body>
 </html>

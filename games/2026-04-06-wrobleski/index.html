@@ -1,1 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Justin Wrobleski · April 6</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000e20;--navy:#001a3d;--panel:#071e3d;--panel2:#0b2245;
+  --red:#E8002D;--white:#fff;--cream:#ddeaf8;
+  --gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;
+  --border:rgba(255,255,255,.07);--bhi:rgba(255,255,255,.13);
+  --green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;
+  --lad:#003DA5;--lad-bright:#005AC8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
 
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;width:fit-content;transition:color .15s;}
+.back-link:hover{color:var(--white);}
+.back-link span{color:var(--red);}
+
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;overflow:hidden;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red) 0%,rgba(232,0,45,.3) 50%,transparent 100%);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hero-hed{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1;margin-bottom:8px;}
+.hero-hed .red{color:var(--red);}
+.hero-hed .role{font-size:18px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;letter-spacing:.04em;}
+.hero-dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
+.hero-dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px 10px 12px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;line-height:1;}
+.aca-handle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;align-items:stretch;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;}
+.mi:first-child{padding-left:0;}
+.mi:last-child{border-right:none;margin-left:auto;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+
+.tab-bar{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.tab:hover{color:var(--white);}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}
+.panel.active{display:block;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.divider{height:1px;background:var(--border);margin:18px 0;}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+.pullquote{border-left:3px solid var(--red);padding:14px 20px;margin:20px 0;font-size:15px;line-height:1.65;color:var(--cream);font-style:italic;background:rgba(255,255,255,.02);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.gold{background:rgba(196,162,75,.07);border:1px solid rgba(196,162,75,.22);color:var(--cream);}
+.callout.gold strong{color:var(--gold);}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.16);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.seq{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.seq strong{color:var(--green);}
+
+/* SERIES FLIP */
+.flip-box{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);border-radius:5px;padding:20px;margin-bottom:18px;display:flex;gap:24px;align-items:center;}
+.flip-item{text-align:center;flex-shrink:0;}
+.flip-name{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--mid);margin-bottom:2px;letter-spacing:.06em;}
+.flip-ctx{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-bottom:6px;}
+.flip-val{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;line-height:1;}
+.flip-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px;}
+.flip-arrow{font-size:24px;color:var(--dim);flex:1;text-align:center;}
+
+/* ARSENAL BARS */
+.abar{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.abar-n{font-size:12px;color:var(--cream);width:130px;flex-shrink:0;}
+.abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.abar-f{height:100%;border-radius:2px;opacity:.88;}
+.abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:32px;text-align:right;flex-shrink:0;}
+.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:52px;text-align:right;color:var(--dim);flex-shrink:0;}
+
+/* MATCHUP ROWS */
+.mu-row{display:flex;align-items:center;gap:12px;padding:11px 18px;margin-bottom:7px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:border-color .15s;}
+.mu-row:hover{border-color:var(--bhi);}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.h::before{background:var(--green);}
+.mu-row.s::before{background:var(--rose);}
+.mu-row.n::before{background:rgba(255,255,255,.1);}
+.mu-row.x::before{background:rgba(255,255,255,.06);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:130px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-track{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
+.mr-ci{position:absolute;top:20%;bottom:20%;background:rgba(255,255,255,.06);}
+.mr-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
+.mr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:2;}
+.mr-num{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:42px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:6px;line-height:1.35;}
+
+/* SEQUENCING */
+.seq-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:9px;}
+.seq-table th{padding:6px 10px;text-align:right;color:var(--dim);border-bottom:1px solid var(--border);font-weight:400;letter-spacing:.08em;}
+.seq-table th:first-child{text-align:left;}
+.seq-table td{padding:5px 10px;text-align:right;border-bottom:1px solid rgba(255,255,255,.04);}
+.seq-table td:first-child{text-align:left;color:var(--cream);}
+.seq-table tr:last-child td{border-bottom:none;}
+.seq-hot{color:var(--amber);font-weight:500;}
+.seq-cold{color:rgba(255,255,255,.15);}
+
+/* WATCH FOR */
+.wf-item{margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+.wf-top{display:flex;align-items:flex-start;}
+.wf-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:rgba(255,255,255,.1);padding:20px 22px;flex-shrink:0;border-right:1px solid var(--border);width:72px;text-align:center;line-height:1;}
+.wf-content{padding:20px 22px;flex:1;}
+.wf-q{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:6px;}
+.wf-body{font-size:13px;color:var(--mid);line-height:1.75;}
+.wf-body strong{color:var(--cream);}
+.wf-footer{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.wff{padding:14px 22px;}
+.wff+.wff{border-left:1px solid var(--border);}
+.wff-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wff-val{font-size:12px;color:var(--cream);line-height:1.6;}
+
+/* EDGE */
+.edge-hero{background:rgba(0,40,100,.14);border:1px solid rgba(0,79,163,.22);border-radius:5px;padding:24px;margin-bottom:18px;}
+.eh-stats{display:flex;margin-bottom:18px;}
+.eh-s{flex:1;padding:0 22px;}
+.eh-s:first-child{padding-left:0;}
+.eh-s+.eh-s{border-left:1px solid var(--border);}
+.eh-val{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;line-height:1;margin-bottom:4px;}
+.eh-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;}
+.eh-prose{font-size:13px;color:var(--mid);line-height:1.75;border-top:1px solid var(--border);padding-top:16px;}
+.eh-prose strong{color:var(--white);}
+
+/* BOTTOM LINE */
+.tonight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.tg-card{background:var(--panel2);border:1px solid var(--border);border-radius:4px;padding:18px;}
+.tg-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.tg-name{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;}
+.tg-body{font-size:12px;color:var(--mid);line-height:1.65;}
+.tg-body strong{color:var(--cream);}
+.tg-card.best{border-color:rgba(45,212,160,.2);}.tg-card.best .tg-tag{color:var(--green);}
+.tg-card.watch{border-color:rgba(244,185,66,.18);}.tg-card.watch .tg-tag{color:var(--amber);}
+.tg-card.worst{border-color:rgba(255,79,106,.2);}.tg-card.worst .tg-tag{color:var(--rose);}
+.tg-card.flip{border-color:rgba(45,212,160,.3);background:rgba(45,212,160,.04);}.tg-card.flip .tg-tag{color:var(--green);}
+
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+
+.social{background:linear-gradient(135deg,rgba(0,40,100,.15) 0%,rgba(0,15,40,.15) 100%);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:24px;position:relative;}
+.social::before{content:'"';font-family:'Oswald',sans-serif;font-size:80px;color:rgba(232,0,45,.12);position:absolute;top:-12px;left:12px;line-height:1;pointer-events:none;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<nav class="back-nav">
+  <a class="back-link" href="../../index.html"><span>←</span> All games</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">LAD @ TOR · Rogers Centre · April 6, 2026 · 7:07 PM ET · Home opener</div>
+      <div class="hero-hed">JUSTIN <span class="red">WROBLESKI</span><span class="role">LHP · Los Angeles</span></div>
+      <div class="hero-dek">A left-hander who attacks same-handed hitters with <em>Slider and Sinker, no Changeup.</em> Heineman moves into the second spot. Varsho drops to one of the lowest projections in the lineup. Same hitter, completely different problem again.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-handle">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi">
+      <div class="mi-lbl">Confidence</div>
+      <div class="mi-val">Moderate</div>
+      <div class="mi-sub">33 career starts · 511 weighted pitches</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Jays vs Wrobleski</div>
+      <div class="mi-val">3 PA, one game</div>
+      <div class="mi-sub">Aug 10, 2025 · not enough to update expectations</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">Series</div>
+      <div class="mi-val">LAD @ TOR, Game 1 of 3</div>
+      <div class="mi-sub">Rogers Centre home opener</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">2026 record</div>
+      <div class="mi-val">4-6</div>
+      <div class="mi-sub">0-3 vs CWS · first home series</div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab active" onclick="go(0)">Who Is He</div>
+  <div class="tab" onclick="go(1)">The Matchups</div>
+  <div class="tab" onclick="go(2)">Watch For</div>
+  <div class="tab" onclick="go(3)">Is There an Edge</div>
+  <div class="tab" onclick="go(4)">Bottom Line</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══ WHO IS HE ══ -->
+<div class="panel active" id="p0">
+
+  <div class="lede">Wrobleski is a LHP who has made 33 starts across three seasons. His defining characteristic is how differently he pitches to left-handed and right-handed hitters. Against lefties, the Slider and Sinker combine for nearly 67% of his pitches with almost no Changeup. Against righties, the 4-Seam takes over. <strong>This is not a pitcher who balances the arsenal by handedness. He leans hard into movement pitches against same-handed hitters.</strong></div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">His arsenal · career through 2026</div>
+      <div id="mixBars"></div>
+      <div class="divider"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs lefties</div>
+          <div id="lhh"></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs righties</div>
+          <div id="rhh"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Career at a glance</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:13px;color:var(--cream);">2026</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);">1 start · 60 pitches vs COL</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:13px;color:var(--cream);">2025</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);">24 starts · full rotation role</span>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:13px;color:var(--cream);">2024</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);">8 starts · debut season</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card-hd">How the ball moves</div>
+      <canvas id="mv" width="256" height="188"></canvas>
+      <div style="margin-top:8px;font-size:11px;color:var(--dim);line-height:1.6;">
+        As a LHP, the 4-Seam rides up and glove-side. The Sinker runs arm-side into RHH and away from LHH. The Slider sweeps glove-side and stays flat, a classic LHP put-away weapon vs same-handed hitters.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout amber">
+    <strong>The defining LHP characteristic:</strong> Wrobleski throws the Changeup to left-handed hitters 0.3% of the time across his career. Martin did the same thing last night, except that was a deviation from his career. For Wrobleski, this is the career pattern. Left-handed hitters will see Sliders and Sinkers all night with no soft offering to worry about. Whether that is good or bad for the Jays lineup depends entirely on which individual hitters do what with those pitch types.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Best and worst pitches by xwOBA allowed</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">4-Seam Fastball</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);">.287 xwOBA</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">Slider</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);">.253 xwOBA · best pitch</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">Sinker</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);">.390 xwOBA · hitters make contact</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">Curveball</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--rose);">.415 xwOBA · can be hit</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
+          <span style="font-size:12px;color:var(--cream);">Cutter</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--rose);">.390 xwOBA</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Pitch feel · velocity and profile</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:var(--cream);">4-Seam Fastball</span>
+          <div style="text-align:right;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--amber);">95.7 mph avg · 94.0 in 2026</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">-1.7 mph vs career · watch for this</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:var(--cream);">Slider</span>
+          <div style="text-align:right;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--cream);">87.6 mph · flat break</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">sweeps glove-side with very little drop</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:var(--cream);">Sinker</span>
+          <div style="text-align:right;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--cream);">94.9 mph · arm-side run</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">runs away from LHH, into RHH</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:var(--cream);">Cutter</span>
+          <div style="text-align:right;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--cream);">92.1 mph · tight cut</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">primary vs RHH, rarely used vs LHH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ THE MATCHUPS ══ -->
+<div class="panel" id="p1">
+
+  <div class="lede">The CWS series was three RHP in a row. Wrobleski is a LHP and the lineup almost entirely reshuffles. <strong>Heineman moves to second in the lineup projection. Varsho drops near the bottom.</strong> Same hitter two completely different profiles on back-to-back nights.</div>
+
+  <div class="flip-box">
+    <div class="flip-item">
+      <div class="flip-name">Varsho</div>
+      <div class="flip-ctx">vs Martin (RHP, Apr 5)</div>
+      <div class="flip-val" style="color:var(--green);">.395</div>
+      <div class="flip-lbl" style="color:var(--green);">2nd highest</div>
+    </div>
+    <div class="flip-arrow">→</div>
+    <div class="flip-item">
+      <div class="flip-name">Varsho</div>
+      <div class="flip-ctx">vs Wrobleski (LHP, Apr 6)</div>
+      <div class="flip-val" style="color:var(--rose);">.313</div>
+      <div class="flip-lbl" style="color:var(--rose);">near bottom</div>
+    </div>
+    <div style="flex:2;padding-left:20px;border-left:1px solid var(--border);">
+      <div style="font-size:13px;color:var(--mid);line-height:1.7;">Martin threw Changeups to lefties at 6% last night, still a deviating-from-career surprise. Wrobleski's career rate is 0.3%. LHH hitters face nothing but Slider and Sinker from him. Varsho does not handle that combination well. Three nights, three different puzzles for the same hitter.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;padding:3px 18px;margin-bottom:6px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:130px;flex-shrink:0;">Hitter</div>
+    <div style="width:26px;flex-shrink:0;"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;">Expected production tonight</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:42px;text-align:right;">exp</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;padding-left:6px;">Why</div>
+  </div>
+  <div id="muRows"></div>
+
+  <div style="margin-top:12px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--green);border-radius:2px;"></div>Lineup edge</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--rose);border-radius:2px;"></div>Tough matchup</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:20px;height:1px;background:rgba(232,0,45,.42);"></div>League average</div>
+    <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">Faded region = uncertainty range</div>
+  </div>
+</div>
+
+<!-- ══ WATCH FOR ══ -->
+<div class="panel" id="p2">
+  <div class="lede">Three questions to watch through the first three innings. The Slider is the key variable. When it locates, this is a very long night for left-handed hitters.</div>
+  <div id="wfItems"></div>
+
+  <div class="callout seq" style="margin-top:20px;">
+    <strong>Sequencing note:</strong> Wrobleski opens at-bats against LHH with Sinker or 4-Seam roughly 70% of the time, then feeds the Slider in competitive counts. At 1-1, the Slider appears 52% of the time. This is a consistent pattern across his career. Left-handed hitters who can foul off the Sinker and survive into deeper counts will see the Slider. The question is whether they can do anything with it.
+  </div>
+</div>
+
+<!-- ══ THE EDGE ══ -->
+<div class="panel" id="p3">
+  <div class="lede">The Jays project slightly above league average against Wrobleski, driven almost entirely by the right-handed hitters. <strong>The LHH side is where the suppression happens.</strong></div>
+
+  <div class="edge-hero">
+    <div class="eh-stats">
+      <div class="eh-s"><div class="eh-val" style="color:var(--amber);">Slight</div><div class="eh-lbl">Lineup advantage</div></div>
+      <div class="eh-s"><div class="eh-val" style="color:var(--amber);">+3.5%</div><div class="eh-lbl">Above league average</div></div>
+      <div class="eh-s"><div class="eh-val" style="color:var(--amber);">Moderate</div><div class="eh-lbl">Confidence</div></div>
+    </div>
+    <div class="eh-prose">The edge comes from the right-handed hitters. Springer, Guerrero, and Kirk all face a pitch mix they can handle from the right side. <strong>Left-handed hitters are the suppressed group tonight.</strong> Varsho, Lukes, and Giménez all project below their baselines. Whether the RHH advantage is enough to offset the LHH difficulty depends on where in the order lefties sit relative to when Wrobleski is most sharp.
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">What makes the edge real</div>
+      <div class="prose">Wrobleski's Slider is his best pitch by xwOBA (.253) but it runs away from right-handed hitters. Against RHH he goes to the 4-Seam first and mixes the Cutter in heavily. <strong>Springer and Guerrero face a more balanced attack than LHH do.</strong> The Curveball and Cutter have been hittable across his career. If those are in play, the right side of the lineup can do damage.</div>
+    </div>
+    <div class="card">
+      <div class="card-hd">What kills the edge</div>
+      <div class="prose">Slider command. When the Slider is locating against lefties, there is no viable alternative pitch to look for and the at-bat is nearly unwinnable. Across his career the Slider xwOBA is .253, his best pitch. <strong>If it is sharp tonight, LHH will struggle and the top of the order loses roughly half its projected edge.</strong> The velocity drop on the fastball (-1.7 mph in his 2026 debut) is also worth watching.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BOTTOM LINE ══ -->
+<div class="panel" id="p4">
+
+  <div class="lede">Home opener. Wrobleski is a left-hander who makes life hard for left-handed hitters by design. The right side of the lineup carries this game.</div>
+
+  <div class="tonight-grid">
+    <div class="tg-card best">
+      <div class="tg-tag">Top of the list</div>
+      <div class="tg-name">Springer</div>
+      <div class="tg-body">Leads at .422 for the fourth game running. RHH against a LHP with a manageable 4-Seam and Cutter mix from the right side. <strong>Against a Slider-heavy LHP, he is in the best position of anyone in this lineup.</strong></div>
+    </div>
+    <div class="tg-card flip">
+      <div class="tg-tag">The move of the night</div>
+      <div class="tg-name">Heineman</div>
+      <div class="tg-body">Up to second at .415, her highest projection of the young season. <strong>LHH who handles the Sinker well in her 2025 splits.</strong> Against a pitcher who throws 33% Sinkers to lefties, that translates directly. The Slider is the risk, but the Sinker is the pitch she is set up for.</div>
+    </div>
+    <div class="tg-card watch">
+      <div class="tg-tag">Key variable</div>
+      <div class="tg-name">Slider command</div>
+      <div class="tg-body">Wrobleski's Slider at 1-1 against LHH appears 52% of the time. <strong>Whether he can locate it consistently determines whether the LHH projections hold or the suppression is even worse.</strong> Watch the first two LHH at-bats carefully.</div>
+    </div>
+    <div class="tg-card worst">
+      <div class="tg-tag">Toughest projection</div>
+      <div class="tg-name">Lukes / Giménez</div>
+      <div class="tg-body">Both LHH, both projecting near or below .285. <strong>Slider-Sinker diet with no Changeup to disrupt timing.</strong> If they are in the lineup, they face a challenging pitch mix without a clear pitch to look for. Lukes at .285, Giménez at .283.</div>
+    </div>
+  </div>
+
+  <div class="honest-box">
+    <div class="hb-tag">The honest read</div>
+    <div class="hb-body">Three PA against Wrobleski in August 2025 is not enough to change these projections. The read is built on his career tendencies and the lineup's 2025 pitch-type splits. The biggest uncertainty tonight is the velocity drop on his fastball, down 1.7 mph from career. <strong>If he is pitching at 94 rather than 96, the Jays' right-handed hitters are in a better position than the career numbers suggest.</strong> That story starts in the first inning.</div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel 4-6-26. Home opener. Justin Wrobleski, LHP, gets the ball for the Dodgers.<br><br>
+      Wrobleski attacks LHH with Slider and Sinker, essentially no Changeup, 0.3% career rate. Martin did the same thing last night, except for Martin it was a one-night change. For Wrobleski it is the career pattern.<br><br>
+      That means Heineman, who handles the Sinker, moves up to second in the projection at .415. Varsho, who projected second last night against Martin, drops near the bottom at .313. Same hitter, three consecutive different puzzles.<br><br>
+      Springer leads at .422 for the fourth consecutive night.<br><br>
+      Watch the Slider command in the first two LHH at-bats. When it locates, left-handed hitters have very little to look for.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="footer">Statcast data via Baseball Savant · 511 effective weighted pitches · 33 career starts · Arm Chair Analyst · @scherrology</div>
+
+<script>
+const PC={'4-Seam Fastball':'#E8002D','Changeup':'#fb923c','Slider':'#c084fc','Cutter':'#38bdf8','Sinker':'#f4b942','Curveball':'#2dd4a0','Sweeper':'#a78bfa'};
+const LG=.320;
+
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+  if(i===0)drawMv();
+  if(i===1&&!window._mu)buildMu();
+  if(i===2&&!window._wf)buildWf();
+}
+
+function mkBars(data,id,mx){
+  const c=document.getElementById(id);if(!c)return;
+  data.forEach(p=>{
+    const col=PC[p.n]||'#888';
+    const r=document.createElement('div');r.className='abar';
+    r.innerHTML=`<div class="abar-n">${p.n}</div><div class="abar-t"><div class="abar-f" style="width:${p.p/mx*100}%;background:${col};"></div></div><div class="abar-p" style="color:${col};">${p.p}%</div>${p.v?`<div class="abar-v">${p.v} mph</div>`:''}`;
+    c.appendChild(r);
+  });
+}
+
+mkBars([
+  {n:'4-Seam Fastball',p:32.9,v:95.7},{n:'Slider',p:26.2,v:87.6},
+  {n:'Sinker',p:17.2,v:94.9},{n:'Cutter',p:10.9,v:92.1},
+  {n:'Curveball',p:8.4,v:81.7},{n:'Changeup',p:3.1,v:87.4},
+],'mixBars',38);
+mkBars([
+  {n:'Slider',p:33.9},{n:'Sinker',p:33.0},{n:'4-Seam Fastball',p:25.0},
+  {n:'Curveball',p:4.3},{n:'Cutter',p:2.0},{n:'Changeup',p:0.3},
+],'lhh',38);
+mkBars([
+  {n:'4-Seam Fastball',p:36.0},{n:'Slider',p:23.2},{n:'Cutter',p:14.4},
+  {n:'Sinker',p:11.0},{n:'Curveball',p:10.1},{n:'Changeup',p:4.2},
+],'rhh',40);
+
+function drawMv(){
+  const cv=document.getElementById('mv');if(!cv)return;
+  const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(0,0,0,.07)';ctx.fillRect(0,0,W,H);
+  const cx=W/2,cy=H/2,sc=36;
+  ctx.strokeStyle='rgba(255,255,255,.07)';ctx.lineWidth=1;
+  [[0,cy,W,cy],[cx,0,cx,H]].forEach(l=>{ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();});
+  ctx.fillStyle='rgba(255,255,255,.16)';ctx.font='8px IBM Plex Mono';
+  ctx.textAlign='center';ctx.fillText('Arm-side →',W-34,cy-5);ctx.fillText('← Glove-side',34,cy-5);
+  ctx.textAlign='left';ctx.fillText('↑ Rise',cx+4,11);
+  // Weighted movement profile (LHP, pfx_x from Statcast)
+  [
+    {n:'4-Seam Fastball',x:0.60,z:1.36,s:32.9},
+    {n:'Slider',         x:-0.27,z:0.03,s:26.2},
+    {n:'Sinker',         x:1.20,z:0.89,s:17.2},
+    {n:'Cutter',         x:-0.05,z:0.72,s:10.9},
+    {n:'Curveball',      x:-0.66,z:-0.75,s:8.4},
+    {n:'Changeup',       x:0.94,z:0.26,s:3.1},
+  ].forEach(p=>{
+    const px=cx+p.x*sc,py=cy-p.z*sc,r=Math.sqrt(p.s)*1.75,col=PC[p.n]||'#aaa';
+    ctx.beginPath();ctx.arc(px,py,r,0,Math.PI*2);ctx.fillStyle=col+'a0';ctx.fill();
+    ctx.strokeStyle=col;ctx.lineWidth=1.5;ctx.stroke();
+    const ab={'4-Seam Fastball':'FF','Changeup':'CH','Slider':'SL','Sinker':'SI','Curveball':'CU','Cutter':'CT'};
+    ctx.fillStyle='#fff';ctx.font='8px IBM Plex Mono';ctx.textAlign='center';ctx.fillText(ab[p.n]||p.n.slice(0,2),px,py+3);
+  });
+  ctx.fillStyle='rgba(255,255,255,.13)';ctx.font='8px IBM Plex Mono';ctx.textAlign='left';ctx.fillText('size = career usage',5,H-5);
+}
+drawMv();
+
+const MD=[
+  {n:'Springer',    h:'R',e:.422,lo:.319,hi:.527,cls:'h',why:'RHH vs LHP · 4-Seam first, Slider he can handle · leads for 4th straight game'},
+  {n:'Heineman',    h:'L',e:.415,lo:.313,hi:.520,cls:'h',why:'+.055 vs baseline · hits the Sinker · career high projection this series'},
+  {n:'Guerrero Jr.',h:'R',e:.378,lo:.278,hi:.482,cls:'h',why:'RHH · 4-Seam and Cutter mix he handles well'},
+  {n:'Kirk',        h:'R',e:.348,lo:.251,hi:.451,cls:'n',why:'RHH · near baseline · Curveball exposure is the risk'},
+  {n:'Schneider',   h:'R',e:.345,lo:.248,hi:.448,cls:'n',why:'RHH · Slider from LHP runs away · slightly below baseline'},
+  {n:'Sánchez',     h:'L',e:.330,lo:.234,hi:.434,cls:'n',why:'LHH · near baseline · handles the Sinker reasonably'},
+  {n:'Barger',      h:'L',e:.326,lo:.230,hi:.428,cls:'n',why:'LHH · Slider-Sinker diet · holds close to baseline'},
+  {n:'Clement',     h:'R',e:.315,lo:.220,hi:.416,cls:'n',why:'RHH · baseline result projected'},
+  {n:'Varsho',      h:'L',e:.313,lo:.219,hi:.415,cls:'s',why:'LHH · -.040 vs baseline · Slider-Sinker with no Changeup is her toughest profile'},
+  {n:'Straw',       h:'R',e:.300,lo:.208,hi:.400,cls:'s',why:'RHH · below baseline · Slider runs away from him'},
+  {n:'Lukes',       h:'L',e:.285,lo:.194,hi:.384,cls:'s',why:'LHH · -.038 · Slider-Sinker diet, lowest LHH projection'},
+  {n:'Giménez',     h:'L',e:.283,lo:.192,hi:.382,cls:'s',why:'LHH · near-lowest projection · does not hit Slider/Sinker mix well'},
+  {n:'Okamoto',     h:'R',e:null,lo:null,hi:null,cls:'x',why:'No projection'},
+];
+
+function buildMu(){
+  window._mu=true;
+  const c=document.getElementById('muRows');if(!c)return;
+  const xMn=.12,xMx=.62,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
+  MD.forEach(d=>{
+    const row=document.createElement('div');
+    if(d.cls==='x'){
+      row.className='mu-row x';
+      row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div style="flex:1;font-size:12px;color:var(--dim);">No projection available</div><div class="mr-num" style="color:var(--dim);">—</div><div class="mr-note"></div>`;
+    } else {
+      const bCol=d.cls==='h'?'var(--green)':(d.cls==='s'?'var(--rose)':'var(--dim)');
+      row.className=`mu-row ${d.cls}`;
+      row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div class="mr-track"><div class="mr-ci" style="left:${xs(d.lo)};width:${((d.hi-d.lo)/(xMx-xMn)*100).toFixed(1)}%;"></div><div class="mr-fill" style="width:${xs(d.e)};background:${bCol};"></div><div class="mr-lg" style="left:${xs(LG)};"></div></div><div class="mr-num" style="color:${bCol};">${d.e.toFixed(2)}</div><div class="mr-note">${d.why}</div>`;
+    }
+    c.appendChild(row);
+  });
+}
+buildMu();
+
+const WF=[
+  {num:1,
+   q:'Is the Slider locating against left-handed hitters?',
+   body:'Wrobleski throws the Slider 34% of the time to LHH and at 1-1 it jumps to 52%. <strong>When it locates, left-handed hitters have almost no alternative pitch to look for.</strong> The Changeup barely exists against them. If the Slider is sharp and he is placing it glove-side and down, the LHH side of the Jays lineup is in for a very difficult night. If it is flat or in the zone, hitters can sit on the Sinker and wait.',
+   if1:'Slider sharp, locating down and away to LHH',
+   then1:'LHH hitters struggle all night. Heineman\'s Sinker-hit projection may not come. Martin-like suppression for the LHH side.',
+   if2:'Slider flat or leaking over the zone',
+   then2:'LHH can be more aggressive on the Sinker in hittable counts. The projection for Heineman and Sánchez holds or improves.'},
+  {num:2,
+   q:'Is the fastball velocity back near 95-96 mph?',
+   body:'Wrobleski\'s career fastball sits at 95.7 mph. His one 2026 start had it at 94.0, a drop of 1.7 mph. <strong>For a pitcher whose best pitch by xwOBA is the Slider, not the fastball, velocity on the 4-Seam matters because it affects whether hitters can time up the Sinker.</strong> If he is at 93-94 instead of 95-96, right-handed hitters in particular are in a better spot tonight.',
+   if1:'Fastball sitting 95-96 mph, back to career norm',
+   then1:'The Sinker and 4-Seam establish the at-bat properly. Hitters have to respect the velocity, which sets up the Slider.',
+   if2:'Fastball sitting 93-94 as in his 2026 debut',
+   then2:'Right-handed hitters can time up faster. Springer and Guerrero are in a better position than the career numbers suggest.'},
+  {num:3,
+   q:'Does the Sinker sequence into the Slider vs LHH?',
+   body:'The sequencing pattern across his career: open with Sinker or 4-Seam, then feed the Slider in competitive counts. Against LHH in 1-1 counts, the Slider comes 52% of the time. <strong>The Sinker is the setup pitch. The Slider is the payoff.</strong> If LHH can disrupt that sequence by fouling off the Sinker and getting to a hitter\'s count, the at-bat changes. If not, Wrobleski controls the count and the Slider puts it away.',
+   if1:'LHH working deep counts, fouling off the Sinker',
+   then1:'More fastball counts, more pitch variety. Heineman and Sánchez become active threats.',
+   if2:'LHH putting Sinkers in play early or chasing Sliders',
+   then2:'Quick at-bats, low pitch counts. Wrobleski works efficiently and the bullpen stays fresh.'}
+];
+
+function buildWf(){
+  window._wf=true;
+  const c=document.getElementById('wfItems');if(!c)return;
+  WF.forEach(w=>{
+    const el=document.createElement('div');el.className='wf-item';
+    el.innerHTML=`<div class="wf-top"><div class="wf-num">${w.num}</div><div class="wf-content"><div class="wf-q">${w.q}</div><div class="wf-body">${w.body}</div></div></div><div class="wf-footer"><div class="wff"><div class="wff-tag">If yes →</div><div style="font-size:12px;color:var(--amber);font-weight:600;margin-bottom:4px;">${w.if1}</div><div class="wff-val">${w.then1}</div></div><div class="wff"><div class="wff-tag">If no →</div><div style="font-size:12px;color:var(--rose);font-weight:600;margin-bottom:4px;">${w.if2}</div><div class="wff-val">${w.then2}</div></div></div>`;
+    c.appendChild(el);
+  });
+}
+buildWf();
+</script>
+</body>
+</html>

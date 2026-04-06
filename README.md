@@ -10,7 +10,7 @@ Daily pre-game matchup intelligence and post-game retrospective analysis for the
 
 Before every Jays game, a full pre-game matchup preview is published covering the opposing starter. After the game, a retrospective evaluates the pre-game read against observed outcomes and updates the system's working knowledge of that pitcher type going forward.
 
-The analysis is built around a self-calibrating framework that names its assumptions explicitly, scores them after each game, and carries what it learns into the next preview. That loop is the point. A single preview is directional. A season of previews and retrospectives is a progressively sharper instrument.
+The analysis is built around a self-calibrating framework that names its assumptions explicitly, scores them after each game, and carries what it learns into the next preview. That loop is the point. A single preview is directional. A season of previews and retrospectives is a progressively sharper instrument, provided the self-learning layer actually improves forecast accuracy. Demonstrating that it does is the primary validation objective for the 2026 season.
 
 ---
 
@@ -26,7 +26,7 @@ For each hitter facing pitcher *p*:
 exp_wOBA = Σ (pitch_weight_k × hitter_wOBA_vs_pitch_k)
 ```
 
-where `pitch_weight_k` is the pitcher's projected usage fraction for pitch type *k* against the hitter's handedness, and `hitter_wOBA_vs_pitch_k` is the hitter's 2025 wOBA against pitch type *k* across all pitchers. A minimum of 10 plate appearances is required to use a hitter's pitch-type split; below that threshold the hitter's overall wOBA serves as a fallback.
+where `pitch_weight_k` is the pitcher's projected usage fraction for pitch type *k* against the hitter's handedness, and `hitter_wOBA_vs_pitch_k` is the hitter's prior-season wOBA against pitch type *k* across all pitchers. A minimum of 10 plate appearances is required to use a hitter's pitch-type split; below that threshold the hitter's overall wOBA serves as a fallback.
 
 ### Pitcher Sample Weighting
 
@@ -38,11 +38,11 @@ recency_weight = 0.5^(age_in_days / 180)
 
 A pitch thrown at mid-2025 carries approximately 26% the weight of a pitch thrown today. A pitch from mid-2024 carries approximately 9%. This produces a recency-weighted effective sample count used for confidence classification, and a recency-weighted pitch mix by batter handedness.
 
-The half-life of 180 days is a principled default. It is not empirically validated against prediction accuracy and represents an assumption about the rate at which pitcher approaches stabilize across seasons.
+The half-life of 180 days is a principled default. It has not been empirically validated against prediction accuracy. Calibration against historical data is a named objective in the validation roadmap below.
 
 ### Credible Intervals
 
-Uncertainty around each exp_wOBA point estimate is expressed as a 90% credible interval derived from a Beta conjugate prior. The prior is parameterized with a strength of K = 60 pseudo-observations anchored to the computed exp_wOBA:
+Uncertainty around each exp_wOBA point estimate is expressed as a 90% credible interval derived from a Beta conjugate prior, parameterized with strength K = 60 pseudo-observations anchored to the computed exp_wOBA:
 
 ```
 alpha_0 = exp_wOBA × K
@@ -50,67 +50,118 @@ beta_0  = (1 − exp_wOBA) × K
 CI_90   = [Beta(0.05, α₀, β₀), Beta(0.95, α₀, β₀)]
 ```
 
-For a hitter with an exp_wOBA of .350, this produces a 90% CI of approximately [.252, .453], a width of .201. The interval is wide by design at small effective sample sizes; it narrows as the pitcher's career sample grows and as assumption reliability accumulates in the memory system. K = 60 is asserted, not derived from calibration.
+For a hitter with an exp_wOBA of .350 this produces a 90% CI of approximately [.252, .453], a width of .201. K = 60 is asserted, not derived from calibration. The validation roadmap below includes a grid search over K and half-life values to identify parameters that minimize out-of-sample error on historical data.
 
-**Important distinction:** The credible intervals are genuine Bayesian posterior quantiles. The point estimate (exp_wOBA) is an empirical Bayes approximation: a weighted average computed before inference, not a posterior mean. These are not equivalent. A fully Bayesian formulation would propagate uncertainty through the pitch mix itself and produce the point estimate as a posterior mean. That is the named long-term direction for this framework.
+**Important distinction:** The credible intervals are genuine Bayesian posterior quantiles. The point estimate (exp_wOBA) is an empirical Bayes approximation, a weighted average computed before inference, not a posterior mean. These are not equivalent. A fully Bayesian formulation would propagate uncertainty through the pitch mix itself and produce the point estimate as a posterior mean with partial pooling across pitcher archetypes. That is the named long-term direction for this framework.
 
 ### Confidence Classification
 
-Confidence tiers are assigned by effective weighted sample size and, where available, historical mean absolute error (MAE) for the pitcher archetype:
-
-| Tier | Effective sample | Historical MAE |
-|------|-----------------|----------------|
+| Tier | Effective weighted sample | Historical MAE |
+|------|--------------------------|----------------|
 | LOW | < 200 | any |
 | MODERATE | 200 – 700 | ≤ 0.060 |
 | HIGH | ≥ 700 | ≤ 0.040 |
 
-Historical MAE is itself recency-weighted (half-life 30 days) from the memory system, and initializes as missing for new pitcher archetypes.
+Historical MAE is recency-weighted (half-life 30 days) from the memory system and initializes as missing for new pitcher archetypes.
 
-### Assumption Tracking
+### Assumption Tracking and Memory
 
 Each preview names two to three pre-game assumptions with explicit expected values, tolerances, and hitter-level sensitivity weights. After each game the retrospective:
 
-1. Derives actual values for quantifiable assumptions directly from the pitch file (Changeup-to-LHH%, Sweeper usage%)
+1. Derives actual values for quantifiable assumptions directly from the pitch file
 2. Scores each assumption: held / partial / failed
 3. Attributes each hitter's residual to the most specific available explanation, in priority order: within expected variance, insufficient PA sample, no pre-game expectation, assumption miss, execution miss, or variance miss
-4. Updates a persistent assumption audit file, which feeds the reliability weighting for the next preview involving the same pitcher type
+4. Updates a persistent memory file by pitcher archetype
 
-Assumption reliability is recency-weighted (half-life 30 days). An assumption that held six months ago carries less weight than one that failed last week.
+Assumption reliability is recency-weighted (half-life 30 days). Failed assumptions reduce the reliability weight for that assumption in the next preview for the same pitcher type, which widens credible intervals for exposed hitters and applies directional corrections to point estimates.
+
+Whether this layer improves forecast accuracy over a static prior is the central empirical question the validation notebook is designed to answer.
+
+### Pitch Sequencing
+
+Starting with the April 5 Davis Martin game, pitch sequencing analysis is incorporated into retrospectives and previews where career sample size permits. The implementation uses pitch transition matrices by count state and handedness, computed from the full career Statcast file for each pitcher. Sparse cells are flagged rather than pooled. Partial pooling by pitcher archetype is a planned extension that pairs with the Bayesian hierarchical rebuild.
+
+---
+
+## Validation Roadmap
+
+This section documents what has been demonstrated, what is in progress, and what has not yet been tested. The distinction matters.
+
+### Current state
+
+Seven games scored in the 2026 season (April 5 through ongoing). The retrospective memory system is accumulating hitter-level audit records and assumption audit records. In-season MAE is being tracked. No out-of-sample validation against historical data has been completed.
+
+### Planned: Historical backtest notebook
+
+A backtest notebook covering approximately 50 starts from the 2025 season is in development. The methodology:
+
+**Setup:** For each start in the backtest sample, generate exp_wOBA predictions using only information available before that game: the pitcher's Statcast history through the day before, and the lineup's prior-season pitch-type splits. No forward-looking data.
+
+**Primary metric:** Mean absolute error between predicted and observed wOBA at the hitter-game level, for hitters with at least 2 PA against the starter.
+
+**Baseline comparisons:**
+
+- *Naive baseline 1:* The hitter's overall prior-season wOBA, ignoring the pitcher entirely.
+- *Naive baseline 2:* League average wOBA by handedness matchup, a single number for LHH vs LHP, LHH vs RHP, etc.
+- *Naive baseline 3:* The hitter's prior-season wOBA against the pitcher's primary handedness (LHP or RHP) with no pitch-type specificity.
+
+The framework earns its complexity only if it reduces MAE relative to all three baselines. If it does not outperform naive baseline 1 on aggregate, there is no case for the pitch-type weighting. That result, whatever it is, will be documented.
+
+**Error decomposition:**
+
+- MAE by confidence tier (LOW / MODERATE / HIGH)
+- MAE by pitcher archetype (LHP starter, RHP bulk, high-Slider, Sinker-heavy, etc.)
+- MAE by handedness matchup (LHH vs LHP being the theoretically hardest case)
+- Residual distribution to check for systematic bias
+
+**Self-learning layer evaluation:** The backtest will be run twice, once with the memory system active and once with a static prior that does not update from game to game. If the memory layer does not improve MAE over the static version in the out-of-sample period, that is a finding worth documenting, not suppressing.
+
+### Planned: Parameter calibration
+
+A grid search over K (prior strength: 30, 60, 100, 200) and half-life (90, 180, 270, 365 days) using the backtest sample to identify combinations that minimize out-of-sample MAE. Results will replace the current asserted defaults with empirically grounded values, or will document that the results are not sensitive to parameter choice within a reasonable range.
+
+### Planned: Sparse-input stress test
+
+Systematic evaluation of framework behavior as effective sample decreases: pitcher with one 2026 start only, pitcher with no MLB Statcast history, hitter with fewer than 10 PA against a given pitch type across the prior season. The goal is to confirm that the framework degrades gracefully rather than producing confidently wrong outputs.
+
+### Planned: Bayesian hierarchical rebuild
+
+The long-term formulation replaces the frequentist weighted average with a proper hierarchical model: pitcher-type priors, pitch-type priors at the hitter level, and partial pooling by handedness. This addresses the core limitation that the current point estimate is not a posterior mean. Pitch sequencing assumptions will integrate naturally as priors over transition matrices. Target implementation: offseason 2026.
 
 ---
 
 ## Limitations
 
-These are honest. Some are addressable with a more complete statistical formulation. Some are structural to the problem.
+These are honest. Some are addressable with a more complete statistical formulation. Some are structural.
 
-**The point estimate is not a posterior.** exp_wOBA is a weighted average computed before inference, not a Bayesian posterior mean. The credible intervals are genuine Beta posterior quantiles, but they are placed around a frequentist point estimate. The two are not equivalent. A fully Bayesian formulation would propagate uncertainty through the pitch mix itself and produce the point estimate as a posterior mean with partial pooling across pitcher archetypes. That is the named long-term direction for this framework.
+**The point estimate is not a posterior.** exp_wOBA is a weighted average computed before inference, not a Bayesian posterior mean. The credible intervals are genuine Beta posterior quantiles placed around a frequentist point estimate. The two are not equivalent.
 
-**The prior strength K = 60 and the recency half-life of 180 days are asserted defaults, not calibrated parameters.** The correct values depend on the distributional properties of pitcher evolution and hitter variance across seasons. Neither has been validated against historical prediction accuracy. Both represent assumptions that may be meaningfully wrong.
+**K = 60 and the recency half-life of 180 days are asserted defaults, not calibrated parameters.** Neither has been validated against historical prediction accuracy. Both will be calibrated in the backtest notebook.
 
-**Single-game scoring is dominated by measurement noise.** The standard error of observed wOBA in a 2-plate-appearance sample is approximately 0.337. The retrospective threshold for flagging an outcome as outside expected variance is a residual of 0.050, well below one standard deviation of sampling noise at this scale. Individual game verdicts are directional signals at best. Season-level mean absolute error is the appropriate unit of evaluation.
+**Single-game scoring is dominated by measurement noise.** The standard error of observed wOBA in a 2-plate-appearance sample is approximately 0.337. The retrospective threshold for flagging an outcome as outside expected variance is 0.050, well below one standard deviation of sampling noise at this scale. Individual game verdicts are directional. Season-level MAE is the appropriate unit of evaluation.
 
-**Pitch-type wOBA does not distinguish between pitchers.** A hitter's performance against "Changeup" is aggregated across every pitcher who has thrown that pitch to them. No two pitchers throw the same Changeup. Pitch velocity, movement, and release point are not incorporated into the hitter-pitch match; only the categorical pitch type label is used.
+**Pitch-type wOBA does not distinguish between pitchers.** A hitter's performance against "Changeup" is aggregated across every pitcher who has thrown that pitch to them. Pitch velocity, movement profile, and release point are not incorporated into the hitter-pitch match. Feature expansion beyond categorical pitch type labels is a named validation objective.
 
-**Hitter outcomes within a game are treated as independent.** In practice they are correlated. If a pitcher's Changeup is effective on a given day, it is effective against the entire lineup, not a random subset. This correlation structure is not modeled, which inflates the apparent informativeness of single-game retrospective scores.
+**Hitter outcomes within a game are treated as independent.** If a pitcher's Changeup is effective on a given day it is effective against the lineup, not a random subset. This correlation structure is not modeled, which inflates the apparent informativeness of single-game retrospective scores.
 
-**Pitch classification is not perfectly stable across seasons.** Statcast classification algorithms are periodically updated. A pitch recorded as "Cutter" in one season may have been recorded as "Slider" in another. The framework cannot distinguish a genuine repertoire change from a reclassification artifact.
+**Pitch classification is not stable across seasons.** Statcast classification algorithms are updated periodically. The framework cannot distinguish a genuine repertoire change from a reclassification artifact.
 
-**Assumption inputs are analyst-determined.** Named assumptions, expected values, tolerances, and importance weights are specified by the analyst before each game. There is no objective derivation process. A different analyst would make different choices. The assumption framework is the most transparent component of the system and also the most subjective.
+**Assumption inputs are analyst-determined.** Named assumptions, expected values, tolerances, and importance weights are specified before each game. There is no objective derivation process.
 
-**No adjustment for run environment, umpire, or weather.** The league-average wOBA baseline of .320 is applied uniformly. Park factors, umpire strike-zone tendencies, and weather conditions (wind, temperature) affect outcomes in ways that interact with pitcher command and batted ball results. None are incorporated.
+**No adjustment for run environment, umpire, or weather.** The league-average wOBA baseline of .320 is applied uniformly regardless of park, umpire, or conditions.
 
 ---
 
 ## Scope
 
-Analysis covers the **opposing bulk pitcher's plate appearances only.** Opener innings are logged in the retrospective but excluded from scoring and memory. Relief pitcher usage, pinch-hitting sequences, and bullpen game structures are excluded. Modeling these pre-game from public data is not defensible.
+Analysis covers the opposing starter's plate appearances. Opener innings are logged in the retrospective but excluded from scoring and memory. Modeling relief pitcher usage or bullpen structure pre-game from public data is not defensible.
 
 ---
 
 ## Site Structure
 
 ```
-index.html                           game hub, all previews and retrospectives
+index.html                           game hub
 games/YYYY-MM-DD-pitcher/            pre-game matchup previews
 retro/YYYY-MM-DD-pitcher/            post-game retrospectives
 analysis/                            R source code
@@ -119,13 +170,13 @@ model_memory/                        persistent assumption and hitter audit memo
 
 ## Reproducibility
 
-Source code is published in `/analysis`. The framework runs on three scripts:
+Source code is published in `/analysis`. The framework runs on three core scripts:
 
-- `jays_matchup_intel_self_learning.R` — all core functions
+- `jays_matchup_intel_self_learning.R` — all core functions including multi-year weighted sampling, assumption tracking, and pitch sequencing
 - `preview_runner_YYYY-MM-DD.R` — game-specific preview execution
 - `retro_runner_YYYY-MM-DD_pitcher.R` — game-specific retrospective execution
 
-Statcast pitch-level exports sourced from [Baseball Savant](https://baseballsavant.mlb.com).
+Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-level exports. No proprietary data sources.
 
 ---
 

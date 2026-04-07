@@ -1,1 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Yoshinobu Yamamoto · April 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000e20;--navy:#001a3d;--panel:#071e3d;--panel2:#0b2245;
+  --red:#E8002D;--white:#fff;--cream:#ddeaf8;
+  --gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;
+  --border:rgba(255,255,255,.07);--bhi:rgba(255,255,255,.13);
+  --green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;
+  --lad:#003DA5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
 
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;width:fit-content;}
+.back-link:hover{color:var(--white);}
+.back-link span{color:var(--red);}
+
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;overflow:hidden;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red) 0%,rgba(232,0,45,.3) 50%,transparent 100%);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hero-hed{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1;margin-bottom:8px;}
+.hero-hed .red{color:var(--red);}
+.hero-hed .role{font-size:18px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;letter-spacing:.04em;}
+.hero-dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
+.hero-dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px 10px 12px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;line-height:1;}
+.aca-handle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;align-items:stretch;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);line-height:1.4;}
+
+.tab-bar{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.tab:hover{color:var(--white);}.tab.active{color:var(--white);border-bottom-color:var(--red);}
+
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.divider{height:1px;background:var(--border);margin:18px 0;}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.gold{background:rgba(196,162,75,.07);border:1px solid rgba(196,162,75,.22);color:var(--cream);}
+.callout.gold strong{color:var(--gold);}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.16);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.callout.diag strong{color:var(--mid);}
+
+/* ARSENAL BARS */
+.abar{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.abar-n{font-size:12px;color:var(--cream);width:130px;flex-shrink:0;}
+.abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.abar-f{height:100%;border-radius:2px;opacity:.88;}
+.abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:36px;text-align:right;flex-shrink:0;}
+.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:58px;text-align:right;color:var(--dim);flex-shrink:0;}
+
+/* MATCHUP ROWS */
+.mu-row{display:flex;align-items:center;gap:12px;padding:11px 18px;margin-bottom:7px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:border-color .15s;}
+.mu-row:hover{border-color:var(--bhi);}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.h::before{background:var(--green);}
+.mu-row.s::before{background:var(--rose);}
+.mu-row.n::before{background:rgba(255,255,255,.1);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:130px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-track{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
+.mr-ci{position:absolute;top:20%;bottom:20%;background:rgba(255,255,255,.06);}
+.mr-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
+.mr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:2;}
+.mr-num{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:42px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:6px;line-height:1.35;}
+.bvp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:4px;vertical-align:middle;}
+
+/* BASELINE TABLE */
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);}
+.bl-row:last-child{border-bottom:none;}
+.bl-label{font-size:12px;color:var(--mid);}
+.bl-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.bl-badge{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 6px;border-radius:2px;}
+.bl-badge.beat{background:rgba(45,212,160,.1);color:var(--green);}
+.bl-badge.close{background:rgba(244,185,66,.1);color:var(--amber);}
+
+/* WF */
+.wf-item{margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+.wf-top{display:flex;align-items:flex-start;}
+.wf-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:rgba(255,255,255,.1);padding:20px 22px;flex-shrink:0;border-right:1px solid var(--border);width:72px;text-align:center;line-height:1;}
+.wf-content{padding:20px 22px;flex:1;}
+.wf-q{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:6px;}
+.wf-body{font-size:13px;color:var(--mid);line-height:1.75;}
+.wf-body strong{color:var(--cream);}
+.wf-footer{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.wff{padding:14px 22px;}.wff+.wff{border-left:1px solid var(--border);}
+.wff-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wff-val{font-size:12px;color:var(--cream);line-height:1.6;}
+
+/* BOTTOM LINE */
+.tonight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.tg-card{background:var(--panel2);border:1px solid var(--border);border-radius:4px;padding:18px;}
+.tg-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.tg-name{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;}
+.tg-body{font-size:12px;color:var(--mid);line-height:1.65;}
+.tg-body strong{color:var(--cream);}
+.tg-card.best{border-color:rgba(45,212,160,.2);}.tg-card.best .tg-tag{color:var(--green);}
+.tg-card.watch{border-color:rgba(244,185,66,.18);}.tg-card.watch .tg-tag{color:var(--amber);}
+.tg-card.worst{border-color:rgba(255,79,106,.2);}.tg-card.worst .tg-tag{color:var(--rose);}
+.tg-card.diag{border-color:rgba(255,255,255,.12);}.tg-card.diag .tg-tag{color:var(--dim);}
+
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<nav class="back-nav">
+  <a class="back-link" href="../../index.html"><span>←</span> All games</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">LAD @ TOR · Rogers Centre · April 7, 2026 · 7:07 PM ET · Game 2 of 3</div>
+      <div class="hero-hed">YOSHINOBU <span class="red">YAMAMOTO</span><span class="role">RHP · Los Angeles</span></div>
+      <div class="hero-dek">The 2025 World Series MVP. <em>The Jays have faced him three times, all in October.</em> The Splitter is the pitch that defines every at-bat. Against LHH he throws it 46% of the time. There is no soft way into this game.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-handle">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi">
+      <div class="mi-lbl">Confidence</div>
+      <div class="mi-val">Low</div>
+      <div class="mi-sub">3 starts vs Jays only · WS 2025 · 126 eff. pitches</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">BvP (Jays)</div>
+      <div class="mi-val">63 PA · 3 WS games</div>
+      <div class="mi-sub">Oct 25, Oct 31, Nov 1 2025 · diagnostic only</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">2026 Yamamoto</div>
+      <div class="mi-val">3.00 ERA · 1 start</div>
+      <div class="mi-sub">no 2026 Statcast file available</div>
+    </div>
+    <div class="mi">
+      <div class="mi-lbl">2026 record</div>
+      <div class="mi-val">4-6</div>
+      <div class="mi-sub">0-1 vs LAD</div>
+    </div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Model governance</div>
+    <div class="gov-txt">Champion model only in this preview. In-season blending, exploit score, and memory adjustments are logged as experimental challengers but do not appear in headline rankings. They must demonstrate out-of-sample lift before promotion.</div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab active" onclick="go(0)">Who Is He</div>
+  <div class="tab" onclick="go(1)">The Matchups</div>
+  <div class="tab" onclick="go(2)">Watch For</div>
+  <div class="tab" onclick="go(3)">Baseline Tournament</div>
+  <div class="tab" onclick="go(4)">Bottom Line</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══ WHO IS HE ══ -->
+<div class="panel active" id="p0">
+
+  <div class="lede">Yamamoto won the 2025 World Series MVP against this team. The Jays have faced him more than any other team this year that matters. The Splitter is his signature pitch and it dominates everything else he throws. <strong>Against LHH he deploys it nearly half the time.</strong> Against RHH the Curveball comes up more, but the Splitter never goes away.</div>
+
+  <div class="callout amber">
+    <strong>Important data note:</strong> This preview is built from three World Series starts against this specific Jays lineup. That is 235 pitches, 63 PA, and the most specific BvP data available. It is also the only Yamamoto data we have. Confidence is LOW. The playoff context may differ from his regular season approach. The pitch mix and hitter projections carry wider uncertainty than any previous preview this season.
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Arsenal from WS 2025 (vs Jays only)</div>
+      <div id="mixAll"></div>
+      <div class="divider"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs LHH</div>
+          <div id="mixLHH"></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs RHH</div>
+          <div id="mixRHH"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Pitch quality by xwOBA allowed</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">4-Seam Fastball</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);">.190 xwOBA · elite</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">Split-Finger</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);">.242 xwOBA · best pitch</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">Curveball</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);">.256 xwOBA · sharp break</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:12px;color:var(--cream);">Slider</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);">.207 xwOBA · rarely thrown</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;">
+          <span style="font-size:12px;color:var(--cream);">Cutter</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);">.392 xwOBA · hittable</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card-hd">Velocity</div>
+      <div style="font-size:12px;color:var(--mid);line-height:1.9;">
+        <div>4-Seam Fastball: <strong style="color:var(--cream);">96.3 mph</strong></div>
+        <div>Split-Finger: Statcast splits vary — typically 88-91 mph with extreme drop</div>
+        <div>Curveball: <strong style="color:var(--cream);">77.6 mph</strong> · massive 18 mph gap from fastball</div>
+        <div>Sinker: <strong style="color:var(--cream);">95.4 mph</strong> · rare but hittable (.634 xwOBA)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout gold">
+    <strong>The Splitter is not a normal pitch.</strong> At 96 mph in and 46% Splitters to LHH, Yamamoto creates a gap of 18+ mph between his fastball and curveball. The Splitter sits in between and drops off the table. Left-handed hitters who chase down and in will have a very long night. The pitch goes from fastball-plane to the dirt in the last 10 feet. It is the reason this man won the World Series MVP against this lineup.
+  </div>
+</div>
+
+<!-- ══ THE MATCHUPS ══ -->
+<div class="panel" id="p1">
+
+  <div class="lede">The champion model ranks LHH who handle Splitters well at the top. <strong>The diagnostic layer shows a different story for some of those hitters.</strong> The distinction between what the model says and what the WS data showed is explicitly separated below.</div>
+
+  <div class="callout diag">
+    <strong>Two layers, clearly separated.</strong> The rankings below come from the champion model: pitch-mix × 2025 prior skill, park-adjusted, no challengers. The BvP column shows actual outcomes from the World Series in October. BvP data with fewer than 10 PA against this pitcher does not move the headline ranking. It is context for the reader, not a model input.
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;padding:3px 18px;margin-bottom:6px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:130px;flex-shrink:0;">Hitter</div>
+    <div style="width:26px;flex-shrink:0;"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;">Champion model projection</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:42px;text-align:right;">exp</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;padding-left:6px;">Context</div>
+  </div>
+  <div id="muRows"></div>
+
+  <div style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--green);border-radius:2px;"></div>Champion edge</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--rose);border-radius:2px;"></div>Champion suppressed</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber);"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid var(--amber);"></div>BvP context (WS 2025, not in model)</div>
+    <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><span style="color:rgba(232,0,45,.6);">|</span> league avg</div>
+  </div>
+</div>
+
+<!-- ══ WATCH FOR ══ -->
+<div class="panel" id="p2">
+  <div class="lede">Three questions. All of them are about one pitch.</div>
+  <div id="wfItems"></div>
+</div>
+
+<!-- ══ BASELINE TOURNAMENT ══ -->
+<div class="panel" id="p3">
+
+  <div class="lede">Before any claims about what the model adds, it has to beat simple alternatives. Here is the full tournament for tonight's game.</div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Baseline tournament · April 7 2026 · Yamamoto vs Jays</div>
+    <div id="baselineRows"></div>
+    <div style="margin-top:18px;font-size:12px;color:var(--dim);line-height:1.7;">
+      The champion model projects team mean exp_wOBA of .350. It beats all four baselines. The meaningful gains come from the pitcher run prevention proxy (+.075) and the platoon baseline (+.036). The gain over Baseline A (hitter prior wOBA alone) is +.010, consistent with the running backtest. The question being answered: does a pitch-mix weighted model add signal over "the Jays are a good offensive team"? At game level, the evidence says yes. At hitter level, n=56 is not yet large enough to confirm.
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">What the baselines tell us</div>
+      <div class="prose">The team 2026 wOBA (Baseline C) of .260 is the honest read on what this Jays offense has done through seven games. Baseline A uses the 2025 prior at .340. The gap between C and A is the over-optimism problem the model has been carrying: <strong>the 2025 prior does not yet know this team is struggling.</strong> The champion model at .350 is still on the generous side. The in-season blend would pull it toward .320 but it is a challenger and has not yet proven lift.</div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Promotion rules for challengers</div>
+      <div class="prose">A challenger earns production status when it beats the champion on game-level MAE, improves lineup ranking accuracy, holds across n=200 hitter-game observations, and introduces no systematic bias. <strong>No exceptions.</strong> In-season blending, exploit score, memory, and sequencing are all Tier 2 or Tier 3 features. Tonight they are logged but invisible to the headline output.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BOTTOM LINE ══ -->
+<div class="panel" id="p4">
+
+  <div class="lede">The World Series MVP on the mound. Three starts against this lineup in October. The Jays went 1-2 in those games. The data tells a specific story about who handled Yamamoto and who did not.</div>
+
+  <div class="tonight-grid">
+    <div class="tg-card best">
+      <div class="tg-tag">Champion model top · LHH Splitter edge</div>
+      <div class="tg-name">Barger</div>
+      <div class="tg-body">Leads at .441. LHH with strong 2025 Splitter splits. Yamamoto throws the Splitter 46% to LHH. <strong>Note: Barger is day-to-day with bilateral ankle discomfort from Chicago.</strong> If not in the lineup the projection moves to Varsho or Giménez.</div>
+    </div>
+    <div class="tg-card watch">
+      <div class="tg-tag">Diagnostic tension</div>
+      <div class="tg-name">Varsho</div>
+      <div class="tg-body">Champion projects .418 (2nd). BvP context: <strong>0 wOBA in 8 PA in the World Series.</strong> The model says her Splitter splits are favorable. October said otherwise. Both are disclosed. The champion holds at .418 until BvP reaches 10+ PA.</div>
+    </div>
+    <div class="tg-card best">
+      <div class="tg-tag">Best RHH matchup</div>
+      <div class="tg-name">Springer</div>
+      <div class="tg-body">Fourth in the champion model at .363. <strong>Hit Yamamoto well in the World Series (.412 in 8 PA).</strong> The BvP supports the projection from both directions. Best aligned hitter in the lineup tonight.</div>
+    </div>
+    <div class="tg-card worst">
+      <div class="tg-tag">Toughest projection</div>
+      <div class="tg-name">Sánchez</div>
+      <div class="tg-body">Lowest at .273. LHH facing a pitcher who throws Splitters 46% against them. Sánchez does not have strong Splitter splits in 2025. <strong>No BvP data from the World Series.</strong></div>
+    </div>
+  </div>
+
+  <div class="honest-box">
+    <div class="hb-tag">The honest read</div>
+    <div class="hb-body">The Yamamoto sample is the smallest of any preview this season. Three WS starts, 126 effective weighted pitches, all from October, all in the highest-leverage context possible. The model is working from less information than usual and the confidence rating reflects that. <strong>What is defensible: the Splitter is his primary weapon against LHH and hitters who handled that pitch in 2025 project better. What is not defensible: treating this preview with the same confidence as the Freeland or Martin reads.</strong> The game-level team projection of .350 beats all baselines but the uncertainty is wider than usual.</div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel 4-7-26. Yoshinobu Yamamoto takes the mound for the Dodgers. The 2025 World Series MVP. We have faced him three times, all in October.<br><br>
+      The Splitter is the pitch that defines every at-bat. Against LHH he throws it 46% of the time. xwOBA of .242. It goes from fastball-plane to the dirt in the last 10 feet. There is no soft way into this game.<br><br>
+      Champion model projects Barger (.441) and Varsho (.418) at the top as LHH with favorable Splitter splits. The diagnostic layer notes Varsho was 0-for-8 in the World Series against him. That conflict is disclosed, not papered over. The model holds the ranking until BvP reaches 10+ PA.<br><br>
+      Springer leads the RHH side at .363 and actually hit Yamamoto well in October (.412). That alignment is the most confident call in tonight's lineup.<br><br>
+      Confidence: LOW. Three starts. Low sample. Wide uncertainty.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="footer">Statcast data via Baseball Savant (WS 2025) · 126 eff. weighted pitches · 3 starts vs Jays · Arm Chair Analyst · @scherrology</div>
+
+<script>
+const PC={'Split-Finger':'#E8002D','4-Seam Fastball':'#38bdf8','Curveball':'#2dd4a0',
+          'Cutter':'#f4b942','Sinker':'#fb923c','Slider':'#c084fc'};
+const LG=.320;
+
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+
+function mkBars(data,id,mx){
+  const c=document.getElementById(id); if(!c) return;
+  data.forEach(d=>{
+    const col=PC[d.n]||'#888';
+    const el=document.createElement('div'); el.className='abar';
+    el.innerHTML=`<div class="abar-n">${d.n}</div><div class="abar-t"><div class="abar-f" style="width:${d.p/mx*100}%;background:${col};"></div></div><div class="abar-p" style="color:${col};">${d.p}%</div>${d.v?`<div class="abar-v">${d.v}</div>`:''}`;
+    c.appendChild(el);
+  });
+}
+
+mkBars([
+  {n:'Split-Finger',p:36.6,v:'~89 mph'},{n:'4-Seam Fastball',p:21.3,v:'96.3 mph'},
+  {n:'Curveball',p:19.1,v:'77.6 mph'},{n:'Cutter',p:13.2,v:'~91 mph'},
+  {n:'Sinker',p:6.0,v:'95.4 mph'},{n:'Slider',p:3.8,v:'87.1 mph'},
+],'mixAll',42);
+mkBars([
+  {n:'Split-Finger',p:46.0},{n:'4-Seam Fastball',p:27.0},
+  {n:'Curveball',p:15.0},{n:'Cutter',p:10.0},{n:'Slider',p:2.0},
+],'mixLHH',50);
+mkBars([
+  {n:'Split-Finger',p:29.6},{n:'Curveball',p:22.2},
+  {n:'4-Seam Fastball',p:17.0},{n:'Cutter',p:15.6},
+  {n:'Sinker',p:10.4},{n:'Slider',p:5.2},
+],'mixRHH',35);
+
+// Matchup rows
+const MD=[
+  {n:'Barger',      h:'L',e:.441,lo:.330,hi:.552,cls:'h',why:'LHH · strong Splitter splits · injury risk (bilateral ankles)',bvp:null},
+  {n:'Varsho',      h:'L',e:.418,lo:.311,hi:.526,cls:'h',why:'LHH · Splitter splits favor her · model holds ranking',bvp:{pa:8,woba:.000,flag:'⚠ 0.000 in 8 WS PA'}},
+  {n:'Giménez',     h:'L',e:.379,lo:.276,hi:.487,cls:'h',why:'LHH · good Splitter splits in 2025',bvp:{pa:6,woba:.000,flag:'0.000 in 6 WS PA'}},
+  {n:'Springer',    h:'R',e:.363,lo:.263,hi:.469,cls:'h',why:'RHH · best WS performance of any Jays hitter',bvp:{pa:8,woba:.412,flag:'✓ .412 in 8 WS PA'}},
+  {n:'Kirk',        h:'R',e:.358,lo:.258,hi:.462,cls:'h',why:'RHH · IL (fractured thumb) · projected if active',bvp:{pa:8,woba:.104,flag:'.104 in 8 WS PA'}},
+  {n:'Guerrero Jr.',h:'R',e:.356,lo:.257,hi:.460,cls:'n',why:'RHH · hits well vs Yamamoto per WS · model flat',bvp:{pa:8,woba:.429,flag:'✓ .429 in 8 WS PA'}},
+  {n:'Lukes',       h:'L',e:.345,lo:.247,hi:.449,cls:'n',why:'LHH · moderate projection',bvp:{pa:6,woba:.148,flag:'.148 in 6 WS PA'}},
+  {n:'Clement',     h:'R',e:.330,lo:.232,hi:.432,cls:'n',why:'RHH · near baseline',bvp:{pa:6,woba:.296,flag:'.296 in 6 WS PA'}},
+  {n:'Straw',       h:'R',e:.318,lo:.222,hi:.419,cls:'n',why:'RHH · near baseline',bvp:null},
+  {n:'Heineman',    h:'L',e:.314,lo:.218,hi:.415,cls:'n',why:'LHH · no WS BvP · moderate splits',bvp:null},
+  {n:'Schneider',   h:'R',e:.303,lo:.208,hi:.402,cls:'s',why:'RHH · below baseline · Cutter exposure',bvp:null},
+  {n:'Sánchez',     h:'L',e:.273,lo:.182,hi:.371,cls:'s',why:'LHH · lowest · Splitter-heavy diet, weak splits',bvp:null},
+];
+
+const xMn=.12,xMx=.62;
+const xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
+
+const c=document.getElementById('muRows');
+MD.forEach(d=>{
+  const bCol=d.cls==='h'?'var(--green)':(d.cls==='s'?'var(--rose)':'var(--dim)');
+  const bvpStr = d.bvp ?
+    `<span style="color:var(--amber);font-size:10px;margin-left:4px;">${d.bvp.flag}</span>` : '';
+  const row=document.createElement('div'); row.className=`mu-row ${d.cls}`;
+  row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div class="mr-track"><div class="mr-ci" style="left:${xs(d.lo)};width:${((d.hi-d.lo)/(xMx-xMn)*100).toFixed(1)}%;"></div><div class="mr-fill" style="width:${xs(d.e)};background:${bCol};"></div><div class="mr-lg" style="left:${xs(LG)};"></div></div><div class="mr-num" style="color:${bCol};">${d.e.toFixed(2)}</div><div class="mr-note">${d.why}${bvpStr}</div>`;
+  c.appendChild(row);
+});
+
+// Baseline tournament
+const BL=[
+  {label:'A · hitter prior wOBA (no pitcher info)',val:.340,beat:false},
+  {label:'B · platoon baseline, park-adjusted',val:.314,beat:true},
+  {label:'C · team 2026 actual wOBA',val:.260,beat:true},
+  {label:'D · pitcher run prevention proxy',val:.275,beat:true},
+  {label:'E · champion model (pitch-mix, park adj.)',val:.350,beat:null,champion:true},
+];
+const bc=document.getElementById('baselineRows');
+BL.forEach(b=>{
+  const row=document.createElement('div'); row.className='bl-row';
+  const badge = b.champion ? '' :
+    `<span class="bl-badge ${b.beat?'beat':'close'}">${b.beat?'champion beats':'close'}</span>`;
+  const style = b.champion ? 'color:var(--green);font-weight:700;' : '';
+  row.innerHTML=`<div class="bl-label" style="${style}">${b.label}</div><div style="display:flex;align-items:center;gap:10px;">${badge}<div class="bl-val" style="${style}">${b.val.toFixed(3)}</div></div>`;
+  bc.appendChild(row);
+});
+
+// Watch for
+const WF=[
+  {num:1,
+   q:'Can LHH survive the Splitter in the first two at-bats?',
+   body:'Yamamoto throws the Splitter 46% of the time to left-handed hitters. The pitch falls out of the strike zone and hitters who chase it down and in produce weak contact or swings and misses. <strong>The first two LHH at-bats set the tone for the whole game.</strong> If Barger or Varsho can lay off the chase Splitter in their first at-bat, the lineup has a chance. If they chase, expect a long night for the left side.',
+   if1:'LHH lay off the low-and-away Splitter early',
+   then1:'Yamamoto has to go to the 4-Seam more, pitch counts climb, and the lineup sees a more hittable mix by the third time through.',
+   if2:'LHH chase the Splitter in the dirt',
+   then2:'Quick outs, low pitch counts, Yamamoto works into the 6th or 7th. The lineup will not see a third time through in any meaningful way.'},
+  {num:2,
+   q:'Does Guerrero hit the Splitter like he did in October?',
+   body:'Guerrero hit Yamamoto at .429 in 8 World Series PA. The champion model has him 6th at .356 based on 2025 pitch-type splits. <strong>These two numbers point in the same direction: he is a legitimate threat tonight.</strong> Whether the WS performance was signal or variance is the question the model cannot answer at 8 PA. Watch his first at-bat approach.',
+   if1:'Guerrero stays in the zone and attacks the 4-Seam',
+   then1:'The WS read holds. He is the most dangerous bat in the lineup against Yamamoto.',
+   if2:'Guerrero chases Splitters away',
+   then2:'The 8-PA WS sample was noise. The pitch-mix model projection of .356 is closer to the truth.'},
+  {num:3,
+   q:'Does the 18 mph gap between fastball and curveball create strikeouts?',
+   body:'Yamamoto\'s fastball sits at 96.3 mph. His curveball is 77.6 mph. That is an 18 mph separation. Hitters who are geared up for the fastball will be very early on the curveball. <strong>The curveball to RHH appears 22% of the time and the xwOBA is .256.</strong> It is his second-best pitch. If it is locating, the right-handed hitters will see strikeouts they were not expecting.',
+   if1:'Curveball locating low in the zone early',
+   then1:'RHH timing is disrupted all game. Even Springer and Guerrero will struggle to make hard contact.',
+   if2:'Curveball flat or leaking up in the zone',
+   then2:'RHH can sit on the fastball and wait. The 96 mph becomes hittable when the curveball is not a threat.'},
+];
+const wc=document.getElementById('wfItems');
+WF.forEach(w=>{
+  const el=document.createElement('div'); el.className='wf-item';
+  el.innerHTML=`<div class="wf-top"><div class="wf-num">${w.num}</div><div class="wf-content"><div class="wf-q">${w.q}</div><div class="wf-body">${w.body}</div></div></div><div class="wf-footer"><div class="wff"><div class="wff-tag">If yes →</div><div class="wff-val">${w.then1}</div></div><div class="wff"><div class="wff-tag">If no →</div><div class="wff-val">${w.then2}</div></div></div>`;
+  wc.appendChild(el);
+});
+</script>
+</body>
+</html>

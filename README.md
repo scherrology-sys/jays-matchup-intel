@@ -187,25 +187,51 @@ The long-term formulation replaces the frequentist weighted average with a prope
 
 ---
 
-## Limitations
+## Addressed Methodological Challenges
 
-These are honest. Some are addressable with a more complete statistical formulation. Some are structural.
+These are problems the framework has directly resolved, not merely acknowledged. The distinction matters.
 
-**The point estimate is not a posterior.** exp_wOBA is a weighted average computed before inference, not a Bayesian posterior mean. The credible intervals are genuine Beta posterior quantiles placed around a frequentist point estimate. The two are not equivalent.
+### Hitter independence within a game
 
-**K = 60 and the recency half-life of 180 days are asserted defaults, not calibrated parameters.** Neither has been validated against historical prediction accuracy. Both will be calibrated in the backtest notebook.
+**The problem:** Hitter outcomes within a game are correlated. If a pitcher's breaking ball is sharp on a given night it is sharp against the whole lineup, not a random subset. Treating each hitter-game observation as independent inflates the apparent informativeness of single-game retrospective scores.
 
-**Single-game scoring is dominated by measurement noise.** The standard error of observed wOBA in a 2-plate-appearance sample is approximately 0.337. The retrospective threshold for flagging an outcome as outside expected variance is 0.050, well below one standard deviation of sampling noise at this scale. Individual game verdicts are directional. Season-level MAE is the appropriate unit of evaluation.
+**The fix:** The primary validation metric is now game-level MAE, the absolute error between the predicted mean team wOBA and the observed mean team wOBA. This aggregation absorbs the within-game correlation structure automatically. Hitter-level rows remain in the retrospective as diagnostic decomposition, showing which specific matchups drove the game-level error. They are not the primary validation claim.
 
-**Pitch-type wOBA does not distinguish between pitchers.** A hitter's performance against "Changeup" is aggregated across every pitcher who has thrown that pitch to them. Pitch velocity, movement profile, and release point are not incorporated into the hitter-pitch match. Feature expansion beyond categorical pitch type labels is a named validation objective.
+**In numbers:** Game-level MAE over 8 scored games is 0.109. The hitter-level figure of 0.278 was inflated by the independence assumption. The game-level figure is the honest headline metric.
 
-**Hitter outcomes within a game are treated as independent.** If a pitcher's Changeup is effective on a given day it is effective against the lineup, not a random subset. This correlation structure is not modeled, which inflates the apparent informativeness of single-game retrospective scores.
+### Pitch classification instability
 
-**Pitch classification is not stable across seasons.** Statcast classification algorithms are updated periodically. The framework cannot distinguish a genuine repertoire change from a reclassification artifact.
+**The problem:** Statcast classification algorithms update periodically. Large year-over-year shifts in pitch type usage that are not accompanied by corresponding movement profile shifts are reclassification artifacts, not repertoire changes. The framework previously had no way to distinguish the two.
 
-**Assumption inputs are analyst-determined.** Named assumptions, expected values, tolerances, and importance weights are specified before each game. There is no objective derivation process.
+**The fix:** The `check_pitch_classification_stability()` function flags pitches where year-over-year usage shifts exceed 15 percentage points AND the pfx_x movement drift is under 0.5 feet. Movement-stable label shifts are flagged as likely reclassifications. Flagged pitches are disclosed in the preview output.
 
-**No adjustment for run environment, umpire, or weather.** The league-average wOBA baseline of .320 is applied uniformly regardless of park, umpire, or conditions.
+**Example from the live system:** Justin Wrobleski's 4-Seam Fastball fell from 59% (2024) to 28.5% (2025) while his Sinker rose from 2.5% to 20.5%. Both pitches showed pfx_x drift under 0.06 feet between seasons. Statcast likely reclassified the same physical pitch. The framework now treats his 4-Seam and Sinker as a classification-uncertain cluster for exp_wOBA matching rather than treating them as distinct pitch types.
+
+### Analyst-determined assumption inputs
+
+**The problem:** Named assumptions, expected values, tolerances, and importance weights were analyst-specified before each game. Different analysts would produce different values. There was no objective derivation process for the numeric components.
+
+**The fix:** The `derive_pitcher_assumptions()` function computes both expected values and tolerances from the recency-weighted Statcast sample. Expected values are weighted means. Tolerances are derived from observed game-to-game standard deviation, capped at 12 percentage points for pitch usage and 2.0 mph for velocity. The analyst specifies which assumptions to track. All numeric values come from the data.
+
+### No park factor adjustment
+
+**The problem:** The league-average wOBA baseline of .320 was applied uniformly regardless of park. Coors Field and Dodger Stadium have measurably different run environments. This was an unacknowledged systematic error in the fallback baseline used when hitter pitch-type splits fall below the minimum PA threshold.
+
+**The fix:** The `park_adjusted_baseline()` function applies a park factor multiplier to the handedness-specific baseline. Source: Baseball Reference 3-year rolling wOBA park factors. The adjusted baseline replaces the flat .320/.325 whenever a fallback is used. Current park factors: Rogers Centre 0.99, Coors 1.15, Guaranteed Rate 0.98, Dodger Stadium 0.97.
+
+---
+
+## Remaining Limitations
+
+These are honest constraints the framework does not yet resolve.
+
+**The point estimate is not a posterior.** exp_wOBA is a weighted average computed before inference, not a Bayesian posterior mean. The credible intervals are genuine Beta posterior quantiles placed around a frequentist point estimate. A fully Bayesian formulation would propagate uncertainty through the pitch mix itself. That is the named long-term direction.
+
+**K = 60 and the recency half-life of 180 days are not yet calibrated.** Both will be estimated via grid search on the historical backtest once the sample reaches n = 200 hitter-game observations.
+
+**Pitch-type wOBA does not distinguish between pitchers.** A hitter's performance against a Changeup is aggregated across every pitcher who has thrown that pitch to them. Pitch velocity, movement profile, and location are not incorporated into the hitter-pitch match. This is the next feature expansion frontier.
+
+**No adjustment for umpire or weather.** Park factors are now applied. Umpire strike-zone tendencies and weather conditions remain unmodeled. Both affect outcomes in ways that interact with pitcher command and batted ball results.
 
 ---
 
@@ -241,7 +267,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-5-26  | LAD | J. Wrobleski LHP | — | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) |
+| 4-6-26  | LAD | J. Wrobleski LHP | LAD 14, TOR 2 | V. Guerrero (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-06-wrobleski/) |
 | 4-5-26  | @ CWS | D. Martin RHP | CWS 3, TOR 0 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-05-martin/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-05-martin/) |
 | 4-4-26  | @ CWS | A. Kay LHP · G. Taylor (opener) | CWS 6, TOR 3 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-04-kay-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-04-kay-taylor/) |
 | 4-3-26  | @ CWS | S. Burke RHP · G. Taylor (opener) | CWS 5, TOR 4 F/10 | G. Springer (.41) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-03-burke-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-03-burke-taylor/) |

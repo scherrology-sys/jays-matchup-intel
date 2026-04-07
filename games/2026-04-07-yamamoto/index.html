@@ -275,26 +275,23 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <!-- ══ THE MATCHUPS ══ -->
 <div class="panel" id="p1">
 
-  <div class="lede">The champion model ranks LHH who handle Splitters well at the top. <strong>The diagnostic layer shows a different story for some of those hitters.</strong> The distinction between what the model says and what the WS data showed is explicitly separated below.</div>
+  <div class="lede">At LOW confidence, most hitters are statistically indistinguishable from the team mean. <strong>Two hitters are in the Edge tier. Two are Suppressed. Eight are Neutral.</strong> Strict ranking implies precision the data cannot support. This preview uses tiers instead.</div>
+
+  <div class="callout amber">
+    <strong>Why tiers, not a ranked list.</strong> The pitch mix is derived from 3 WS starts. The uncertainty in that estimate is approximately ±0.045 on exp_wOBA. The gap between most hitters in the middle of this lineup is smaller than that uncertainty. Reporting a precise ranking of Giménez (.379) over Springer (.363) would be a false precision claim. The tier structure is honest about what the data supports.
+  </div>
 
   <div class="callout diag">
-    <strong>Two layers, clearly separated.</strong> The rankings below come from the champion model: pitch-mix × 2025 prior skill, park-adjusted, no challengers. The BvP column shows actual outcomes from the World Series in October. BvP data with fewer than 10 PA against this pitcher does not move the headline ranking. It is context for the reader, not a model input.
+    <strong>Two layers, clearly separated.</strong> Tier placement comes from the champion model. BvP labels in amber show World Series outcomes. BvP data under 10 PA does not move tier placement. It is context for the reader, not a model input.
   </div>
 
-  <div style="display:flex;align-items:center;gap:12px;padding:3px 18px;margin-bottom:6px;">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:130px;flex-shrink:0;">Hitter</div>
-    <div style="width:26px;flex-shrink:0;"></div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;">Champion model projection</div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);width:42px;text-align:right;">exp</div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:1;padding-left:6px;">Context</div>
-  </div>
-  <div id="muRows"></div>
+  <div id="tierDisplay"></div>
 
   <div style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--green);border-radius:2px;"></div>Champion edge</div>
-    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--rose);border-radius:2px;"></div>Champion suppressed</div>
-    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber);"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid var(--amber);"></div>BvP context (WS 2025, not in model)</div>
-    <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><span style="color:rgba(232,0,45,.6);">|</span> league avg</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--green);border-radius:2px;"></div>Edge · exp > team mean + 0.045</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:rgba(255,255,255,.15);border-radius:2px;"></div>Neutral · within ±0.045 of team mean</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);"><div style="width:16px;height:3px;background:var(--rose);border-radius:2px;"></div>Suppressed · exp < team mean − 0.045</div>
+    <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber);"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid var(--amber);"></div>BvP (WS 2025, context only)</div>
   </div>
 </div>
 
@@ -313,18 +310,18 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div class="card-hd">Baseline tournament · April 7 2026 · Yamamoto vs Jays</div>
     <div id="baselineRows"></div>
     <div style="margin-top:18px;font-size:12px;color:var(--dim);line-height:1.7;">
-      The champion model projects team mean exp_wOBA of .350. It beats all four baselines. The meaningful gains come from the pitcher run prevention proxy (+.075) and the platoon baseline (+.036). The gain over Baseline A (hitter prior wOBA alone) is +.010, consistent with the running backtest. The question being answered: does a pitch-mix weighted model add signal over "the Jays are a good offensive team"? At game level, the evidence says yes. At hitter level, n=56 is not yet large enough to confirm.
+      The champion model projects team mean exp_wOBA of .350. It beats all four baselines. Baseline D now uses an explicit formula: wOBA_allowed ≈ 0.195 + (ERA × 0.027), park-adjusted. At Yamamoto ERA=3.00, TOR park factor 0.99: Baseline D = .273. The gain over Baseline A (hitter prior wOBA) is +.010, consistent with the running backtest. Game-level evaluation is the primary metric.
     </div>
   </div>
 
   <div class="g2">
     <div class="card">
       <div class="card-hd">What the baselines tell us</div>
-      <div class="prose">The team 2026 wOBA (Baseline C) of .260 is the honest read on what this Jays offense has done through seven games. Baseline A uses the 2025 prior at .340. The gap between C and A is the over-optimism problem the model has been carrying: <strong>the 2025 prior does not yet know this team is struggling.</strong> The champion model at .350 is still on the generous side. The in-season blend would pull it toward .320 but it is a challenger and has not yet proven lift.</div>
+      <div class="prose">Baseline C (team 2026 actual .260) is the honest read on what this offense has done. Baseline A (2025 prior .340) is what the model uses. That gap is the over-optimism the model carries until the in-season blend earns production status. <strong>The challenger that would most directly fix this is in-season blending, which has not yet proven lift over n=56 games.</strong> Promoting it before it earns its place is the failure mode the governance framework exists to prevent.</div>
     </div>
     <div class="card">
-      <div class="card-hd">Promotion rules for challengers</div>
-      <div class="prose">A challenger earns production status when it beats the champion on game-level MAE, improves lineup ranking accuracy, holds across n=200 hitter-game observations, and introduces no systematic bias. <strong>No exceptions.</strong> In-season blending, exploit score, memory, and sequencing are all Tier 2 or Tier 3 features. Tonight they are logged but invisible to the headline output.</div>
+      <div class="card-hd">Tier thresholds by confidence</div>
+      <div class="prose">The tier system uses a threshold of ±0.045 from team mean at LOW confidence, ±0.030 at MODERATE, ±0.018 at HIGH. <strong>The threshold is derived from pitch-mix uncertainty: at 50 effective pitches, the SE of a mix fraction is ~0.046, which propagates to ~0.040 of uncertainty on exp_wOBA across 4-5 pitch types.</strong> The credible interval also widens at LOW confidence: K_adj = 30 vs K = 60 at HIGH, producing a 90% CI width of 0.282 vs 0.201.</div>
     </div>
   </div>
 </div>
@@ -332,44 +329,45 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <!-- ══ BOTTOM LINE ══ -->
 <div class="panel" id="p4">
 
-  <div class="lede">The World Series MVP on the mound. Three starts against this lineup in October. The Jays went 1-2 in those games. The data tells a specific story about who handled Yamamoto and who did not.</div>
+  <div class="lede">The World Series MVP on the mound. At LOW confidence, two hitters are in the Edge tier, eight are indistinguishable from the team mean, and two are Suppressed.</div>
 
   <div class="tonight-grid">
     <div class="tg-card best">
-      <div class="tg-tag">Champion model top · LHH Splitter edge</div>
-      <div class="tg-name">Barger</div>
-      <div class="tg-body">Leads at .441. LHH with strong 2025 Splitter splits. Yamamoto throws the Splitter 46% to LHH. <strong>Note: Barger is day-to-day with bilateral ankle discomfort from Chicago.</strong> If not in the lineup the projection moves to Varsho or Giménez.</div>
+      <div class="tg-tag">Edge tier · both LHH</div>
+      <div class="tg-name">Barger + Varsho</div>
+      <div class="tg-body">The only two hitters the model can distinguish above the team mean at LOW confidence. Both LHH with favorable Splitter splits. <strong>Barger is day-to-day.</strong> The Varsho BvP conflict (0-for-8 in WS) is disclosed and does not move the tier. At 8 PA it is context, not evidence.</div>
     </div>
-    <div class="tg-card watch">
-      <div class="tg-tag">Diagnostic tension</div>
-      <div class="tg-name">Varsho</div>
-      <div class="tg-body">Champion projects .418 (2nd). BvP context: <strong>0 wOBA in 8 PA in the World Series.</strong> The model says her Splitter splits are favorable. October said otherwise. Both are disclosed. The champion holds at .418 until BvP reaches 10+ PA.</div>
-    </div>
-    <div class="tg-card best">
-      <div class="tg-tag">Best RHH matchup</div>
-      <div class="tg-name">Springer</div>
-      <div class="tg-body">Fourth in the champion model at .363. <strong>Hit Yamamoto well in the World Series (.412 in 8 PA).</strong> The BvP supports the projection from both directions. Best aligned hitter in the lineup tonight.</div>
+    <div class="tg-card diag">
+      <div class="tg-tag">Neutral tier · 8 hitters</div>
+      <div class="tg-name">Giménez through Schneider</div>
+      <div class="tg-body">The model cannot distinguish these matchups from each other given the current data. Within the neutral tier, Springer is the most confident individual call because his BvP (.412 in 8 WS PA) aligns with his champion projection. <strong>That alignment is informative. The others carry more uncertainty.</strong></div>
     </div>
     <div class="tg-card worst">
-      <div class="tg-tag">Toughest projection</div>
+      <div class="tg-tag">Suppressed tier</div>
       <div class="tg-name">Sánchez</div>
-      <div class="tg-body">Lowest at .273. LHH facing a pitcher who throws Splitters 46% against them. Sánchez does not have strong Splitter splits in 2025. <strong>No BvP data from the World Series.</strong></div>
+      <div class="tg-body">Clear suppression at .273, 77 points below team mean. LHH with weak Splitter splits facing a pitcher who throws it 46% against them. <strong>No WS BvP data.</strong> The suppression is driven entirely by the 2025 pitch-type splits.</div>
+    </div>
+    <div class="tg-card watch">
+      <div class="tg-tag">The honest constraint</div>
+      <div class="tg-name">LOW confidence limit</div>
+      <div class="tg-body">Three WS starts is not enough to rank hitters 1 through 12 with any confidence. The tier structure says what the data actually supports: two hitters are clearly favoured, one is clearly suppressed, eight are in between. That is the full extent of the claim.</div>
     </div>
   </div>
 
   <div class="honest-box">
-    <div class="hb-tag">The honest read</div>
-    <div class="hb-body">The Yamamoto sample is the smallest of any preview this season. Three WS starts, 126 effective weighted pitches, all from October, all in the highest-leverage context possible. The model is working from less information than usual and the confidence rating reflects that. <strong>What is defensible: the Splitter is his primary weapon against LHH and hitters who handled that pitch in 2025 project better. What is not defensible: treating this preview with the same confidence as the Freeland or Martin reads.</strong> The game-level team projection of .350 beats all baselines but the uncertainty is wider than usual.</div>
+    <div class="hb-tag">What changed in this preview</div>
+    <div class="hb-body">Previous previews ranked hitters 1 through 12. This preview uses tiers. The change reflects an honest accounting of pitch-mix uncertainty at LOW confidence. At eff_sample = 53 LHH pitches, the uncertainty on any individual matchup is approximately ±0.045. Most hitters in this lineup fall within that band of the team mean. <strong>Reporting a precise 8th-vs-9th place distinction would be a false precision claim. The tier structure is not a retreat from analytical depth. It is what analytical depth looks like when the data is thin.</strong></div>
   </div>
 
   <div class="social">
     <div class="social-tag">Post · X / Twitter</div>
     <div class="social-body">
-      Jays Matchup Intel 4-7-26. Yoshinobu Yamamoto takes the mound for the Dodgers. The 2025 World Series MVP. We have faced him three times, all in October.<br><br>
-      The Splitter is the pitch that defines every at-bat. Against LHH he throws it 46% of the time. xwOBA of .242. It goes from fastball-plane to the dirt in the last 10 feet. There is no soft way into this game.<br><br>
-      Champion model projects Barger (.441) and Varsho (.418) at the top as LHH with favorable Splitter splits. The diagnostic layer notes Varsho was 0-for-8 in the World Series against him. That conflict is disclosed, not papered over. The model holds the ranking until BvP reaches 10+ PA.<br><br>
-      Springer leads the RHH side at .363 and actually hit Yamamoto well in October (.412). That alignment is the most confident call in tonight's lineup.<br><br>
-      Confidence: LOW. Three starts. Low sample. Wide uncertainty.<br><br>
+      Jays Matchup Intel 4-7-26. Yoshinobu Yamamoto. 2025 World Series MVP. Three starts against this lineup, all in October.<br><br>
+      The Splitter runs 46% to LHH. xwOBA of .242. There is no soft way into this game.<br><br>
+      Confidence is LOW. Three starts is not enough to rank this lineup 1 through 12. Tonight uses tiers instead.<br><br>
+      Edge: Barger and Varsho. Both LHH with favorable Splitter splits. Barger is day-to-day. Varsho was 0-for-8 against Yamamoto in the WS. That conflict is disclosed.<br><br>
+      Neutral: eight hitters the model cannot distinguish from each other at this data volume. Within that group, Springer is the most confident call because his WS performance (.412 in 8 PA) aligns with his projection.<br><br>
+      Suppressed: Sánchez. Clear at .273, 77 points below team mean.<br><br>
       scherrology-sys.github.io/jays-matchup-intel · #BlueJays
     </div>
   </div>
@@ -413,34 +411,80 @@ mkBars([
   {n:'Sinker',p:10.4},{n:'Slider',p:5.2},
 ],'mixRHH',35);
 
-// Matchup rows
+// ── RANKING TIERS ─────────────────────────────────────────────────────────────
+// LOW confidence: threshold = ±0.045 from team mean
+// Derived from pitch-mix uncertainty at eff_sample ~50-100 pitches
+const TEAM_MEAN = 0.350;
+const THRESHOLD = 0.045;  // LOW confidence tier width
+const EDGE_MIN  = TEAM_MEAN + THRESHOLD;  // 0.395
+const SUPP_MAX  = TEAM_MEAN - THRESHOLD;  // 0.305
+
 const MD=[
-  {n:'Barger',      h:'L',e:.441,lo:.330,hi:.552,cls:'h',why:'LHH · strong Splitter splits · injury risk (bilateral ankles)',bvp:null},
-  {n:'Varsho',      h:'L',e:.418,lo:.311,hi:.526,cls:'h',why:'LHH · Splitter splits favor her · model holds ranking',bvp:{pa:8,woba:.000,flag:'⚠ 0.000 in 8 WS PA'}},
-  {n:'Giménez',     h:'L',e:.379,lo:.276,hi:.487,cls:'h',why:'LHH · good Splitter splits in 2025',bvp:{pa:6,woba:.000,flag:'0.000 in 6 WS PA'}},
-  {n:'Springer',    h:'R',e:.363,lo:.263,hi:.469,cls:'h',why:'RHH · best WS performance of any Jays hitter',bvp:{pa:8,woba:.412,flag:'✓ .412 in 8 WS PA'}},
-  {n:'Kirk',        h:'R',e:.358,lo:.258,hi:.462,cls:'h',why:'RHH · IL (fractured thumb) · projected if active',bvp:{pa:8,woba:.104,flag:'.104 in 8 WS PA'}},
-  {n:'Guerrero Jr.',h:'R',e:.356,lo:.257,hi:.460,cls:'n',why:'RHH · hits well vs Yamamoto per WS · model flat',bvp:{pa:8,woba:.429,flag:'✓ .429 in 8 WS PA'}},
-  {n:'Lukes',       h:'L',e:.345,lo:.247,hi:.449,cls:'n',why:'LHH · moderate projection',bvp:{pa:6,woba:.148,flag:'.148 in 6 WS PA'}},
-  {n:'Clement',     h:'R',e:.330,lo:.232,hi:.432,cls:'n',why:'RHH · near baseline',bvp:{pa:6,woba:.296,flag:'.296 in 6 WS PA'}},
-  {n:'Straw',       h:'R',e:.318,lo:.222,hi:.419,cls:'n',why:'RHH · near baseline',bvp:null},
-  {n:'Heineman',    h:'L',e:.314,lo:.218,hi:.415,cls:'n',why:'LHH · no WS BvP · moderate splits',bvp:null},
-  {n:'Schneider',   h:'R',e:.303,lo:.208,hi:.402,cls:'s',why:'RHH · below baseline · Cutter exposure',bvp:null},
-  {n:'Sánchez',     h:'L',e:.273,lo:.182,hi:.371,cls:'s',why:'LHH · lowest · Splitter-heavy diet, weak splits',bvp:null},
+  {n:'Barger',      h:'L',e:.441,bvp:null,note:'Strong Splitter splits · day-to-day (ankles)'},
+  {n:'Varsho',      h:'L',e:.418,bvp:{pa:8,woba:.000,flag:'⚠ 0.000 in 8 WS PA'},note:'Splitter splits favorable · WS conflict disclosed'},
+  {n:'Giménez',     h:'L',e:.379,bvp:{pa:6,woba:.000,flag:'0.000 in 6 WS PA'},note:'Good Splitter splits · 2026 struggles are in-season data, not champion input'},
+  {n:'Springer',    h:'R',e:.363,bvp:{pa:8,woba:.412,flag:'✓ .412 in 8 WS PA'},note:'Best BvP-model alignment in lineup'},
+  {n:'Kirk',        h:'R',e:.358,bvp:{pa:8,woba:.104,flag:'.104 in 8 WS PA'},note:'IL (fractured thumb) — conditional'},
+  {n:'Guerrero Jr.',h:'R',e:.356,bvp:{pa:8,woba:.429,flag:'✓ .429 in 8 WS PA'},note:'WS performance above model — BvP signal worth noting'},
+  {n:'Lukes',       h:'L',e:.345,bvp:{pa:6,woba:.148,flag:'.148 in 6 WS PA'},note:'Middle of neutral band'},
+  {n:'Clement',     h:'R',e:.330,bvp:{pa:6,woba:.296,flag:'.296 in 6 WS PA'},note:'Near team mean'},
+  {n:'Straw',       h:'R',e:.318,bvp:null,note:'Near team mean · no WS BvP'},
+  {n:'Heineman',    h:'L',e:.314,bvp:null,note:'Near team mean · no WS BvP'},
+  {n:'Schneider',   h:'R',e:.303,bvp:null,note:'Low end of neutral band'},
+  {n:'Sánchez',     h:'L',e:.273,bvp:null,note:'Weak Splitter splits · no WS BvP'},
 ];
 
-const xMn=.12,xMx=.62;
-const xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
+const tierContainer = document.getElementById('tierDisplay');
 
-const c=document.getElementById('muRows');
-MD.forEach(d=>{
-  const bCol=d.cls==='h'?'var(--green)':(d.cls==='s'?'var(--rose)':'var(--dim)');
-  const bvpStr = d.bvp ?
-    `<span style="color:var(--amber);font-size:10px;margin-left:4px;">${d.bvp.flag}</span>` : '';
-  const row=document.createElement('div'); row.className=`mu-row ${d.cls}`;
-  row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div class="mr-track"><div class="mr-ci" style="left:${xs(d.lo)};width:${((d.hi-d.lo)/(xMx-xMn)*100).toFixed(1)}%;"></div><div class="mr-fill" style="width:${xs(d.e)};background:${bCol};"></div><div class="mr-lg" style="left:${xs(LG)};"></div></div><div class="mr-num" style="color:${bCol};">${d.e.toFixed(2)}</div><div class="mr-note">${d.why}${bvpStr}</div>`;
-  c.appendChild(row);
-});
+function mkTierSection(label, hitters, col, desc) {
+  const sec = document.createElement('div');
+  sec.style.cssText = `margin-bottom:18px;`;
+
+  const hdr = document.createElement('div');
+  hdr.style.cssText = `display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:8px 16px;background:rgba(255,255,255,.03);border-radius:4px;border-left:3px solid ${col};`;
+  hdr.innerHTML = `<span style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:${col};letter-spacing:.08em;">${label}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">${desc}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-left:auto;">${hitters.length} hitter${hitters.length!==1?'s':''}</span>`;
+  sec.appendChild(hdr);
+
+  hitters.forEach(d => {
+    const row = document.createElement('div');
+    row.className = 'mu-row';
+    row.style.cssText = `border-left:none;`;
+    const bvpStr = d.bvp ? `<span style="color:var(--amber);font-size:10px;margin-left:6px;">${d.bvp.flag}</span>` : '';
+    // Adjusted CI (K=30 for LOW confidence)
+    const K = 30;
+    const a = d.e * K; const b = (1 - d.e) * K;
+    // Use simple normal approximation for CI display
+    const se = Math.sqrt(d.e*(1-d.e)/K);
+    const lo = Math.max(0.10, d.e - 1.645*se).toFixed(3);
+    const hi = Math.min(0.65, d.e + 1.645*se).toFixed(3);
+    row.innerHTML = `
+      <div class="mr-name" style="color:${col};">${d.n}</div>
+      <div class="mr-hand">${d.h}</div>
+      <div class="mr-track">
+        <div class="mr-ci" style="left:${((+lo-0.12)/(0.62-0.12)*100).toFixed(1)}%;width:${((+hi-+lo)/(0.62-0.12)*100).toFixed(1)}%;"></div>
+        <div class="mr-fill" style="width:${((d.e-0.12)/(0.62-0.12)*100).toFixed(1)}%;background:${col};opacity:0.7;"></div>
+        <div class="mr-lg" style="left:${((0.320-0.12)/(0.62-0.12)*100).toFixed(1)}%;"></div>
+      </div>
+      <div class="mr-num" style="color:${col};">${d.e.toFixed(3)}</div>
+      <div class="mr-note">${d.note}${bvpStr}</div>`;
+    sec.appendChild(row);
+  });
+  return sec;
+}
+
+const edge     = MD.filter(d => d.e >= EDGE_MIN);
+const neutral  = MD.filter(d => d.e < EDGE_MIN && d.e > SUPP_MAX);
+const suppress = MD.filter(d => d.e <= SUPP_MAX);
+
+tierContainer.appendChild(mkTierSection(
+  'EDGE', edge, 'var(--green)',
+  `exp > ${EDGE_MIN.toFixed(3)} · distinguishably above team mean at LOW confidence`));
+tierContainer.appendChild(mkTierSection(
+  'NEUTRAL', neutral, 'rgba(255,255,255,0.35)',
+  `${SUPP_MAX.toFixed(3)} – ${EDGE_MIN.toFixed(3)} · indistinguishable from team mean at this data volume`));
+tierContainer.appendChild(mkTierSection(
+  'SUPPRESSED', suppress, 'var(--rose)',
+  `exp < ${SUPP_MAX.toFixed(3)} · distinguishably below team mean at LOW confidence`));
 
 // Baseline tournament
 const BL=[

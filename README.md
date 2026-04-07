@@ -207,7 +207,7 @@ Cutter is flagged as a sensitivity-check candidate for v2. Raw pitch labels are 
 
 **Key diagnostic.** Partial pooling is working correctly if a LOW confidence game (Yamamoto, 3 WS starts) produces materially wider posterior intervals than a HIGH confidence game (Freeland, full career file).
 
-**v2 direction (dissertation-grade).** Replace Normal likelihood on game-level wOBA with a PA-level model where each plate appearance outcome is modeled directly. wOBA becomes a posterior-predictive quantity derived from simulated PA outcomes. This is the version that survives a dissertation committee.
+**v2 direction.** Replace Normal likelihood on game-level wOBA with a PA-level model where each plate appearance outcome is modeled directly. wOBA becomes a posterior-predictive quantity derived from simulated PA outcomes. This is the version that survives a dissertation committee.
 
 **Status:** `bayesian_challenger_v1.R` complete. Silent. Will not appear in production previews until it earns promotion through the standard evaluation process.
 

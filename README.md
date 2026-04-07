@@ -181,9 +181,35 @@ A grid search over K (prior strength: 30, 60, 100, 200) and half-life (90, 180, 
 
 Systematic evaluation of framework behavior as effective sample decreases: pitcher with one 2026 start only, pitcher with no MLB Statcast history, hitter with fewer than 10 PA against a given pitch type across the prior season. The goal is to confirm that the framework degrades gracefully rather than producing confidently wrong outputs.
 
-### Planned: Bayesian hierarchical rebuild
+### Bayesian hierarchical challenger: in development (started April 7, 2026)
 
-The long-term formulation replaces the frequentist weighted average with a proper hierarchical model: pitcher-type priors, pitch-type priors at the hitter level, and partial pooling by handedness. This addresses the core limitation that the current point estimate is not a posterior mean. Pitch sequencing assumptions will integrate naturally as priors over transition matrices. Target implementation: offseason 2026.
+A silent Bayesian hierarchical challenger model is running alongside the champion. It does not influence production output. It logs predictions on the same games the champion scores and accumulates comparison data. Promotion criteria are the same as all challengers: beats champion on game-level MAE, improves ranking accuracy, holds across n ≥ 200, introduces no systematic bias.
+
+**Why this matters structurally.** The champion model is a deterministic estimate plus an uncertainty wrapper. The exp_wOBA point estimate is computed before inference and the Beta credible interval is placed around it after the fact. These are not equivalent to a Bayesian posterior mean and posterior interval. The hierarchical model addresses this by estimating latent hitter skill against pitch environments as a posterior distribution rather than a weighted average with a CI attached.
+
+**v1 model structure (brms, ready to fit):**
+
+- Outcome: observed hitter-game wOBA, Normal likelihood with heteroskedastic variance tied to PA count
+- Fixed effects: pitcher handedness, pitch-family percentages (Fastball / Breaking / Offspeed / Undefined)
+- Random effects: hitter intercept (partially pooled), pitcher intercept (partially pooled), hitter × pitch-family random slopes
+- Priors: weakly informative, centered at league average wOBA (.320)
+
+**Pitch family groupings** (statistical pooling scaffold for inference stability, not claims of pitch identity):
+
+| Family | Pitches |
+|--------|---------|
+| Fastball | 4-Seam Fastball, Sinker, Cutter |
+| Breaking | Slider, Curveball, Sweeper |
+| Offspeed | Changeup, Splitter |
+| Undefined | Knuckleball, Eephus, misc |
+
+Cutter is flagged as a sensitivity-check candidate for v2. Raw pitch labels are retained in the data pipeline for future family restructuring.
+
+**Key diagnostic.** Partial pooling is working correctly if a LOW confidence game (Yamamoto, 3 WS starts) produces materially wider posterior intervals than a HIGH confidence game (Freeland, full career file).
+
+**v2 direction (dissertation-grade).** Replace Normal likelihood on game-level wOBA with a PA-level model where each plate appearance outcome is modeled directly. wOBA becomes a posterior-predictive quantity derived from simulated PA outcomes. This is the version that survives a dissertation committee.
+
+**Status:** `bayesian_challenger_v1.R` complete. Silent. Will not appear in production previews until it earns promotion through the standard evaluation process.
 
 ---
 

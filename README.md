@@ -225,9 +225,15 @@ These are problems the framework has directly resolved, not merely acknowledged.
 
 These are honest constraints the framework does not yet resolve.
 
+**Ranking tiers replace strict ordering at low confidence (added April 7, 2026).** Previews now output Edge / Neutral / Suppressed tiers rather than a ranked list 1 through N. Tier thresholds are derived from pitch-mix uncertainty: at LOW confidence (eff_sample < 200), the SE of the mix estimate propagates approximately ±0.045 of uncertainty onto exp_wOBA. Hitters within that band of the team mean are placed in the Neutral tier because the data cannot distinguish them. Thresholds by confidence tier: HIGH ±0.018, MODERATE ±0.030, LOW ±0.045.
+
+**Uncertainty propagation into credible intervals (added April 7, 2026).** The Beta prior strength K is now scaled by pitcher confidence tier rather than held fixed at 60. K_adj = 60 at HIGH, 45 at MODERATE, 30 at LOW. This widens the CI to reflect pitch-mix uncertainty in the input, not just hitter sampling noise in the output. At LOW confidence the 90% CI width is 0.282 vs 0.201 at HIGH.
+
+**Baseline D uses an explicit formula (added April 7, 2026).** ERA-to-wOBA-allowed: wOBA ≈ 0.195 + (ERA × 0.027), park-adjusted. Anchored at ERA=2.0→wOBA=0.249 and ERA=5.0→wOBA=0.330. FIP-based conversion is preferred when FIP is available. ERA is a proxy with luck confounding.
+
 **The point estimate is not a posterior.** exp_wOBA is a weighted average computed before inference, not a Bayesian posterior mean. The credible intervals are genuine Beta posterior quantiles placed around a frequentist point estimate. A fully Bayesian formulation would propagate uncertainty through the pitch mix itself. That is the named long-term direction.
 
-**K = 60 and the recency half-life of 180 days are not yet calibrated.** Both will be estimated via grid search on the historical backtest once the sample reaches n = 200 hitter-game observations.
+**K = 60 and the recency half-life of 180 days are not yet calibrated at sufficient n.** Grid search at n=56 showed MAE range of 0.0013 across all parameter combinations. Differences are not statistically meaningful. Both will be estimated when n ≥ 200.
 
 **Pitch-type wOBA does not distinguish between pitchers.** A hitter's performance against a Changeup is aggregated across every pitcher who has thrown that pitch to them. Pitch velocity, movement profile, and location are not incorporated into the hitter-pitch match. This is the next feature expansion frontier.
 

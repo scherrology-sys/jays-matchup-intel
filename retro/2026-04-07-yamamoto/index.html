@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Yamamoto · April 7</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#0a0010 0%,#120018 60%,#0a000e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.result-bug{display:inline-flex;align-items:center;gap:8px;background:rgba(232,0,45,.12);border:1px solid rgba(232,0,45,.3);border-radius:3px;padding:6px 14px;margin-bottom:16px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;}
+.rlabel{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.hed{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.gold{background:rgba(196,162,75,.07);border:1px solid rgba(196,162,75,.22);color:var(--cream);}
+.callout.gold strong{color:var(--gold);}
+.hyp{border-radius:5px;padding:20px;margin-bottom:16px;}
+.hyp.h1{background:rgba(45,212,160,.04);border:1px solid rgba(45,212,160,.2);}
+.hyp.h2{background:rgba(244,185,66,.04);border:1px solid rgba(244,185,66,.18);}
+.hyp-lbl{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+.hyp-lbl.h1{color:var(--green);}.hyp-lbl.h2{color:var(--amber);}
+.hyp-res{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--cream);margin-bottom:6px;}
+.hyp-note{font-size:12px;color:var(--mid);line-height:1.65;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.obs-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.obs-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.obs-row.pos::before{background:var(--green);}
+.obs-row.neg::before{background:var(--rose);}
+.or-name{font-size:13px;font-weight:600;color:var(--cream);width:150px;flex-shrink:0;}
+.or-vals{display:flex;gap:16px;flex:1;}
+.or-v{font-family:'IBM Plex Mono',monospace;font-size:10px;}
+.or-v .lbl{color:var(--dim);font-size:8px;letter-spacing:.1em;display:block;}
+.or-note{font-size:11px;color:var(--dim);flex:1;line-height:1.4;}
+.mbadge{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 5px;border-radius:2px;margin-left:5px;}
+.mbadge.c{background:rgba(45,212,160,.1);color:var(--green);}
+.mbadge.n{background:rgba(255,79,106,.1);color:var(--rose);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · LAD @ TOR · Rogers Centre · April 7, 2026 · Observation 9 of season</div>
+      <div class="result-bug"><div><div class="rlabel">Final</div><div class="score">LAD 3 · TOR 2</div></div></div>
+      <div class="hed">YOSHINOBU <span class="red">YAMAMOTO</span> · OBSERVATION 9</div>
+      <div class="dek"><em>6 IP · 1 ER · 6 K · 97 pitches.</em> Strong outing. The model projected .352 team wOBA. Actual was .260. This is one observation scored against H1 and H2. No inference before n=200.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Game line</div><div class="mi-val">6 IP · 1 ER · 6 K</div><div class="mi-sub">97 pitches</div></div>
+    <div class="mi"><div class="mi-lbl">Game-level error</div><div class="mi-val">0.092</div><div class="mi-sub">exp .352 · actual .260</div></div>
+    <div class="mi"><div class="mi-lbl">Champion vs Naive-1</div><div class="mi-val">0.171 vs 0.155</div><div class="mi-sub">naive won this game</div></div>
+    <div class="mi"><div class="mi-lbl">Running n</div><div class="mi-val">63 hitter-games</div><div class="mi-sub">8 games · target 200</div></div>
+  </div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">What It Missed</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+</div>
+<div class="wrap">
 
+<div class="panel active" id="p0">
+  <div class="lede">The retro scores one observation against the two research hypotheses. No individual game confirms or rejects H1. <strong>The verdict comes from the full season sample.</strong></div>
+  <div class="hyp h1">
+    <div class="hyp-lbl h1">H1 · Pitch-mix weighted model produces more accurate team wOBA estimates than a naive hitter baseline</div>
+    <div class="hyp-res">This game: Champion MAE 0.171 · Naive-1 MAE 0.155 · Naive won · Champion did not support H1</div>
+    <div class="hyp-note">The model over-predicted more than the naive baseline. Root cause: the pitch-mix input was built from a 3-start WS sample. The Cutter appeared at 19.3% to LHH versus roughly 10% in that sample. The tier placement for Varsho (Edge) was built on a pitch she largely did not face. The model executed correctly on the inputs available. The inputs were limited. Running champion MAE across all 8 games: 0.255 vs naive 0.254. Insufficient evidence at n=63.</div>
+  </div>
+  <div class="hyp h2">
+    <div class="hyp-lbl h2">H2 · In-season updating improves estimates over the static prior</div>
+    <div class="hyp-res">Challenger not in production · not testable · first fit at n=200</div>
+    <div class="hyp-note">The in-season blending challenger is logged silently and accumulating predictions. It has not demonstrated out-of-sample lift. H2 remains open. No inference until the challenger evaluation threshold is reached.</div>
+  </div>
+  <div class="g2" style="margin-top:20px;">
+    <div class="card">
+      <div class="card-hd">Running study metrics (8 games, n=63)</div>
+      <div class="stat-row"><div class="stat-lbl">Champion MAE (hitter-level)</div><div class="stat-val">0.255</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-1 MAE</div><div class="stat-val">0.254</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-2 MAE (platoon+park)</div><div class="stat-val">0.238</div></div>
+      <div class="stat-row"><div class="stat-lbl">Game-level MAE (primary)</div><div class="stat-val">0.108</div></div>
+      <div class="stat-row"><div class="stat-lbl">Mean Spearman rho</div><div class="stat-val">−0.159</div></div>
+      <div class="stat-row"><div class="stat-lbl">Running bias</div><div class="stat-val">+0.045</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 status</div><div class="stat-val">Insufficient evidence</div></div>
+      <div class="stat-row"><div class="stat-lbl">H2 status</div><div class="stat-val">Not yet testable</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">What this study is measuring</div>
+      <div class="prose">The study asks whether knowing a pitcher's specific pitch mix improves offensive environment estimates over ignoring the pitcher entirely. H1 will be evaluated at n≥200 hitter-game observations. H2 will be evaluated when the in-season blend challenger has accumulated enough comparison data. <strong>All model parameters are locked as of April 7, 2026. No tweaking. The season is the data collection period.</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="p1">
+  <div class="lede">What the locked champion model produced, using the pitch-mix baseline available before first pitch.</div>
+  <div class="callout amber">
+    <strong>Data limitation logged:</strong> Pitch-mix baseline for Yamamoto was derived from a 3-start WS sample, not a full career file. The model executed on the inputs it had. The inputs were limited. This is a data collection note for the study, not a model adjustment trigger.
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Pitch mix used (WS sample, vs LHH)</div>
+      <div class="stat-row"><div class="stat-lbl">Split-Finger</div><div class="stat-val">46.0%</div></div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">27.0%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">15.0%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">~10.0%</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Team-level prediction</div>
+      <div class="stat-row"><div class="stat-lbl">Champion exp_wOBA</div><div class="stat-val">0.352</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-1 (hitter prior)</div><div class="stat-val">0.340</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-2 (platoon+park)</div><div class="stat-val">0.315</div></div>
+      <div class="stat-row"><div class="stat-lbl">Actual team wOBA</div><div class="stat-val">0.260</div></div>
+    </div>
+  </div>
+  <div style="margin-top:20px;" id="obsRows"></div>
+</div>
+
+<div class="panel" id="p2">
+  <div class="lede">Where the prediction deviated from actuals and what the data shows about why.</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Actual pitch mix vs WS input (LHH)</div>
+      <div class="stat-row"><div class="stat-lbl">Split-Finger</div><div class="stat-val">29.8% · expected 46% · −16pp</div></div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">28.1% · expected 27% · held</div></div>
+      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">19.3% · expected ~10% · +9pp</div></div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">10.5% · expected 15% · held</div></div>
+      <div class="stat-row"><div class="stat-lbl">Fastball velocity</div><div class="stat-val">95.6 mph · expected 96.3 · held</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">What we cannot determine</div>
+      <div class="prose">Whether 19.3% Cutter to LHH is Yamamoto's evolved 2026 profile or a situational adjustment requires his full career Statcast file. We do not have it. <strong>The study needs that file before the next Yamamoto start.</strong> This is a data collection gap, not a model adjustment. The model parameters do not change.</div>
+    </div>
+  </div>
+  <div class="callout gold" style="margin-top:16px;">
+    <strong>Springer: the one aligned call.</strong> Neutral tier at .363, WS BvP at .888. Both signals agreed. He delivered .424 with a double. This is three consecutive games where model and BvP context aligned on Springer and the prediction held. That signal is accumulating in the study log.
+  </div>
+</div>
+
+<div class="panel" id="p3">
+  <div class="lede">The running log of what the study has produced. No inference before n=200.</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Game-level errors by observation</div>
+      <div class="stat-row"><div class="stat-lbl">1 · Feltner 2024-04-12</div><div class="stat-val">0.144</div></div>
+      <div class="stat-row"><div class="stat-lbl">2 · Freeland 2025-08-06</div><div class="stat-val">0.113</div></div>
+      <div class="stat-row"><div class="stat-lbl">3 · Sugano 2026-03-30</div><div class="stat-val">0.068</div></div>
+      <div class="stat-row"><div class="stat-lbl">4 · Freeland 2026-04-01</div><div class="stat-val">0.077</div></div>
+      <div class="stat-row"><div class="stat-lbl">5 · Burke 2026-04-03</div><div class="stat-val">0.100</div></div>
+      <div class="stat-row"><div class="stat-lbl">6 · Kay 2026-04-04</div><div class="stat-val">0.105</div></div>
+      <div class="stat-row"><div class="stat-lbl">7 · Martin 2026-04-05</div><div class="stat-val">0.107</div></div>
+      <div class="stat-row"><div class="stat-lbl">8 · Wrobleski 2026-04-06</div><div class="stat-val">0.160</div></div>
+      <div class="stat-row"><div class="stat-lbl">9 · Yamamoto 2026-04-07</div><div class="stat-val">0.092</div></div>
+      <div class="stat-row"><div class="stat-lbl"><strong>Mean</strong></div><div class="stat-val"><strong>0.108</strong></div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Patterns in the data so far</div>
+      <div class="prose"><strong>Positive bias (+0.045).</strong> The 2025 prior is too generous for the 2026 Jays. All models over-predict. This is expected early-season and will narrow as in-season data accumulates.<br><br><strong>Negative Spearman rho (−0.159).</strong> No ranking skill demonstrated at n=63. This is noise at this sample size, not a finding.<br><br><strong>WS-only pitch-mix samples limited.</strong> Two games with WS-only input showed the largest deviations (Wrobleski, Yamamoto). Full career files needed for future previews of these pitchers.</div>
+    </div>
+  </div>
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 9</div>
+    <div class="hb-body">n=63. Champion MAE 0.255 vs naive 0.254. The model is performing within expected noise for this sample size. <strong>Neither H1 nor H2 can be accepted or rejected at n=63.</strong> The study continues. Each game adds observations. The verdict is deferred to the full season sample. That is not a limitation. That is what research looks like.</div>
+  </div>
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-7-26. LAD 3, TOR 2.<br><br>
+      Yamamoto: 6 IP, 1 ER, 6 K. Strong outing. The model had .352 team wOBA projected. Actual .260. Observation 9 in the season study.<br><br>
+      The Cutter appeared at 19.3% to LHH — nearly double what the WS sample showed. Without a full career file we cannot say if that is his 2026 profile or a game-level adjustment. That is a data gap logged for the next time we face him.<br><br>
+      Running n=63. Champion MAE 0.255, naive 0.254. No inference before n=200. The season is the data collection period.<br><br>
+      Springer: third straight aligned call. Model and WS BvP agreed. He delivered. That signal is accumulating.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer">Statcast data via Baseball Savant · April 7, 2026 · Observation 9 · n=63 · Arm Chair Analyst · @scherrology</div>
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+const OBS=[
+  {n:'Giménez · Neutral',  exp:.379,n1:.307,act:.444,pa:2, champ:false,note:'Neutral · champion and naive both under-predicted'},
+  {n:'Sánchez · Suppressed',exp:.273,n1:.307,act:.424,pa:3,champ:false,note:'Suppressed inverted · Cutter gave her hittable pitch · pitch-mix input drove miss'},
+  {n:'Springer · Neutral',  exp:.363,n1:.322,act:.424,pa:3,champ:true, note:'Champion and BvP aligned · delivered · third straight'},
+  {n:'Varsho · Edge',       exp:.418,n1:.307,act:.232,pa:3,champ:false,note:'Edge missed · Splitter assumption drove placement · wrong input'},
+  {n:'Clement · Neutral',   exp:.330,n1:.322,act:.296,pa:3,champ:false,note:'Champion closer but both models over'},
+  {n:'Guerrero · Neutral',  exp:.356,n1:.322,act:.000,pa:3,champ:false,note:'Both models over · 0-for-3'},
+  {n:'Lukes · Neutral',     exp:.345,n1:.307,act:.000,pa:2,champ:false,note:'Both models over'},
+];
+const c=document.getElementById('obsRows');
+OBS.forEach(d=>{
+  const ec=Math.abs(d.exp-d.act).toFixed(3), en=Math.abs(d.n1-d.act).toFixed(3);
+  const badge=d.champ?'<span class="mbadge c">champ won</span>':'<span class="mbadge n">naive won</span>';
+  const row=document.createElement('div'); row.className=`obs-row ${d.champ?'pos':'neg'}`;
+  row.innerHTML=`<div class="or-name">${d.n}${badge}</div><div class="or-vals"><div class="or-v"><span class="lbl">Pred</span>${d.exp.toFixed(3)}</div><div class="or-v"><span class="lbl">Actual</span>${d.act.toFixed(3)}</div><div class="or-v"><span class="lbl">C-err</span>${ec}</div><div class="or-v"><span class="lbl">N-err</span>${en}</div><div class="or-v"><span class="lbl">PA</span>${d.pa}</div></div><div class="or-note">${d.note}</div>`;
+  c.appendChild(row);
+});
+</script>
+</body>
+</html>

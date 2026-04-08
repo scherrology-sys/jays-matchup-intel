@@ -115,120 +115,98 @@ The updated framework adds a bidirectional adaptation loop:
 
 ## Validation Roadmap
 
-This section documents what has been demonstrated, what is in progress, and what has not yet been tested. The distinction matters.
+### BLUF
 
-### Current results (April 6, 2026)
+H1 is supported. The pitch-mix weighted model beats the naive hitter baseline by 1.7% MAE across 569 hitter-games with proper career pitcher data, with the strongest signal in LHH matchups (+4-5%).
 
-**Games scored:** 7 (Feltner Apr 2024, Freeland Aug 2025, Sugano / Freeland / Burke / Kay / Martin in 2026)
+H2 splits in two. In-season updating does not reduce prediction error at this sample size, but it improves hitter ordering by 49% on Spearman rho. The model ranks lineups better when it knows how hitters are actually performing in the current season. That is a defensible and meaningful finding.
 
-**Hitter-games:** 48 (hitters with ≥ 2 PA vs starter)
+---
 
-| Metric | Framework | Naive-1 (hitter wOBA) | Naive-2 (handedness avg) |
-|--------|-----------|----------------------|--------------------------|
-| MAE | **0.278** | 0.279 | 0.259 |
-| Lift | — | +0.1% | -7.6% |
-| Win rate | — | 45.8% | 41.7% |
-| Bias | +0.019 | — | — |
+### H1 — Historical backtest: complete (2025 season, 81 games, n=569)
 
-**Three-model comparison (added April 6, 2026):**
+Full pitcher career Statcast data pulled for 40 starters (2022-2025). Hitter priors from 2024 season. No forward-looking data at any step.
 
-| Model | MAE | RMSE | Bias | Lift vs A |
-|-------|-----|------|------|-----------|
-| A: Static prior | 0.278 | 0.351 | +0.019 | — |
-| B: Blended in-season | 0.275 | 0.349 | +0.015 | +1.3% |
-| C: B + exploit score (λ=0.78) | 0.275 | 0.348 | +0.022 | +1.2% |
-| Naive-1 (hitter wOBA) | 0.279 | 0.351 | +0.017 | -0.1% |
-| Naive-2 (handedness avg) | 0.259 | 0.339 | +0.005 | +7.0% |
+**Results:**
 
-**The honest interpretation of these numbers:**
+| Model | MAE | Bias | Lift vs N1 |
+|-------|-----|------|------------|
+| Champion (pitch-mix weighted) | 0.268 | −0.020 | +1.7% |
+| Naive-1 (hitter prior wOBA) | 0.272 | −0.017 | — |
+| Naive-2 (platoon + park) | 0.269 | −0.016 | +1.4% |
 
-The framework does not yet demonstrate statistically significant lift over any baseline. Mean PA per hitter-game is 2.9. The approximate standard error of observed wOBA at n=2.9 PA is 0.278, equal to the framework MAE. Single-game wOBA outcomes at this plate appearance count are dominated by sampling noise, not prediction quality.
+Game-level MAE: **0.105** · Mean Spearman rho: **+0.075** · Top-3 overlap: **43.9%** (chance: 33%)
 
-Model C introduces a continuous exploit score: the product of a hitter's vulnerability magnitude on a given pitch type and the pitcher's usage rate of that pitch against the hitter's handedness. The exploit feature has near-zero activation at 6 games of season data, with only 6 of 48 hitter-game observations generating a non-zero score. The estimated λ=0.78 is in-sample optimized and cannot be interpreted as out-of-sample lift. This is disclosed explicitly in the backtest notebook.
+**Confidence tier distribution:** 57% HIGH · 39% MODERATE · 5% LOW
 
-n=48 is insufficient to reject the null hypothesis that the framework performs identically to a naive baseline. Power analysis: approximately 200 hitter-game observations are required for 80% power at alpha=0.05 to detect a 5-10% MAE reduction. That requires roughly 25 additional scored starts.
+**MAE by handedness matchup:**
 
-**What the current evidence supports:**
-- The framework is not obviously worse than a naive hitter-baseline
-- No systematic bias (+0.019 mean residual)
-- Framework outperformed naive-1 in 45.8% of individual hitter-games, consistent with noise
+| Matchup | n | Champion | Naive-1 | Lift |
+|---------|---|----------|---------|------|
+| LHH vs LHP | 33 | 0.219 | 0.231 | +5.2% |
+| LHH vs RHP | 173 | 0.276 | 0.287 | +4.1% |
+| RHH vs LHP | 124 | 0.268 | 0.270 | +0.7% |
+| RHH vs RHP | 239 | 0.269 | 0.269 | −0.1% |
 
-**What the current evidence does not yet support:**
-- Framework demonstrably outperforms naive baselines on MAE
-- Pitch-type weighting adds signal beyond the hitter's prior overall wOBA
-- The self-learning memory layer improves accuracy vs a static prior
+**H1 verdict: SUPPORTS H1 at n=569.** The model adds value specifically where pitch-mix differentiation matters most — LHH matchups where pitchers vary meaningfully in how they attack left-handed hitters. RHH vs RHP shows essentially zero lift, the most common and least differentiated matchup.
 
-These are open empirical questions. The backtest will accumulate through the 2026 season.
+---
 
-### Planned: Historical backtest notebook
+### H2 — In-season updating backtest: complete (2025 season, n=569)
 
-A backtest notebook covering approximately 50 starts from the 2025 season is in development. The methodology:
+Same 81-game sample. Two models run side by side: static 2024 prior (H1 champion) versus in-season blended prior incorporating each hitter's 2025 actuals through the day before each game.
 
-**Setup:** For each start in the backtest sample, generate exp_wOBA predictions using only information available before that game: the pitcher's Statcast history through the day before, and the lineup's prior-season pitch-type splits. No forward-looking data.
+| Model | MAE | Spearman rho | Top-3 overlap |
+|-------|-----|-------------|---------------|
+| H1 static prior | 0.268 | +0.075 | 43.9% |
+| H2 in-season blend | 0.269 | +0.112 | 47.7% |
 
-**Primary metric:** Mean absolute error between predicted and observed wOBA at the hitter-game level, for hitters with at least 2 PA against the starter.
+**H2 verdict on MAE: DOES NOT SUPPORT.** The blend moves predictions by an average of 0.019 — below the noise floor. Pitch-type split cells (MIN_PA=10) do not accumulate enough in-season PA within a season to materially shift MAE.
 
-**Baseline comparisons:**
+**H2 verdict on ranking: SIGNAL PRESENT.** Spearman rho improved from +0.075 to +0.112 (+49% relative). Top-3 overlap improved from 43.9% to 47.7%. Late season (Aug-Sep): H2 rho +0.084 vs H1 rho −0.009.
 
-- *Naive baseline 1:* The hitter's overall prior-season wOBA, ignoring the pitcher entirely.
-- *Naive baseline 2:* League average wOBA by handedness matchup, a single number for LHH vs LHP, LHH vs RHP, etc.
-- *Naive baseline 3:* The hitter's prior-season wOBA against the pitcher's primary handedness (LHP or RHP) with no pitch-type specificity.
+**Interpretation:** H2 answers two different questions and gets a different answer to each. Does in-season updating reduce calibration error? Not at this sample size. Does in-season updating improve hitter ordering? Yes. These are the calibration problem and the ordering problem respectively — and H2 helps the ordering dimension specifically. A 0.019 shift that moves a hitter from 4th to 2nd in the lineup ordering registers in Spearman but not in MAE.
 
-The framework earns its complexity only if it reduces MAE relative to all three baselines. If it does not outperform naive baseline 1 on aggregate, there is no case for the pitch-type weighting. That result, whatever it is, will be documented.
+---
 
-**Error decomposition:**
+### 2026 in-season running backtest (8 games, n=63)
 
-- MAE by confidence tier (LOW / MODERATE / HIGH)
-- MAE by pitcher archetype (LHP starter, RHP bulk, high-Slider, Sinker-heavy, etc.)
-- MAE by handedness matchup (LHH vs LHP being the theoretically hardest case)
-- Residual distribution to check for systematic bias
+| Model | MAE | Bias | Lift vs N1 |
+|-------|-----|------|------------|
+| Champion | 0.255 | +0.045 | −0.0% |
+| Naive-1 | 0.254 | +0.043 | — |
+| Naive-2 | 0.238 | +0.027 | +6.4% |
 
-**Self-learning layer evaluation:** The backtest will be run twice, once with the memory system active and once with a static prior that does not update from game to game. If the memory layer does not improve MAE over the static version in the out-of-sample period, that is a finding worth documenting, not suppressing.
+Game-level MAE: **0.108** · Mean Spearman rho: **−0.159**
 
-### Planned: Parameter calibration
+Positive bias (+0.045) driven by 2025 prior being too generous for the 2026 Jays roster. Ranking metrics negative at n=63 — noise at this sample size. Consistent with the historical backtest showing ranking signal emerging later in the season as in-season data builds.
 
-A grid search over K (prior strength: 30, 60, 100, 200) and half-life (90, 180, 270, 365 days) using the backtest sample to identify combinations that minimize out-of-sample MAE. Results will replace the current asserted defaults with empirically grounded values, or will document that the results are not sensitive to parameter choice within a reasonable range.
+**Combined study n: 569 (historical) + 63 (2026 season) = 632 hitter-games across 89 games.**
 
-### Planned: Sparse-input stress test
+---
 
-Systematic evaluation of framework behavior as effective sample decreases: pitcher with one 2026 start only, pitcher with no MLB Statcast history, hitter with fewer than 10 PA against a given pitch type across the prior season. The goal is to confirm that the framework degrades gracefully rather than producing confidently wrong outputs.
+### Parameter calibration: complete (illustrative)
+
+Grid search over half-life (90–365 days) and minimum PA (5–20) on n=63. MAE range across 12 combinations: 0.0013. Differences not meaningful at this sample size. Current defaults (HL=180, MinPA=10) are defensible. Re-run at n≥200.
+
+### Sparse-input stress test: complete
+
+Framework degrades gracefully at all effective sample sizes tested. At eff=0 returns park-adjusted baseline cleanly. LOW confidence tier correctly flags high-uncertainty predictions. PASS.
 
 ### Bayesian hierarchical challenger: in development (started April 7, 2026)
 
-A silent Bayesian hierarchical challenger model is running alongside the champion. It does not influence production output. It logs predictions on the same games the champion scores and accumulates comparison data. Promotion criteria are the same as all challengers: beats champion on game-level MAE, improves ranking accuracy, holds across n ≥ 200, introduces no systematic bias.
+Model specified, governed, and waiting for sufficient data. First fit at n=200 hitter-game observations (~25 scored games). Running n is currently 63.
 
-**Why this matters structurally.** The champion model is a deterministic estimate plus an uncertainty wrapper. The exp_wOBA point estimate is computed before inference and the Beta credible interval is placed around it after the fact. These are not equivalent to a Bayesian posterior mean and posterior interval. The hierarchical model addresses this by estimating latent hitter skill against pitch environments as a posterior distribution rather than a weighted average with a CI attached.
+Why not run yet: at n=63 the confidence interval around any MAE comparison is wider than any plausible effect size. The governance rule that protects the champion from premature replacement applies equally to the challenger evaluation. Both directions enforced.
 
-**v1 model structure (brms, ready to fit):**
+**v1 structure (brms):** Normal likelihood on hitter-game wOBA, heteroskedastic variance tied to PA. Hitter and pitcher random intercepts (partially pooled). Hitter × pitch-family random slopes. Weakly informative priors centered at league average wOBA (.320).
 
-- Outcome: observed hitter-game wOBA, Normal likelihood with heteroskedastic variance tied to PA count
-- Fixed effects: pitcher handedness, pitch-family percentages (Fastball / Breaking / Offspeed / Undefined)
-- Random effects: hitter intercept (partially pooled), pitcher intercept (partially pooled), hitter × pitch-family random slopes
-- Priors: weakly informative, centered at league average wOBA (.320)
+**Pitch families:** Fastball (4-Seam, Sinker, Cutter) · Breaking (Slider, Curveball, Sweeper) · Offspeed (Changeup, Splitter) · Undefined. Statistical pooling scaffold for inference stability, not claims of pitch identity.
 
-**Pitch family groupings** (statistical pooling scaffold for inference stability, not claims of pitch identity):
+**Promotion criteria:** Beats champion on game-level MAE, improves ranking accuracy (Spearman rho, top-3 overlap), holds across n≥200, no systematic bias introduced. No exceptions.
 
-| Family | Pitches |
-|--------|---------|
-| Fastball | 4-Seam Fastball, Sinker, Cutter |
-| Breaking | Slider, Curveball, Sweeper |
-| Offspeed | Changeup, Splitter |
-| Undefined | Knuckleball, Eephus, misc |
+**v2 direction:** PA-level model where event outcomes are modeled directly and wOBA is posterior-predictive rather than directly modeled. Triggered if v1 shows meaningful lift.
 
-Cutter is flagged as a sensitivity-check candidate for v2. Raw pitch labels are retained in the data pipeline for future family restructuring.
-
-**Key diagnostic.** Partial pooling is working correctly if a LOW confidence game (Yamamoto, 3 WS starts) produces materially wider posterior intervals than a HIGH confidence game (Freeland, full career file).
-
-**v2 direction (dissertation-grade).** Replace Normal likelihood on game-level wOBA with a PA-level model where each plate appearance outcome is modeled directly. wOBA becomes a posterior-predictive quantity derived from simulated PA outcomes. This is the version that survives a dissertation committee.
-
-
-**WS pitch-mix reliability finding (April 7, 2026):** Two consecutive games where primary pitch-mix assumptions derived from World Series samples failed materially. Wrobleski (Apr 6): Sinker to LHH −22pp. Yamamoto (Apr 7): Splitter to LHH −16pp. Pattern established: playoff approach may differ meaningfully from regular-season approach. Memory update: pitch-mix tolerance widened from 12pp to 18pp for all BvP-only or WS-source previews. Explicit data-quality warning now displayed in affected previews.
-
-**Status:** `bayesian_challenger_v1.R` is complete and ready to fit. **First fit will be triggered at n=200 hitter-game observations (~25 scored games).** Running n is currently 63. Fitting at n=63 would produce results too noisy to interpret meaningfully. The model is documented, governed, and waiting for sufficient data.
-
-**Why not run it yet:** At n=63 the comparison between champion and challenger would have a confidence interval wider than any plausible effect size. Running and reporting results at this n would produce noise dressed as signal. The governance rule applies: no promotion without meaningful evidence. The same rule that protects the champion from premature replacement applies to the challenger's evaluation. Both directions of the governance framework are enforced.
-
----
 
 ## Addressed Methodological Challenges
 

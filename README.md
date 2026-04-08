@@ -8,7 +8,7 @@
 
 Every preview executes H1 and H2 using the locked champion model. Every retro scores one observation against those hypotheses. Memory accumulates evidence. Verdict deferred to full season sample (target n=200). The study may confirm the model, reject it, or return an inconclusive result. All outcomes are valid findings.
 
----
+,-
 
 # Jays Matchup Intel
 
@@ -16,7 +16,7 @@ Daily pre-game matchup intelligence and post-game retrospective analysis for the
 
 **Live site:** [scherrology-sys.github.io/jays-matchup-intel](https://scherrology-sys.github.io/jays-matchup-intel)
 
----
+,-
 
 ## What This Is
 
@@ -24,7 +24,7 @@ Before every Jays game, a full pre-game matchup preview is published covering th
 
 The analysis is built around a self-calibrating framework that names its assumptions explicitly, scores them after each game, and carries what it learns into the next preview. That loop is the point. A single preview is directional. A season of previews and retrospectives is a progressively sharper instrument, provided the self-learning layer actually improves forecast accuracy. Demonstrating that it does is the primary validation objective for the 2026 season.
 
----
+,-
 
 ## Analytical Framework
 
@@ -69,7 +69,7 @@ For a hitter with an exp_wOBA of .350 this produces a 90% CI of approximately [.
 ### Confidence Classification
 
 | Tier | Effective weighted sample | Historical MAE |
-|------|--------------------------|----------------|
+|,,,|,,,,,,,,,,,,,|,,,,,,,,|
 | LOW | < 200 | any |
 | MODERATE | 200 – 700 | ≤ 0.060 |
 | HIGH | ≥ 700 | ≤ 0.040 |
@@ -111,7 +111,7 @@ The updated framework adds a bidirectional adaptation loop:
 
 **Validation plan.** The backtest will be run with and without in-season updating to measure whether blending adds MAE lift over static prior-season splits. This is the A/B test the self-learning layer requires.
 
----
+,-
 
 ## Validation Roadmap
 
@@ -121,7 +121,7 @@ H1 is supported. The pitch-mix weighted model beats the naive hitter baseline by
 
 H2 splits in two. In-season updating does not reduce prediction error at this sample size, but it improves hitter ordering by 49% on Spearman rho. The model ranks lineups better when it knows how hitters are actually performing in the current season. That is a defensible and meaningful finding.
 
----
+,-
 
 ### H1 — Historical backtest: complete (2025 season, 81 games, n=569)
 
@@ -130,7 +130,7 @@ Full pitcher career Statcast data pulled for 40 starters (2022-2025). Hitter pri
 **Results:**
 
 | Model | MAE | Bias | Lift vs N1 |
-|-------|-----|------|------------|
+|,,,-|,,-|,,,|,,,,,,|
 | Champion (pitch-mix weighted) | 0.268 | −0.020 | +1.7% |
 | Naive-1 (hitter prior wOBA) | 0.272 | −0.017 | — |
 | Naive-2 (platoon + park) | 0.269 | −0.016 | +1.4% |
@@ -142,7 +142,7 @@ Game-level MAE: **0.105** · Mean Spearman rho: **+0.075** · Top-3 overlap: **4
 **MAE by handedness matchup:**
 
 | Matchup | n | Champion | Naive-1 | Lift |
-|---------|---|----------|---------|------|
+|,,,,-|,-|,,,,,|,,,,-|,,,|
 | LHH vs LHP | 33 | 0.219 | 0.231 | +5.2% |
 | LHH vs RHP | 173 | 0.276 | 0.287 | +4.1% |
 | RHH vs LHP | 124 | 0.268 | 0.270 | +0.7% |
@@ -150,14 +150,14 @@ Game-level MAE: **0.105** · Mean Spearman rho: **+0.075** · Top-3 overlap: **4
 
 **H1 verdict: SUPPORTS H1 at n=569.** The model adds value specifically where pitch-mix differentiation matters most — LHH matchups where pitchers vary meaningfully in how they attack left-handed hitters. RHH vs RHP shows essentially zero lift, the most common and least differentiated matchup.
 
----
+,-
 
 ### H2 — In-season updating backtest: complete (2025 season, n=569)
 
 Same 81-game sample. Two models run side by side: static 2024 prior (H1 champion) versus in-season blended prior incorporating each hitter's 2025 actuals through the day before each game.
 
 | Model | MAE | Spearman rho | Top-3 overlap |
-|-------|-----|-------------|---------------|
+|,,,-|,,-|,,,,,,-|,,,,,,,-|
 | H1 static prior | 0.268 | +0.075 | 43.9% |
 | H2 in-season blend | 0.269 | +0.112 | 47.7% |
 
@@ -167,12 +167,12 @@ Same 81-game sample. Two models run side by side: static 2024 prior (H1 champion
 
 **Interpretation:** H2 answers two different questions and gets a different answer to each. Does in-season updating reduce calibration error? Not at this sample size. Does in-season updating improve hitter ordering? Yes. These are the calibration problem and the ordering problem respectively — and H2 helps the ordering dimension specifically. A 0.019 shift that moves a hitter from 4th to 2nd in the lineup ordering registers in Spearman but not in MAE.
 
----
+,-
 
 ### 2026 in-season running backtest (8 games, n=63)
 
 | Model | MAE | Bias | Lift vs N1 |
-|-------|-----|------|------------|
+|,,,-|,,-|,,,|,,,,,,|
 | Champion | 0.255 | +0.045 | −0.0% |
 | Naive-1 | 0.254 | +0.043 | — |
 | Naive-2 | 0.238 | +0.027 | +6.4% |
@@ -183,7 +183,7 @@ Positive bias (+0.045) driven by 2025 prior being too generous for the 2026 Jays
 
 **Combined study n: 569 (historical) + 63 (2026 season) = 632 hitter-games across 89 games.**
 
----
+,-
 
 ### Parameter calibration: complete (illustrative)
 
@@ -240,7 +240,7 @@ These are problems the framework has directly resolved, not merely acknowledged.
 
 **The fix:** The `park_adjusted_baseline()` function applies a park factor multiplier to the handedness-specific baseline. Source: Baseball Reference 3-year rolling wOBA park factors. The adjusted baseline replaces the flat .320/.325 whenever a fallback is used. Current park factors: Rogers Centre 0.99, Coors 1.15, Guaranteed Rate 0.98, Dodger Stadium 0.97.
 
----
+,-
 
 ## Remaining Limitations
 
@@ -260,13 +260,13 @@ These are honest constraints the framework does not yet resolve.
 
 **No adjustment for umpire or weather.** Park factors are now applied. Umpire strike-zone tendencies and weather conditions remain unmodeled. Both affect outcomes in ways that interact with pitcher command and batted ball results.
 
----
+,-
 
 ## Scope
 
 Analysis covers the opposing starter's plate appearances. Opener innings are logged in the retrospective but excluded from scoring and memory. Modeling relief pitcher usage or bullpen structure pre-game from public data is not defensible.
 
----
+,-
 
 ## Site Structure
 
@@ -288,12 +288,12 @@ Source code is published in `/analysis`. The framework runs on three core script
 
 Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-level exports. No proprietary data sources.
 
----
+,-
 
 ## 2026 Season Log
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
-|------|-----|---------|--------|----------|-------|
+|,,,|,,-|,,,,-|,,,,|,,,,,|,,,-|
 | 4-8-26  | LAD | S. Ohtani RHP | — | G. Springer (.44) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-08-ohtani/) |
 | 4-7-26  | LAD | Y. Yamamoto RHP | LAD 4, TOR 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-07-yamamoto/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-07-yamamoto/) |
 | 4-6-26  | LAD | J. Wrobleski LHP | LAD 14, TOR 2 | V. Guerrero (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-06-wrobleski/) |
@@ -308,6 +308,6 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 *Updated: April 8, 2026*
 
----
+,-
 
 Built by **Arm Chair Analyst** · [@scherrology](https://x.com/scherrology) · [GitHub](https://github.com/scherrology-sys)

@@ -9,7 +9,9 @@ Built and published by [@scherrology](https://x.com/scherrology) under the **Arm
 
 ## BLUF
 
-This project builds and evaluates a pitch-mix aware model for estimating lineup offensive output against a specific starting pitcher.
+This project tests whether a pitch-mix aware model can improve estimates of lineup offensive output against a specific starting pitcher.
+
+In plain terms: this model asks "how will this lineup perform tonight against this pitcher," not "how good are these hitters overall."
 
 Unlike naive hitter-based projections, the model adjusts each hitter's expected performance based on the pitcher's arsenal, pitch-type usage patterns, and the hitter's historical performance against each pitch family. Each hitter gets an expected wOBA weighted by the pitcher's specific mix, not just a platoon average.
 
@@ -33,7 +35,7 @@ This system tests whether incorporating pitcher-specific pitch mix provides a me
 
 Before every Jays game, a pre-game matchup preview is published. After the game, a retrospective scores the prediction against observed outcomes and updates the system's working knowledge of that pitcher going forward.
 
-That loop is the point. Prediction, assumption audit, scoring, memory. A single preview is directional. A season of previews and retrospectives is a prospective validation study.
+That loop is the point. Prediction, assumption audit, scoring, memory. A single preview is directional. The season is the validation.
 
 ---
 

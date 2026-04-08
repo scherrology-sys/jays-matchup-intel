@@ -21,14 +21,19 @@ The system is locked for the 2026 season and evaluated prospectively through dai
 
 ---
 
-## What This Is
+## Why This Matters
 
-Before every Jays game, a full pre-game matchup preview is published covering the opposing starter. After the game, a retrospective evaluates the pre-game read against observed outcomes and updates the system's working knowledge of that pitcher type going forward.
+Traditional projections treat hitters as static. In reality, performance is conditional on how pitchers attack them. A hitter with strong fastball splits facing a pitcher who throws 60% breaking balls is in a fundamentally different environment than his season line suggests.
 
-The analysis is built around a self-calibrating framework that names its assumptions explicitly, scores them after each game, and carries what it learns into the next preview. That loop is the point. A single preview is directional. A season of previews and retrospectives is a progressively sharper instrument, provided the self-learning layer actually improves forecast accuracy. Demonstrating that it does is the primary validation objective for the 2026 season.
+This system tests whether incorporating pitcher-specific pitch mix provides a measurable edge in predicting lineup performance and hitter ordering. If it does, it suggests matchup-aware modeling is a more effective framework than talent-only baselines. If it does not, that is an equally important finding and it will be documented as such.
 
 ---
 
+## What This Is
+
+Before every Jays game, a pre-game matchup preview is published. After the game, a retrospective scores the prediction against observed outcomes and updates the system's working knowledge of that pitcher going forward.
+
+That loop is the point. Prediction, assumption audit, scoring, memory. A single preview is directional. A season of previews and retrospectives is a prospective validation study.
 
 ---
 

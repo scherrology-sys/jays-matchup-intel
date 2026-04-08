@@ -1,3 +1,15 @@
+## Research Framework
+
+**Model locked: April 7, 2026.** Parameters do not change mid-season. The season is the data collection period. No tweaking.
+
+**H1:** A pitch-mix weighted expectation model produces more accurate estimates of lineup offensive output against a given starter than a naive hitter-baseline that ignores the pitcher's arsenal.
+
+**H2:** As in-season data accumulates, updating hitter pitch-type performance toward 2026 actuals improves those estimates beyond what the prior-season baseline alone produces.
+
+Every preview executes H1 and H2 using the locked champion model. Every retro scores one observation against those hypotheses. Memory accumulates evidence. Verdict deferred to full season sample (target n=200). The study may confirm the model, reject it, or return an inconclusive result. All outcomes are valid findings.
+
+---
+
 # Jays Matchup Intel
 
 Daily pre-game matchup intelligence and post-game retrospective analysis for the Toronto Blue Jays. Built and published by [@scherrology](https://x.com/scherrology) under the **Arm Chair Analyst** brand.
@@ -207,9 +219,14 @@ Cutter is flagged as a sensitivity-check candidate for v2. Raw pitch labels are 
 
 **Key diagnostic.** Partial pooling is working correctly if a LOW confidence game (Yamamoto, 3 WS starts) produces materially wider posterior intervals than a HIGH confidence game (Freeland, full career file).
 
-**v2 direction.** Replace Normal likelihood on game-level wOBA with a PA-level model where each plate appearance outcome is modeled directly. wOBA becomes a posterior-predictive quantity derived from simulated PA outcomes. This is the version that survives a dissertation committee.
+**v2 direction (dissertation-grade).** Replace Normal likelihood on game-level wOBA with a PA-level model where each plate appearance outcome is modeled directly. wOBA becomes a posterior-predictive quantity derived from simulated PA outcomes. This is the version that survives a dissertation committee.
 
-**Status:** `bayesian_challenger_v1.R` complete. Silent. Will not appear in production previews until it earns promotion through the standard evaluation process.
+
+**WS pitch-mix reliability finding (April 7, 2026):** Two consecutive games where primary pitch-mix assumptions derived from World Series samples failed materially. Wrobleski (Apr 6): Sinker to LHH −22pp. Yamamoto (Apr 7): Splitter to LHH −16pp. Pattern established: playoff approach may differ meaningfully from regular-season approach. Memory update: pitch-mix tolerance widened from 12pp to 18pp for all BvP-only or WS-source previews. Explicit data-quality warning now displayed in affected previews.
+
+**Status:** `bayesian_challenger_v1.R` is complete and ready to fit. **First fit will be triggered at n=200 hitter-game observations (~25 scored games).** Running n is currently 63. Fitting at n=63 would produce results too noisy to interpret meaningfully. The model is documented, governed, and waiting for sufficient data.
+
+**Why not run it yet:** At n=63 the comparison between champion and challenger would have a confidence interval wider than any plausible effect size. Running and reporting results at this n would produce noise dressed as signal. The governance rule applies: no promotion without meaningful evidence. The same rule that protects the champion from premature replacement applies to the challenger's evaluation. Both directions of the governance framework are enforced.
 
 ---
 
@@ -299,7 +316,8 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-7-26  | LAD | Y. Yamamoto RHP | — | A. Barger (.44) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-07-yamamoto/) |
+| 4-8-26  | LAD | S. Ohtani RHP | — | G. Springer (.44) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-08-ohtani/) |
+| 4-7-26  | LAD | Y. Yamamoto RHP | LAD 3, TOR 2 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-07-yamamoto/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-07-yamamoto/) |
 | 4-6-26  | LAD | J. Wrobleski LHP | LAD 14, TOR 2 | V. Guerrero (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-06-wrobleski/) |
 | 4-5-26  | @ CWS | D. Martin RHP | CWS 3, TOR 0 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-05-martin/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-05-martin/) |
 | 4-4-26  | @ CWS | A. Kay LHP · G. Taylor (opener) | CWS 6, TOR 3 | G. Springer (.43) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-04-kay-taylor/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-04-kay-taylor/) |
@@ -308,9 +326,9 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 4-6 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 0-1**
+**2026 record: 4-7 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 0-2 · series finale today**
 
-*Updated: April 7, 2026*
+*Updated: April 8, 2026*
 
 ---
 

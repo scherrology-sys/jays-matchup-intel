@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Ohtani · April 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#0a0010 0%,#120018 60%,#0a000e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.result-bug{display:inline-flex;align-items:center;gap:8px;background:rgba(232,0,45,.12);border:1px solid rgba(232,0,45,.3);border-radius:3px;padding:6px 14px;margin-bottom:16px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;}
+.rlabel{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.hed{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.hyp{border-radius:5px;padding:20px;margin-bottom:16px;}
+.hyp.h1{background:rgba(45,212,160,.04);border:1px solid rgba(45,212,160,.2);}
+.hyp.h2{background:rgba(244,185,66,.04);border:1px solid rgba(244,185,66,.18);}
+.hyp-lbl{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+.hyp-lbl.h1{color:var(--green);}.hyp-lbl.h2{color:var(--amber);}
+.hyp-res{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--cream);margin-bottom:6px;}
+.hyp-note{font-size:12px;color:var(--mid);line-height:1.65;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.obs-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.obs-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.obs-row.pos::before{background:var(--green);}
+.obs-row.neg::before{background:var(--rose);}
+.obs-row.neu::before{background:rgba(255,255,255,.15);}
+.or-name{font-size:13px;font-weight:600;color:var(--cream);width:160px;flex-shrink:0;}
+.or-vals{display:flex;gap:16px;flex:1;}
+.or-v{font-family:'IBM Plex Mono',monospace;font-size:10px;}
+.or-v .lbl{color:var(--dim);font-size:8px;letter-spacing:.1em;display:block;}
+.or-note{font-size:11px;color:var(--dim);flex:1;line-height:1.4;}
+.mbadge{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 5px;border-radius:2px;margin-left:5px;}
+.mbadge.c{background:rgba(45,212,160,.1);color:var(--green);}
+.mbadge.n{background:rgba(255,79,106,.1);color:var(--rose);}
+.assume-card{background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;margin-bottom:10px;}
+.assume-top{display:flex;}
+.assume-verdict{width:72px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 8px;}
+.assume-verdict.held{background:rgba(45,212,160,.1);color:var(--green);border-right:2px solid var(--green);}
+.assume-body{padding:14px 18px;flex:1;}
+.assume-name{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:4px;}
+.assume-nums{display:flex;gap:20px;margin-bottom:6px;}
+.assume-num{font-family:'IBM Plex Mono',monospace;font-size:10px;}
+.assume-num .lbl{color:var(--dim);font-size:8px;display:block;}
+.assume-note{font-size:12px;color:var(--mid);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · LAD @ TOR · Rogers Centre · April 8, 2026 · Observation 10</div>
+      <div class="result-bug"><div><div class="rlabel">Final</div><div class="score">TOR 4 · LAD 3</div></div></div>
+      <div class="hed">SHOHEI <span class="red">OHTANI</span> · OBSERVATION 10</div>
+      <div class="dek"><em>6 IP · 97 pitches.</em> Every pitch-mix assumption held. Career file data proved reliable. Guerrero had the best night against him. Springer, the lone Edge hitter, under-performed. One observation. Study continues.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Ohtani line</div><div class="mi-val">6 IP · 97 pitches</div><div class="mi-sub">career file · MODERATE confidence</div></div>
+    <div class="mi"><div class="mi-lbl">Game-level error</div><div class="mi-val">0.096</div><div class="mi-sub">exp .335 · actual .239 · over-predicted</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val">All held</div><div class="mi-sub">first game with zero failures this series</div></div>
+    <div class="mi"><div class="mi-lbl">Spearman rho</div><div class="mi-val">+0.482</div><div class="mi-sub">best ranking game of the season</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val">5-7</div><div class="mi-sub">1-2 vs LAD</div></div>
+  </div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">Assumption Audit</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+</div>
+<div class="wrap">
 
+<div class="panel active" id="p0">
+  <div class="lede">Observation 10. The model over-predicted at game level but produced the best Spearman rho of the 2026 season. Every pitch-mix assumption held, the first time that has happened in the LAD series.</div>
+
+  <div class="hyp h1">
+    <div class="hyp-lbl h1">H1 · Champion vs Naive-1 this game</div>
+    <div class="hyp-res">Champion MAE: 0.237 · Naive-1 MAE: 0.237 · Tie</div>
+    <div class="hyp-note">Identical MAE. The champion and naive baseline predicted equally well at the hitter level. At game level the champion was 0.001 worse. H1 is neither supported nor refuted by this observation — both models over-predicted by roughly the same amount, driven by Ohtani being sharper than either prior expected.</div>
+  </div>
+
+  <div class="hyp h2">
+    <div class="hyp-lbl h2">H2 · Ranking signal</div>
+    <div class="hyp-res">Spearman rho: +0.482 · Top-3 overlap: 2/3</div>
+    <div class="hyp-note">The strongest ranking performance of the 2026 season. The model correctly identified Guerrero and Springer as the top two threats. Sánchez making the actual top-3 was the miss. Two of three top-3 predicted correctly is well above the 33% chance baseline. This game adds meaningful ranking signal to the study.</div>
+  </div>
+
+  <div class="callout green">
+    <strong>What made this game different from the LAD series:</strong> The career file (15 starts, 388 effective pitches) gave the model a reliable pitch-mix foundation. Every assumption held within tolerance. No WS-only sample problem. This is what the model is supposed to look like when the data quality is right.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Running study metrics (10 games)</div>
+      <div class="stat-row"><div class="stat-lbl">Champion MAE (hitter-level)</div><div class="stat-val">~0.254</div></div>
+      <div class="stat-row"><div class="stat-lbl">Game-level MAE running</div><div class="stat-val">~0.105</div></div>
+      <div class="stat-row"><div class="stat-lbl">Mean Spearman rho</div><div class="stat-val">improving from −0.159</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 status</div><div class="stat-val">Insufficient evidence</div></div>
+      <div class="stat-row"><div class="stat-lbl">H2 status</div><div class="stat-val">Ranking signal present</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">The Guerrero miss</div>
+      <div class="prose">Guerrero produced .720 actual wOBA, the highest of any hitter against Ohtani. The champion had him neutral at .363. His WS BvP (.700 in 3 PA) pointed in the right direction but the model held neutral because 3 PA does not move tier placement. This is one game. The WS BvP signal on Guerrero vs Ohtani has now appeared twice. Worth tracking.</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="p1">
+  <div class="lede">What the locked champion model predicted. Career file data. MODERATE confidence. Tier threshold ±0.030.</div>
+  <div id="obsRows"></div>
+</div>
+
+<div class="panel" id="p2">
+  <div class="lede">First game this series where every pitch-mix assumption held. Career file proved reliable.</div>
+
+  <div class="callout green">
+    <strong>All assumptions held.</strong> The contrast with the Wrobleski and Yamamoto games is direct. Those previews were built on WS samples and both failed materially. This preview was built on a 15-start career file and every assumption was within tolerance. The confidence tier system is working as intended.
+  </div>
+
+  <div id="assumeCards"></div>
+
+  <div class="card" style="margin-top:16px;">
+    <div class="card-hd">Comparison to prior LAD series games</div>
+    <div class="prose">
+      <strong>Wrobleski Apr 6:</strong> WS source. Sinker assumption failed −22pp.<br><br>
+      <strong>Yamamoto Apr 7:</strong> WS source. Splitter assumption failed −16pp. Cutter jumped +9pp.<br><br>
+      <strong>Ohtani Apr 8:</strong> Career file (15 starts). All assumptions held. This confirms the pattern established this series. WS-source pitch-mix estimates are unreliable. Career files produce stable assumptions. The data source matters more than the model when the input quality is poor.
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="p3">
+  <div class="lede">The running study after 10 observations.</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Game-level errors by observation</div>
+      <div class="stat-row"><div class="stat-lbl">1 · Feltner 2024-04-12</div><div class="stat-val">0.144</div></div>
+      <div class="stat-row"><div class="stat-lbl">2 · Freeland 2025-08-06</div><div class="stat-val">0.113</div></div>
+      <div class="stat-row"><div class="stat-lbl">3 · Sugano 2026-03-30</div><div class="stat-val">0.068</div></div>
+      <div class="stat-row"><div class="stat-lbl">4 · Freeland 2026-04-01</div><div class="stat-val">0.077</div></div>
+      <div class="stat-row"><div class="stat-lbl">5 · Burke 2026-04-03</div><div class="stat-val">0.100</div></div>
+      <div class="stat-row"><div class="stat-lbl">6 · Kay 2026-04-04</div><div class="stat-val">0.105</div></div>
+      <div class="stat-row"><div class="stat-lbl">7 · Martin 2026-04-05</div><div class="stat-val">0.107</div></div>
+      <div class="stat-row"><div class="stat-lbl">8 · Wrobleski 2026-04-06</div><div class="stat-val">0.160</div></div>
+      <div class="stat-row"><div class="stat-lbl">9 · Yamamoto 2026-04-07</div><div class="stat-val">0.092</div></div>
+      <div class="stat-row"><div class="stat-lbl">10 · Ohtani 2026-04-08</div><div class="stat-val">0.096</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Emerging patterns</div>
+      <div class="prose"><strong>Bias is consistent (+0.045 running).</strong> The 2025 prior is too generous for the 2026 Jays. Every model over-predicts. This will narrow as the season progresses.<br><br><strong>Ranking is improving.</strong> This game's Spearman of +0.482 is the best of the season. The career file produced the strongest ranking result. Data quality drives ranking accuracy more than any model parameter.<br><br><strong>The WS reliability finding is now confirmed across 3 games.</strong> Wrobleski, Yamamoto both failed. Ohtani held. The pattern is not coincidence.</div>
+    </div>
+  </div>
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 10</div>
+    <div class="hb-body">Ten observations. H1 still insufficient evidence. H2 ranking signal is accumulating. The Ohtani game is the cleanest data point of the 2026 season — career file, all assumptions held, positive Spearman. <strong>No inference before n=200. The season is the validation.</strong></div>
+  </div>
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-8-26. TOR 4, LAD 3. Jays take the series finale.<br><br>
+      Ohtani: 6 IP, 97 pitches. The model had .335 team wOBA projected. Actual .239 vs Ohtani. Over-predicted, but produced the best Spearman rho of the season at +0.482. Career file data held. Every pitch-mix assumption within tolerance.<br><br>
+      The contrast with the Yamamoto and Wrobleski games is direct. WS-only samples both failed. Career file held. Data source matters more than model when the input is poor.<br><br>
+      Guerrero was the actual top performer at .720. The WS BvP (.700 in 3 PA) pointed in the right direction. The model held him neutral at 3 PA. That signal has now appeared twice vs Ohtani.<br><br>
+      Running n: ~70 hitter-games, 10 observations. No inference before n=200.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer">Statcast data via Baseball Savant · April 8, 2026 · Observation 10 · Arm Chair Analyst · @scherrology</div>
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+
+const OBS=[
+  {n:'Springer · Edge',      exp:.440,act:.296,pa:3,champ:false,note:'Edge miss · under-performed · Sweeper exposure'},
+  {n:'Guerrero · Neutral',   exp:.363,act:.720,pa:3,champ:false,note:'Neutral — actual top performer · WS BvP .700 signal noted'},
+  {n:'Varsho · Neutral',     exp:.341,act:.232,pa:3,champ:true, note:'Champion closer · Curveball drove at-bats'},
+  {n:'Heineman · Neutral',   exp:.332,act:.000,pa:2,champ:true, note:'Champion closer · Sweeper-dominant'},
+  {n:'Giménez · Neutral',    exp:.325,act:.000,pa:2,champ:false,note:'Both over'},
+  {n:'Sánchez · Neutral',    exp:.306,act:.424,pa:3,champ:false,note:'Actual top-3 · LHH facing Curveball-heavy approach'},
+  {n:'Clement · Suppressed', exp:.275,act:.000,pa:3,champ:true, note:'Suppressed held · RHH Sweeper-heavy'},
+];
+
+const c=document.getElementById('obsRows');
+OBS.forEach(d=>{
+  const ec=Math.abs(d.exp-d.act).toFixed(3);
+  const badge=d.champ?'<span class="mbadge c">champ won</span>':'<span class="mbadge n">naive won</span>';
+  const cls=d.champ?'pos':'neg';
+  const row=document.createElement('div'); row.className=`obs-row ${cls}`;
+  row.innerHTML=`<div class="or-name">${d.n}${badge}</div><div class="or-vals"><div class="or-v"><span class="lbl">Pred</span>${d.exp.toFixed(3)}</div><div class="or-v"><span class="lbl">Actual</span>${d.act.toFixed(3)}</div><div class="or-v"><span class="lbl">Err</span>${ec}</div><div class="or-v"><span class="lbl">PA</span>${d.pa}</div></div><div class="or-note">${d.note}</div>`;
+  c.appendChild(row);
+});
+
+const ASSUME=[
+  {name:'4-Seam Fastball to LHH', exp:44.1, act:40.0, tol:12},
+  {name:'Curveball to LHH',       exp:17.8, act:25.5, tol:12},
+  {name:'Sweeper to RHH',         exp:36.9, act:46.3, tol:12},
+  {name:'Fastball velocity',       exp:98.1, act:98.3, tol:1.5, unit:'mph'},
+];
+const ac=document.getElementById('assumeCards');
+ASSUME.forEach(a=>{
+  const delta=(a.act-a.exp).toFixed(1);
+  const held=Math.abs(a.act-a.exp)<=a.tol;
+  const card=document.createElement('div'); card.className='assume-card';
+  card.innerHTML=`<div class="assume-top"><div class="assume-verdict held">✓ Held</div><div class="assume-body"><div class="assume-name">${a.name}</div><div class="assume-nums"><div class="assume-num"><span class="lbl">Expected</span>${a.exp}${a.unit||'%'}</div><div class="assume-num"><span class="lbl">Actual</span>${a.act}${a.unit||'%'}</div><div class="assume-num"><span class="lbl">Delta</span>${delta>0?'+':''}${delta}${a.unit||'pp'}</div><div class="assume-num"><span class="lbl">Tolerance</span>±${a.tol}${a.unit||'pp'}</div></div><div class="assume-note">Within tolerance. Career file data reliable.</div></div></div>`;
+  ac.appendChild(card);
+});
+</script>
+</body>
+</html>

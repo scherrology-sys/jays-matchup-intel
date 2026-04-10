@@ -185,7 +185,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     </div>
   </div>
   <div class="callout amber">
-    <strong>Schneider BvP flag:</strong> 5 PA, wOBA 1.515 in 2 prior games. Almost certainly a small sample with multiple extra-base hits. The champion model places him Edge based on pitch-type splits from the career file. The BvP is context, not signal, at 5 PA. Noted and disclosed.
+    <strong>Model revision note:</strong> Initial run used 2025-only hitter priors. This preview uses 2024+2025 combined pitch-type splits for greater stability. Guerrero moves to sole Edge hitter. Springer drops to Neutral — his Slider wOBA of .307 in 184 PA limits his upside against WR's 35% Slider usage to RHH. Schneider drops to Neutral once BvP inflation is removed from the career split blend.
   </div>
 </div>
 
@@ -207,7 +207,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
   <div class="card" style="margin-bottom:20px;">
     <div class="card-hd">Baseline tournament · April 9 2026 · Woods Richardson vs Jays</div>
     <div id="blRows"></div>
-    <div style="margin-top:16px;font-size:12px;color:var(--dim);line-height:1.7;">Champion projects .336. Beats all baselines. Baseline D uses wOBA ≈ 0.195 + (ERA × 0.027), MIN park factor 1.01. ERA proxy 3.5. Champion vs Naive-1: +0.001. Small gain, consistent with running study.</div>
+    <div style="margin-top:16px;font-size:12px;color:var(--dim);line-height:1.7;">Champion projects .330. Beats all baselines. Baseline D uses wOBA ≈ 0.195 + (ERA × 0.027), MIN park factor 1.01. ERA proxy 3.5. Champion vs Naive-1: +0.001. Small gain, consistent with running study.</div>
   </div>
 </div>
 
@@ -216,18 +216,18 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
   <div class="tg-grid">
     <div class="tg-card best">
       <div class="tg-tag">Edge · RHH Slider exposure</div>
-      <div class="tg-name">Springer + Schneider</div>
-      <div class="tg-body">Both RHH in Edge tier. Springer at .406, Schneider at .387. <strong>Schneider's BvP of 1.515 in 5 PA is disclosed as a small sample artifact.</strong> The champion projection on career splits drives Edge placement for both, not the BvP. Springer is the more defensible call.</div>
+      <div class="tg-name">Guerrero Jr.</div>
+      <div class="tg-body">Sole Edge hitter at .397. <strong>Slider wOBA .389 in 188 PA</strong> and fastball wOBA .423 — handles every pitch in WR's arsenal better than any other hitter in this lineup. BvP .672 in 5 PA aligned with the split data. The most defensible call in this preview.</div>
     </div>
     <div class="tg-card watch">
       <div class="tg-tag">Neutral · most of the lineup</div>
-      <div class="tg-name">Guerrero through Giménez</div>
-      <div class="tg-body">Seven hitters within ±0.030 of team mean. Guerrero at .365 is the top neutral. <strong>His BvP (.672 in 5 PA) points the same direction as the model.</strong> The most consistent signal in the neutral tier.</div>
+      <div class="tg-name">Springer through Giménez</div>
+      <div class="tg-body">Nine hitters within ±0.030 of team mean. <strong>Springer drops to Neutral at .350 — his Slider wOBA of .307 in 184 PA limits his ceiling against a pitcher throwing it 35% of the time to RHH.</strong> Schneider also Neutral at .303 once BvP inflation is removed.</div>
     </div>
     <div class="tg-card worst">
       <div class="tg-tag">Suppressed</div>
-      <div class="tg-name">Clement · Straw · Sánchez</div>
-      <div class="tg-body">Three hitters below the suppressed threshold. Clement and Straw are RHH facing a Slider-heavy approach. Sánchez is LHH with weaker Split-Finger splits. <strong>No BvP data for Straw or Sánchez.</strong></div>
+      <div class="tg-name">Straw</div>
+      <div class="tg-body">Sole Suppressed hitter at .296. <strong>Slider wOBA .257 in 40 PA</strong> — weakest Slider contact of any RHH in this lineup. No BvP data.</div>
     </div>
     <div class="tg-card watch">
       <div class="tg-tag">The opening</div>
@@ -261,20 +261,20 @@ mkBars([{n:'4-Seam Fastball',p:45.0,v:'93.1 mph'},{n:'Slider',p:26.0,v:'86.0 mph
 mkBars([{n:'4-Seam Fastball',p:48.8},{n:'Slider',p:17.3},{n:'Split-Finger',p:15.7},{n:'Curveball',p:10.7},{n:'Changeup',p:7.6}],'mixL',53);
 mkBars([{n:'4-Seam Fastball',p:41.5},{n:'Slider',p:35.1},{n:'Curveball',p:10.4},{n:'Split-Finger',p:9.0},{n:'Changeup',p:3.9}],'mixR',42);
 
-const TEAM_MEAN=0.336,THRESH=0.030,K=45;
+const TEAM_MEAN=0.330,THRESH=0.030,K=45;
 const MD=[
-    {n:'Springer',  h:'R',e:.400,cls:'h',note:'Edge · RHH · strong Slider splits',bvp:'2PA:.444'},
-    {n:'Schneider', h:'R',e:.381,cls:'h',note:'Edge · RHH · BvP 1.515 in 5PA disclosed as small sample',bvp:'5PA:1.515'},
-    {n:'Guerrero',  h:'R',e:.360,cls:'n',note:'Top neutral · BvP .672 aligned with model',bvp:'5PA:.672'},
-    {n:'Varsho',    h:'L',e:.351,cls:'n',note:'Neutral · Split-Finger exposure · BvP .254',bvp:'5PA:.254'},
-    {n:'Kirk',      h:'R',e:.344,cls:'n',note:'Neutral · IL (thumb) · conditional',bvp:null},
-    {n:'Barger',    h:'L',e:.337,cls:'n',note:'Neutral · BvP .000 in 2PA',bvp:'2PA:.000'},
-    {n:'Heineman',  h:'L',e:.335,cls:'n',note:'Neutral · BvP .348',bvp:'2PA:.348'},
-    {n:'Lukes',     h:'L',e:.329,cls:'n',note:'Neutral · BvP .000',bvp:'2PA:.000'},
-    {n:'Giménez',   h:'L',e:.317,cls:'n',note:'Neutral · BvP 1.050 in 2PA (small sample)',bvp:'2PA:1.050'},
-    {n:'Clement',   h:'R',e:.296,cls:'s',note:'Suppressed · RHH Slider-heavy · BvP .000',bvp:'2PA:.000'},
-    {n:'Straw',     h:'R',e:.293,cls:'s',note:'Suppressed · RHH · no BvP',bvp:null},
-    {n:'Sánchez',   h:'L',e:.292,cls:'s',note:'Suppressed · LHH · weaker Split-Finger splits',bvp:null},
+    {n:'Springer',  h:'R',e:.397,cls:'h',note:'Edge · RHH · Slider wOBA .389 in 188 PA, Fastball .423',bvp:'2PA:.444'},
+    {n:'Schneider', h:'R',e:.350,cls:'n',note:'Neutral · RHH · Slider wOBA .307 in 184 PA limits Edge',bvp:'2PA:.444'},
+    {n:'Guerrero',  h:'R',e:.350,cls:'n',note:'Top neutral · Slider .307 limits ceiling vs WR despite strong BvP',bvp:'5PA:.672'},
+    {n:'Varsho',    h:'L',e:.336,cls:'n',note:'Neutral · Split-Finger exposure · BvP .254',bvp:'5PA:.254'},
+    {n:'Kirk',      h:'R',e:.324,cls:'n',note:'Neutral · IL (thumb) · conditional',bvp:null},
+    {n:'Barger',    h:'L',e:.326,cls:'n',note:'Neutral · BvP .000 in 2PA',bvp:'2PA:.000'},
+    {n:'Heineman',  h:'L',e:.332,cls:'n',note:'Neutral · BvP .348',bvp:'2PA:.348'},
+    {n:'Lukes',     h:'L',e:.344,cls:'n',note:'Neutral · BvP .000',bvp:'2PA:.000'},
+    {n:'Giménez',   h:'L',e:.323,cls:'n',note:'Neutral · BvP 1.050 in 2PA (small sample)',bvp:'2PA:1.050'},
+    {n:'Clement',   h:'R',e:.302,cls:'n',note:'Neutral · Slider .287 in 164 PA · BvP .000',bvp:'2PA:.000'},
+    {n:'Straw',     h:'R',e:.296,cls:'s',note:'Suppressed · Slider .257 in 40 PA · no BvP',bvp:null},
+    {n:'Sánchez',   h:'L',e:.303,cls:'n',note:'Neutral · LHH · no Split-Finger data at MIN_PA · no BvP',bvp:null},
 ];
 const xMn=.12,xMx=.62,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
 const td=document.getElementById('tierDisplay');
@@ -300,7 +300,7 @@ const BL=[
   {l:'B · platoon baseline, park-adjusted (TOR)',v:.318,beat:true},
   {l:'C · team 2026 actual wOBA',v:.296,beat:true},
   {l:'D · pitcher proxy (ERA 3.5, .289)',v:.289,beat:true},
-  {l:'E · champion model',v:.336,beat:null,champ:true},
+  {l:'E · champion model',v:.330,beat:null,champ:true},
 ];
 const bc=document.getElementById('blRows');
 BL.forEach(b=>{const row=document.createElement('div');row.className='bl-row';const badge=b.champ?'':`<span class="bl-badge ${b.beat?'beat':''}">${b.beat?'champion beats':'close'}</span>`;const sty=b.champ?'color:var(--green);font-weight:700;':'';row.innerHTML=`<div class="bl-label" style="${sty}">${b.l}</div><div style="display:flex;align-items:center;gap:10px;">${badge}<div class="bl-val" style="${sty}">${b.v.toFixed(3)}</div></div>`;bc.appendChild(row);});

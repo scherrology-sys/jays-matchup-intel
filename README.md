@@ -301,6 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
+| 4-9-26  | MIN | S. Woods Richardson RHP | — | G. Springer (.400) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-09-woods-richardson/) |
 | 4-8-26  | LAD | S. Ohtani RHP | TOR 4, LAD 3 | G. Springer (.44) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-08-ohtani/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-08-ohtani/) |
 | 4-7-26  | LAD | Y. Yamamoto RHP | LAD 4, TOR 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-07-yamamoto/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-07-yamamoto/) |
 | 4-6-26  | LAD | J. Wrobleski LHP | LAD 14, TOR 2 | V. Guerrero (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-06-wrobleski/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-06-wrobleski/) |
@@ -311,9 +312,9 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 5-7 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2**
+**2026 record: 5-7 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: in progress**
 
-*Updated: April 8, 2026*
+*Updated: April 9, 2026*
 
 ---
 

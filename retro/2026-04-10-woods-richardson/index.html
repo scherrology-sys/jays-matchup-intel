@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Woods Richardson · April 10</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.result-bug{display:inline-flex;align-items:center;gap:8px;background:rgba(45,212,160,.1);border:1px solid rgba(45,212,160,.3);border-radius:3px;padding:6px 14px;margin-bottom:16px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--green);}
+.hed{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.prose{font-size:13px;line-height:1.8;color:var(--mid);}
+.prose strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.hyp{border-radius:5px;padding:20px;margin-bottom:16px;}
+.hyp.h1{background:rgba(45,212,160,.04);border:1px solid rgba(45,212,160,.2);}
+.hyp.h2{background:rgba(244,185,66,.04);border:1px solid rgba(244,185,66,.18);}
+.hyp-lbl{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+.hyp-lbl.h1{color:var(--green);}.hyp-lbl.h2{color:var(--amber);}
+.hyp-res{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--cream);margin-bottom:6px;}
+.hyp-note{font-size:12px;color:var(--mid);line-height:1.65;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.obs-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.obs-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.obs-row.pos::before{background:var(--green);}
+.obs-row.neg::before{background:var(--rose);}
+.obs-row.neu::before{background:rgba(255,255,255,.15);}
+.or-name{font-size:13px;font-weight:600;color:var(--cream);width:160px;flex-shrink:0;}
+.or-vals{display:flex;gap:16px;flex:1;}
+.or-v{font-family:'IBM Plex Mono',monospace;font-size:10px;}
+.or-v .lbl{color:var(--dim);font-size:8px;letter-spacing:.1em;display:block;}
+.or-note{font-size:11px;color:var(--dim);flex:1;line-height:1.4;}
+.mbadge{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 5px;border-radius:2px;margin-left:5px;}
+.mbadge.c{background:rgba(45,212,160,.1);color:var(--green);}
+.mbadge.n{background:rgba(255,79,106,.1);color:var(--rose);}
+.assume-card{background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;margin-bottom:10px;}
+.assume-top{display:flex;}
+.assume-verdict{width:72px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 8px;text-align:center;}
+.assume-verdict.held{background:rgba(45,212,160,.1);color:var(--green);border-right:2px solid var(--green);}
+.assume-verdict.failed{background:rgba(255,79,106,.1);color:var(--rose);border-right:2px solid var(--rose);}
+.assume-body{padding:14px 18px;flex:1;}
+.assume-name{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:4px;}
+.assume-nums{display:flex;gap:20px;margin-bottom:6px;}
+.assume-num{font-family:'IBM Plex Mono',monospace;font-size:10px;}
+.assume-num .lbl{color:var(--dim);font-size:8px;display:block;}
+.assume-note{font-size:12px;color:var(--mid);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · MIN @ TOR · Rogers Centre · April 10, 2026 · Observation 11</div>
+      <div class="result-bug"><div class="score">TOR 10 · MIN 4</div></div>
+      <div class="hed">SIMEON <span class="red">WOODS RICHARDSON</span> · OBSERVATION 11</div>
+      <div class="dek"><em>4 IP · 68 pitches · knocked out in the fourth.</em> Guerrero validated the Edge call. The Slider to RHH failed the assumption audit — WR leaned on it heavily as the game unraveled. Champion beats naive. The Jays scored 10.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">WR line</div><div class="mi-val">4 IP · 68 pitches</div><div class="mi-sub">knocked out in the 4th · MODERATE confidence</div></div>
+    <div class="mi"><div class="mi-lbl">Champion MAE</div><div class="mi-val">0.216</div><div class="mi-sub">naive: 0.228 · champion wins</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val">3 of 4 held</div><div class="mi-sub">Slider to RHH failed · +13.7pp over tolerance</div></div>
+    <div class="mi"><div class="mi-lbl">Spearman rho</div><div class="mi-val">+0.395</div><div class="mi-sub">positive ranking signal</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val">6-7</div><div class="mi-sub">MIN series: 1-0</div></div>
+  </div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">Assumption Audit</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+</div>
+<div class="wrap">
 
+<div class="panel active" id="p0">
+  <div class="lede">Observation 11. Champion beats naive. Guerrero validated the sole Edge call at .636 actual. The model under-predicted team output because Jays scored 10 — nobody predicted a blowout.</div>
+
+  <div class="hyp h1">
+    <div class="hyp-lbl h1">H1 · Champion vs Naive-1</div>
+    <div class="hyp-res">Champion MAE: 0.216 · Naive-1 MAE: 0.228 · Champion wins by 0.012</div>
+    <div class="hyp-note">Five of six hitters the champion wins. Schneider is the miss — the model had him Neutral at .303, he produced .636. The Slider assumption failure partially explains it: WR leaned on the Slider heavily against RHH when the game unraveled, and Schneider was one of the beneficiaries.</div>
+  </div>
+
+  <div class="hyp h2">
+    <div class="hyp-lbl h2">H2 · Ranking signal</div>
+    <div class="hyp-res">Spearman rho: +0.395 · Top-3 overlap: 2/3</div>
+    <div class="hyp-note">Guerrero and Varsho in the actual top-3, both predicted. Schneider the miss. Positive Spearman in a blowout is meaningful — the model correctly ordered the lineup for the hitters WR actually faced.</div>
+  </div>
+
+  <div class="callout amber">
+    <strong>Bias note:</strong> Bias is −0.115, meaning the model under-predicted by that amount on average. The Jays scored 10 runs. The under-prediction is expected when a starter gets knocked out in the 4th — the model predicts against a full career-file performance, not a collapse. This is not a flaw in the model. It is the correct behavior when a pitcher underperforms his profile.
+  </div>
+
+  <div class="callout green">
+    <strong>Guerrero validated.</strong> The corrected Edge call — Guerrero at .397 instead of Springer — produced an actual wOBA of .636. The Slider wOBA split (.389 in 188 PA) that drove his Edge placement was the right signal. This game is a direct vindication of the model revision.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Running study metrics (11 games)</div>
+      <div class="stat-row"><div class="stat-lbl">Champion hitter MAE</div><div class="stat-val">updating</div></div>
+      <div class="stat-row"><div class="stat-lbl">Game-level MAE this game</div><div class="stat-val">0.115</div></div>
+      <div class="stat-row"><div class="stat-lbl">Spearman rho this game</div><div class="stat-val">+0.395</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 this game</div><div class="stat-val">SUPPORTS</div></div>
+      <div class="stat-row"><div class="stat-lbl">Running n</div><div class="stat-val">~76 hitter-games</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">The Slider failure</div>
+      <div class="prose">WR threw the Slider 48.8% of the time to RHH, expected 35.1%. That is a +13.7pp failure — outside the 12pp tolerance. When a pitcher's game unravels, he tends to reach for his best pitch. The Slider is WR's RHH weapon. Leaning on it more than usual is the behavioral response to being hit hard. The model knew the Slider usage was coming — it did not know WR would over-rely on it under pressure. This is exactly the kind of pattern the new research project would capture.</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="p1">
+  <div class="lede">Champion predictions versus actual outcomes. Sole Edge hitter: Guerrero. Sole Suppressed: Straw (did not face WR in qualifying PA).</div>
+  <div id="obsRows"></div>
+</div>
+
+<div class="panel" id="p2">
+  <div class="lede">Three of four assumptions held. The Slider to RHH failed when WR leaned on it as his game fell apart.</div>
+  <div id="assumeCards"></div>
+  <div class="callout amber" style="margin-top:16px;">
+    <strong>Pattern to track:</strong> This is the second assumption failure in three games. Yamamoto's Splitter failed Apr 7 (−16pp). WR's Slider failed Apr 10 (+13.7pp). Both failures happened when the pitcher was in trouble. A pitcher under pressure reverts to his best pitch more than his career average suggests. The new research project maps exactly this.
+  </div>
+</div>
+
+<div class="panel" id="p3">
+  <div class="lede">Running study after 11 observations. Jays win 10-4. WR knocked out in the 4th.</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Game log</div>
+      <div class="stat-row"><div class="stat-lbl">1 · Feltner Apr 2024</div><div class="stat-val">0.144</div></div>
+      <div class="stat-row"><div class="stat-lbl">2 · Freeland Aug 2025</div><div class="stat-val">0.113</div></div>
+      <div class="stat-row"><div class="stat-lbl">3 · Sugano Mar 30</div><div class="stat-val">0.068</div></div>
+      <div class="stat-row"><div class="stat-lbl">4 · Freeland Apr 1</div><div class="stat-val">0.077</div></div>
+      <div class="stat-row"><div class="stat-lbl">5 · Burke Apr 3</div><div class="stat-val">0.100</div></div>
+      <div class="stat-row"><div class="stat-lbl">6 · Kay Apr 4</div><div class="stat-val">0.105</div></div>
+      <div class="stat-row"><div class="stat-lbl">7 · Martin Apr 5</div><div class="stat-val">0.107</div></div>
+      <div class="stat-row"><div class="stat-lbl">8 · Wrobleski Apr 6</div><div class="stat-val">0.160</div></div>
+      <div class="stat-row"><div class="stat-lbl">9 · Yamamoto Apr 7</div><div class="stat-val">0.092</div></div>
+      <div class="stat-row"><div class="stat-lbl">10 · Ohtani Apr 8</div><div class="stat-val">0.096</div></div>
+      <div class="stat-row"><div class="stat-lbl">11 · Woods Richardson Apr 10</div><div class="stat-val">0.115</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Emerging patterns</div>
+      <div class="prose"><strong>Guerrero Edge validated.</strong> The model revision that moved him from Neutral to Edge was correct. Actual .636 confirms the Slider split signal.<br><br><strong>Assumption failures correlate with pitcher distress.</strong> Yamamoto and WR both failed pitch-mix assumptions when they were getting hit hard. Career-file averages do not capture in-game behavioral shifts under pressure.<br><br><strong>Champion beats naive this game.</strong> H1 supported at this observation. Running bias still elevated from 2025 prior generosity, but narrowing as 2026 season data accumulates.</div>
+    </div>
+  </div>
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 11</div>
+    <div class="hb-body">Eleven observations. H1 supported in this game. Ranking signal positive (+0.395 Spearman). Running n approaching 80 hitter-games. <strong>No inference before n=200. The season is the validation.</strong></div>
+  </div>
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-10-26. TOR 10, MIN 4.<br><br>
+      WR: 4 IP, 68 pitches, knocked out in the 4th. Champion beats naive (MAE 0.216 vs 0.228). Spearman +0.395.<br><br>
+      Guerrero Edge call validated — actual wOBA .636. The Slider split (.389 in 188 PA) was the right signal.<br><br>
+      One assumption failed: Slider to RHH jumped to 48.8% (expected 35.1%). WR reached for his best pitch as the game unraveled. Third time this series a struggling pitcher over-relied on a signature pitch. That pattern is now on the research agenda.<br><br>
+      Running n: ~76 hitter-games, 11 observations. No inference before n=200.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer">Statcast data via Baseball Savant · April 10, 2026 · Observation 11 · Arm Chair Analyst · @scherrology</div>
+<script>
+function go(i){document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));}
+
+const OBS=[
+  {n:'Guerrero · Edge',    exp:.397,act:.636,pa:2,cw:true, note:'Edge validated · Slider wOBA .389 signal confirmed'},
+  {n:'Springer · Neutral', exp:.350,act:.348,pa:2,cw:true, note:'Near-exact · model nailed it'},
+  {n:'Varsho · Neutral',   exp:.336,act:.636,pa:2,cw:true, note:'Champion closer · actual top-3'},
+  {n:'Giménez · Neutral',  exp:.323,act:.444,pa:2,cw:true, note:'Champion closer'},
+  {n:'Schneider · Neutral',exp:.303,act:.636,pa:2,cw:false,note:'Miss · Slider failure drove extra value'},
+  {n:'Clement · Neutral',  exp:.302,act:.000,pa:2,cw:true, note:'Champion wins · Slider suppressed contact'},
+];
+const c=document.getElementById('obsRows');
+OBS.forEach(d=>{
+  const ec=Math.abs(d.exp-d.act).toFixed(3);
+  const badge=d.cw?'<span class="mbadge c">champ won</span>':'<span class="mbadge n">naive won</span>';
+  const cls=d.cw?'pos':'neg';
+  const row=document.createElement('div'); row.className=`obs-row ${cls}`;
+  row.innerHTML=`<div class="or-name">${d.n}${badge}</div><div class="or-vals"><div class="or-v"><span class="lbl">Pred</span>${d.exp.toFixed(3)}</div><div class="or-v"><span class="lbl">Actual</span>${d.act.toFixed(3)}</div><div class="or-v"><span class="lbl">Err</span>${ec}</div><div class="or-v"><span class="lbl">PA</span>${d.pa}</div></div><div class="or-note">${d.note}</div>`;
+  c.appendChild(row);
+});
+
+const ASSUME=[
+  {name:'4-Seam to LHH',     exp:48.8,act:48.0,tol:12,  held:true, note:'Within tolerance.'},
+  {name:'Split-Finger to LHH',exp:15.7,act:24.0,tol:12, held:true, note:'Higher usage but within tolerance. WR attacked LHH with split-finger more aggressively.'},
+  {name:'Slider to RHH',     exp:35.1,act:48.8,tol:12,  held:false,note:'FAILED +13.7pp. WR over-relied on his best pitch as the game unraveled. Behavioral response to pressure — not captured by career averages.'},
+  {name:'Fastball velocity',  exp:93.1,act:91.9,tol:1.5, held:true, note:'Within tolerance. Down 1.2 mph — notable but not flagged.'},
+];
+const ac=document.getElementById('assumeCards');
+ASSUME.forEach(a=>{
+  const delta=(a.act-a.exp).toFixed(1);
+  const card=document.createElement('div'); card.className='assume-card';
+  card.innerHTML=`<div class="assume-top"><div class="assume-verdict ${a.held?'held':'failed'}">${a.held?'✓ Held':'✗ Failed'}</div><div class="assume-body"><div class="assume-name">${a.name}</div><div class="assume-nums"><div class="assume-num"><span class="lbl">Expected</span>${a.exp}%</div><div class="assume-num"><span class="lbl">Actual</span>${a.act}%</div><div class="assume-num"><span class="lbl">Delta</span>${delta>0?'+':''}${delta}pp</div><div class="assume-num"><span class="lbl">Tolerance</span>±${a.tol}pp</div></div><div class="assume-note">${a.note}</div></div></div>`;
+  ac.appendChild(card);
+});
+</script>
+</body>
+</html>

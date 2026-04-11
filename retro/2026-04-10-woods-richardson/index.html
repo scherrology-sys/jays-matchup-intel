@@ -102,7 +102,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
       <div class="kicker">Retrospective · MIN @ TOR · Rogers Centre · April 10, 2026 · Observation 11</div>
       <div class="result-bug"><div class="score">TOR 10 · MIN 4</div></div>
       <div class="hed">SIMEON <span class="red">WOODS RICHARDSON</span> · OBSERVATION 11</div>
-      <div class="dek"><em>4 IP · 68 pitches · knocked out in the fourth.</em> Guerrero validated the Edge call. The Slider to RHH failed the assumption audit — WR leaned on it heavily as the game unraveled. Champion beats naive. The Jays scored 10.</div>
+      <div class="dek"><em>4 IP · 68 pitches · knocked out in the fourth.</em> Guerrero validated the Edge call. The Slider to RHH failed the assumption audit, WR leaned on it heavily as the game unraveled. Champion beats naive. The Jays scored 10.</div>
     </div>
     <div class="aca">
       <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
@@ -128,26 +128,26 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <div class="wrap">
 
 <div class="panel active" id="p0">
-  <div class="lede">Observation 11. Champion beats naive. Guerrero validated the sole Edge call at .636 actual. The model under-predicted team output because Jays scored 10 — nobody predicted a blowout.</div>
+  <div class="lede">Observation 11. Champion beats naive. Guerrero validated the sole Edge call at .636 actual. The model under-predicted team output because Jays scored 10, nobody predicted a blowout.</div>
 
   <div class="hyp h1">
     <div class="hyp-lbl h1">H1 · Champion vs Naive-1</div>
     <div class="hyp-res">Champion MAE: 0.216 · Naive-1 MAE: 0.228 · Champion wins by 0.012</div>
-    <div class="hyp-note">Five of six hitters the champion wins. Schneider is the miss — the model had him Neutral at .303, he produced .636. The Slider assumption failure partially explains it: WR leaned on the Slider heavily against RHH when the game unraveled, and Schneider was one of the beneficiaries.</div>
+    <div class="hyp-note">Five of six hitters the champion wins. Schneider is the miss, the model had him Neutral at .303, he produced .636. The Slider assumption failure partially explains it: WR leaned on the Slider heavily against RHH when the game unraveled, and Schneider was one of the beneficiaries.</div>
   </div>
 
   <div class="hyp h2">
     <div class="hyp-lbl h2">H2 · Ranking signal</div>
     <div class="hyp-res">Spearman rho: +0.395 · Top-3 overlap: 2/3</div>
-    <div class="hyp-note">Guerrero and Varsho in the actual top-3, both predicted. Schneider the miss. Positive Spearman in a blowout is meaningful — the model correctly ordered the lineup for the hitters WR actually faced.</div>
+    <div class="hyp-note">Guerrero and Varsho in the actual top-3, both predicted. Schneider the miss. Positive Spearman in a blowout is meaningful, the model correctly ordered the lineup for the hitters WR actually faced.</div>
   </div>
 
   <div class="callout amber">
-    <strong>Bias note:</strong> Bias is −0.115, meaning the model under-predicted by that amount on average. The Jays scored 10 runs. The under-prediction is expected when a starter gets knocked out in the 4th — the model predicts against a full career-file performance, not a collapse. This is not a flaw in the model. It is the correct behavior when a pitcher underperforms his profile.
+    <strong>Bias note:</strong> Bias is −0.115, meaning the model under-predicted by that amount on average. The Jays scored 10 runs. The under-prediction is expected when a starter gets knocked out in the 4th, the model predicts against a full career-file performance, not a collapse. This is not a flaw in the model. It is the correct behavior when a pitcher underperforms his profile.
   </div>
 
   <div class="callout green">
-    <strong>Guerrero validated.</strong> The corrected Edge call — Guerrero at .397 instead of Springer — produced an actual wOBA of .636. The Slider wOBA split (.389 in 188 PA) that drove his Edge placement was the right signal. This game is a direct vindication of the model revision.
+    <strong>Guerrero validated.</strong> The corrected Edge call, Guerrero at .397 instead of Springer, produced an actual wOBA of .636. The Slider wOBA split (.389 in 188 PA) that drove his Edge placement was the right signal. This game is a direct vindication of the model revision.
   </div>
 
   <div class="g2">
@@ -161,7 +161,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     </div>
     <div class="card">
       <div class="card-hd">The Slider failure</div>
-      <div class="prose">WR threw the Slider 48.8% of the time to RHH, expected 35.1%. That is a +13.7pp failure — outside the 12pp tolerance. When a pitcher's game unravels, he tends to reach for his best pitch. The Slider is WR's RHH weapon. Leaning on it more than usual is the behavioral response to being hit hard. The model knew the Slider usage was coming — it did not know WR would over-rely on it under pressure. This is exactly the kind of pattern the new research project would capture.</div>
+      <div class="prose">WR threw the Slider 48.8% of the time to RHH, expected 35.1%. That is a +13.7pp failure, outside the 12pp tolerance. When a pitcher's game unravels, he tends to reach for his best pitch. The Slider is WR's RHH weapon. Leaning on it more than usual is the behavioral response to being hit hard. The model knew the Slider usage was coming, it did not know WR would over-rely on it under pressure. This is exactly the kind of pattern the new research project would capture.</div>
     </div>
   </div>
 </div>
@@ -210,7 +210,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div class="social-body">
       Jays Matchup Intel retro · 4-10-26. TOR 10, MIN 4.<br><br>
       WR: 4 IP, 68 pitches, knocked out in the 4th. Champion beats naive (MAE 0.216 vs 0.228). Spearman +0.395.<br><br>
-      Guerrero Edge call validated — actual wOBA .636. The Slider split (.389 in 188 PA) was the right signal.<br><br>
+      Guerrero Edge call validated, actual wOBA .636. The Slider split (.389 in 188 PA) was the right signal.<br><br>
       One assumption failed: Slider to RHH jumped to 48.8% (expected 35.1%). WR reached for his best pitch as the game unraveled. Third time this series a struggling pitcher over-relied on a signature pitch. That pattern is now on the research agenda.<br><br>
       Running n: ~76 hitter-games, 11 observations. No inference before n=200.<br><br>
       scherrology-sys.github.io/jays-matchup-intel · #BlueJays
@@ -243,8 +243,8 @@ OBS.forEach(d=>{
 const ASSUME=[
   {name:'4-Seam to LHH',     exp:48.8,act:48.0,tol:12,  held:true, note:'Within tolerance.'},
   {name:'Split-Finger to LHH',exp:15.7,act:24.0,tol:12, held:true, note:'Higher usage but within tolerance. WR attacked LHH with split-finger more aggressively.'},
-  {name:'Slider to RHH',     exp:35.1,act:48.8,tol:12,  held:false,note:'FAILED +13.7pp. WR over-relied on his best pitch as the game unraveled. Behavioral response to pressure — not captured by career averages.'},
-  {name:'Fastball velocity',  exp:93.1,act:91.9,tol:1.5, held:true, note:'Within tolerance. Down 1.2 mph — notable but not flagged.'},
+  {name:'Slider to RHH',     exp:35.1,act:48.8,tol:12,  held:false,note:'FAILED +13.7pp. WR over-relied on his best pitch as the game unraveled. Behavioral response to pressure, not captured by career averages.'},
+  {name:'Fastball velocity',  exp:93.1,act:91.9,tol:1.5, held:true, note:'Within tolerance. Down 1.2 mph, notable but not flagged.'},
 ];
 const ac=document.getElementById('assumeCards');
 ASSUME.forEach(a=>{

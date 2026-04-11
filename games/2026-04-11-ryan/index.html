@@ -119,7 +119,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div>
       <div class="kicker">MIN @ TOR · Rogers Centre · April 11, 2026 · Study observation 12</div>
       <div class="hed">JOE <span class="red">RYAN</span><span class="role">RHP · Minnesota</span></div>
-      <div class="dek"><em>57 career starts. MODERATE confidence.</em> The Knuckle Curve (.173 xwOBA) and Sweeper (.211) are his best weapons. Varsho is Suppressed on Sweeper weakness. Guerrero and Springer are Edge despite Guerrero's contradictory BvP — the career split data overrules nine at-bats.</div>
+      <div class="dek"><em>57 career starts. MODERATE confidence. 2026 mix is the primary signal.</em> Ryan has elevated the Knuckle Curve to ~12% in 2026, nearly double his career rate. The KC at .173 xwOBA is now his headline weapon tonight, not a low-frequency finisher. Guerrero and Springer are Edge. Varsho is Suppressed on both Sweeper and KC exposure.</div>
     </div>
     <div class="aca">
       <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
@@ -129,7 +129,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 </div>
 <div class="meta">
   <div class="meta-inner">
-    <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val">Moderate</div><div class="mi-sub">eff_L=678 · eff_R=667 · 57 starts · career file</div></div>
+    <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val">Moderate</div><div class="mi-sub">2026 primary · career prior · 57 starts total</div></div>
     <div class="mi"><div class="mi-lbl">BvP</div><div class="mi-val">3 games vs Jays</div><div class="mi-sub">Aug 2025 · Jun 2025 · May 2024</div></div>
     <div class="mi"><div class="mi-lbl">Tier threshold</div><div class="mi-val">±0.030</div><div class="mi-sub">MODERATE confidence band</div></div>
     <div class="mi"><div class="mi-lbl">Park</div><div class="mi-val">Rogers Centre · TOR</div><div class="mi-sub">Park factor 0.99</div></div>
@@ -139,7 +139,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <div class="gov-bar">
   <div class="gov-inner">
     <div class="gov-tag">Research framework</div>
-    <div class="gov-txt">Champion model locked April 7. This preview executes H1 and H2. The retro will score observation 12. No parameter changes.</div>
+    <div class="gov-txt">Champion model locked April 7. Pitch mix uses 2026 as primary signal, blended with career prior. This preview executes H1 and H2. The retro will score observation 12.</div>
   </div>
 </div>
 <div class="tabs">
@@ -152,36 +152,58 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <div class="wrap">
 
 <div class="panel active" id="p0">
-  <div class="lede">Ryan's best weapons are his Knuckle Curve (.173 xwOBA) and Sweeper (.211). Both appear at low-to-moderate frequency but generate elite swing-and-miss. His Sinker (.341) and Slider (.376) are his most hittable pitches. <strong>The Fastball at 93.7 mph is above the WR benchmark from yesterday and plays better off the breaking ball separation.</strong></div>
+  <div class="lede">Ryan has made a clear mix change in 2026. The Knuckle Curve at .173 xwOBA is up +8pp from his career rate, from 3.8% to 11.8% across three starts. The Sweeper, Slider, and Sinker are all down. The matchup model uses 2026 as the primary signal, blended with the career file as prior. <strong>Fastball is down 1.1 mph this season at 92.7 mph.</strong></div>
+
+  <div class="callout green">
+    <strong>2026 mix shift (primary signal tonight):</strong> Knuckle Curve +8.0pp · Sweeper ,4.8pp · Slider ,3.1pp · Sinker ,2.4pp. The KC at .173 xwOBA was a low-frequency finisher in 2024-25. In 2026 it is a primary weapon at nearly 12%.
+  </div>
+
   <div class="g2" style="margin-bottom:20px;">
     <div class="card">
-      <div class="card-hd">Arsenal · 57 starts, 2024-2026 recency-weighted</div>
-      <div id="mixAll"></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
-        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs LHH</div><div id="mixL"></div></div>
-        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:9px;">vs RHH</div><div id="mixR"></div></div>
-      </div>
+      <div class="card-hd">2026 · 3 starts · primary signal</div>
+      <div id="mix2026"></div>
     </div>
     <div class="card">
-      <div class="card-hd">Pitch quality (xwOBA allowed)</div>
-      <div class="stat-row"><div class="stat-lbl">Knuckle Curve</div><div class="stat-val">.173 · elite</div></div>
-      <div class="stat-row"><div class="stat-lbl">Sweeper</div><div class="stat-val">.211 · best volume weapon</div></div>
+      <div class="card-hd">Career 2024-25 · 54 starts · prior</div>
+      <div id="mixCareer"></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Blended model (70% 2026, 30% career) · vs LHH</div>
+      <div id="mixL"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Blended model (70% 2026, 30% career) · vs RHH</div>
+      <div id="mixR"></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Pitch quality (xwOBA allowed · career)</div>
+      <div class="stat-row"><div class="stat-lbl">Knuckle Curve</div><div class="stat-val">.173 · elite · 11.8% in 2026</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sweeper</div><div class="stat-val">.211 · 8.7% in 2026</div></div>
       <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">.277</div></div>
       <div class="stat-row"><div class="stat-lbl">Split-Finger</div><div class="stat-val">.289</div></div>
       <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">.341 · most hittable</div></div>
       <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val">.376 · avoid</div></div>
-      <div style="height:1px;background:var(--border);margin:14px 0;"></div>
-      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">93.7 mph</div></div>
-      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">93.1 mph</div></div>
-      <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val">87.6 mph</div></div>
-      <div class="stat-row"><div class="stat-lbl">Split-Finger</div><div class="stat-val">88.1 mph</div></div>
-      <div class="stat-row"><div class="stat-lbl">Sweeper</div><div class="stat-val">80.9 mph · 12.8 mph gap</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Velocity</div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">92.7 mph (2026) · 93.8 career</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">92.7 mph (2026) · 93.1 career</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val">86.7 mph</div></div>
+      <div class="stat-row"><div class="stat-lbl">Split-Finger</div><div class="stat-val">87.2 mph</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sweeper</div><div class="stat-val">79.4 mph · 13.3 mph gap off FB</div></div>
+      <div class="stat-row"><div class="stat-lbl">Knuckle Curve</div><div class="stat-val">78.4 mph · 14.3 mph gap off FB</div></div>
     </div>
   </div>
+
   <div class="callout amber">
-    <strong>Guerrero BvP contradiction:</strong> Career splits drive Edge placement at .402. BvP shows .275 in 9 PA across 3 games. Nine PA is insufficient to override 339 PA of fastball data and 188 PA of slider data. The model uses career pitch-type splits. The BvP is disclosed as context only.
+    <strong>Guerrero BvP contradiction:</strong> 2026-primary blended splits drive Edge placement at .409. BvP shows .275 in 9 PA across 3 games. Career pitch-type splits with 300+ PA per pitch carry more weight than 9 at-bats.
   </div>
-</div>
 
 <div class="panel" id="p1">
   <div class="lede">MODERATE confidence. Two Edge, two Suppressed. The Sweeper is the dividing pitch — it suppresses LHH who can't handle it and has no effect on hitters who can.</div>
@@ -211,17 +233,17 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div class="tg-card best">
       <div class="tg-tag">Edge</div>
       <div class="tg-name">Guerrero + Springer</div>
-      <div class="tg-body">Both RHH. Guerrero at .402, Springer at .377. <strong>Strong contact across all four RHH pitches — fastball, sinker, sweeper, slider.</strong> Guerrero's BvP (.275 in 9 PA) contradicts the model; career splits with 300+ PA per pitch type carry more weight than 9 at-bats. Springer's BvP (.609 in 5 PA) aligns with Edge placement.</div>
+      <div class="tg-body">Both RHH. Guerrero at .409, Springer at .384. <strong>Strong contact across all four RHH pitches — fastball, sinker, sweeper, slider.</strong> Guerrero's BvP (.275 in 9 PA) contradicts the model; career splits with 300+ PA per pitch type carry more weight than 9 at-bats. Springer's BvP (.609 in 5 PA) aligns with Edge placement.</div>
     </div>
     <div class="tg-card watch">
       <div class="tg-tag">Neutral · watch list</div>
       <div class="tg-name">Barger + Giménez</div>
-      <div class="tg-body">Both LHH near the Edge threshold. Barger at .361, Giménez at .339. <strong>If the Sweeper isn't landing, both could do damage on the fastball.</strong> Giménez BvP 2PA:1.494 — too small to use but noted.</div>
+      <div class="tg-body">Both LHH near the Edge threshold. Barger at .361, Giménez at .339. <strong>The KC is now a real factor at 9% to both hands. If Ryan misses with it, Barger and Giménez attack the fastball.</strong> Giménez BvP 2PA:1.494 — too small to use but noted.</div>
     </div>
     <div class="tg-card worst">
       <div class="tg-tag">Suppressed</div>
       <div class="tg-name">Varsho + Straw</div>
-      <div class="tg-body">Both Suppressed. Varsho at .305 — <strong>Sweeper wOBA .147 in 45 PA</strong> is the most specific and damning split in this preview. Ryan throws the Sweeper 9% to LHH. Straw at .307 on Sinker and Sweeper weakness. Two hitters to watch down in the order.</div>
+      <div class="tg-body">Both Suppressed. Varsho at .307 — <strong>Sweeper wOBA .147 in 45 PA</strong> still the primary signal, now compounded by KC at 10% to LHH in 2026. Ryan throws the Sweeper 9% to LHH. Straw at .307 on Sinker and Sweeper weakness. Two hitters to watch down in the order.</div>
     </div>
     <div class="tg-card watch">
       <div class="tg-tag">The opening</div>
@@ -252,23 +274,27 @@ const PC={'4-Seam Fastball':'#38bdf8','Sinker':'#818cf8','Sweeper':'#c084fc','Sp
 function go(i){document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));}
 function mkBars(data,id,mx){const c=document.getElementById(id);if(!c)return;data.forEach(d=>{const col=PC[d.n]||'#888';const el=document.createElement('div');el.className='abar';el.innerHTML=`<div class="abar-n">${d.n}</div><div class="abar-t"><div class="abar-f" style="width:${d.p/mx*100}%;background:${col};"></div></div><div class="abar-p" style="color:${col};">${d.p}%</div>${d.v?`<div class="abar-v">${d.v}</div>`:''}`;c.appendChild(el);});}
 
-mkBars([{n:'4-Seam Fastball',p:50.0,v:'93.7 mph'},{n:'Sinker',p:11.6,v:'93.1 mph'},{n:'Split-Finger',p:12.4,v:'88.1 mph'},{n:'Sweeper',p:12.5,v:'80.9 mph'},{n:'Slider',p:8.8,v:'87.6 mph'},{n:'Knuckle Curve',p:5.3,v:'—'}],'mixAll',55);
-mkBars([{n:'4-Seam Fastball',p:53.4},{n:'Split-Finger',p:18.4},{n:'Sweeper',p:8.9},{n:'Slider',p:7.0},{n:'Knuckle Curve',p:6.2},{n:'Sinker',p:6.2}],'mixL',58);
-mkBars([{n:'4-Seam Fastball',p:46.2},{n:'Sinker',p:16.7},{n:'Sweeper',p:16.5},{n:'Slider',p:10.3},{n:'Split-Finger',p:6.0},{n:'Knuckle Curve',p:4.3}],'mixR',50);
+// 2026 current (3 starts)
+mkBars([{n:'4-Seam Fastball',p:51.0,v:'92.7 mph'},{n:'Split-Finger',p:12.5,v:'87.2 mph'},{n:'Knuckle Curve',p:11.8,v:'78.4 mph'},{n:'Sinker',p:9.5,v:'92.7 mph'},{n:'Sweeper',p:8.7,v:'79.4 mph'},{n:'Slider',p:6.1,v:'86.7 mph'}],'mix2026',55);
+// Career 2024-25 (54 starts, recency-weighted)
+mkBars([{n:'4-Seam Fastball',p:49.5,v:'93.8 mph'},{n:'Sweeper',p:13.5,v:'81.0 mph'},{n:'Split-Finger',p:12.1,v:'88.2 mph'},{n:'Sinker',p:11.9,v:'93.1 mph'},{n:'Slider',p:9.2,v:'87.6 mph'},{n:'Knuckle Curve',p:3.8,v:'79.1 mph'}],'mixCareer',55);
+// Blended (70% 2026, 30% career) by handedness
+mkBars([{n:'4-Seam Fastball',p:52.5},{n:'Split-Finger',p:21.9},{n:'Knuckle Curve',p:9.9},{n:'Sweeper',p:5.8},{n:'Sinker',p:5.3},{n:'Slider',p:4.1}],'mixL',58);
+mkBars([{n:'4-Seam Fastball',p:48.6},{n:'Sinker',p:14.9},{n:'Sweeper',p:14.3},{n:'Slider',p:9.7},{n:'Knuckle Curve',p:8.9},{n:'Split-Finger',p:3.6}],'mixR',53);
 
-const TEAM_MEAN=0.339,THRESH=0.030,K=45;
+const TEAM_MEAN=0.341,THRESH=0.030,K=45;
 const MD=[
-  {n:'Guerrero',  h:'R',e:.402,cls:'h',note:'Edge · RHH strong across all pitches · BvP .275 in 9PA contradicts — career splits carry',bvp:'9PA:.275'},
-  {n:'Springer',  h:'R',e:.377,cls:'h',note:'Edge · RHH · BvP .609 in 5PA aligned',bvp:'5PA:.609'},
-  {n:'Barger',    h:'L',e:.361,cls:'n',note:'Neutral · near Edge threshold · fastball exposure',bvp:'3PA:.232'},
+  {n:'Guerrero',  h:'R',e:.409,cls:'h',note:'Edge · RHH strong across all pitches · BvP .275 in 9PA contradicts, career splits carry',bvp:'9PA:.275'},
+  {n:'Springer',  h:'R',e:.384,cls:'h',note:'Edge · RHH · BvP .609 in 5PA aligned',bvp:'5PA:.609'},
+  {n:'Barger',    h:'L',e:.369,cls:'n',note:'Neutral · two points from Edge · KC and Sweeper exposure manageable',bvp:'3PA:.232'},
+  {n:'Giménez',   h:'L',e:.345,cls:'n',note:'Neutral · BvP 1.494 in 2PA too small',bvp:'2PA:1.494'},
   {n:'Lukes',     h:'L',e:.343,cls:'n',note:'Neutral',bvp:'5PA:.254'},
-  {n:'Giménez',   h:'L',e:.339,cls:'n',note:'Neutral · BvP 1.494 in 2PA — too small',bvp:'2PA:1.494'},
-  {n:'Heineman',  h:'L',e:.337,cls:'n',note:'Neutral · no BvP',bvp:null},
-  {n:'Kirk',      h:'R',e:.333,cls:'n',note:'Neutral · BvP .598 in 5PA · conditional on availability',bvp:'5PA:.598'},
-  {n:'Schneider', h:'R',e:.314,cls:'n',note:'Neutral · BvP .000 in 3PA',bvp:'3PA:.000'},
-  {n:'Clement',   h:'R',e:.314,cls:'n',note:'Neutral · BvP .417 in 7PA',bvp:'7PA:.417'},
-  {n:'Straw',     h:'R',e:.307,cls:'s',note:'Suppressed · Sinker and Sweeper weakness',bvp:'2PA:.000'},
-  {n:'Varsho',    h:'L',e:.305,cls:'s',note:'Suppressed · Sweeper wOBA .147 in 45PA — most specific split in this preview',bvp:'6PA:.000'},
+  {n:'Heineman',  h:'L',e:.333,cls:'n',note:'Neutral · no BvP',bvp:null},
+  {n:'Kirk',      h:'R',e:.329,cls:'n',note:'Neutral · BvP .598 in 5PA · conditional on availability',bvp:'5PA:.598'},
+  {n:'Schneider', h:'R',e:.313,cls:'n',note:'Neutral · BvP .000 in 3PA',bvp:'3PA:.000'},
+  {n:'Clement',   h:'R',e:.313,cls:'n',note:'Neutral · BvP .417 in 7PA',bvp:'7PA:.417'},
+  {n:'Straw',     h:'R',e:.309,cls:'s',note:'Suppressed · Sinker and Sweeper weakness',bvp:'2PA:.000'},
+  {n:'Varsho',    h:'L',e:.307,cls:'s',note:'Suppressed · Sweeper .147 in 45PA AND KC now at 10% to LHH in 2026',bvp:'6PA:.000'},
 ];
 const xMn=.12,xMx=.62,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
 const td=document.getElementById('tierDisplay');
@@ -294,7 +320,7 @@ const BL=[
   {l:'B · platoon baseline, park-adjusted (TOR)',v:.312,beat:true},
   {l:'C · team 2026 actual wOBA to date',v:.296,beat:true},
   {l:'D · pitcher proxy (Ryan 2025 xwOBA .289 × 0.99)',v:.286,beat:true},
-  {l:'E · champion model',v:.339,beat:null,champ:true},
+  {l:'E · champion model',v:.341,beat:null,champ:true},
 ];
 const bc=document.getElementById('blRows');
 BL.forEach(b=>{const row=document.createElement('div');row.className='bl-row';const badge=b.champ?'':`<span class="bl-badge ${b.beat?'beat':''}">${b.beat?'champion beats':'close'}</span>`;const sty=b.champ?'color:var(--green);font-weight:700;':'';row.innerHTML=`<div class="bl-label" style="${sty}">${b.l}</div><div style="display:flex;align-items:center;gap:10px;">${badge}<div class="bl-val" style="${sty}">${b.v.toFixed(3)}</div></div>`;bc.appendChild(row);});

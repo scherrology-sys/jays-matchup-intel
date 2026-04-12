@@ -301,6 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
+| 4-12-26 | MIN | T. Bradley RHP | — | V. Guerrero Jr. (.375) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-12-bradley/) |
 | 4-11-26 | MIN | J. Ryan RHP | MIN 7, TOR 4 | V. Guerrero Jr. (.409) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-11-ryan/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-11-ryan/) |
 | 4-10-26 | MIN | S. Woods Richardson RHP | TOR 10, MIN 4 | V. Guerrero Jr. (.397) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-10-woods-richardson/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-10-woods-richardson/) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-10-woods-richardson/) |
 | 4-8-26  | LAD | S. Ohtani RHP | TOR 4, LAD 3 | G. Springer (.44) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-08-ohtani/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-08-ohtani/) |
@@ -313,9 +314,9 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 6-8 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-1**
+**2026 record: 6-8 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-1 · Series finale today**
 
-*Updated: April 11, 2026*
+*Updated: April 12, 2026*
 
 ---
 

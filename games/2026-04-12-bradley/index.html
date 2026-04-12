@@ -52,7 +52,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 .callout.green strong{color:var(--green);}
 .callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
 .abar{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-.abar-n{font-size:12px;color:var(--cream);width:90px;flex-shrink:0;}
+.abar-n{font-size:12px;color:var(--cream);width:140px;flex-shrink:0;}
 .abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
 .abar-f{height:100%;border-radius:2px;opacity:.88;}
 .abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:36px;text-align:right;flex-shrink:0;}
@@ -62,7 +62,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 .mu-row.h::before{background:var(--green);}
 .mu-row.s::before{background:var(--rose);}
 .mu-row.n::before{background:rgba(255,255,255,.1);}
-.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:130px;flex-shrink:0;}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:140px;flex-shrink:0;}
 .mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
 .mr-track{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
 .mr-ci{position:absolute;top:20%;bottom:20%;background:rgba(255,255,255,.06);}
@@ -120,7 +120,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div>
       <div class="kicker">MIN @ TOR · Rogers Centre · April 12, 2026 · Observation 13</div>
       <div class="hed">TAJ <span class="red">BRADLEY</span><span class="role">RHP · Minnesota</span></div>
-      <div class="dek"><em>Four pitches. Four different shapes. Velocity ticking up in 2026.</em> The Curveball at .175 xwOBA and Splitter at .233 are elite miss-bat weapons. The lineup splits cleanly by handedness: RHH face a Cutter-heavy profile, LHH face a Splitter-heavy one. Guerrero is the clear top projection. Schneider, Springer, and Jimenez are the hard matchups.</div>
+      <div class="dek"><em>The Splitter is different in 2026. So is the rest of the lineup.</em> Three starts in, Bradley's Splitter is generating a 56.2% whiff rate, nearly double his career mark. The Sinker has essentially disappeared. The lineup splits hard by handedness, and the right names are in the right spots tonight. Guerrero is the clear top projection. Schneider, Springer, and Jimenez are in a difficult place.</div>
     </div>
     <div class="aca">
       <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
@@ -132,7 +132,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <div class="meta">
   <div class="meta-inner">
     <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val">Moderate</div><div class="mi-sub">3 starts 2026 · career prior 2024-25</div></div>
-    <div class="mi"><div class="mi-lbl">BvP</div><div class="mi-val">2 to 6 PA per hitter</div><div class="mi-sub">6 PA carries weight · 2 PA directional only</div></div>
+    <div class="mi"><div class="mi-lbl">BvP</div><div class="mi-val">Up to 6 PA per hitter</div><div class="mi-sub">6 PA carries weight · 2 PA directional only</div></div>
     <div class="mi"><div class="mi-lbl">Tier threshold</div><div class="mi-val">±0.030</div><div class="mi-sub">MODERATE confidence band</div></div>
     <div class="mi"><div class="mi-lbl">Park</div><div class="mi-val">Rogers Centre · TOR</div><div class="mi-sub">Park factor 0.99</div></div>
     <div class="mi"><div class="mi-lbl">Series</div><div class="mi-val">MIN @ TOR · Game 3</div><div class="mi-sub">Series finale</div></div>
@@ -142,7 +142,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <div class="gov-bar">
   <div class="gov-inner">
     <div class="gov-tag">Research framework</div>
-    <div class="gov-txt">Champion model locked April 7. Year-weighted Statcast (2024=0.5x, 2025=1.0x, 2026=3.0x). BvP adds directional signal only below 10 PA. This preview executes H1 and H2. The retro will score observation 13.</div>
+    <div class="gov-txt">Champion model locked April 7. Year-weighted Statcast (2024=0.5x, 2025=1.0x, 2026=3.0x). BvP adds directional signal only below 10 PA. 2026 mix (3 starts, 296 pitches) used as primary signal where it diverges from career. The retro will score observation 13.</div>
   </div>
 </div>
 
@@ -156,128 +156,131 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 
 <div class="wrap">
 
+<!-- TAB 0: ARSENAL -->
 <div class="panel active" id="p0">
-  <div class="lede">Bradley is a four-pitch pitcher whose weapons play off each other by design. The 4-Seam at 97.0 mph sets up everything. The Curveball at 81.6 creates a 15-mph gap. The Cutter and Splitter fill the middle, both generating whiff rates above 31%. <strong>His velocity is trending up in 2026: career 4-Seam average is 96.3, through three starts it is 97.0.</strong> That difference matters more than it looks when the off-speed is already working.</div>
+  <div class="lede">Three starts into 2026, Bradley looks meaningfully different than his career file suggests. The Splitter's whiff rate has jumped from 31% career to <strong>56.2% in 2026.</strong> The Sinker has nearly disappeared. And the Cutter-to-LHH rate has dropped sharply, replaced by more Splitters. Whether this is a genuine change or a three-start sample artifact is the most important question for tonight.</div>
 
   <div class="callout green">
-    <strong>Best weapons by miss-bat rate:</strong> Curveball (36.8% whiff, .175 xwOBA) · Cutter (32.3% whiff, .298 xwOBA) · Splitter (31.3% whiff, .233 xwOBA). Three legitimate strikeout pitches off the same arm slot. The 4-Seam at 19.6% whiff is the zone-setter, not the finisher.
+    <strong>The 2026 headline:</strong> Splitter whiff rate 56.2% (career: 31.3%). Curveball 38.5% (career: 36.8%). Cutter 34.6% (career: 32.3%). The three off-speed weapons are all generating more misses than the career file alone would suggest. The 4-Seam whiff rate (11.1%) is below career (19.6%) — but that pitch is not the finishing weapon.
+  </div>
+
+  <!-- 2026 vs Career side by side -->
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">2026 · 3 starts · 296 pitches · primary signal</div>
+      <div id="mix2026"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Career 2024-25 · year-weighted prior</div>
+      <div id="mixCareer"></div>
+    </div>
+  </div>
+
+  <!-- LHH / RHH split by handedness in 2026 -->
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">2026 · vs Left-Handed Hitters</div>
+      <div id="mix2026L"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">2026 · vs Right-Handed Hitters</div>
+      <div id="mix2026R"></div>
+    </div>
   </div>
 
   <div class="g2" style="margin-bottom:20px;">
     <div class="card">
-      <div class="card-hd">Overall mix · year-weighted 2024-2026</div>
-      <div id="mixAll"></div>
-    </div>
-    <div class="card">
-      <div class="card-hd">Pitch quality · xwOBA allowed (year-weighted)</div>
-      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">.175 · elite · best miss-bat pitch</div></div>
-      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val">.233 · excellent · LHH primary off-speed</div></div>
+      <div class="card-hd">Pitch quality · xwOBA allowed (career weighted)</div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">.175 · elite · best sustained xwOBA</div></div>
+      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val">.233 · excellent · 56.2% whiff in 2026</div></div>
       <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">.298 · solid · RHH primary weapon</div></div>
-      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">.348 · most hittable · RHH only at 9%</div></div>
-      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">.386 · zone-setter, not finisher</div></div>
-    </div>
-  </div>
-
-  <div class="g2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-hd">vs Left-Handed Hitters · weighted mix</div>
-      <div id="mixL"></div>
+      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">.348 · most hittable · essentially gone in 2026</div></div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">.386 · zone-setter · 97.0 mph in 2026</div></div>
     </div>
     <div class="card">
-      <div class="card-hd">vs Right-Handed Hitters · weighted mix</div>
-      <div id="mixR"></div>
-    </div>
-  </div>
-
-  <div class="g2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-hd">Velocity</div>
-      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">97.0 mph (2026) · 96.3 career</div></div>
-      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val">90.9 mph (2026)</div></div>
-      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">88.6 mph (2026) · 90.2 career</div></div>
-      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">81.6 mph · 15.4 mph gap off FB</div></div>
-      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">96.0 mph · RHH only, 9% usage</div></div>
-    </div>
-    <div class="card">
-      <div class="card-hd">Whiff rates by pitch</div>
-      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">36.8% overall · 38.8% vs RHH</div></div>
-      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">32.3% overall · 33.9% vs LHH</div></div>
-      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val">31.3% overall · 32.5% vs LHH</div></div>
-      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">19.6% overall · 21.2% vs RHH</div></div>
-      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">15.1% · lowest miss-bat rate</div></div>
+      <div class="card-hd">Whiff rates · 2026 vs career</div>
+      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val">56.2% (2026) · 31.3% career</div></div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">38.5% (2026) · 36.8% career</div></div>
+      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">34.6% (2026) · 32.3% career</div></div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">11.1% (2026) · 19.6% career</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">0% usage in 2026 · 4.7% career</div></div>
     </div>
   </div>
 
   <div class="callout amber">
-    <strong>The crack in the wall is the walk rate.</strong> Bradley's weighted BB% sits at 8.3%. When he falls behind in the count, his 4-Seam over the heart of the plate plays very differently than the one on the corners. Patient at-bats that force him into hitter's counts are the blueprint tonight. First-pitch aggression plays into his hands.
+    <strong>What changed and what to watch.</strong> The Sinker has gone from 4.7% career usage to effectively zero in 2026. The Splitter has grown in LHH usage from 26.4% (career weighted) to 31.2%. If the 56.2% Splitter whiff rate holds tonight, left-handed hitters are in serious trouble. If it is a three-start sample fluke, Lukes and Barger are in a better spot than the numbers suggest.
   </div>
 </div>
 
+<!-- TAB 1: MATCHUPS -->
 <div class="panel" id="p1">
-  <div class="lede">MODERATE confidence. BvP sample ranges from 2 to 6 PA per hitter. Six PA hitters carry real weight. Two PA hitters are directional signal only. Tier threshold ±0.030. The lineup splits by handedness, and the split matters tonight.</div>
+  <div class="lede">MODERATE confidence. Eleven hitters, corrected to the confirmed 2026 roster. BvP sample ranges from 0 to 6 PA. Heineman and Straw have no career BVP data against Bradley. Six PA hitters carry real weight. Tier threshold ±0.030.</div>
   <div class="callout diag">
-    <strong>Champion model only.</strong> BvP context noted where available. Does not move tier placement below 5 reliable PA. LHH face Splitter-heavy profile (26.4%). RHH face Cutter-heavy profile (29.7%). Two completely different problems in the same lineup.
+    <strong>2026 roster only.</strong> Horwitz, Jansen, Loperfido, and Turner are not on this team. Heineman and Straw have no BvP against Bradley. LHH face a Splitter-heavy profile that is even more pronounced in 2026 (31.2%). RHH face Cutter at 28.9%.
   </div>
   <div id="tierDisplay"></div>
 </div>
 
+<!-- TAB 2: WATCH FOR -->
 <div class="panel" id="p2">
-  <div class="lede">Three questions. The Vlad anomaly. The Splitter against the LHH half of the lineup. The walk rate as the lineup's best collective weapon.</div>
+  <div class="lede">Three questions. The Splitter's 2026 surge and what it means for the LHH side of the lineup. The Vlad/Springer split. The walk rate as the lineup's best collective leverage point.</div>
   <div id="wfItems"></div>
 </div>
 
+<!-- TAB 3: BASELINES -->
 <div class="panel" id="p3">
-  <div class="lede">Bradley is a legitimately above-average starter. The baseline tournament reflects that, and the model has to beat real suppression tonight, not a soft pitcher proxy.</div>
+  <div class="lede">Bradley is a legitimately above-average starter. The baseline tournament reflects real suppression tonight, not a soft pitcher proxy. The champion model has to earn its number.</div>
   <div class="card" style="margin-bottom:20px;">
     <div class="card-hd">Baseline tournament · April 12 2026 · Bradley vs Jays</div>
     <div id="blRows"></div>
-    <div style="margin-top:16px;font-size:12px;color:var(--dim);line-height:1.7;">All baselines computed from source data. Baseline D uses Bradley's career xwOBA allowed, year-weighted toward 2025. His 2026 sample (3 starts, 296 pitches) is real signal but too small for a stable ERA estimator on its own. Year-weighted Statcast xwOBA is the primary pitch quality input.</div>
+    <div style="margin-top:16px;font-size:12px;color:var(--dim);line-height:1.7;">Baseline D uses Bradley's career xwOBA allowed, year-weighted toward 2025. His 2026 sample (3 starts) is real signal but not a stable ERA estimator on its own. If the 2026 Splitter whiff rate (56.2%) represents a genuine improvement, Baseline D may be too generous to the Jays.</div>
   </div>
 </div>
 
+<!-- TAB 4: BOTTOM LINE -->
 <div class="panel" id="p4">
-  <div class="lede">One clear Edge hitter. Two in the favorable zone. The bottom half of the lineup faces a genuine assignment tonight.</div>
+  <div class="lede">One clear Edge. The lineup splits hard by handedness. The 2026 Splitter is the variable nobody in this lineup has seen enough of to have a confident read on.</div>
   <div class="tg-grid">
     <div class="tg-card best">
       <div class="tg-tag">Edge</div>
       <div class="tg-name">Guerrero Jr.</div>
-      <div class="tg-body">4 for 6 career. Zero strikeouts. BvP xwOBA of .520. <strong>Guerrero has the barrel timing figured out against Bradley in a way nobody else in this lineup does.</strong> RHH get the Cutter-heavy profile at 29.7%. He is the clear top projection and it is not close. The model and the BvP are pointing the same direction.</div>
+      <div class="tg-body">4 for 6 career. Zero strikeouts. BvP xwOBA .520. <strong>The model and the BvP are pointing the same direction, which is unusual enough to trust.</strong> RHH get the Cutter-heavy profile. He has the timing figured out against Bradley in a way that nobody else on this roster does. Clear top projection.</div>
     </div>
     <div class="tg-card watch">
-      <div class="tg-tag">Favorable</div>
-      <div class="tg-name">Horwitz + Lukes</div>
-      <div class="tg-body">Both LHH who have managed Bradley's Splitter-heavy approach better than expected. Horwitz 3/6 with a .411 BvP xwOBA. Lukes 1/3 with a walk and .507 xwOBA in small sample. <strong>LHH are in the harder half tonight, which makes Horwitz's career results against Bradley the most interesting counterintuitive number in the matchup.</strong></div>
+      <div class="tg-tag">Favorable · watch</div>
+      <div class="tg-name">Lukes</div>
+      <div class="tg-body">1 for 3 with a walk, .507 BvP xwOBA in a small sample. LHH who has handled Bradley's approach better than the profile suggests he should. <strong>The 2026 Splitter surge at 31.2% usage vs LHH makes this a tougher assignment than the career data implies.</strong> The small sample is doing real work here — monitor closely.</div>
     </div>
     <div class="tg-card worst">
       <div class="tg-tag">Suppressed</div>
       <div class="tg-name">Schneider + Springer + Jimenez</div>
-      <div class="tg-body">Schneider: 0/4 with three strikeouts, BvP xwOBA .004. Springer: 0/6 with a .044 BvP xwOBA in six plate appearances. Jimenez: 0/4 with two strikeouts. <strong>Three hitters with enough BvP sample to carry real weight, all pointing the same direction.</strong> Springer in particular is the puzzle: quality RHH with a sample that looks like a different kind of hitter.</div>
+      <div class="tg-body">Schneider: 0/4, three strikeouts, .004 BvP xwOBA. Springer: 0/6, .044 xwOBA, six plate appearances that carry real weight. Jimenez: 0/4, two strikeouts, .084. <strong>Three right-handed hitters with enough BvP sample to matter, all in the same direction.</strong> Springer's case is the puzzle — quality RHH, career history that should be better than this.</div>
     </div>
     <div class="tg-card watch">
       <div class="tg-tag">The opening</div>
       <div class="tg-name">Work the count</div>
-      <div class="tg-body">An 8.3% weighted walk rate is the structural vulnerability. <strong>When Bradley falls behind, he has to come into the zone with a fastball that plays differently over the heart of the plate than on the corners.</strong> A lineup that takes pitches early in at-bats forces him to throw strikes he does not want to throw. That is the collective blueprint tonight.</div>
+      <div class="tg-body">Bradley's weighted BB% is 8.3%. <strong>When he falls behind in the count, the 4-Seam over the heart of the plate is a completely different pitch than the one on the corners.</strong> A lineup that takes pitches and forces him to throw strikes he does not want to throw turns his walk tendency into baserunners without needing big hits. First-pitch aggressiveness eliminates that path entirely.</div>
     </div>
   </div>
   <div class="honest-box">
     <div class="hb-tag">Observation 13 · assumption audit</div>
-    <div class="hb-body">Three items the retro will score: <strong>(1) Does Bradley's velocity hold at 97.0?</strong> Career average is 96.3. If he sits at 95-96, that is meaningful context. <strong>(2) Does the Splitter generate its expected whiff rate against LHH?</strong> 32.5% expected against lefties. What Horwitz and Lukes do is the specific test. <strong>(3) Does the Vlad/Springer divergence play out, or does baseball randomize it again?</strong> No inference before n=200. The season is the validation.</div>
+    <div class="hb-body">Three items the retro will score: <strong>(1) Does the Splitter whiff rate hold near 56%?</strong> If yes, the LHH suppression call was correct. If it drops back toward career (31%), Lukes and Barger were in a better spot than the model suggested. <strong>(2) Does Bradley's velocity hold at 97.0?</strong> Career average is 96.3. A meaningful drop changes the Cutter gap story for RHH. <strong>(3) Does the Vlad/Springer divergence play out?</strong> Six PA each, pointing opposite directions. No inference before n=200. The season is the validation.</div>
   </div>
   <div class="social">
     <div class="social-tag">Post · X / Twitter</div>
     <div class="social-body">
       Jays Matchup Intel 4-12-26. Taj Bradley, RHP. Rogers Centre. Observation 13.<br><br>
-      Four pitches. Four shapes. Curveball (.175 xwOBA, 36.8% whiff) and Splitter (.233) are elite. 4-Seam sitting at 97.0 mph in 2026, up from a 96.3 career average.<br><br>
-      Edge: Guerrero Jr. 4/6 career, 0 strikeouts, BvP xwOBA .520. Model and BvP aligned. Clear top projection.<br><br>
-      Suppressed: Schneider (0/4, 3K, .004), Springer (0/6, .044), Jimenez (0/4, 2K). All three have enough PA to carry weight.<br><br>
-      The blueprint: take pitches, work counts, make the 8.3% walk rate show up.<br><br>
+      The 2026 story: Splitter whiff rate jumped to 56.2% (career: 31.3%). Sinker essentially gone. LHH get the Splitter at 31.2% tonight.<br><br>
+      Edge: Guerrero Jr. 4/6 career, 0 K, .520 BvP xwOBA. Model and BvP aligned.<br><br>
+      Suppressed: Schneider (0/4, 3K, .004), Springer (0/6, .044, 6PA), Jimenez (0/4, 2K, .084).<br><br>
+      Blueprint: take pitches, force the 8.3% walk rate to show up.<br><br>
       MODERATE confidence. 2024-2026 weighted.<br><br>
       scherrology-sys.github.io/jays-matchup-intel · #BlueJays
     </div>
   </div>
 </div>
 
-</div>
+</div><!-- /wrap -->
 
 <div class="footer">Statcast data via Baseball Savant · MODERATE confidence · 2024-2026 weighted · Observation 13 · Arm Chair Analyst · @scherrology</div>
 
@@ -299,24 +302,53 @@ function mkBars(data,id,mx){
   });
 }
 
-mkBars([{n:'4-Seam',p:41.2,v:'97.0 mph'},{n:'Cutter',p:22.1,v:'88.6 mph'},{n:'Splitter',p:19.6,v:'90.9 mph'},{n:'Curveball',p:12.4,v:'81.6 mph'},{n:'Sinker',p:4.7,v:'96.0 mph'}],'mixAll',50);
-mkBars([{n:'4-Seam',p:45.3},{n:'Splitter',p:26.4},{n:'Cutter',p:14.9},{n:'Curveball',p:13.0},{n:'Sinker',p:0.5}],'mixL',52);
-mkBars([{n:'4-Seam',p:36.9},{n:'Cutter',p:29.7},{n:'Splitter',p:12.4},{n:'Curveball',p:11.7},{n:'Sinker',p:9.2}],'mixR',45);
+// 2026 (3 starts, 296 pitches — no Sinker)
+mkBars([
+  {n:'4-Seam',  p:47.3,v:'97.0 mph'},
+  {n:'Splitter',p:21.6,v:'90.9 mph'},
+  {n:'Cutter',  p:20.3,v:'88.6 mph'},
+  {n:'Curveball',p:10.8,v:'81.6 mph'},
+],'mix2026',55);
 
+// Career year-weighted
+mkBars([
+  {n:'4-Seam',  p:41.2,v:'96.3 mph avg'},
+  {n:'Cutter',  p:22.1,v:'90.2 mph avg'},
+  {n:'Splitter',p:19.6,v:'91.0 mph avg'},
+  {n:'Curveball',p:12.4,v:'80.8 mph avg'},
+  {n:'Sinker',  p:4.7, v:'96.0 mph avg'},
+],'mixCareer',55);
+
+// 2026 vs LHH
+mkBars([
+  {n:'4-Seam',  p:46.5},
+  {n:'Splitter',p:31.2},
+  {n:'Curveball',p:11.1},
+  {n:'Cutter',  p:11.1},
+],'mix2026L',55);
+
+// 2026 vs RHH
+mkBars([
+  {n:'4-Seam',  p:48.0},
+  {n:'Cutter',  p:28.9},
+  {n:'Splitter',p:12.5},
+  {n:'Curveball',p:10.5},
+],'mix2026R',55);
+
+// Matchup data — confirmed 2026 roster only
 const TEAM_MEAN=0.310,THRESH=0.030,K=45;
 const MD=[
-  {n:'Guerrero Jr.',h:'R',e:.375,cls:'h',note:'Edge · 4/6 career, 0 K · BvP and model aligned',bvp:'6PA:.520'},
-  {n:'Horwitz',h:'L',e:.348,cls:'h',note:'Edge · 3/6 career · LHH who has handled the Splitter',bvp:'6PA:.411'},
-  {n:'Lukes',h:'L',e:.328,cls:'n',note:'Neutral · 1/3 with a walk · small sample, directional signal',bvp:'3PA:.507'},
-  {n:'Barger',h:'L',e:.320,cls:'n',note:'Neutral · 2PA walk, no K · too small to move tier',bvp:'2PA:.526'},
-  {n:'Jansen',h:'R',e:.315,cls:'n',note:'Neutral · walk in 2PA, decent contact quality',bvp:'2PA:.362'},
-  {n:'Loperfido',h:'L',e:.305,cls:'n',note:'Neutral · 2PA, no quality signal',bvp:'2PA:.122'},
-  {n:'Varsho',h:'L',e:.296,cls:'s',note:'Suppressed · Splitter-heavy LHH profile · BvP .103',bvp:'2PA:.103'},
-  {n:'Kirk',h:'R',e:.292,cls:'s',note:'Suppressed · 0/3 with a K · BvP .052',bvp:'3PA:.052'},
-  {n:'Jimenez',h:'R',e:.288,cls:'s',note:'Suppressed · 0/4, 2K · BvP .084 in 4PA',bvp:'4PA:.084'},
-  {n:'Turner',h:'R',e:.285,cls:'s',note:'Suppressed · 0/2, 2K · sample too small to isolate',bvp:'2PA:n/a'},
-  {n:'Springer',h:'R',e:.283,cls:'s',note:'Suppressed · 0/6, .044 BvP xwOBA · 6PA carries weight',bvp:'6PA:.044'},
-  {n:'Schneider',h:'R',e:.272,cls:'s',note:'Suppressed · 0/4, 3K, .004 BvP xwOBA · hardest matchup',bvp:'4PA:.004'},
+  {n:'Guerrero Jr.',h:'R',e:.375,cls:'h',note:'Edge · 4/6 career, 0 K · model and BvP aligned',bvp:'6PA:.520'},
+  {n:'Lukes',       h:'L',e:.328,cls:'n',note:'Neutral · 1/3 with walk · small sample, directional signal',bvp:'3PA:.507'},
+  {n:'Barger',      h:'L',e:.320,cls:'n',note:'Neutral · walk in 2PA, no K · too small to move tier',bvp:'2PA:.526'},
+  {n:'Clement',     h:'R',e:.315,cls:'n',note:'Neutral · 2PA, contact quality unremarkable',bvp:'2PA:.144'},
+  {n:'Heineman',    h:'L',e:.308,cls:'n',note:'Neutral · no career BvP against Bradley',bvp:null},
+  {n:'Straw',       h:'R',e:.304,cls:'n',note:'Neutral · no career BvP against Bradley',bvp:null},
+  {n:'Varsho',      h:'L',e:.296,cls:'s',note:'Suppressed · LHH Splitter profile · 2026 usage 31.2%',bvp:'2PA:.103'},
+  {n:'Kirk',        h:'R',e:.292,cls:'s',note:'Suppressed · 0/3 with K · BvP .052',bvp:'3PA:.052'},
+  {n:'Jimenez',     h:'R',e:.288,cls:'s',note:'Suppressed · 0/4, 2K · BvP .084',bvp:'4PA:.084'},
+  {n:'Springer',    h:'R',e:.283,cls:'s',note:'Suppressed · 0/6, .044 xwOBA · 6PA carries real weight',bvp:'6PA:.044'},
+  {n:'Schneider',   h:'R',e:.272,cls:'s',note:'Suppressed · 0/4, 3K · BvP .004 · hardest matchup',bvp:'4PA:.004'},
 ];
 
 const xMn=.15,xMx=.55,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
@@ -340,19 +372,20 @@ const td=document.getElementById('tierDisplay');
   });
 });
 
+// Watch For
 const WF=[
-  {num:1,q:'Can the top of the lineup solve the Cutter?',
-   body:'Bradley runs his Cutter at 29.7% to right-handed hitters at 88.6 mph off a 97-mph 4-Seam. That 8-mph velocity gap is the primary conflict. <strong>Guerrero has solved it: 4/6 career, zero strikeouts, .520 BvP xwOBA.</strong> Springer has not: 0/6 with a .044 BvP xwOBA. Two right-handed hitters with the same pitcher facing the same pitch profile. Completely opposite results.',
-   th1:'Guerrero gets quality contact early in the game. The top of the order delivers. Springer finds a way to put one good swing on something.',
-   th2:'Bradley keeps the Cutter on the periphery. Guerrero gets one pitch to hit and does not connect cleanly. Springer extends the 0-for streak to 7.'},
-  {num:2,q:'Does the Splitter suppress the LHH half?',
-   body:'Against left-handed hitters, Bradley throws the Splitter 26.4% of the time, generating a 32.5% whiff rate. It runs down and away from a lefty at 91 mph off a 97-mph heater. <strong>Horwitz has handled it in 6 PA. Lukes in 3 PA. The broader LHH group, including Varsho and Loperfido, is in the harder half of the lineup tonight.</strong> The Splitter is the pitch to watch every time a lefty steps in.',
-   th1:'Horwitz and Lukes continue their results. The model catches something real about their approach against the Splitter. Varsho has a tough night.',
-   th2:'The Splitter suppresses the whole LHH group equally. Horwitz regresses. The small sample corrects. The LHH side of the order goes quiet.'},
-  {num:3,q:'Does the 8.3% walk rate show up?',
-   body:'Bradley\'s weighted BB% is 8.3%. That is real, consistent, and spread across his career file. <strong>When he falls behind in the count, the 4-Seam over the heart of the plate is a fundamentally different pitch than the one on the corners.</strong> A lineup that takes pitches and forces him to throw strikes he does not want to throw is the structural path to offense. First-pitch aggressiveness eliminates that path.',
-   th1:'The lineup works counts. Runners accumulate on walks. Bradley falls behind in at-bats repeatedly. The Jays manufacture trouble without needing big hits.',
-   th2:'Bradley gets ahead early in counts all night. The lineup swings first pitch. He controls at-bat tempo and his K% climbs toward 24%.'},
+  {num:1,q:'Is the 2026 Splitter as good as the early numbers say?',
+   body:'Bradley\'s Splitter is generating a 56.2% whiff rate through three 2026 starts. Career mark is 31.3%. That kind of jump in three starts is either a genuine improvement or a sample artifact, and there is no clean way to know which before tonight\'s game. <strong>Against LHH, he is throwing the Splitter 31.2% of the time in 2026 — up from 26.4% career.</strong> If the whiff rate holds near 56%, the LHH side of this lineup faces a much harder night than the career file alone would predict.',
+   th1:'The Splitter generates its 2026 whiff rate. Varsho, Barger, and Lukes all have difficult at-bats against it. The LHH half of the lineup goes quiet.',
+   th2:'The Splitter regresses toward its career 31% whiff rate. Lukes handles it. The LHH group performs closer to what the career data suggests.'},
+  {num:2,q:'Does the Vlad/Springer RHH split hold?',
+   body:'Two right-handed hitters. Same pitcher. Six career plate appearances each. Guerrero: 4 hits, zero strikeouts, .520 BvP xwOBA. Springer: zero hits, .044 BvP xwOBA. <strong>RHH get the Cutter at 28.9% — an 8-mph gap off the 97-mph heater.</strong> Guerrero has timed it. Springer has not. The question is whether that divergence represents something structural or whether six plate appearances is just noise playing out in opposite directions.',
+   th1:'Guerrero gets quality contact at least once. Springer extends the hitless streak. The BvP split plays out, the model gets credit for the separation.',
+   th2:'Baseball does baseball things. Springer gets a hit on the first good fastball he sees. Guerrero hits into a shift. The six-PA sample corrects itself and both hitters look similar.'},
+  {num:3,q:'Does the walk rate create baserunners without big hits?',
+   body:'Bradley\'s weighted BB% is 8.3%. That is consistent across his career file, not an early-season artifact. <strong>When he falls behind in the count, the 4-Seam over the heart of the plate is a completely different pitch than the one on the corners at 97 mph.</strong> His 4-Seam whiff rate in 2026 is only 11.1% — below his career mark. If he is not commanding it well, patient hitters manufacture trouble without requiring the ball to leave the infield.',
+   th1:'The lineup takes pitches early in at-bats. Bradley falls behind repeatedly. Walks accumulate. The Jays get baserunners without needing extra-base hits.',
+   th2:'Bradley works ahead consistently. The lineup swings early. He controls at-bat tempo all night and the walk total stays near zero.'},
 ];
 const wc=document.getElementById('wfItems');
 WF.forEach(w=>{
@@ -361,6 +394,7 @@ WF.forEach(w=>{
   wc.appendChild(el);
 });
 
+// Baselines
 const BL=[
   {l:'A · hitter prior wOBA (2024-25)',v:.328,beat:true},
   {l:'B · platoon baseline, park-adjusted (TOR)',v:.312,beat:true},

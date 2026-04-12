@@ -9,13 +9,20 @@
 
 This project tests whether a pitch-mix aware model improves estimates of lineup offensive output against a specific starting pitcher.
 
-**Result (n=569, 2025 season):** +1.7% MAE lift vs hitter-only baseline, concentrated in LHH matchups (+4–5%)
-**Ranking signal:** +62% Spearman rho with in-season updating. No calibration gain.
-**Conclusion:** Pitch-mix adds value as a ranking tool. Not a pure prediction improvement.
+Result (2025, n=569):
++1.7% MAE lift vs hitter-only baseline
+Signal concentrated in LHH matchups (+4–5%)
+
+Ranking signal:
++62% Spearman rho with in-season updating
+No calibration improvement
+
+Conclusion:
+Pitch-mix adds value as a ranking tool, not a prediction improvement
 
 Model locked April 7, 2026. No mid-season tuning. The 2026 season is a prospective evaluation.
 
-A Bayesian hierarchical challenger is in development. It will be promoted only if it meets pre-defined criteria at n ≥ 200 out-of-sample hitter-games.
+A Bayesian hierarchical challenger is in development. Promotion requires pre-defined criteria at n ≥ 200 out-of-sample hitter-games.
 
 ---
 
@@ -26,7 +33,7 @@ Do hitters perform differently when evaluated against how pitchers attack them, 
 - If yes → matchup-aware modeling adds signal beyond talent-only baselines
 - If no → hitter-only projections are sufficient
 
-Both outcomes are valid findings. The 2026 season is the test.
+Both outcomes are valid.
 
 ---
 
@@ -50,11 +57,13 @@ Verdict: **Supported.** Signal concentrated in LHH matchups (+4–5%). Near zero
 | Spearman rho | +0.075 | +0.122 | +62% |
 | Top-3 overlap | 43.9% | 47.7% | +3.8pp |
 
-Verdict: **Calibration not supported. Ranking signal present.** MAE does not improve. Hitter ordering does.
+Verdict: **Calibration not supported. Ranking signal present.**
 
-**2026 in-season (n=~83, 13 observations)**
+**Key distinction:** Calibration and discrimination are separate objectives. This framework shows limited calibration gain but meaningful improvement in hitter ordering.
 
-Running. No inference before n=200.
+**2026 in-season (n≈83)**
+
+No inference before n ≥ 200. Early results show no lift and unstable ranking metrics, consistent with expected small-sample noise.
 
 ---
 
@@ -62,15 +71,15 @@ Running. No inference before n=200.
 
 These are problems the framework has directly resolved.
 
-**Within-game hitter correlation.** Hitter outcomes within a game are correlated. The primary validation metric is game-level MAE, the absolute error between predicted and observed mean team wOBA. This absorbs within-game correlation automatically. Hitter-level rows are diagnostic decomposition, not the primary claim.
+**Within-game hitter correlation.** Hitter outcomes within a game are correlated. The primary validation metric is game-level MAE, which absorbs within-game correlation automatically. Hitter-level rows are diagnostic decomposition, not the primary claim.
 
-**Pitch classification instability.** Statcast classification algorithms update periodically. Year-over-year usage shifts that are not accompanied by movement profile changes are reclassification artifacts. A stability check flags pitches where usage shifts exceed 15pp and pfx_x drift is under 0.5 feet. Flagged pitches are disclosed in preview output.
+**Pitch classification instability.** Year-over-year usage shifts not accompanied by movement profile changes are reclassification artifacts. A stability check flags pitches where usage shifts exceed 15pp and pfx_x drift is under 0.5 feet. Flagged pitches are disclosed in preview output.
 
-**Analyst-determined assumption inputs.** Expected values and tolerances are now computed from the recency-weighted Statcast sample, not analyst assertion. Expected values are weighted means. Tolerances derive from observed game-to-game standard deviation, capped at 12pp for pitch usage and 2.0 mph for velocity.
+**Analyst-determined assumption inputs.** Expected values and tolerances are computed from the recency-weighted Statcast sample. Expected values are weighted means. Tolerances derive from observed game-to-game standard deviation, capped at 12pp for pitch usage and 2.0 mph for velocity.
 
 **No park factor adjustment.** The `park_adjusted_baseline()` function applies park factor multipliers to handedness-specific baselines. Source: Baseball Reference 3-year rolling wOBA park factors.
 
-**In-season pitch mix blending.** The blending weight between current-year and career pitch mix is now empirically derived. Grid search on n=628 hitter-games established a sample-size dependent rule: n_curr < 30 → career only; 30–74 → 50/50; 75–149 → 70/30; 150+ → 90/10. MAE difference across all weights was 0.0005. Spearman rho improved +23% with current-year weighting.
+**In-season pitch mix blending weights are empirically derived via grid search (n=628).** MAE sensitivity is negligible (Δ=0.0005), while Spearman rho improves +23% with current-year weighting. Blending rule: n_curr < 30 → career only; 30–74 → 50/50; 75–149 → 70/30; 150+ → 90/10.
 
 ---
 
@@ -86,7 +95,7 @@ The current champion uses a frequentist point estimate with Beta-Binomial credib
 - Holds across n ≥ 200 out-of-sample hitter-game observations
 - No systematic bias
 
-**Status:** In development. First fit at n=200 (~25 scored games). Running n currently ~83.
+**Status:** In development. First fit at n=200. Running n currently ~83.
 
 ---
 
@@ -94,7 +103,7 @@ The current champion uses a frequentist point estimate with Beta-Binomial credib
 
 The pitch-mix framework is rejected if:
 
-- It fails to outperform a simple team-level wOBA baseline (Baseline C/D) at n ≥ 200
+- It fails to outperform a simple team-level wOBA baseline at n ≥ 200
 - Lift does not persist as sample size grows
 - Ranking improvements disappear with sufficient in-season data
 - Gains are fully explained by handedness splits alone
@@ -109,7 +118,7 @@ This is a test of whether the framework works, not a proof that it does.
 
 **Pitch-type wOBA does not distinguish between pitchers.** A hitter's Slider performance is aggregated across every pitcher who has thrown that pitch to them. Velocity, movement, and location are not incorporated into the hitter-pitch match.
 
-**K=60 and half-life of 180 days are not yet calibrated at sufficient n.** Grid search at current n showed MAE range of 0.0013 across all parameter combinations. Differences are not meaningful at this sample size.
+**K=60 and half-life of 180 days are not calibrated at sufficient n.** Grid search at current n showed MAE range of 0.0013 across all parameter combinations. Not meaningful at this sample size. Both will be estimated at n ≥ 200.
 
 **No adjustment for umpire or weather.** Park factors are applied. Umpire tendencies and weather remain unmodeled.
 
@@ -130,7 +139,7 @@ code/
   retro_runner_YYYY-MM-DD.R       game-specific retro execution
 ```
 
-Core engine is private IP. Runners source it and are self-contained for data loading and assumption specification. Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-level exports. No proprietary data sources.
+Core engine is not included. Runners are self-contained for execution, data loading, and assumption specification. Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-level exports. No proprietary data sources.
 
 ---
 

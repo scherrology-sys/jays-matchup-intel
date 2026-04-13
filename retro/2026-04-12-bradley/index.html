@@ -1,1 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Taj Bradley · April 12</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--rose);letter-spacing:.04em;margin-bottom:10px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-val.red{color:var(--rose);}
+.mi-val.green{color:var(--green);}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.hit::before{background:var(--green);}
+.mu-row.miss::before{background:var(--rose);}
+.mu-row.ok::before{background:rgba(255,255,255,.1);}
+.mu-row.na::before{background:rgba(255,255,255,.04);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:150px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-tier{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:1px 6px;border-radius:2px;flex-shrink:0;}
+.mr-tier.edge{background:rgba(45,212,160,.12);color:var(--green);}
+.mr-tier.supp{background:rgba(255,79,106,.1);color:var(--rose);}
+.mr-tier.neut{background:rgba(255,255,255,.05);color:var(--dim);}
+.mr-exp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);width:50px;text-align:right;flex-shrink:0;}
+.mr-act{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:50px;text-align:right;flex-shrink:0;}
+.mr-resid{font-family:'IBM Plex Mono',monospace;font-size:11px;width:54px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:8px;line-height:1.35;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.stat-val.red{color:var(--rose);}
+.stat-val.green{color:var(--green);}
+.stat-val.amber{color:var(--amber);}
+.ass-row{padding:14px 16px;margin-bottom:8px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--border);}
+.ass-row.held{border-left-color:var(--green);}
+.ass-row.partial{border-left-color:var(--amber);}
+.ass-row.failed{border-left-color:var(--rose);}
+.ass-row.untestable{border-left-color:var(--dim);}
+.ass-name{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.ass-vals{display:flex;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.ass-val-item{display:flex;flex-direction:column;gap:2px;}
+.ass-val-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+.ass-val-num{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;}
+.ass-verdict{font-size:12px;color:var(--mid);line-height:1.55;}
+.ass-verdict strong{color:var(--cream);}
+.log-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px solid var(--border);}
+.log-row:last-child{border-bottom:none;}
+.log-row.current{background:rgba(196,162,75,.06);padding:7px 10px;border-radius:3px;border-bottom:none;margin-bottom:2px;}
+.log-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:20px;flex-shrink:0;}
+.log-label{font-size:12px;color:var(--mid);flex:1;}
+.log-label.current{color:var(--gold);}
+.log-mae{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--cream);width:50px;text-align:right;flex-shrink:0;}
+.log-mae.current{color:var(--gold);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;margin-top:20px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 12px;font-size:11px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · MIN @ TOR · Rogers Centre · April 12, 2026 · Observation 13</div>
+      <div class="score">MIN 8 · TOR 2</div>
+      <div class="hed">TAJ <span class="red">BRADLEY</span><span class="role">OBSERVATION 13</span></div>
+      <div class="dek"><em>5 IP · 7 K · 4 BB · efficient but short.</em> Varsho Suppressed at .296, actual 1.016 — the second consecutive game the model misses him in this direction. The 2026 Splitter claim was untestable. Velocity dropped 1.1 mph. Three of four assumptions failed. Champion beats naive this game. Eloy Jimenez debuts: 1 for 2 vs Bradley.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Bradley line</div><div class="mi-val">5 IP</div><div class="mi-sub">7 K · 4 BB · 5 H · 0 HR</div></div>
+    <div class="mi"><div class="mi-lbl">Champion MAE</div><div class="mi-val green">0.311</div><div class="mi-sub">naive: 0.321 · champion wins</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val red">1 of 4 held</div><div class="mi-sub">Velo, walk rate, Cutter to RHH all failed</div></div>
+    <div class="mi"><div class="mi-lbl">Spearman rho</div><div class="mi-val red">−0.400</div><div class="mi-sub">negative ranking signal</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val">6-9</div><div class="mi-sub">MIN series 1-2 · series loss</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Study note</div>
+    <div class="gov-txt">Only 4 scoreable hitters. Bradley lasted 5 innings. Many roster hitters faced only the bullpen (Morris, Topa). Game-level |err|: 0.148. Running n after observation 13: ~87 hitter-games.</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">Assumption Audit</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0: H1/H2 -->
+<div class="panel active" id="p0">
+  <div class="lede">Observation 13. Champion beats naive this game. <strong>Varsho was Suppressed at .296 and actual 1.016 — the second consecutive game the model has missed him in the same direction.</strong> Four scoreable hitters because Bradley only lasted five innings. Sample is thin. The game-level error is large.</div>
+
+  <div class="callout green">
+    <strong>H1 · Champion vs Naive-1 · this game</strong><br>
+    Champion MAE: 0.311 · Naive-1 MAE: 0.321 · Champion wins by 0.010<br>
+    Champion wins, but the margin is narrow and the Varsho miss is the dominant signal in a 4-hitter sample.
+  </div>
+
+  <div class="callout rose">
+    <strong>H2 · Ranking signal · this game</strong><br>
+    Spearman rho: −0.400 · Top-3 overlap: 1/3<br>
+    Guerrero was correctly placed top. Varsho was Suppressed; he was the top actual performer at 1.016. Lukes was Neutral; he was last at .000. The ranking is inverted at the extremes.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">H1 · game error vs baselines</div>
+      <div class="stat-row"><div class="stat-lbl">Champion MAE (hitter-level)</div><div class="stat-val">0.311</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-1 MAE (flat .310)</div><div class="stat-val">0.321</div></div>
+      <div class="stat-row"><div class="stat-lbl">Champion wins by</div><div class="stat-val green">+0.010</div></div>
+      <div class="stat-row"><div class="stat-lbl">Game-level |err|</div><div class="stat-val red">0.148</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bias (mean residual)</div><div class="stat-val red">+0.147</div></div>
+      <div class="stat-row"><div class="stat-lbl">Scoreable hitters</div><div class="stat-val">4 of 11</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Context · why only 4 scoreable</div>
+      <div class="stat-row"><div class="stat-lbl">Bradley IP</div><div class="stat-val">5.0</div></div>
+      <div class="stat-row"><div class="stat-lbl">Morris (bullpen, 6-8)</div><div class="stat-val">3.0 IP · 6 H allowed</div></div>
+      <div class="stat-row"><div class="stat-lbl">Topa (bullpen, 9th)</div><div class="stat-val">1.0 IP</div></div>
+      <div class="stat-row"><div class="stat-lbl">Most runs scored</div><div class="stat-val red">Bullpen, not Bradley</div></div>
+      <div class="stat-row"><div class="stat-lbl">Eloy Jimenez debut</div><div class="stat-val">1/2 vs Bradley (1B, K)</div></div>
+    </div>
+  </div>
+
+  <div class="callout amber" style="margin-top:20px;">
+    <strong>Varsho: second consecutive suppressed miss.</strong> Observation 12 (Ryan): Suppressed at .307, actual .700. Observation 13 (Bradley): Suppressed at .296, actual 1.016. Two games, same direction, same hitter. At n=2 this is a pattern worth noting, not a conclusion. The retro memory system will flag his suppression assumptions for review in the next game he appears in.
+  </div>
+</div>
+
+<!-- TAB 1: WHAT THE MODEL SAW -->
+<div class="panel" id="p1">
+  <div class="lede">Four scoreable hitters. Two assumptions about Bradley's approach failed in ways that directly affected the suppression cases. The Splitter's 56.2% whiff rate was effectively untestable tonight — only 3 LHH swings against it.</div>
+
+  <!-- Hitter rows -->
+  <div style="margin-bottom:24px;">
+
+    <div style="display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding:0 16px 8px;border-bottom:1px solid var(--border);margin-bottom:6px;">
+      <span style="width:150px;flex-shrink:0;">Hitter</span>
+      <span style="width:28px;flex-shrink:0;">H</span>
+      <span style="width:28px;flex-shrink:0;">Tier</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Exp</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Actual</span>
+      <span style="width:54px;text-align:right;flex-shrink:0;">Resid</span>
+      <span style="flex:1;padding-left:8px;">Note</span>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Varsho, Daulton</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier supp">Suppressed</div>
+      <div class="mr-exp">.296</div>
+      <div class="mr-act" style="color:var(--green);">1.016</div>
+      <div class="mr-resid" style="color:var(--green);">+0.720</div>
+      <div class="mr-note">2B + 1B + 1B. Splitter thrown to him only 3 times vs LHH (14 total), 0 whiffs. Suppression case dissolved when Splitter was untestable.</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Guerrero Jr., Vladimir</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier edge">Edge</div>
+      <div class="mr-exp">.375</div>
+      <div class="mr-act" style="color:var(--green);">0.464</div>
+      <div class="mr-resid" style="color:var(--green);">+0.089</div>
+      <div class="mr-note">Field out + 2 walks. Two patient at-bats forced the walk rate. Model underestimated — directionally correct placement.</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Clement, Ernie</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier neut">Neutral</div>
+      <div class="mr-exp">.315</div>
+      <div class="mr-act" style="color:var(--green);">0.424</div>
+      <div class="mr-resid" style="color:var(--green);">+0.109</div>
+      <div class="mr-note">2 field outs + double. Model underestimated. Within the noise range given PA count.</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Lukes, Nathan</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier neut">Neutral</div>
+      <div class="mr-exp">.328</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">−0.328</div>
+      <div class="mr-note">Field out + strikeout. The LHH assignment was genuinely harder in-game. Model overestimated output.</div>
+    </div>
+
+    <div class="mu-row na">
+      <div class="mr-name">Barger, Schneider, Straw, Heineman, Jiménez L.</div>
+      <div class="mr-hand">—</div>
+      <div class="mr-tier neut">—</div>
+      <div class="mr-exp">—</div>
+      <div class="mr-act" style="color:var(--dim);">n/a</div>
+      <div class="mr-resid" style="color:var(--dim);">—</div>
+      <div class="mr-note">Did not face Bradley or fewer than 2 PA. Not scored. Faced bullpen (Morris allowed 6 H in 3 IP).</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Jiménez, Eloy (debut)</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier neut">Not in preview</div>
+      <div class="mr-exp">—</div>
+      <div class="mr-act" style="color:var(--amber);">0.444</div>
+      <div class="mr-resid" style="color:var(--dim);">—</div>
+      <div class="mr-note">First game up. 1B off 4-Seam, K on Cutter. Not scored — no preview expectation. Will be included in subsequent previews.</div>
+    </div>
+
+  </div>
+
+  <div class="callout diag">
+    <strong>The Varsho pattern.</strong> In the Ryan retro (Obs 12) Varsho was Suppressed on Sweeper weakness. Ryan barely threw the Sweeper. Tonight he was Suppressed on the Splitter profile. Bradley's Splitter went to LHH only 14 times across 5 innings — and he got 3 of those at-bats. He had 3 hits. The suppression cases are technically grounded but dissolve when the pitcher's actual in-game mix diverges from expectations. That is the honest explanation. It is also a structural limitation of pre-game prediction.
+  </div>
+</div>
+
+<!-- TAB 2: ASSUMPTION AUDIT -->
+<div class="panel" id="p2">
+  <div class="lede">One of four assumptions held. The velocity drop is the most structurally significant finding. The Splitter whiff rate assumption was untestable at n=3 LHH swings. The walk rate worked in the Jays' favor but not enough to overcome the bullpen.</div>
+
+  <div class="ass-row held">
+    <div class="ass-name">Cutter usage vs RHH · HELD direction, FAILED magnitude</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">28.9%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--rose);">42.9%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--rose);">+14.0pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict">Bradley leaned heavily on the Cutter vs RHH — 42.9% actual vs 28.9% expected. This is +14pp above expectation, qualifying as failed. The Cutter was his most reliable weapon tonight (34.6% career whiff, he generated 44.4% tonight). The over-reliance pattern continues: this is the fourth game this season where a pitcher significantly exceeded expected usage on a primary weapon. The Guerrero suppression case held anyway because he drew two walks.</div>
+  </div>
+
+  <div class="ass-row failed">
+    <div class="ass-name">4-Seam velocity · FAILED</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">97.0 mph</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--rose);">95.9 mph</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--rose);">−1.1 mph</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict"><strong>This is the most structurally significant finding tonight.</strong> The pre-game preview flagged 97.0 mph as a 2026 signal worth watching. The actual was 95.9 — closer to his career average (96.3) than to his first-three-starts pace. This drops the velocity gap off his Cutter back toward normal. The 97.0 figure in the preview was likely a three-start artifact. Retro memory: flag Bradley's velocity as uncertain until n≥5 starts.</div>
+  </div>
+
+  <div class="ass-row failed">
+    <div class="ass-name">Walk rate · FAILED (opposite direction — elevated)</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">8.3%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--amber);">17.4%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--amber);">+9.1pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict">The pre-game blueprint said work the count and force the walk rate. It worked — Bradley issued 4 walks in 5 innings, double his career rate. He threw first-pitch strikes at a low rate and hitters took advantage. The walks contributed to his early exit. The runs, however, came largely from the bullpen (Morris: 6 H in 3 IP). The assumption was correct in direction but failed in magnitude. Filed as failed.</div>
+  </div>
+
+  <div class="ass-row untestable">
+    <div class="ass-name">Splitter whiff rate vs LHH · UNTESTABLE</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">56.2%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--dim);">0% (n=3 swings)</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--dim);">UNTESTABLE</div></div>
+    </div>
+    <div class="ass-verdict">Bradley threw 14 Splitters to LHH across 5 innings. Three generated swings. Zero whiffs. The sample is too small to score this assumption. <strong>The 56.2% pre-game figure from 3 starts is flagged as unresolved.</strong> It cannot be confirmed or denied from tonight's data. This assumption carries forward to the next Bradley preview with reduced confidence — the career 31.3% whiff rate is the more defensible input until n≥6 starts.</div>
+  </div>
+
+  <div class="callout amber" style="margin-top:4px;">
+    <strong>Emerging pattern — four games:</strong> Yamamoto Splitter +16pp (Apr 7), Woods-Richardson Slider +13.7pp (Apr 10), Ryan Sinker +18.4pp (Apr 11), Bradley Cutter to RHH +14.0pp (Apr 12). Four games now where a pitcher significantly exceeded expected usage on their most trusted pitch under pressure. This is no longer noise. It is a consistent behavioral signature that the assumption framework should begin incorporating as a prior.
+  </div>
+</div>
+
+<!-- TAB 3: STUDY LOG -->
+<div class="panel" id="p3">
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 13</div>
+    <div class="hb-body">Thirteen observations. Champion beats naive this game. Running n ~87 hitter-games across 13 observations. <strong>Varsho suppression miss is now a two-game pattern — logged for review.</strong> Velocity assumption for Bradley flagged as uncertain until more 2026 starts accumulate. Pitch over-reliance pattern confirmed across five games. No inference before n=200. The season is the validation.<br><br>Eloy Jimenez is now on the active roster and will be included in previews going forward. Springer and Kirk remain on the IL.</div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Running study metrics after 13 games</div>
+      <div class="stat-row"><div class="stat-lbl">Running n (hitter-games)</div><div class="stat-val">~87</div></div>
+      <div class="stat-row"><div class="stat-lbl">Running game-level MAE</div><div class="stat-val">0.108 est.</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 this game</div><div class="stat-val green">SUPPORTS (narrow)</div></div>
+      <div class="stat-row"><div class="stat-lbl">Assumption miss rate</div><div class="stat-val red">3/4 failed · 1 untestable</div></div>
+      <div class="stat-row"><div class="stat-lbl">Pitch over-reliance pattern</div><div class="stat-val amber">4 of 13 games</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 record</div><div class="stat-val">6-9</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Retro memory updates</div>
+      <div class="stat-row"><div class="stat-lbl">Varsho suppression flag</div><div class="stat-val red">2-game pattern · review</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bradley velo assumption</div><div class="stat-val amber">Flag as uncertain · n&lt;5</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bradley Splitter whiff</div><div class="stat-val amber">Unresolved · revert to career</div></div>
+      <div class="stat-row"><div class="stat-lbl">Eloy Jimenez</div><div class="stat-val">Add to roster for next preview</div></div>
+      <div class="stat-row"><div class="stat-lbl">Springer / Kirk</div><div class="stat-val">IL · exclude until return</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Game log · game-level error</div>
+    <div class="log-row"><div class="log-num">1</div><div class="log-label">Feltner · Apr 2024</div><div class="log-mae">0.144</div></div>
+    <div class="log-row"><div class="log-num">2</div><div class="log-label">Freeland · Aug 2025</div><div class="log-mae">0.113</div></div>
+    <div class="log-row"><div class="log-num">3</div><div class="log-label">Sugano · Mar 30</div><div class="log-mae">0.068</div></div>
+    <div class="log-row"><div class="log-num">4</div><div class="log-label">Freeland · Apr 1</div><div class="log-mae">0.077</div></div>
+    <div class="log-row"><div class="log-num">5</div><div class="log-label">Burke · Apr 3</div><div class="log-mae">0.100</div></div>
+    <div class="log-row"><div class="log-num">6</div><div class="log-label">Kay · Apr 4</div><div class="log-mae">0.105</div></div>
+    <div class="log-row"><div class="log-num">7</div><div class="log-label">Martin · Apr 5</div><div class="log-mae">0.107</div></div>
+    <div class="log-row"><div class="log-num">8</div><div class="log-label">Wrobleski · Apr 6</div><div class="log-mae">0.160</div></div>
+    <div class="log-row"><div class="log-num">9</div><div class="log-label">Yamamoto · Apr 7</div><div class="log-mae">0.092</div></div>
+    <div class="log-row"><div class="log-num">10</div><div class="log-label">Ohtani · Apr 8</div><div class="log-mae">0.096</div></div>
+    <div class="log-row"><div class="log-num">11</div><div class="log-label">Woods Richardson · Apr 10</div><div class="log-mae">0.115</div></div>
+    <div class="log-row"><div class="log-num">12</div><div class="log-label">Ryan · Apr 11</div><div class="log-mae">0.101</div></div>
+    <div class="log-row current"><div class="log-num">13</div><div class="log-label current">Bradley · Apr 12 ← this game</div><div class="log-mae current">0.148</div></div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-12-26. MIN 8, TOR 2.<br><br>
+      Bradley: 5 IP, 7 K, 4 BB. Short but pitched ok. The bullpen (Morris: 6 H in 3 IP) is where the game was lost.<br><br>
+      Varsho was Suppressed at .296. He went 3/3 — double and two singles — for a 1.016 actual wOBA. Second straight game he has beaten a suppressed call. The pattern is logged.<br><br>
+      Three assumptions failed: velocity (95.9 not 97.0), walk rate (17.4% not 8.3%), Cutter to RHH (42.9% not 28.9%). The 2026 Splitter whiff rate was untestable — 3 LHH swings, 0 whiffs. Reverting to career 31.3% for next preview.<br><br>
+      Pitch over-reliance pattern: four games this season. Yamamoto, WR, Ryan, Bradley all exceeded expected usage on their primary weapon by 13pp+. This is a prior now.<br><br>
+      Eloy Jimenez debut: 1/2 vs Bradley (single off 4-Seam, K on Cutter).<br><br>
+      Running n: ~87 hitter-games, 13 observations. Champion beats naive this game (MAE 0.311 vs 0.321).<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">Statcast data via Baseball Savant · April 12, 2026 · Observation 13 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+</script>
+</body>
+</html>

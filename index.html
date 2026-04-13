@@ -426,10 +426,10 @@ const GAMES = [
     awayLogo:    "https://a.espncdn.com/i/teamlogos/mlb/500/min.png",
     pitcher:     "Taj Bradley",
     pitcherHand: "RHP",
-    status:      "preview",
-    result:      null,
+    status:      "final",
+    result:      "MIN 8, TOR 2",
     link:        "games/2026-04-12-bradley/index.html",
-    retroLink:   null,
+    retroLink:   "retro/2026-04-12-bradley/index.html",
     pick:        "V. Guerrero Jr.",
     pickWoba:    ".375"
   },
@@ -655,7 +655,7 @@ function buildCard(g) {
         <div class="model-row">
           <div class="model-label">Top Pick</div>
           <div class="model-pick">${g.pick}</div>
-          <div class="model-woba">${g.pickWoba} wOBA</div>
+          <div class="model-woba">${g.pickWoba} exp wOBA</div>
         </div>` : `
         <div class="model-row">
           <div class="model-label" style="color:rgba(255,255,255,0.2);">Model pending</div>

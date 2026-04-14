@@ -301,6 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
+| 4-14-26 | MIL | J. Misiorowski RHP | — | V. Guerrero Jr. (.355) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-14-misiorowski/) |
 | 4-12-26 | MIN | T. Bradley RHP | MIN 8, TOR 2 | V. Guerrero Jr. (.375) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-12-bradley/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-12-bradley/) |
 | 4-11-26 | MIN | J. Ryan RHP | MIN 7, TOR 4 | V. Guerrero Jr. (.402) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-11-ryan/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-11-ryan/) |
 | 4-10-26 | MIN | S. Woods Richardson RHP | TOR 10, MIN 4 | V. Guerrero Jr. (.360) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-10-woods-richardson/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-10-woods-richardson/) |
@@ -316,7 +317,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 **2026 record: 6-9 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2**
 
-*Updated: April 12, 2026*
+*Updated: April 14, 2026*
 
 ---
 

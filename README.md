@@ -301,6 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
+| 4-15-26 | MIL | C. Patrick RHP | — | V. Guerrero Jr. (.358) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-15-patrick/) |
 | 4-14-26 | MIL | J. Misiorowski RHP | TOR 9, MIL 7 (F/10) | V. Guerrero Jr. (.355) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-14-misiorowski/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-14-misiorowski/) |
 | 4-12-26 | MIN | T. Bradley RHP | MIN 8, TOR 2 | V. Guerrero Jr. (.375) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-12-bradley/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-12-bradley/) |
 | 4-11-26 | MIN | J. Ryan RHP | MIN 7, TOR 4 | V. Guerrero Jr. (.402) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-11-ryan/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-11-ryan/) |

@@ -1,1 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Jacob Misiorowski · April 14</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--green);letter-spacing:.04em;margin-bottom:10px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-val.red{color:var(--rose);}.mi-val.green{color:var(--green);}.mi-val.amber{color:var(--amber);}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.hit::before{background:var(--green);}
+.mu-row.miss::before{background:var(--rose);}
+.mu-row.ok::before{background:rgba(255,255,255,.1);}
+.mu-row.na::before{background:rgba(255,255,255,.04);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:150px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-tier{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:1px 6px;border-radius:2px;flex-shrink:0;background:rgba(255,255,255,.05);color:var(--dim);}
+.mr-exp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);width:50px;text-align:right;flex-shrink:0;}
+.mr-act{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:50px;text-align:right;flex-shrink:0;}
+.mr-resid{font-family:'IBM Plex Mono',monospace;font-size:11px;width:56px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:8px;line-height:1.35;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.stat-val.red{color:var(--rose);}.stat-val.green{color:var(--green);}.stat-val.amber{color:var(--amber);}
+.ass-row{padding:14px 16px;margin-bottom:8px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--border);}
+.ass-row.held{border-left-color:var(--green);}
+.ass-row.partial{border-left-color:var(--amber);}
+.ass-row.failed{border-left-color:var(--rose);}
+.ass-name{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.ass-vals{display:flex;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.ass-val-item{display:flex;flex-direction:column;gap:2px;}
+.ass-val-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+.ass-val-num{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;}
+.ass-verdict{font-size:12px;color:var(--mid);line-height:1.55;}
+.ass-verdict strong{color:var(--cream);}
+.log-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px solid var(--border);}
+.log-row:last-child{border-bottom:none;}
+.log-row.current{background:rgba(45,212,160,.05);padding:7px 10px;border-radius:3px;border-bottom:none;margin-bottom:2px;}
+.log-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:20px;flex-shrink:0;}
+.log-label{font-size:12px;color:var(--mid);flex:1;}
+.log-label.current{color:var(--green);}
+.log-mae{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--cream);width:50px;text-align:right;flex-shrink:0;}
+.log-mae.current{color:var(--green);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;margin-top:20px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 12px;font-size:11px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · TOR @ MIL · American Family Field · April 14, 2026 · Observation 14</div>
+      <div class="score">TOR 9 · MIL 7 (F/10)</div>
+      <div class="hed">JACOB <span class="red">MISIOROWSKI</span><span class="role">OBSERVATION 14</span></div>
+      <div class="dek"><em>6 IP · 5 K · 0 BB · effective but short.</em> All three assumptions failed. Misiorowski walked nobody in six innings, completely eliminating the offensive blueprint. Varsho hit a home run against a pitcher the model said he had a neutral matchup against. The Jays won anyway in extras, with Guerrero doubling home the go-ahead run in the 10th. Naive beats champion this game.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Misiorowski line</div><div class="mi-val">6 IP</div><div class="mi-sub">5 K · 0 BB · 2 HR · 5 H</div></div>
+    <div class="mi"><div class="mi-lbl">Champion MAE</div><div class="mi-val red">0.283</div><div class="mi-sub">naive: 0.274 · naive wins</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val red">0 of 3 held</div><div class="mi-sub">Walk rate, velo, Changeup all failed</div></div>
+    <div class="mi"><div class="mi-lbl">Spearman rho</div><div class="mi-val red">-0.257</div><div class="mi-sub">negative ranking signal</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val green">7-9</div><div class="mi-sub">MIL series 1-0</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Study note</div>
+    <div class="gov-txt">6 scoreable hitters. LOW confidence preview, prior-only estimates. No BVP existed pre-game. Running n after observation 14: ~93 hitter-games. Game-level |err|: 0.109. Guerrero doubled home the walk-off in the 10th.</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">Assumption Audit</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0: H1/H2 -->
+<div class="panel active" id="p0">
+  <div class="lede">Observation 14. Naive-1 beats the champion. The LOW confidence preview produced a flat lineup with no tier separation, and the game validated why that honesty matters. <strong>All three pre-game assumptions failed, including the walk rate blueprint which was the primary path to offense.</strong> Misiorowski commanded the zone better than any version of his career file suggested. The Jays won anyway, in extras, through at-bats that produced nothing against Misiorowski and everything against the bullpen.</div>
+
+  <div class="callout rose">
+    <strong>H1 · Champion vs Naive-1 · this game</strong><br>
+    Champion MAE: 0.283 · Naive-1 MAE: 0.274 · Naive wins by 0.009<br>
+    The flat prior-only estimates were close to the flat naive baseline. With no BVP signal to differentiate hitters, the champion had no structural advantage over a flat prediction. The result is honest: a LOW confidence preview without BVP is not meaningfully better than the naive baseline.
+  </div>
+
+  <div class="callout amber">
+    <strong>H2 · Ranking signal · this game</strong><br>
+    Spearman rho: -0.257 · Top-3 overlap: 1/3<br>
+    Guerrero was the highest projection and had the best result among scoreable hitters at .296 actual, which is not much above the Neutral floor. Varsho was dead center Neutral at .299 projected and hit a home run (.700 actual). The ranking inversion is driven by two hitters on the wrong side of the prior.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">H1 · game error vs baselines</div>
+      <div class="stat-row"><div class="stat-lbl">Champion MAE (hitter-level)</div><div class="stat-val">0.283</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-1 MAE (flat .310)</div><div class="stat-val green">0.274</div></div>
+      <div class="stat-row"><div class="stat-lbl">Game-level |err|</div><div class="stat-val">0.109</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bias (mean residual)</div><div class="stat-val red">-0.149</div></div>
+      <div class="stat-row"><div class="stat-lbl">Scoreable hitters</div><div class="stat-val">6 of 11</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 verdict this game</div><div class="stat-val red">DOES NOT SUPPORT</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Game context</div>
+      <div class="stat-row"><div class="stat-lbl">Jays starter</div><div class="stat-val">Kevin Gausman</div></div>
+      <div class="stat-row"><div class="stat-lbl">Misiorowski innings</div><div class="stat-val">6.0 IP</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bullpen (MIL)</div><div class="stat-val">Zerpa · Uribe · Megill · Anderson</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walk-off</div><div class="stat-val green">Guerrero 2B, 10th inn.</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bauers HR (off Gausman)</div><div class="stat-val">3-run · 4th inning · 418 ft</div></div>
+    </div>
+  </div>
+
+  <div class="callout amber" style="margin-top:20px;">
+    <strong>What the WIN tells us.</strong> The Jays scored 9 runs in a game where Misiorowski allowed 2 HRs and 5 hits in 6 innings, then the bullpen allowed 7 more hits including a walk-off-setting Guerrero double in the 10th. The offense found ways through the bullpen (Megill allowed 3 H in the 9th to let TOR tie, Anderson allowed 2 H in the 10th). The model scored only the Misiorowski portion. The actual game was won against the relievers, not the starter.
+  </div>
+</div>
+
+<!-- TAB 1: WHAT THE MODEL SAW -->
+<div class="panel" id="p1">
+  <div class="lede">Six scoreable hitters. Misiorowski lasted six innings, meaning the bottom of the order largely faced the bullpen. Four hitters failed to produce, one had a minor positive residual, and Varsho hit a home run for the fourth consecutive game of overperformance against a suppression or neutral call.</div>
+
+  <div style="margin-bottom:24px;">
+    <div style="display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding:0 16px 8px;border-bottom:1px solid var(--border);margin-bottom:6px;">
+      <span style="width:150px;flex-shrink:0;">Hitter</span>
+      <span style="width:28px;flex-shrink:0;">H</span>
+      <span style="width:52px;flex-shrink:0;">Tier</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Exp</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Actual</span>
+      <span style="width:56px;text-align:right;flex-shrink:0;">Resid</span>
+      <span style="flex:1;padding-left:8px;">Note</span>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Varsho, Daulton</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.299</div>
+      <div class="mr-act" style="color:var(--green);">0.700</div>
+      <div class="mr-resid" style="color:var(--green);">+0.401</div>
+      <div class="mr-note">Home run, field out, strikeout. Fourth consecutive game significantly outperforming the model. The HR came on the Slider in the 3rd inning.</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Guerrero Jr., Vladimir</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier" style="color:var(--amber);background:rgba(196,162,75,.1);">Edge edge</div>
+      <div class="mr-exp">.355</div>
+      <div class="mr-act" style="color:var(--dim);">0.296</div>
+      <div class="mr-resid" style="color:var(--dim);">-0.059</div>
+      <div class="mr-note">Single, two field outs vs Misiorowski. Within noise range. Doubled home the winning run in the 10th off Anderson, not scored here.</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Clement, Ernie</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.298</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.298</div>
+      <div class="mr-note">Three field outs. No walks issued meant no free passes to cushion. Model overestimated.</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Okamoto, Kazuma</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.316</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.316</div>
+      <div class="mr-note">Strikeout, field out. First career exposure to Misiorowski. 99 mph first impression.</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Lukes, Nathan</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.302</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.302</div>
+      <div class="mr-note">Field out, strikeout. LHH did not see the Changeup at expected rate. Profile was harder than model suggested.</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Jiménez, Eloy</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.319</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.319</div>
+      <div class="mr-note">Two field outs. Second game since callup. Slider-heavy RHH profile for a hitter without Misiorowski exposure.</div>
+    </div>
+
+    <div class="mu-row na">
+      <div class="mr-name">Barger, Schneider, Straw, etc.</div>
+      <div class="mr-hand">var</div>
+      <div class="mr-tier">n/a</div>
+      <div class="mr-exp">n/a</div>
+      <div class="mr-act" style="color:var(--dim);">n/a</div>
+      <div class="mr-resid" style="color:var(--dim);">n/a</div>
+      <div class="mr-note">Fewer than 2 PA vs Misiorowski, or faced bullpen only. Not scored. Straw doubled and scored in the 10th off Anderson.</div>
+    </div>
+  </div>
+
+  <div class="callout diag">
+    <strong>Varsho pattern: four games.</strong> Obs 11 (Woods-Richardson): outperformed neutral call. Obs 12 (Ryan): Suppressed .307, actual .700. Obs 13 (Bradley): Suppressed .296, actual 1.016. Obs 14 (Misiorowski): Neutral .299, actual .700. Four games, same direction. The prior wOBA used for Varsho is almost certainly understating his 2026 form. The retro memory flags this: the next preview should note the 2026 in-season signal on Varsho is diverging from his prior-season baseline.
+  </div>
+</div>
+
+<!-- TAB 2: ASSUMPTION AUDIT -->
+<div class="panel" id="p2">
+  <div class="lede">All three assumptions failed. The walk rate failure is the most structurally significant because it invalidated the entire offensive blueprint before the first pitch. Misiorowski threw 76 pitches in 6 innings and issued zero walks. The career file said 11.5%. The actual was 0.0%.</div>
+
+  <div class="ass-row failed">
+    <div class="ass-name">Walk rate · FAILED · blueprint invalidated</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">11.5%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--rose);">0.0%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--rose);">-11.5pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict"><strong>Zero walks in 76 pitches across six innings.</strong> The pre-game blueprint said take pitches, work counts, and force the 11.5% walk rate to show up. Misiorowski threw first-pitch strikes consistently and commanded the zone better than any version of his career data suggested. This is the third game this season where the walk rate assumption has failed, joining Bradley (17.4% actual vs 8.3% expected, in the opposite direction) and Ryan (sinker rate rather than walk rate). Worth noting: all three walk-rate fails have been in the same direction, pitchers commanding the zone better than expected in games where it matters.</div>
+  </div>
+
+  <div class="ass-row failed">
+    <div class="ass-name">Changeup to LHH · FAILED · primary LHH weapon absent</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">9.7%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--rose);">2.6%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--rose);">-7.1pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict">One Changeup to a left-handed hitter in 39 LHH pitches. The pre-game preview flagged the Changeup at .132 xwOBA as the primary weapon against the LHH group. He barely used it. LHH instead faced a Slider-heavy profile (20.5%) and more Curveball (20.5%). <strong>The LHH group was in a harder spot than even the model suggested because the Changeup, which the preview identified as the key watch item, never materialized.</strong> This is the second consecutive game where a starter's deployment of a specific pitch to a specific handedness diverged significantly from the career file.</div>
+  </div>
+
+  <div class="ass-row failed">
+    <div class="ass-name">4-Seam velocity · FAILED · below tolerance</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">99.1 mph</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--rose);">98.0 mph</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--rose);">-1.1 mph</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict">The 3-start 2026 average was 99.1 mph. Tonight he sat at 98.0, just barely below the 1.0 mph tolerance. The Curveball gap narrows from 12 mph to 10.1 mph when he sits at 98. Still a real velocity gap, still an effective pitch, but the assumption did not hold at the expected value. This is the second consecutive start where his velocity came in below the 3-start 2026 average. <strong>The 99.1 figure should be treated as a ceiling, not an expectation.</strong></div>
+  </div>
+
+  <div class="callout amber" style="margin-top:4px;">
+    <strong>Walk rate pattern across 14 observations:</strong> Three games now with a significant walk rate assumption failure. Ryan (walk rate implicit in sinker over-reliance), Bradley (17.4% actual vs 8.3% expected), Misiorowski (0.0% actual vs 11.5% expected). In all three cases the pitcher commanded the zone differently than the career file projected. The walk rate assumption needs a wider tolerance than ±5pp. Recommend adjusting to ±7pp in future previews until the pattern resolves.
+  </div>
+</div>
+
+<!-- TAB 3: STUDY LOG -->
+<div class="panel" id="p3">
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 14</div>
+    <div class="hb-body">Fourteen observations. Naive wins this game. Running n: ~93 hitter-games. <strong>Varsho outperformance is now a four-game pattern and will be flagged in future previews as a divergence between his prior-season baseline and 2026 form.</strong> Walk rate assumption tolerance widened to ±7pp going forward. Velocity assumption for Misiorowski corrected: 98-99 mph range, not a stable 99.1. All three 2026 failed velocity assumptions have been above career (Bradley 97.0 vs 96.3) or below the 3-start signal (Misiorowski 98.0 vs 99.1 3-start). The 2026 sample for velocity is too small to treat as stable in either direction. No inference before n=200. The season is the validation.</div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Running study metrics after 14 games</div>
+      <div class="stat-row"><div class="stat-lbl">Running n (hitter-games)</div><div class="stat-val">~93</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 this game</div><div class="stat-val red">DOES NOT SUPPORT</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walk rate assumption fails</div><div class="stat-val amber">3 of 14 games</div></div>
+      <div class="stat-row"><div class="stat-lbl">Pitch over-reliance pattern</div><div class="stat-val amber">4 of 14 games</div></div>
+      <div class="stat-row"><div class="stat-lbl">Varsho overperformance streak</div><div class="stat-val amber">4 consecutive games</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 record</div><div class="stat-val green">7-9</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Retro memory updates</div>
+      <div class="stat-row"><div class="stat-lbl">Varsho prior</div><div class="stat-val red">Flag: 2026 form exceeds prior</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walk rate tolerance</div><div class="stat-val amber">Widen to ±7pp</div></div>
+      <div class="stat-row"><div class="stat-lbl">Misiorowski velocity</div><div class="stat-val amber">Use 98-99 range, not 99.1</div></div>
+      <div class="stat-row"><div class="stat-lbl">Misiorowski Changeup to LHH</div><div class="stat-val amber">Reduce expected rate to ~5%</div></div>
+      <div class="stat-row"><div class="stat-lbl">First exposure games</div><div class="stat-val">LOW conf valid: champion and naive converge</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Game log · game-level error</div>
+    <div class="log-row"><div class="log-num">1</div><div class="log-label">Feltner · Apr 2024</div><div class="log-mae">0.144</div></div>
+    <div class="log-row"><div class="log-num">2</div><div class="log-label">Freeland · Aug 2025</div><div class="log-mae">0.113</div></div>
+    <div class="log-row"><div class="log-num">3</div><div class="log-label">Sugano · Mar 30</div><div class="log-mae">0.068</div></div>
+    <div class="log-row"><div class="log-num">4</div><div class="log-label">Freeland · Apr 1</div><div class="log-mae">0.077</div></div>
+    <div class="log-row"><div class="log-num">5</div><div class="log-label">Burke · Apr 3</div><div class="log-mae">0.100</div></div>
+    <div class="log-row"><div class="log-num">6</div><div class="log-label">Kay · Apr 4</div><div class="log-mae">0.105</div></div>
+    <div class="log-row"><div class="log-num">7</div><div class="log-label">Martin · Apr 5</div><div class="log-mae">0.107</div></div>
+    <div class="log-row"><div class="log-num">8</div><div class="log-label">Wrobleski · Apr 6</div><div class="log-mae">0.160</div></div>
+    <div class="log-row"><div class="log-num">9</div><div class="log-label">Yamamoto · Apr 7</div><div class="log-mae">0.092</div></div>
+    <div class="log-row"><div class="log-num">10</div><div class="log-label">Ohtani · Apr 8</div><div class="log-mae">0.096</div></div>
+    <div class="log-row"><div class="log-num">11</div><div class="log-label">Woods-Richardson · Apr 10</div><div class="log-mae">0.115</div></div>
+    <div class="log-row"><div class="log-num">12</div><div class="log-label">Ryan · Apr 11</div><div class="log-mae">0.101</div></div>
+    <div class="log-row"><div class="log-num">13</div><div class="log-label">Bradley · Apr 12</div><div class="log-mae">0.148</div></div>
+    <div class="log-row current"><div class="log-num">14</div><div class="log-label current">Misiorowski · Apr 14 · this game</div><div class="log-mae current">0.109</div></div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-14-26. TOR 9, MIL 7 (F/10). Win.<br><br>
+      Misiorowski: 6 IP, 5 K, 0 BB. The pre-game blueprint was work the 11.5% walk rate. He walked nobody. All three assumptions failed.<br><br>
+      Varsho: Neutral at .299 projected. Hit a home run. Fourth consecutive game outperforming the model in the same direction. His 2026 form is exceeding his prior-season baseline. Flagged for review.<br><br>
+      Guerrero was the right top pick — his walk-off double in the 10th scored the go-ahead run. That came against Anderson, not Misiorowski, so it does not enter the model score. But the game-winning hit was the right player.<br><br>
+      Naive beats champion this game (MAE 0.274 vs 0.283). Expected for a LOW confidence, first-exposure preview with no BVP. The champion and naive converge when there is nothing to differentiate hitters.<br><br>
+      Running n: ~93 hitter-games, 14 observations.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant · April 14, 2026 · Observation 14 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+</script>
+</body>
+</html>

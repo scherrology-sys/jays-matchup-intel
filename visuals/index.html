@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Misiorowski · 2026 Start Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  body {
+    background: #ffffff;
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding: 40px;
+    color: #1a1a1a;
+  }
+
+  .table-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .table-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .table-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* Spanners */
+  .spanner-row td {
+    padding: 6px 10px 2px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #666;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  .spanner-row td.label-col { text-align: left; }
+
+  /* Column headers */
+  thead tr.col-headers th {
+    padding: 8px 10px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    text-align: right;
+    border-bottom: 2px solid #1a1a1a;
+    background: #fff;
+    white-space: nowrap;
+  }
+  thead tr.col-headers th.label-col {
+    text-align: left;
+  }
+
+  /* Body rows */
+  tbody tr td {
+    padding: 9px 10px;
+    text-align: right;
+    border-bottom: 1px solid #f0f0f0;
+    color: #1a1a1a;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  tbody tr td.label-col {
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+  }
+
+  /* Highlight row */
+  tbody tr.highlight td {
+    background: #fff8f0;
+    font-weight: 600;
+  }
+  tbody tr.highlight td.label-col {
+    border-left: 3px solid #E8002D;
+    padding-left: 7px;
+    color: #E8002D;
+  }
+
+  /* Cell color coding */
+  .good   { color: #1a7a4a; font-weight: 600; }
+  .warn   { color: #b85c00; font-weight: 600; }
+  .bad    { color: #c0392b; }
+  .neutral{ color: #555; }
+  .best   { color: #1a7a4a; font-weight: 700; }
+
+  /* Divider between spanner groups */
+  .group-divider td { border-left: 1px solid #e8e8e8; }
+
+  /* Footer */
+  .table-footer {
+    margin-top: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #999;
+    letter-spacing: 0.06em;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+  }
+
+  /* Source line */
+  .source-note {
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="table-wrap">
+
+  <div class="table-title">Misiorowski, Jacob &mdash; 2026 Start Comparison</div>
+  <div class="table-subtitle">All four 2026 starts &nbsp;&middot;&nbsp; April 14 vs TOR highlighted &nbsp;&middot;&nbsp; Statcast / Baseball Savant</div>
+
+  <table>
+    <thead>
+      <!-- Spanner row -->
+      <tr class="spanner-row">
+        <td class="label-col" rowspan="1"></td>
+        <td colspan="1" style="border-right:1px solid #e0e0e0;"></td>
+        <td colspan="2" style="border-right:1px solid #e0e0e0; color:#1a7a4a;">Command</td>
+        <td colspan="2" style="border-right:1px solid #e0e0e0; color:#b85c00;">Results</td>
+        <td colspan="2" style="border-right:1px solid #e0e0e0; color:#555;">Swing Behavior</td>
+        <td colspan="1">Mechanics</td>
+      </tr>
+      <!-- Column header row -->
+      <tr class="col-headers">
+        <th class="label-col">Start</th>
+        <th>4-Seam<br>Velo</th>
+        <th style="border-left:1px solid #e0e0e0;">Zone %</th>
+        <th>FP Strike %</th>
+        <th style="border-left:1px solid #e0e0e0;">BB %</th>
+        <th>K %</th>
+        <th style="border-left:1px solid #e0e0e0;">Whiff %</th>
+        <th>Chase %</th>
+        <th style="border-left:1px solid #e0e0e0;">Release<br>x-std</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label-col">Mar 26</td>
+        <td class="neutral">98.3</td>
+        <td class="bad" style="border-left:1px solid #e0e0e0;">37.9%</td>
+        <td class="neutral">65.0%</td>
+        <td class="bad" style="border-left:1px solid #e0e0e0;">15.0%</td>
+        <td class="good">55.0%</td>
+        <td class="good" style="border-left:1px solid #e0e0e0;">58.1%</td>
+        <td class="neutral">34.5%</td>
+        <td class="neutral" style="border-left:1px solid #e0e0e0;">0.120</td>
+      </tr>
+      <tr>
+        <td class="label-col">Apr 1</td>
+        <td class="good">98.9</td>
+        <td class="good" style="border-left:1px solid #e0e0e0;">52.1%</td>
+        <td class="neutral">64.0%</td>
+        <td class="good" style="border-left:1px solid #e0e0e0;">8.0%</td>
+        <td class="neutral">28.0%</td>
+        <td class="neutral" style="border-left:1px solid #e0e0e0;">27.7%</td>
+        <td class="neutral">31.1%</td>
+        <td class="neutral" style="border-left:1px solid #e0e0e0;">0.112</td>
+      </tr>
+      <tr>
+        <td class="label-col">Apr 7</td>
+        <td class="good">98.8</td>
+        <td class="bad" style="border-left:1px solid #e0e0e0;">39.6%</td>
+        <td class="bad">31.8%</td>
+        <td class="bad" style="border-left:1px solid #e0e0e0;">18.2%</td>
+        <td class="good">45.5%</td>
+        <td class="good" style="border-left:1px solid #e0e0e0;">41.0%</td>
+        <td class="neutral">24.6%</td>
+        <td class="bad" style="border-left:1px solid #e0e0e0;">0.134</td>
+      </tr>
+      <tr class="highlight">
+        <td class="label-col">Apr 14 vs TOR</td>
+        <td class="warn">98.0</td>
+        <td class="best" style="border-left:1px solid #e0e0e0;">53.9% &#9650;</td>
+        <td class="best">76.2% &#9650;</td>
+        <td class="best" style="border-left:1px solid #e0e0e0;">0.0% &#9650;</td>
+        <td class="neutral">23.8%</td>
+        <td class="neutral" style="border-left:1px solid #e0e0e0;">30.0%</td>
+        <td class="warn">42.9% &#9650;</td>
+        <td class="best" style="border-left:1px solid #e0e0e0;">0.088 &#9650;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="table-footer">
+    <span class="source-note">&#9650; = season best &nbsp;&middot;&nbsp; Green = favorable &nbsp;&middot;&nbsp; Orange = notable change &nbsp;&middot;&nbsp; Red = unfavorable</span>
+    <span>Arm Chair Analyst &nbsp;&middot;&nbsp; @scherrology</span>
+  </div>
+
+</div>
+</body>
+</html>

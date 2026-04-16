@@ -1,1 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Brandon Sproat · April 16</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:600px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.abar{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.abar-n{font-size:12px;color:var(--cream);width:140px;flex-shrink:0;}
+.abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.abar-f{height:100%;border-radius:2px;opacity:.88;}
+.abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:36px;text-align:right;flex-shrink:0;}
+.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:76px;text-align:right;color:var(--dim);flex-shrink:0;}
+.mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.h::before{background:var(--green);}
+.mu-row.s::before{background:var(--rose);}
+.mu-row.n::before{background:rgba(255,255,255,.1);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:140px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-track{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
+.mr-ci{position:absolute;top:20%;bottom:20%;background:rgba(255,255,255,.06);}
+.mr-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
+.mr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:2;}
+.mr-num{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:42px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:6px;line-height:1.35;}
+.bl-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);}
+.bl-row:last-child{border-bottom:none;}
+.bl-label{font-size:12px;color:var(--mid);}
+.bl-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.bl-badge{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 6px;border-radius:2px;}
+.bl-badge.beat{background:rgba(45,212,160,.1);color:var(--green);}
+.bl-badge.lose{background:rgba(255,79,106,.08);color:var(--rose);}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.wf-item{margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+.wf-top{display:flex;}
+.wf-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:rgba(255,255,255,.1);padding:20px 22px;flex-shrink:0;border-right:1px solid var(--border);width:72px;text-align:center;line-height:1;}
+.wf-content{padding:20px 22px;flex:1;}
+.wf-q{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:6px;}
+.wf-body{font-size:13px;color:var(--mid);line-height:1.75;}
+.wf-body strong{color:var(--cream);}
+.wf-foot{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.wff{padding:14px 22px;}.wff+.wff{border-left:1px solid var(--border);}
+.wff-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wff-val{font-size:12px;color:var(--cream);line-height:1.6;}
+.tg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.tg-card{background:var(--panel2);border:1px solid var(--border);border-radius:4px;padding:18px;}
+.tg-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.tg-name{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;}
+.tg-body{font-size:12px;color:var(--mid);line-height:1.65;}
+.tg-body strong{color:var(--cream);}
+.tg-card.best{border-color:rgba(45,212,160,.2);}.tg-card.best .tg-tag{color:var(--green);}
+.tg-card.watch{border-color:rgba(244,185,66,.18);}.tg-card.watch .tg-tag{color:var(--amber);}
+.tg-card.worst{border-color:rgba(255,79,106,.2);}.tg-card.worst .tg-tag{color:var(--rose);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.tg-grid{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 12px;font-size:11px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">MIL @ TOR · Rogers Centre · April 16, 2026 · Observation 16</div>
+      <div class="hed">BRANDON <span class="red">SPROAT</span><span class="role">RHP · Milwaukee</span></div>
+      <div class="dek"><em>20% walk rate in 2026. Not a typo.</em> Three starts, ten walks in 50 plate appearances. The Sinker is his bread and butter at 37% usage, but the Cutter has a .511 xwOBA and the model's pitch-mix baseline projects above-average offense for this lineup. After two nights of getting held down, this is the best matchup the Jays have seen in a while.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val" style="color:var(--rose);">LOW</div><div class="mi-sub">3 starts 2026 · small BVP sample</div></div>
+    <div class="mi"><div class="mi-lbl">BvP</div><div class="mi-val">3 hitters · 2-3 PA each</div><div class="mi-sub">Barger, Leo Jiménez, Straw</div></div>
+    <div class="mi"><div class="mi-lbl">Tier threshold</div><div class="mi-val">±0.045</div><div class="mi-sub">LOW confidence band</div></div>
+    <div class="mi"><div class="mi-lbl">2026 BB%</div><div class="mi-val" style="color:var(--green);">20.0%</div><div class="mi-sub">22.2%, 17.6%, 20.0% by start</div></div>
+    <div class="mi"><div class="mi-lbl">Pitcher sample</div><div class="mi-val">513 pitches</div><div class="mi-sub">2025-26 · 3 starts 2026</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Research framework</div>
+    <div class="gov-txt">Champion model locked April 7. Pitch-mix baseline projects .417 vs LHH and .391 vs RHH, both above league average. This is the most favorable matchup projected so far this season. The walk rate is the most significant number in the file.</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">Arsenal</div>
+  <div class="tab" onclick="go(1)">Matchups</div>
+  <div class="tab" onclick="go(2)">Watch For</div>
+  <div class="tab" onclick="go(3)">Baselines</div>
+  <div class="tab" onclick="go(4)">Bottom Line</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0: ARSENAL -->
+<div class="panel active" id="p0">
+  <div class="lede">Sproat is a Sinker-first pitcher who added the Cutter this year and promptly started walking everyone. His Sinker velocity is actually up in 2026, from 95.7 to 96.9 mph. But the Cutter has a .511 xwOBA, the Sinker a .409, and the walk rate in three starts has been 22%, 18%, and 20%. <strong>That is not variance. That is a pattern.</strong></div>
+
+  <div class="callout rose">
+    <strong>The number that defines this matchup:</strong> 20.0% walk rate in 2026. Every start. Consistent. The Jays scored one run last night against Patrick. Tonight the pitcher is going to put runners on base for free. What the lineup does with them is the game.
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">2026 · 3 starts · 222 pitches · primary signal</div>
+      <div id="mix2026"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Career 2025 · year-weighted prior</div>
+      <div id="mixCareer"></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">2026 · vs Left-Handed Hitters</div>
+      <div id="mix2026L"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">2026 · vs Right-Handed Hitters</div>
+      <div id="mix2026R"></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Pitch quality · xwOBA allowed (year-weighted)</div>
+      <div class="stat-row"><div class="stat-lbl">Sweeper</div><div class="stat-val">.316 · best pitch · 34.2% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">.333 · solid breaking ball · 81 mph</div></div>
+      <div class="stat-row"><div class="stat-lbl">Changeup</div><div class="stat-val">.377 · hittable · 90.7 mph</div></div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">.375 · limited usage (6%) · 96.8 mph</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">.409 · primary pitch · contact generator</div></div>
+      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">.511 · most hittable · new in 2026</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">2026 walk rate · by start</div>
+      <div class="stat-row"><div class="stat-lbl">Mar 29</div><div class="stat-val" style="color:var(--rose);">22.2% (4/18 PA)</div></div>
+      <div class="stat-row"><div class="stat-lbl">Apr 4</div><div class="stat-val" style="color:var(--rose);">17.6% (3/17 PA)</div></div>
+      <div class="stat-row"><div class="stat-lbl">Apr 11</div><div class="stat-val" style="color:var(--rose);">20.0% (3/15 PA)</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 total</div><div class="stat-val" style="color:var(--rose);font-weight:700;">20.0% (10/50 PA)</div></div>
+      <div class="stat-row"><div class="stat-lbl">Career (2025)</div><div class="stat-val">12.7%</div></div>
+    </div>
+  </div>
+
+  <div class="callout amber">
+    <strong>The big 2026 change.</strong> He barely threw a Cutter in 2025. This year it is 22.6% of his pitches. That is where the problem lives. The Cutter has a .511 xwOBA, the worst of any pitch in the arsenal. Adding a new pitch mid-development and throwing it 22% of the time while walking one in five hitters is not a recipe for success.
+  </div>
+</div>
+
+<!-- TAB 1: MATCHUPS -->
+<div class="panel" id="p1">
+  <div class="lede">LOW confidence, but this time the pitch-mix baseline is working in the Jays' favor. The model projects .417 vs LHH and .391 vs RHH, both above league average. Guerrero and Barger are Edge. Lukes is right on the line. Small BVP samples on three hitters, all directional only.</div>
+  <div class="callout diag">
+    <strong>BVP notes.</strong> Barger: 3 PA, double, field out, strikeout. Small sample but the double was real. Leo Jiménez: 2 PA, two strikeouts, 0 for 2. The Sweeper got him. Straw: 2 PA, strikeout and walk. Too small to move any tier placement but worth noting direction.
+  </div>
+  <div id="tierDisplay"></div>
+</div>
+
+<!-- TAB 2: WATCH FOR -->
+<div class="panel" id="p2">
+  <div class="lede">Two questions. Whether the Jays make the walk rate hurt. And whether the Cutter gives up the damage the xwOBA says it should.</div>
+  <div id="wfItems"></div>
+</div>
+
+<!-- TAB 3: BASELINES -->
+<div class="panel" id="p3">
+  <div class="lede">This is the first game this season where the champion model projects above the hitter prior baseline. Sproat's arsenal is genuinely below average across most pitches.</div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Baseline tournament · April 16 2026 · Sproat vs Jays</div>
+    <div id="blRows"></div>
+    <div style="margin-top:16px;font-size:12px;color:var(--dim);line-height:1.7;">Baseline D reflects Sproat's career xwOBA allowed, weighted toward 2026. His Cutter at .511 and Sinker at .409 drag the baseline up significantly. The champion model projects .360, which beats all four baselines. For the first time this season, the model says the lineup should produce above its own prior.</div>
+  </div>
+</div>
+
+<!-- TAB 4: BOTTOM LINE -->
+<div class="panel" id="p4">
+  <div class="lede">This is the best matchup projected for the Jays since the model locked. Take pitches. Make him throw strikes. He will walk someone in every inning if the lineup is patient.</div>
+
+  <div class="tg-grid">
+    <div class="tg-card best">
+      <div class="tg-tag">Edge</div>
+      <div class="tg-name">Guerrero Jr.</div>
+      <div class="tg-body">Top projection at .391. RHH vs Sproat get the Sweeper at 23%, Cutter at 17%, Sinker at 38%. <strong>The .511 xwOBA Cutter is a problem for Sproat, not for Guerrero.</strong> No BVP but the prior is strong and the arsenal is weak. Best matchup on the board tonight.</div>
+    </div>
+    <div class="tg-card best">
+      <div class="tg-tag">Edge</div>
+      <div class="tg-name">Barger</div>
+      <div class="tg-body">LHH at .359, just clears the threshold. 3 PA BVP with a double. <strong>The Cutter that Sproat throws heavily to LHH is the most hittable pitch in his arsenal at .511 xwOBA.</strong> Directional signal says Barger has handled him. Consistent with the model.</div>
+    </div>
+    <div class="tg-card watch">
+      <div class="tg-tag">Watch · near Edge</div>
+      <div class="tg-name">Lukes + Varsho</div>
+      <div class="tg-body">Both LHH at .356 and .353, just inside the Neutral band. The Changeup to LHH at 16% is the weapon to watch for them. At .377 xwOBA it is not dominant. <strong>A 20% walk rate means patient LHH get chances regardless.</strong> Both are live tonight even at Neutral.</div>
+    </div>
+    <div class="tg-card watch">
+      <div class="tg-tag">Tough match · BVP warning</div>
+      <div class="tg-name">Leo Jiménez</div>
+      <div class="tg-body">0 for 2 in BVP with two strikeouts. Both came on the Sweeper, Sproat's best pitch at .316 xwOBA and 34.2% whiff. <strong>RHH see the Sweeper at 23.3%.</strong> Leo's two-PA sample says the Sweeper is the pitch to watch against him specifically. Small sample, flagged.</div>
+    </div>
+  </div>
+
+  <div class="honest-box">
+    <div class="hb-tag">Observation 16 · assumption audit setup</div>
+    <div class="hb-body">Three items the retro will score: <strong>(1) Does the walk rate hold near 20%?</strong> It has been 17-22% in every 2026 start. If he commands the zone better tonight the whole blueprint changes. <strong>(2) Does the Cutter give up damage?</strong> .511 xwOBA career. The first time the Jays see it against Sproat. <strong>(3) Does the Sweeper suppress Leo Jiménez and the RHH group?</strong> Two strikeouts in two prior PA. The model has him Neutral but the BVP is a flag.</div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel 4-16-26. Brandon Sproat, RHP. Rogers Centre. Observation 16.<br><br>
+      20% walk rate in 2026. Every single start. 22%, 18%, 20%. That is the whole game tonight.<br><br>
+      The Cutter he added this year has a .511 xwOBA. Most hittable pitch in his arsenal. He throws it 23% of the time.<br><br>
+      Edge: Guerrero (.391), Barger (.359). Model projects .417 vs LHH and .391 vs RHH, both above league average. Best matchup projected all season.<br><br>
+      Leo Jiménez went 0/2 with two strikeouts in BVP. Both on the Sweeper. Watch for that tonight.<br><br>
+      LOW confidence. Take pitches. Make him work. He will walk someone every inning if the lineup stays patient.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant · LOW confidence · Observation 16 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+const PC={'4-Seam':'#38bdf8','Cutter':'#ff4f6a','Sinker':'#818cf8',
+          'Changeup':'#f4b942','Sweeper':'#2dd4a0','Curveball':'#c084fc'};
+
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+
+function mkBars(data,id,mx){
+  const c=document.getElementById(id);if(!c)return;
+  data.forEach(d=>{
+    const col=PC[d.n]||'#888';
+    const el=document.createElement('div');el.className='abar';
+    el.innerHTML=`<div class="abar-n">${d.n}</div><div class="abar-t"><div class="abar-f" style="width:${d.p/mx*100}%;background:${col};"></div></div><div class="abar-p" style="color:${col};">${d.p}%</div>${d.v?`<div class="abar-v">${d.v}</div>`:''}`;
+    c.appendChild(el);
+  });
+}
+
+mkBars([
+  {n:'Sinker',  p:36.7,v:'96.9 mph'},
+  {n:'Cutter',  p:22.6,v:'93.8 mph · new'},
+  {n:'Curveball',p:12.7,v:'81.1 mph'},
+  {n:'Sweeper', p:11.3,v:'85.2 mph'},
+  {n:'Changeup',p:10.9,v:'90.7 mph'},
+  {n:'4-Seam',  p:5.9, v:'96.8 mph'},
+],'mix2026',45);
+
+mkBars([
+  {n:'Sinker',  p:34.8,v:'95.7 mph avg'},
+  {n:'Sweeper', p:19.0,v:'85.2 mph avg'},
+  {n:'Curveball',p:14.8,v:'81.1 mph avg'},
+  {n:'Changeup',p:14.1,v:'90.7 mph avg'},
+  {n:'4-Seam',  p:6.5, v:'96.8 mph avg'},
+],'mixCareer',45);
+
+mkBars([
+  {n:'Sinker',  p:35.9},
+  {n:'Cutter',  p:26.7},
+  {n:'Changeup',p:16.0},
+  {n:'Curveball',p:12.2},
+  {n:'4-Seam',  p:6.1},
+  {n:'Sweeper', p:3.1},
+],'mix2026L',45);
+
+mkBars([
+  {n:'Sinker',  p:37.8},
+  {n:'Sweeper', p:23.3},
+  {n:'Cutter',  p:16.7},
+  {n:'Curveball',p:13.3},
+  {n:'4-Seam',  p:5.6},
+  {n:'Changeup',p:3.3},
+],'mix2026R',45);
+
+const TEAM_MEAN=0.310, THRESH=0.045, K=30;
+const MD=[
+  {n:'Guerrero Jr.',h:'R',e:.391,cls:'h',note:'Edge · top projection · RHH vs .511 xwOBA Cutter',bvp:null},
+  {n:'Barger',      h:'L',e:.359,cls:'h',note:'Edge · 3 PA BVP incl. double · LHH Cutter exposure',bvp:'3PA: 2B, out, K'},
+  {n:'Lukes',       h:'L',e:.356,cls:'n',note:'Near Edge · LHH get the Cutter + Changeup mix',bvp:null},
+  {n:'Jiménez, Eloy',h:'R',e:.355,cls:'n',note:'Neutral · prior .330 · first exposure',bvp:null},
+  {n:'Varsho',      h:'L',e:.353,cls:'n',note:'Neutral · 2026 form trending up · patience key',bvp:null},
+  {n:'Sánchez',     h:'L',e:.353,cls:'n',note:'Neutral · LHH · first exposure',bvp:null},
+  {n:'Okamoto',     h:'R',e:.352,cls:'n',note:'Neutral · first exposure',bvp:null},
+  {n:'Schneider',   h:'R',e:.346,cls:'n',note:'Neutral · first exposure',bvp:null},
+  {n:'Giménez, A.', h:'R',e:.343,cls:'n',note:'Neutral · first exposure',bvp:null},
+  {n:'Straw',       h:'L',e:.338,cls:'n',note:'Neutral · 2PA BVP: K and walk',bvp:'2PA: K, BB'},
+  {n:'Clement',     h:'R',e:.334,cls:'n',note:'Neutral · first exposure',bvp:null},
+  {n:'Jiménez, Leo',h:'R',e:.337,cls:'n',note:'Neutral · 0/2 BVP, both Ks on Sweeper',bvp:'2PA: K, K'},
+  {n:'Heineman',    h:'R',e:.331,cls:'n',note:'Neutral · first exposure',bvp:null},
+];
+
+const xMn=.15,xMx=.60,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
+const td=document.getElementById('tierDisplay');
+['Edge','Neutral'].forEach(tier=>{
+  const items=MD.filter(d=>(tier==='Edge'&&d.cls==='h')||(tier==='Neutral'&&d.cls==='n'));
+  const col=tier==='Edge'?'var(--green)':'rgba(255,255,255,.4)';
+  const desc=tier==='Edge'?`exp > ${(TEAM_MEAN+THRESH).toFixed(3)}`:`${(TEAM_MEAN-THRESH).toFixed(3)} - ${(TEAM_MEAN+THRESH).toFixed(3)} · ${items.length} hitters`;
+  const hd=document.createElement('div');
+  hd.style.cssText=`display:flex;align-items:center;gap:10px;padding:8px 16px;margin-bottom:8px;border-radius:4px;border-left:3px solid ${col};background:rgba(255,255,255,.02);`;
+  hd.innerHTML=`<span style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:${col};letter-spacing:.08em;">${tier}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);">${desc}</span>`;
+  td.appendChild(hd);
+  items.forEach(d=>{
+    const bCol=d.cls==='h'?'var(--green)':'var(--dim)';
+    const se=Math.sqrt(d.e*(1-d.e)/K);
+    const lo=Math.max(xMn,d.e-1.645*se);const hi=Math.min(xMx,d.e+1.645*se);
+    const bvp=d.bvp?`<span style="color:var(--amber);font-size:10px;margin-left:4px;">BvP: ${d.bvp}</span>`:'';
+    const row=document.createElement('div');row.className=`mu-row ${d.cls==='h'?'h':'n'}`;
+    row.innerHTML=`<div class="mr-name">${d.n}</div><div class="mr-hand">${d.h}</div><div class="mr-track"><div class="mr-ci" style="left:${xs(lo)};width:${((hi-lo)/(xMx-xMn)*100).toFixed(1)}%;"></div><div class="mr-fill" style="width:${xs(d.e)};background:${bCol};"></div><div class="mr-lg" style="left:${xs(TEAM_MEAN)};"></div></div><div class="mr-num" style="color:${d.e>=(TEAM_MEAN+THRESH)?'var(--green)':bCol};">${d.e.toFixed(3)}</div><div class="mr-note">${d.note}${bvp}</div>`;
+    td.appendChild(row);
+  });
+});
+
+const WF=[
+  {num:1,q:'Does the 20% walk rate show up?',
+   body:'Ten walks in 50 plate appearances across three 2026 starts. Every start has been between 17 and 22%. <strong>That is not one bad night, that is who he is right now.</strong> The 4-seam and Cutter command are the problem. When he misses, he misses badly. A patient lineup that takes borderline pitches and refuses to expand the zone will see multiple free baserunners.',
+   th1:'The lineup takes pitches early in at-bats. Sproat falls behind in counts. Walks accumulate. Runners on base in every inning, and the offense scores from contact rather than needing big hits.',
+   th2:'Sproat finds his command tonight, career walk rate shows up instead of the 2026 version. Gets ahead early, stays out of trouble. The lineup has to earn everything the hard way.'},
+  {num:2,q:'Does the Cutter get punished?',
+   body:'He barely threw a Cutter in 2025. This year it is 22.6% of pitches. The career xwOBA on it is .511, worst in his arsenal by a significant margin. <strong>He is throwing his weakest pitch more than any other pitch except the Sinker.</strong> First time the Jays see it from him. If they square it up, the damage accumulates fast.',
+   th1:'The Jays make contact on the Cutter early. The .511 xwOBA shows up as line drives and hard ground balls. Sproat is forced back to the Sinker to limit damage.',
+   th2:'First-exposure confusion makes the Cutter less hittable than the career number suggests. Hitters are not sure what shape to expect. The .511 xwOBA corrects itself toward league average as a first-exposure artifact.'},
+  {num:3,q:'Can the Sweeper keep the RHH group quiet?',
+   body:'The Sweeper is his best pitch, .316 xwOBA and 34.2% whiff. He throws it to RHH at 23.3%. Leo Jiménez saw it twice in prior BVP and struck out both times. <strong>The RHH group faces a lineup where the only elite pitch is specifically designed for them.</strong> Guerrero is the exception, prior says he handles breaking balls. The rest of the RHH group is the test.',
+   th1:'The Sweeper generates strikeouts against the middle of the RHH lineup. Jiménez, Clement, Heineman have tough at-bats. Guerrero and Barger carry the Edge projections.',
+   th2:'The RHH group lays off the Sweeper, forces Sproat into his less effective Sinker and Cutter. The .511 xwOBA Cutter gets punished. RHH produce alongside LHH.'},
+];
+const wc=document.getElementById('wfItems');
+WF.forEach(w=>{
+  const el=document.createElement('div');el.className='wf-item';
+  el.innerHTML=`<div class="wf-top"><div class="wf-num">${w.num}</div><div class="wf-content"><div class="wf-q">${w.q}</div><div class="wf-body">${w.body}</div></div></div><div class="wf-foot"><div class="wff"><div class="wff-tag">If yes →</div><div class="wff-val">${w.th1}</div></div><div class="wff"><div class="wff-tag">If no →</div><div class="wff-val">${w.th2}</div></div></div>`;
+  wc.appendChild(el);
+});
+
+const BL=[
+  {l:'A · hitter prior wOBA (2024-25)',v:.328,beat:true},
+  {l:'B · platoon baseline, park-adjusted (TOR)',v:.332,beat:true},
+  {l:'C · team 2026 actual wOBA to date',v:.296,beat:true},
+  {l:'D · pitcher proxy (Sproat career xwOBA allowed weighted)',v:.403,beat:false},
+  {l:'E · champion model',v:.360,beat:null,champ:true},
+];
+const bc=document.getElementById('blRows');
+BL.forEach(b=>{
+  const row=document.createElement('div');row.className='bl-row';
+  const beat=b.champ?null:b.v<0.360;
+  const badge=b.champ?'':`<span class="bl-badge ${beat?'beat':'lose'}">${beat?'champion beats':'pitcher beats champion'}</span>`;
+  const sty=b.champ?'color:var(--green);font-weight:700;':'';
+  row.innerHTML=`<div class="bl-label" style="${sty}">${b.l}</div><div style="display:flex;align-items:center;gap:10px;">${badge}<div class="bl-val" style="${sty}">${b.v.toFixed(3)}</div></div>`;
+  bc.appendChild(row);
+});
+</script>
+</body>
+</html>

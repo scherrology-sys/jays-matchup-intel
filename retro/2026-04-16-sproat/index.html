@@ -1,1 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Brandon Sproat · April 16</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--rose);letter-spacing:.04em;margin-bottom:10px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.hit::before{background:var(--green);}
+.mu-row.miss::before{background:var(--rose);}
+.mu-row.ok::before{background:rgba(255,255,255,.1);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:160px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-tier{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:1px 6px;border-radius:2px;flex-shrink:0;background:rgba(255,255,255,.05);color:var(--dim);}
+.mr-exp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);width:50px;text-align:right;flex-shrink:0;}
+.mr-act{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:50px;text-align:right;flex-shrink:0;}
+.mr-resid{font-family:'IBM Plex Mono',monospace;font-size:11px;width:60px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:8px;line-height:1.35;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.stat-val.red{color:var(--rose);}.stat-val.green{color:var(--green);}.stat-val.amber{color:var(--amber);}
+.ass-row{padding:14px 16px;margin-bottom:8px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--border);}
+.ass-row.held{border-left-color:var(--green);}
+.ass-row.partial{border-left-color:var(--amber);}
+.ass-row.failed{border-left-color:var(--rose);}
+.ass-name{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.ass-vals{display:flex;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.ass-val-item{display:flex;flex-direction:column;gap:2px;}
+.ass-val-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+.ass-val-num{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;}
+.ass-verdict{font-size:12px;color:var(--mid);line-height:1.6;}
+.ass-verdict strong{color:var(--cream);}
+.log-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px solid var(--border);}
+.log-row:last-child{border-bottom:none;}
+.log-row.current{background:rgba(45,212,160,.04);padding:7px 10px;border-radius:3px;border-bottom:none;margin-bottom:2px;}
+.log-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:20px;flex-shrink:0;}
+.log-label{font-size:12px;color:var(--mid);flex:1;}
+.log-label.current{color:var(--amber);}
+.log-mae{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--cream);width:50px;text-align:right;flex-shrink:0;}
+.log-mae.current{color:var(--amber);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;margin-top:20px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.wh-section{margin-bottom:32px;}
+.wh-head{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.wh-body{font-size:14px;line-height:1.8;color:var(--mid);}
+.wh-body strong{color:var(--cream);}
+.wh-body p{margin-bottom:12px;}
+.wh-body p:last-child{margin-bottom:0;}
+.wh-stat{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;padding:2px 8px;border-radius:3px;margin:0 2px;}
+.wh-stat.good{background:rgba(45,212,160,.12);color:var(--green);}
+.wh-stat.bad{background:rgba(255,79,106,.1);color:var(--rose);}
+.wh-stat.neutral{background:rgba(255,255,255,.06);color:var(--cream);}
+.wh-nugget{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:16px 18px;margin-bottom:10px;}
+.wh-nugget-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wh-nugget-body{font-size:13px;color:var(--mid);line-height:1.65;}
+.wh-nugget-body strong{color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 10px;font-size:10px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>←</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · TOR @ MIL · American Family Field · April 16, 2026 · Observation 16</div>
+      <div class="score">MIL 2 · TOR 1</div>
+      <div class="hed">BRANDON <span class="red">SPROAT</span><span class="role">OBSERVATION 16</span></div>
+      <div class="dek"><em>7 IP · 6K · 1BB · the walk rate never showed up.</em> The entire blueprint was built on a 20% walk rate that had been consistent all season. Tonight he walked one hitter in 24 plate appearances. The Sweeper got Guerrero twice. The Cutter finally gave up a hit. Naive wins again. Series loss.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Sproat line</div><div class="mi-val">7 IP</div><div class="mi-sub">6K · 1BB · 0HR · 4H</div></div>
+    <div class="mi"><div class="mi-lbl">Champion MAE</div><div class="mi-val red">0.250</div><div class="mi-sub">naive: 0.224 · naive wins</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val red">1 of 3</div><div class="mi-sub">Walk rate failed · Sweeper partial · Cutter partial</div></div>
+    <div class="mi"><div class="mi-lbl">Spearman rho</div><div class="mi-val red">-0.238</div><div class="mi-sub">negative ranking signal</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val red">7-11</div><div class="mi-sub">MIL series 1-2</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Study note</div>
+    <div class="gov-txt">8 scoreable hitters. Running n after observation 16: ~108 hitter-games. Walk rate assumption failed for the third time this season. The blueprint was patience, he made it irrelevant. Sproat pitcher ID confirmed: 687075.</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">Assumption Audit</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+  <div class="tab" onclick="go(4)">What Happened</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0: H1/H2 -->
+<div class="panel active" id="p0">
+  <div class="lede">Naive wins for the third time in a row. The model overestimated the lineup across the board. Bias of -0.149 means every hitter came in below expectation. The walk rate that was supposed to be the path to offense did not show up, and without free baserunners the lineup had to earn everything the hard way against a guy who commanded the zone better than any of his prior three 2026 starts.</div>
+
+  <div class="callout rose">
+    <strong>H1 · Champion vs Naive · this game</strong><br>
+    Champion MAE: 0.250 · Naive MAE: 0.224 · Naive wins by 0.026<br>
+    Third consecutive LOW confidence game where naive beats champion. The model's pitch-mix baseline projected above-average offense. Sproat delivered below-average offense. The 20% walk rate assumption failed and took the whole blueprint with it.
+  </div>
+
+  <div class="callout rose">
+    <strong>H2 · Ranking signal · this game</strong><br>
+    Spearman rho: -0.238 · Negative ranking signal<br>
+    Guerrero was the top projection at .391 and went 0 for 3 with two strikeouts. Giménez was near the bottom of the board and hit a double. The ranking inverted tonight. The model did not get the order right.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">H1 · game error</div>
+      <div class="stat-row"><div class="stat-lbl">Champion MAE</div><div class="stat-val">0.250</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-1 MAE</div><div class="stat-val green">0.224</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bias (mean residual)</div><div class="stat-val red">-0.149</div></div>
+      <div class="stat-row"><div class="stat-lbl">Scoreable hitters</div><div class="stat-val">8</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 verdict</div><div class="stat-val red">DOES NOT SUPPORT</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Game context</div>
+      <div class="stat-row"><div class="stat-lbl">TOR run</div><div class="stat-val">Heineman sac bunt, 3rd inn.</div></div>
+      <div class="stat-row"><div class="stat-lbl">Guerrero tonight</div><div class="stat-val red">0/3, 2K, GDP · both Ks on Sweeper</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walk rate entering game</div><div class="stat-val">20.0% (3 starts, consistent)</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walk rate tonight</div><div class="stat-val red">4.2% (1/24 PA)</div></div>
+      <div class="stat-row"><div class="stat-lbl">FP strikes</div><div class="stat-val">62.5% · zone command improved</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1: WHAT THE MODEL SAW -->
+<div class="panel" id="p1">
+  <div class="lede">Eight scoreable hitters. Sproat went seven innings, which means most of the roster got three looks at him. The top projection went 0 for 3. The bottom of the order produced the only real positive residuals. Not the game the model projected.</div>
+
+  <div style="margin-bottom:24px;">
+    <div style="display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:0 16px 8px;border-bottom:1px solid var(--border);margin-bottom:6px;">
+      <span style="width:160px;flex-shrink:0;">Hitter</span>
+      <span style="width:28px;flex-shrink:0;">H</span>
+      <span style="width:52px;flex-shrink:0;">Tier</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Exp</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Actual</span>
+      <span style="width:60px;text-align:right;flex-shrink:0;">Resid</span>
+      <span style="flex:1;padding-left:8px;">Note</span>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Guerrero Jr., Vladimir</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier" style="color:var(--amber);background:rgba(196,162,75,.1);">Edge</div>
+      <div class="mr-exp">.391</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.391</div>
+      <div class="mr-note">GDP, strikeout (ST), strikeout (ST)</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Sánchez, Jesús</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.353</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.353</div>
+      <div class="mr-note">Field out, field out, field out</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Okamoto, Kazuma</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.352</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.352</div>
+      <div class="mr-note">Field out, strikeout, field out</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Varsho, Daulton</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.353</div>
+      <div class="mr-act" style="color:var(--amber);">0.296</div>
+      <div class="mr-resid" style="color:var(--dim);">-0.057</div>
+      <div class="mr-note">Single, field out, strikeout</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Schneider, Davis</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.346</div>
+      <div class="mr-act" style="color:var(--amber);">0.232</div>
+      <div class="mr-resid" style="color:var(--dim);">-0.114</div>
+      <div class="mr-note">Walk, field out, field out</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Giménez, Andrés</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.343</div>
+      <div class="mr-act" style="color:var(--green);">0.635</div>
+      <div class="mr-resid" style="color:var(--green);">+0.292</div>
+      <div class="mr-note">Strikeout, double (FF)</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Clement, Ernie</div>
+      <div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.334</div>
+      <div class="mr-act" style="color:var(--green);">0.444</div>
+      <div class="mr-resid" style="color:var(--green);">+0.110</div>
+      <div class="mr-note">Field out, single</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Heineman, Tyler</div>
+      <div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.331</div>
+      <div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.331</div>
+      <div class="mr-note">Strikeout, sac bunt (scored TOR's only run)</div>
+    </div>
+  </div>
+
+  <div class="callout diag">
+    <strong>Inversion at the top.</strong> The two Edge projections, Guerrero (.391) and Barger (.359), combined for zero scoreable hits. The positive residuals came from Giménez and Clement, both Neutral at the bottom of the projection board. When the ranking inverts this badly, it usually means either the pitcher found something new or the baseline assumption failed. Tonight it was both.
+  </div>
+</div>
+
+<!-- TAB 2: ASSUMPTION AUDIT -->
+<div class="panel" id="p2">
+  <div class="lede">One of three held. Walk rate failed by 15.8 percentage points. The assumption that defined the entire offensive blueprint turned out to be the most wrong thing in the preview. Third walk rate failure of the season, all in the same direction.</div>
+
+  <div class="ass-row failed">
+    <div class="ass-name">Walk rate · FAILED · blueprint invalidated</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">20.0%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--rose);">4.2%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--rose);">-15.8pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--rose);">FAILED</div></div>
+    </div>
+    <div class="ass-verdict"><strong>One walk in 24 plate appearances.</strong> This is the third game this season where a walk rate assumption failed badly. Bradley, Misiorowski, Sproat. All three times the pitcher commanded the zone far better than their prior data suggested. Sproat's first-pitch strike rate was 62.5%, better than any of his three prior 2026 starts where he was walking one in five. The walk rate was not a fluke in those three starts, it was real. But tonight he fixed it, at least for one game.</div>
+  </div>
+
+  <div class="ass-row partial">
+    <div class="ass-name">Sweeper to RHH · PARTIAL, exceeded</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">23.3%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--amber);">31.1%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--amber);">+7.8pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--amber);">PARTIAL</div></div>
+    </div>
+    <div class="ass-verdict">He leaned on the Sweeper even more than expected against RHH. 50% whiff rate on 15 pitches. <strong>The BVP said Jiménez was 0/2 with two Ks on the Sweeper. Sproat used it on Guerrero instead and got him twice.</strong> The assumption was directionally correct that the Sweeper would be his primary RHH weapon. Just did not anticipate how much he would lean on it, or who it would hurt most.</div>
+  </div>
+
+  <div class="ass-row partial">
+    <div class="ass-name">Cutter contact quality · PARTIAL</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected xwOBA</div><div class="ass-val-num" style="color:var(--mid);">.511</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual hits</div><div class="ass-val-num" style="color:var(--amber);">1 of 24 FC pitches</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Whiff%</div><div class="ass-val-num" style="color:var(--amber);">15.4%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--amber);">PARTIAL</div></div>
+    </div>
+    <div class="ass-verdict">One hit on 24 Cutters, a Sosa double on a pfx_x of 0.17, slight cut. <strong>The Cutter pfx_x tonight was 0.035, same flat profile as Patrick's version last night.</strong> The Jays have now seen 89 FC pitches in the past two games and managed one hit. The .511 xwOBA career number is not showing up in practice against this lineup. Tracking as a 2026 Jays-vs-Cutter vulnerability.</div>
+  </div>
+
+  <div class="callout amber">
+    <strong>Walk rate pattern: three failures, same direction.</strong> Bradley walked far fewer than expected. Misiorowski walked nobody. Sproat walked one. Every game where the walk rate has been the key assumption, the pitcher has thrown more strikes than the prior data said he would. The ±7pp tolerance is not wide enough to catch what is happening. Worth examining whether this lineup is swing-happy early in counts in 2026, which would make pitchers look like better zone commanders than they are.
+  </div>
+</div>
+
+<!-- TAB 3: STUDY LOG -->
+<div class="panel" id="p3">
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 16</div>
+    <div class="hb-body">Sixteen observations. Running n: ~108 hitter-games. <strong>Three consecutive LOW confidence games, three consecutive naive wins.</strong> The emerging pattern is clear: at LOW confidence, the champion cannot beat naive on MAE. H2 held in observation 15 but inverted tonight. The walk rate assumption has failed three times in the same direction. Worth investigating whether this lineup's early-count approach is inflating pitcher command metrics. Sproat pitcher ID confirmed: 687075. Cutter vulnerability now four games running with zero hits on 89 FC pitches across the last two games.</div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Running study metrics after 16 games</div>
+      <div class="stat-row"><div class="stat-lbl">Running n (hitter-games)</div><div class="stat-val">~108</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 this game</div><div class="stat-val red">DOES NOT SUPPORT</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walk rate assumption fails</div><div class="stat-val red">3 of 16 games</div></div>
+      <div class="stat-row"><div class="stat-lbl">LOW conf streak (obs 14-16)</div><div class="stat-val red">H1 fails · H2 mixed</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 record</div><div class="stat-val red">7-11</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Retro memory updates</div>
+      <div class="stat-row"><div class="stat-lbl">Sproat walk rate</div><div class="stat-val amber">May be correcting toward 12-13% range</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sproat Sweeper vs RHH</div><div class="stat-val red">Higher usage than expected · 50% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">Jays vs Cutter 2026</div><div class="stat-val red">0 hits in last 48 FC pitches</div></div>
+      <div class="stat-row"><div class="stat-lbl">Sproat pitcher ID</div><div class="stat-val green">687075 confirmed</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Game log · game-level MAE</div>
+    <div class="log-row"><div class="log-num">13</div><div class="log-label">Bradley · Apr 12</div><div class="log-mae">0.311</div></div>
+    <div class="log-row"><div class="log-num">14</div><div class="log-label">Misiorowski · Apr 14</div><div class="log-mae">0.283</div></div>
+    <div class="log-row"><div class="log-num">15</div><div class="log-label">Patrick · Apr 15</div><div class="log-mae">0.209</div></div>
+    <div class="log-row current"><div class="log-num">16</div><div class="log-label current">Sproat · Apr 16 · this game</div><div class="log-mae current">0.250</div></div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-16-26. MIL 2, TOR 1. Series loss.<br><br>
+      Sproat: 7 IP, 6K, 1BB. The blueprint was patience and a 20% walk rate. He walked one hitter all night.<br><br>
+      Third consecutive game where the walk rate assumption failed in the same direction. At some point that stops being variance and starts being a question about this lineup's approach.<br><br>
+      Guerrero was the top Edge pick at .391. Went 0/3 with two strikeouts, both on the Sweeper. BVP flagged the Sweeper for Leo Jiménez. Sproat used it on Guerrero instead.<br><br>
+      Jays have zero hits on the last 48 Cutter pitches thrown to them across two games. Something to watch.<br><br>
+      Naive wins again. Third straight LOW confidence game, third straight naive win. The pattern is real.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4: WHAT HAPPENED -->
+<div class="panel" id="p4">
+
+  <div class="wh-section">
+    <div class="wh-head">What Sproat Did</div>
+    <div class="wh-body">
+      <p>The walk rate was supposed to be the game. Three starts, 20% walk rate, consistent every time. Tonight he walked one hitter in 24 plate appearances. <span class="wh-stat bad">4.2% walk rate</span> against a lineup that was told to take pitches and make him work counts. He threw first-pitch strikes 62.5% of the time, more than any prior 2026 start. The blueprint was gone before the second inning.</p>
+      <p>The Sweeper was the weapon. <span class="wh-stat good">50% whiff rate on 15 pitches.</span> He threw it to RHH at 31%, up from the expected 23%. It got Guerrero twice. It is a good pitch, the best in his arsenal, and he leaned on it when he needed strikeouts.</p>
+      <p>The Cutter was flat again. Same pfx_x near zero as the career 2026 trend. One hit allowed on 24 pitches. Still generating outs despite having no horizontal movement.</p>
+    </div>
+  </div>
+
+  <div class="wh-section">
+    <div class="wh-head">What the Jays Did</div>
+    <div class="wh-body">
+      <p>Four hits, one run, seven innings. The only run scored on a Heineman sac bunt in the third inning, not a hit.</p>
+      <p>Guerrero had the worst game of the night for any projected Edge hitter. <span class="wh-stat bad">0/3, two strikeouts, a grounded double play.</span> Both strikeouts came on the Sweeper, a pitch the preview flagged as dangerous for RHH. The model flagged it for the wrong hitter but the pitch played out exactly as described.</p>
+      <p>The bottom of the lineup produced the only positive residuals. Giménez doubled. Clement singled. The hitters the model was least confident about did the most damage. That is a ranking inversion and it hurts the H2 story tonight.</p>
+    </div>
+  </div>
+
+  <div class="wh-section">
+    <div class="wh-head">Interesting Findings</div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">The walk rate question</div>
+      <div class="wh-nugget-body">Three games now where the walk rate assumption failed in the same direction, pitchers commanding the zone better than their prior data said they would. Bradley, Misiorowski, Sproat. <strong>Worth asking whether this lineup is helping them. If the Jays are swinging at first pitches at an above-average rate in 2026, pitchers are going to look like better zone commanders than they are.</strong> That would explain a consistent directional bias across three different pitchers with different profiles.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Jays vs Cutters: still zero hits</div>
+      <div class="wh-nugget-body">48 Cutter pitches in the last two games. Zero hits. Heineman's double tonight broke a brief zero streak but it came on a Cutter with a pfx_x of 0.17, slight cut rather than the flat version. <strong>The Jays are 0 for their last two games' worth of Cutters with any meaningful movement.</strong> Across all of 2026 in the game files, the Jays have zero hits on real Cutters (pfx_x > 0.20). Something is going on with how this lineup handles the pitch.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Sweeper got the wrong hitter</div>
+      <div class="wh-nugget-body">The preview specifically flagged Leo Jiménez and the Sweeper, 0/2 in BVP with two strikeouts on that pitch. Tonight Sproat threw the Sweeper at Guerrero, and got two strikeouts on pfx_x values of 1.09 and 1.35. <strong>The BVP was right about the pitch being dangerous. It just did not help us identify which RHH it would hurt most.</strong> Guerrero's 2026 Sweeper exposure is now worth tracking.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Series recap</div>
+      <div class="wh-nugget-body">TOR 1-2 in Milwaukee. Three starters, three different approaches. Misiorowski dominated with a command that did not match his prior data. Patrick was unhittable with a Cutter that had no cut. Sproat eliminated his walk rate for one night. <strong>All three times the Jays' offensive blueprint failed because the assumption that defined it did not show up in the game.</strong> The common thread is not the pitchers. It might be the lineup.</div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant · April 16, 2026 · Observation 16 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+</script>
+</body>
+</html>

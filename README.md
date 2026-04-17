@@ -301,7 +301,8 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-16-26 | MIL | B. Sproat RHP | — | V. Guerrero Jr. (.391) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-16-sproat/) |
+| 4-17-26 | ARI | M. Soroka RHP | — | V. Guerrero Jr. (.413) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-17-soroka/) |
+| 4-16-26 | MIL | B. Sproat RHP | MIL 2, TOR 1 | V. Guerrero Jr. (.391) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-16-sproat/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-16-sproat/) |
 | 4-15-26 | MIL | C. Patrick RHP | MIL 2, TOR 1 | V. Guerrero Jr. (.358) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-15-patrick/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-15-patrick/) |
 | 4-14-26 | MIL | J. Misiorowski RHP | TOR 9, MIL 7 (F/10) | V. Guerrero Jr. (.355) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-14-misiorowski/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-14-misiorowski/) |
 | 4-12-26 | MIN | T. Bradley RHP | MIN 8, TOR 2 | V. Guerrero Jr. (.375) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-12-bradley/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-12-bradley/) |
@@ -317,9 +318,9 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 7-10 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2 · Milwaukee: TOR 1-1**
+**2026 record: 7-11 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2 · Milwaukee: TOR 1-2**
 
-*Updated: April 16, 2026*
+*Updated: April 17, 2026*
 
 ---
 

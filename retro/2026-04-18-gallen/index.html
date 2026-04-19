@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Zac Gallen · April 18</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--rose);letter-spacing:.04em;margin-bottom:10px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.hit::before{background:var(--green);}
+.mu-row.miss::before{background:var(--rose);}
+.mu-row.ok::before{background:rgba(255,255,255,.1);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:160px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-tier{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:1px 6px;border-radius:2px;flex-shrink:0;background:rgba(255,255,255,.05);color:var(--dim);}
+.mr-exp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);width:50px;text-align:right;flex-shrink:0;}
+.mr-act{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:54px;text-align:right;flex-shrink:0;}
+.mr-resid{font-family:'IBM Plex Mono',monospace;font-size:11px;width:60px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:8px;line-height:1.35;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.stat-val.red{color:var(--rose);}.stat-val.green{color:var(--green);}.stat-val.amber{color:var(--amber);}
+.ass-row{padding:14px 16px;margin-bottom:8px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--border);}
+.ass-row.held{border-left-color:var(--green);}
+.ass-row.partial{border-left-color:var(--amber);}
+.ass-row.failed{border-left-color:var(--rose);}
+.ass-name{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.ass-vals{display:flex;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.ass-val-item{display:flex;flex-direction:column;gap:2px;}
+.ass-val-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+.ass-val-num{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;}
+.ass-verdict{font-size:12px;color:var(--mid);line-height:1.6;}
+.ass-verdict strong{color:var(--cream);}
+.log-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px solid var(--border);}
+.log-row:last-child{border-bottom:none;}
+.log-row.current{background:rgba(255,79,106,.04);padding:7px 10px;border-radius:3px;border-bottom:none;margin-bottom:2px;}
+.log-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:20px;flex-shrink:0;}
+.log-label{font-size:12px;color:var(--mid);flex:1;}
+.log-label.current{color:var(--rose);}
+.log-mae{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--cream);width:50px;text-align:right;flex-shrink:0;}
+.log-mae.current{color:var(--rose);}
+.wh-section{margin-bottom:32px;}
+.wh-head{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.wh-body{font-size:14px;line-height:1.8;color:var(--mid);}
+.wh-body strong{color:var(--cream);}
+.wh-body p{margin-bottom:12px;}
+.wh-body p:last-child{margin-bottom:0;}
+.wh-nugget{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:16px 18px;margin-bottom:10px;}
+.wh-nugget-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wh-nugget-body{font-size:13px;color:var(--mid);line-height:1.65;}
+.wh-nugget-body strong{color:var(--cream);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;margin-top:20px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 10px;font-size:10px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>&#8592;</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective &middot; TOR @ ARI &middot; Chase Field &middot; April 18, 2026 &middot; Observation 18</div>
+      <div class="score">ARI 6 &middot; TOR 2</div>
+      <div class="hed">ZAC <span class="red">GALLEN</span><span class="role">OBSERVATION 18</span></div>
+      <div class="dek"><em>6 IP &middot; 3K &middot; 0BB &middot; 9H &middot; the Knuckle Curve recovered.</em> The KC went from a .608 xwOBA in the preview signal to .200 tonight. It was his best pitch. The Slider dropped below its expected RHH rate. Two Suppressed calls outperformed badly. The three Edge hitters combined for one hit in seven plate appearances against Gallen. Naive wins again.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Gallen line</div><div class="mi-val">6 IP</div><div class="mi-sub">3K &middot; 0BB &middot; 9H &middot; 0HR</div></div>
+    <div class="mi"><div class="mi-lbl">Champion MAE</div><div class="mi-val red">0.228</div><div class="mi-sub">naive: 0.220 &middot; naive wins</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val amber">2 held &middot; 1 partial</div><div class="mi-sub">Slider rate partial &middot; KC recovered</div></div>
+    <div class="mi"><div class="mi-lbl">Spearman rho</div><div class="mi-val red">-0.233</div><div class="mi-sub">negative ranking signal</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val red">7-13</div><div class="mi-sub">Arizona series 0-2</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Study note</div>
+    <div class="gov-txt">9 scoreable hitters (PA &ge;2 vs Gallen). Schneider, Varsho, Barger, Leo each had 0 PA against him and are not scored. Running n after observation 18: ~125 hitter-games. KC xwOBA computed from contact events only (5 balls in play on 26 KC pitches).</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">H1 / H2 Test</div>
+  <div class="tab" onclick="go(1)">What the Model Saw</div>
+  <div class="tab" onclick="go(2)">Assumption Audit</div>
+  <div class="tab" onclick="go(3)">Study Log</div>
+  <div class="tab" onclick="go(4)">What Happened</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0 -->
+<div class="panel active" id="p0">
+  <div class="lede">Naive wins by 0.008. The three Edge hitters managed one hit in seven combined plate appearances versus Gallen. Two Suppressed hitters, Clement and Straw, overperformed significantly. The model correctly identified the top of the lineup but the bottom inverted.</div>
+
+  <div class="callout rose">
+    <strong>H1 &middot; Champion vs Naive</strong><br>
+    Champion MAE: 0.228 &middot; Naive MAE: 0.220 &middot; Naive wins by 0.008<br>
+    The margin is narrow. Guerrero, Schneider, and Varsho were the three Edge calls. Guerrero had one hit in three PA. Schneider and Varsho did not face Gallen at all. The Edge tier produced only one scoreable result and it underperformed.
+  </div>
+
+  <div class="callout rose">
+    <strong>H2 &middot; Ranking signal</strong><br>
+    Spearman rho: -0.233 &middot; Negative ranking signal<br>
+    Clement (.281 Suppressed) produced .720 actual wOBA. Straw (.270 Suppressed) produced .888. Both were near the bottom of the model's projection. They finished near the top of actual production against Gallen.
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">H1 &middot; game error</div>
+      <div class="stat-row"><div class="stat-lbl">Champion MAE</div><div class="stat-val">0.228</div></div>
+      <div class="stat-row"><div class="stat-lbl">Naive-1 MAE (LEAGUE_WOBA=0.320)</div><div class="stat-val green">0.220</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bias (mean residual)</div><div class="stat-val">+0.067</div></div>
+      <div class="stat-row"><div class="stat-lbl">Scoreable hitters</div><div class="stat-val">9</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 verdict</div><div class="stat-val red">DOES NOT SUPPORT</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Game context</div>
+      <div class="stat-row"><div class="stat-lbl">Final score</div><div class="stat-val">ARI 6, TOR 2</div></div>
+      <div class="stat-row"><div class="stat-lbl">Gallen innings</div><div class="stat-val">6.0 IP</div></div>
+      <div class="stat-row"><div class="stat-lbl">TOR runs (Gallen)</div><div class="stat-val">Sánchez 1st inn &middot; Okamoto 6th inn</div></div>
+      <div class="stat-row"><div class="stat-lbl">KC recovery</div><div class="stat-val green">xwOBA .200 actual vs .608 expected</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider to RHH</div><div class="stat-val amber">31.9% actual vs 44.7% expected</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1 -->
+<div class="panel" id="p1">
+  <div class="lede">Nine scoreable hitters. Two Suppressed calls overperformed badly. The one scoreable Edge call (Guerrero) underperformed. The model's positive residuals came entirely from the bottom of the projection order.</div>
+
+  <div style="margin-bottom:24px;">
+    <div style="display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:0 16px 8px;border-bottom:1px solid var(--border);margin-bottom:6px;">
+      <span style="width:160px;flex-shrink:0;">Hitter</span>
+      <span style="width:28px;flex-shrink:0;">H</span>
+      <span style="width:54px;flex-shrink:0;">Tier</span>
+      <span style="width:50px;text-align:right;flex-shrink:0;">Exp</span>
+      <span style="width:54px;text-align:right;flex-shrink:0;">Actual</span>
+      <span style="width:60px;text-align:right;flex-shrink:0;">Resid</span>
+      <span style="flex:1;padding-left:8px;">Outcomes</span>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Guerrero Jr., Vladimir</div><div class="mr-hand">R</div>
+      <div class="mr-tier" style="color:var(--green);background:rgba(45,212,160,.08);">Edge</div>
+      <div class="mr-exp">.373</div><div class="mr-act" style="color:var(--rose);">0.296</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.077</div>
+      <div class="mr-note">Field out, field out, single</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Straw, Myles</div><div class="mr-hand">R</div>
+      <div class="mr-tier" style="color:var(--rose);background:rgba(255,79,106,.06);">Supp</div>
+      <div class="mr-exp">.270</div><div class="mr-act" style="color:var(--green);">0.888</div>
+      <div class="mr-resid" style="color:var(--green);">+0.618</div>
+      <div class="mr-note">Single (KC), sac bunt (SL)</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Clement, Ernie</div><div class="mr-hand">R</div>
+      <div class="mr-tier" style="color:var(--rose);background:rgba(255,79,106,.06);">Supp</div>
+      <div class="mr-exp">.281</div><div class="mr-act" style="color:var(--green);">0.720</div>
+      <div class="mr-resid" style="color:var(--green);">+0.439</div>
+      <div class="mr-note">Double, single, field out</div>
+    </div>
+
+    <div class="mu-row hit">
+      <div class="mr-name">Okamoto, Kazuma</div><div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.320</div><div class="mr-act" style="color:var(--green);">0.592</div>
+      <div class="mr-resid" style="color:var(--green);">+0.272</div>
+      <div class="mr-note">Single, strikeout, single</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Lukes, Nathan</div><div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.330</div><div class="mr-act" style="color:var(--amber);">0.296</div>
+      <div class="mr-resid" style="color:var(--dim);">-0.034</div>
+      <div class="mr-note">Field out, field out, single</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Sánchez, Jesús</div><div class="mr-hand">L</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.320</div><div class="mr-act" style="color:var(--amber);">0.296</div>
+      <div class="mr-resid" style="color:var(--dim);">-0.024</div>
+      <div class="mr-note">Field out, field out, single</div>
+    </div>
+
+    <div class="mu-row ok">
+      <div class="mr-name">Jiménez, Eloy</div><div class="mr-hand">R</div>
+      <div class="mr-tier">Neutral</div>
+      <div class="mr-exp">.320</div><div class="mr-act" style="color:var(--amber);">0.296</div>
+      <div class="mr-resid" style="color:var(--dim);">-0.024</div>
+      <div class="mr-note">Single, field out, strikeout</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Heineman, Tyler</div><div class="mr-hand">L</div>
+      <div class="mr-tier" style="color:var(--rose);background:rgba(255,79,106,.06);">Supp</div>
+      <div class="mr-exp">.288</div><div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.288</div>
+      <div class="mr-note">Field out, field out</div>
+    </div>
+
+    <div class="mu-row miss">
+      <div class="mr-name">Giménez, Andrés</div><div class="mr-hand">L</div>
+      <div class="mr-tier" style="color:var(--rose);background:rgba(255,79,106,.06);">Supp</div>
+      <div class="mr-exp">.277</div><div class="mr-act" style="color:var(--rose);">0.000</div>
+      <div class="mr-resid" style="color:var(--rose);">-0.277</div>
+      <div class="mr-note">Field out, field out, strikeout</div>
+    </div>
+  </div>
+
+  <div class="callout diag">
+    <strong>Not scored (0 PA vs Gallen):</strong> Schneider, Varsho, Barger, Jiménez Leo. Gallen exited after 6 innings and these hitters did not get a plate appearance against him.
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="panel" id="p2">
+  <div class="lede">Two assumptions held. The Slider to RHH was partial, dropping below the expected rate. The Knuckle Curve recovered significantly from its 2026 signal, posting a .200 xwOBA tonight against a .608 expectation.</div>
+
+  <div class="ass-row partial">
+    <div class="ass-name">Slider vs RHH &middot; PARTIAL</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">44.7%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--amber);">31.9%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--amber);">-12.8pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--amber);">PARTIAL</div></div>
+    </div>
+    <div class="ass-verdict">Gallen pulled back on the Slider against RHH, dropping from the expected 44.7% to 31.9% (15 of 47 RHH pitches). The Knuckle Curve filled the difference, rising to 31.9% of the RHH mix as well. <strong>The Slider still allowed 4 singles on those 15 pitches to RHH.</strong> When he went to it, hitters made contact. The decision to use it less may have been the right call in-game.</div>
+  </div>
+
+  <div class="ass-row held">
+    <div class="ass-name">Knuckle Curve quality &middot; HELD</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected xwOBA</div><div class="ass-val-num" style="color:var(--mid);">0.608</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual xwOBA</div><div class="ass-val-num" style="color:var(--green);">0.200</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--green);">HELD</div></div>
+    </div>
+    <div class="ass-verdict">The KC recovered dramatically. The preview flagged the 2026 signal (.608 xwOBA) as potentially unstable relative to the career number (.289). Tonight it performed closer to its career profile at .200 xwOBA and 26.7% whiff rate. <strong>He leaned into it at 29.5% of total pitches, doubling its expected usage.</strong> On 5 balls in play: four grounders and fly balls, one line drive single. The pitch was back.</div>
+  </div>
+
+  <div class="ass-row held">
+    <div class="ass-name">K rate &middot; HELD</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">12.7%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--green);">12.0%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--green);">-0.7pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--green);">HELD</div></div>
+    </div>
+    <div class="ass-verdict">3 strikeouts in 25 PA. Expected low-K version showed up. The Changeup generated zero whiffs on 13 pitches tonight. The 4-Seam and Sinker also generated zero whiffs. <strong>All three strikeouts came on either the Slider or KC.</strong> Nine hits with only 3 Ks confirms the model's expectation of a contact-heavy game.</div>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="panel" id="p3">
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 18</div>
+    <div class="hb-body">Eighteen observations. Running n: ~125 hitter-games. <strong>The KC recovery is the retro memory update that matters.</strong> The 2026 in-season signal showed .608 xwOBA on 57 pitches across four starts. Tonight he threw 26 KC pitches and generated a .200 xwOBA. That is noise in a small sample. The career number is .289. For the next Gallen preview, weight the KC assumption closer to the career value and note that the 2026 signal may have been a four-start artifact rather than a real change. The Slider to RHH assumption was partial. He pulled back on it and leaned into the KC when it was working. That adjustment happened in real time and the model cannot anticipate it from pre-game data.</div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Running study metrics after 18 games</div>
+      <div class="stat-row"><div class="stat-lbl">Running n (hitter-games)</div><div class="stat-val">~125</div></div>
+      <div class="stat-row"><div class="stat-lbl">H1 this game</div><div class="stat-val red">DOES NOT SUPPORT</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 record</div><div class="stat-val red">7-13 · Arizona 0-2</div></div>
+      <div class="stat-row"><div class="stat-lbl">Bias this game</div><div class="stat-val amber">+0.067 (model underpredicting offense)</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Retro memory updates</div>
+      <div class="stat-row"><div class="stat-lbl">KC quality</div><div class="stat-val green">Recovered to .200 xwOBA · revert toward career .289</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider vs RHH</div><div class="stat-val amber">31.9% actual vs 44.7% expected · partial</div></div>
+      <div class="stat-row"><div class="stat-lbl">Changeup</div><div class="stat-val red">0% whiff on 13 pitches · flat tonight</div></div>
+      <div class="stat-row"><div class="stat-lbl">Gallen pitcher ID</div><div class="stat-val green">668678 confirmed</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Season game log &middot; champion MAE</div>
+    <div class="log-row"><div class="log-num">13</div><div class="log-label">Bradley &middot; Apr 12</div><div class="log-mae">0.311</div></div>
+    <div class="log-row"><div class="log-num">14</div><div class="log-label">Misiorowski &middot; Apr 14</div><div class="log-mae">0.283</div></div>
+    <div class="log-row"><div class="log-num">15</div><div class="log-label">Patrick &middot; Apr 15</div><div class="log-mae">0.209</div></div>
+    <div class="log-row"><div class="log-num">16</div><div class="log-label">Sproat &middot; Apr 16</div><div class="log-mae">0.250</div></div>
+    <div class="log-row"><div class="log-num">17</div><div class="log-label">Soroka &middot; Apr 17</div><div class="log-mae">0.360</div></div>
+    <div class="log-row current"><div class="log-num">18</div><div class="log-label current">Gallen &middot; Apr 18 &middot; this game</div><div class="log-mae current">0.228</div></div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post &middot; X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro &middot; 4-18-26. ARI 6, TOR 2.<br><br>
+      Gallen: 6 IP, 3K, 0BB, 9H. The Knuckle Curve recovered. Preview expected .608 xwOBA from the 2026 signal. He threw 26 of them and posted .200 xwOBA tonight. It was his best pitch.<br><br>
+      Slider to RHH dropped from expected 44.7% to 31.9%. He leaned into the KC instead. When he went to the Slider it allowed 4 singles on 15 pitches.<br><br>
+      Two Suppressed calls outperformed: Clement (.720) and Straw (.888). The three Edge hitters combined for 1 hit in 7 PA against Gallen.<br><br>
+      Champion MAE 0.228, naive 0.220. Naive wins. rho -0.233.<br><br>
+      Running n: ~125 hitter-games, 18 observations.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel &middot; #BlueJays
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4 -->
+<div class="panel" id="p4">
+
+  <div class="wh-section">
+    <div class="wh-head">What Gallen Did</div>
+    <div class="wh-body">
+      <p>The Knuckle Curve was the story. The 2026 data going in showed .608 xwOBA and 11.5% whiff rate, a dramatic fall from its career numbers. Tonight he threw it 26 times, more than any other pitch, and it generated a .200 xwOBA with a 26.7% whiff rate. The pitch was back. He used it as both a chase pitch and a put-away pitch and it held up across 25 plate appearances.</p>
+      <p>The Slider rate to RHH dropped from the expected 44.7% to 31.9%. He used the KC to fill the gap instead. When he did throw the Slider to RHH, hitters made contact, producing 4 singles on 15 pitches. The in-game adjustment to lean on the KC rather than the Slider was the right call given what the KC was doing.</p>
+      <p>Zero walks in 25 plate appearances. Nine hits. The Changeup generated zero whiffs on 13 pitches. The 4-Seam and Sinker also generated zero whiffs. All three strikeouts came on the Slider or KC. Contact-heavy game, as the model expected.</p>
+    </div>
+  </div>
+
+  <div class="wh-section">
+    <div class="wh-head">What the Jays Did</div>
+    <div class="wh-body">
+      <p>Nine hits, two runs. The two Suppressed calls that outperformed were both right-handed hitters: Clement had a double and a single, Straw had a single. Their hits came on the Knuckle Curve and the Slider respectively. Both were in the bottom of the model's projections entering the game.</p>
+      <p>Guerrero had one single in three plate appearances, below his Edge projection. Schneider, Varsho, and Barger did not face Gallen. The lineup turned over eight times in six innings and the top of the order did not get a third crack at him.</p>
+    </div>
+  </div>
+
+  <div class="wh-section">
+    <div class="wh-head">Interesting Findings</div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">The KC recovery</div>
+      <div class="wh-nugget-body">Four starts of 2026 data showed .608 xwOBA and 11.5% whiff on the Knuckle Curve. The preview flagged it as an unstable signal. Tonight: 26 pitches, .200 xwOBA, 26.7% whiff. Five balls in play produced four field outs and one line drive single. <strong>The career number is .289. The 2026 sample was 57 pitches. Tonight was 26 pitches.</strong> The retro memory update is to revert the KC assumption toward the career value for the next Gallen preview. The in-season signal was small and the recovery was real.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Slider to RHH: 4 singles on 15 pitches</div>
+      <div class="wh-nugget-body">Gallen pulled back on the Slider against RHH. It came in at 31.9% instead of 44.7%. When he did use it, hitters made contact: 4 singles, 2 whiffs, 3 fouls on 15 pitches. <strong>The xwOBA on those 4 singles ranged from .099 to .501.</strong> Mixed quality. Two were genuine hard contact, two were weaker. The in-game adjustment away from the Slider may reflect Gallen reading that it was not working and pivoting to the KC instead.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Clement and Straw: both Suppressed, both produced</div>
+      <div class="wh-nugget-body">Clement (.281 exp) had a double and a single, actual .720. Straw (.270 exp) had a single, actual .888. Both are right-handed hitters. <strong>The model's RHH Suppressed calls were built on the Slider-heavy 2026 mix at 44.7%.</strong> When the Slider dropped to 31.9% and the KC rose, the profile these two hitters faced was different from what the model priced. Heineman and Gimenez, the LHH Suppressed calls, both went 0 for their PA. The LHH Suppressed calls held.</div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant &middot; April 18, 2026 &middot; Observation 18 &middot; V3.2 &middot; LEAGUE_WOBA=0.320 &middot; Arm Chair Analyst &middot; @scherrology</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+</script>
+</body>
+</html>

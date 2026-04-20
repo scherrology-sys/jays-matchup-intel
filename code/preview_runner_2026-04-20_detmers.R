@@ -27,7 +27,7 @@
 #   vs RHH: 4-Seam 46.2%, Slider 31.6%, CH 13.9%, CU 8.3%
 #   K%: 42.9%, 15.4%, 18.2%, 36.0% per start · avg 27.7% (career 28.6%)
 #   BB%: 0%, 15.4%, 9.1%, 0% per start · avg 6.4% (career 9.2%)
-#   BVP (2025, file 71): Clement 2PA single+double, Straw 2PA two singles, Leo 2PA K+out
+#   BVP (2025, file 71): Clement 2PA single+double, Straw 2PA two singles, Heineman 1PA K
 # =============================================================================
 # VALIDATED EXP_WOBA (compute_arsenal_expectation, 2024-25 LHP splits):
 #   Heineman      R  .442  Edge    [bats R vs LHP · 4-Seam entered · Slider/CH/CU fallback]
@@ -42,7 +42,6 @@
 #   Schneider     R  .313  Neutral [4-Seam .248/35, Slider .426/13, CH .383/22, CU .132/12]
 #   Straw         R  .288  Supp    [bats R vs LHP · prior .290 · Slider/CH pull exp down]
 #   Giménez, A.   L  .214  Supp    [LHH · 4-Seam .000/15PA · Slider .371/13 · Sinker .340/24]
-#   Jiménez, Leo  R  .209  Supp    [prior .209 vs LHP · extreme flag · tiny sample]
 # =============================================================================
 
 library(tidyverse)
@@ -114,17 +113,13 @@ batter_pool <- c(
   "Giménez, Andrés",
   "Varsho, Daulton",
   "Sánchez, Jesús",
-  "Jiménez, Leo",
   "Clement, Ernie",
   "Heineman, Tyler",
   "Straw, Myles"
 )
 
 # NOTE: Eloy, Okamoto, Sánchez have no LHP history → LEAGUE_WOBA fallback (.320)
-# NOTE: Heineman and Straw are switch hitters, batting R vs LHP. Their RHH
-#   mix (pitcher_mix_rhh) and RHH pitch splits vs LHP enter the computation.
-# NOTE: Gimenez 4-Seam split vs LHP = .000 in 15 PA. Strong Suppressed signal.
-# NOTE: Leo prior vs LHP = .209 (tiny sample). Extreme flag.
+# NOTE: Heineman and Straw are switch hitters, batting R vs LHP.
 
 # =============================================================================
 # 4. ASSUMPTIONS

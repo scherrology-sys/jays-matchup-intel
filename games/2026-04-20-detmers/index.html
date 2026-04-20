@@ -211,7 +211,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <strong>LHP note.</strong> Detmers is the first LHP in this stretch of previews. Hitter history is filtered to p_throws=&quot;L&quot;, which means different priors and different pitch split PA counts. Switch hitters Heineman and Straw bat right against lefties — their RHH splits and priors vs LHP enter the computation. Three hitters (Eloy, Okamoto, Sanchez) have no LHP history in the file and receive league fallback (.320).
   </div>
   <div class="callout diag">
-    <strong>BVP context (2025 games only).</strong> Clement: 2PA, single + double, wOBA 1.079. Straw: 2PA, two singles, wOBA .888. Leo: 2PA, strikeout + field out, wOBA .000. Heineman: 1PA, strikeout. All below MIN_PA=10 for any pitch type. Directional signal only.
+    <strong>BVP context (2025 games only).</strong> Clement: 2PA, single + double, wOBA 1.079. Straw: 2PA, two singles, wOBA .888. Heineman: 1PA, strikeout. All below MIN_PA=10 for any pitch type. Directional signal only.
   </div>
   <div id="tierDisplay"></div>
 </div>
@@ -254,8 +254,8 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     </div>
     <div class="tg-card worst">
       <div class="tg-tag">Suppressed</div>
-      <div class="tg-name">Straw &middot; Gimenez &middot; Leo</div>
-      <div class="tg-body">Straw: switch hitter batting right, prior .290, Slider .??? and CH splits pull exp to .288. Gimenez: 4-Seam .000 in 15 PA vs LHP, Slider .371, Sinker .340, combined exp .214. Leo: prior .209 vs LHP, extreme flag. <strong>Gimenez's 4-Seam split of .000 in 15 PA is the most notable suppressed signal in the file.</strong></div>
+      <div class="tg-name">Straw &middot; Gimenez</div>
+      <div class="tg-body">Straw: switch hitter batting right, prior .290, Slider and Changeup splits pull exp to .288. Gimenez: 4-Seam .000 in 15 PA vs LHP, Slider .371, Sinker .340, combined exp .214. <strong>Gimenez's 4-Seam split of .000 in 15 PA is the most notable suppressed signal in the file.</strong></div>
     </div>
   </div>
 
@@ -269,7 +269,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div class="social-body">
       Jays Matchup Intel 4-20-26. Reid Detmers, LHP. Angel Stadium. Observation 20.<br><br>
       First LHP of the road trip. Slider .240 xwOBA, 37.5% whiff. Changeup .266 xwOBA, 34.3% whiff. Best two-pitch combination in this series of previews.<br><br>
-      MODERATE confidence. Four Edge: Heineman (.442), Guerrero (.433), Clement (.375), Varsho (.363). Three Suppressed: Gimenez (.214), Leo (.209), Straw (.288).<br><br>
+      MODERATE confidence. Four Edge: Heineman (.442), Guerrero (.433), Clement (.375), Varsho (.363). Two Suppressed: Gimenez (.214), Straw (.288).<br><br>
       Heineman bats right vs Detmers (switch hitter). His prior vs LHP is .398.<br><br>
       Gimenez has a .000 wOBA in 15 PA vs LHP 4-Seamers. That is a real signal.<br><br>
       2026 K% range: 15% to 43%. Which version shows up matters.<br><br>
@@ -317,7 +317,6 @@ const MD=[
   {n:'Schneider',     h:'R',e:0.313,cls:'n',note:'4-Seam .248/35PA, Slider .426/13PA, Changeup .383/22PA, CU .132/12PA · prior .328'},
   {n:'Straw',         h:'R',e:0.288,cls:'s',note:'Switch hitter bats R vs LHP · prior .290 · Slider/CH pull exp below .290 · BvP: 2PA two singles'},
   {n:'Giménez, A.',   h:'L',e:0.214,cls:'s',note:'LHH vs LHP · 4-Seam .000/15PA · Slider .371/13PA · Sinker .340/24PA · prior .220'},
-  {n:'Jiménez, Leo',  h:'R',e:0.209,cls:'s',note:'Prior .209 vs LHP · tiny sample · extreme flag · BvP: 2PA K + field out'},
 ];
 const xMn=0.0,xMx=0.65,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
 const td=document.getElementById('tierDisplay');

@@ -1,1 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Ryne Nelson · April 19</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000e22 0%,#001630 60%,#000e20 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(45,212,160,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),rgba(45,212,160,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.score{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--green);letter-spacing:.04em;margin-bottom:10px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(45,212,160,.2);border-left:2px solid var(--green);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.seq-row{display:flex;align-items:center;gap:12px;padding:9px 14px;margin-bottom:5px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.seq-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.seq-row.hit::before{background:var(--green);}
+.seq-row.out::before{background:rgba(255,255,255,.1);}
+.seq-row.walk::before{background:var(--amber);}
+.seq-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:18px;flex-shrink:0;}
+.seq-name{font-size:13px;font-weight:600;color:var(--cream);width:160px;flex-shrink:0;}
+.seq-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.seq-evt{font-size:12px;color:var(--amber);width:100px;flex-shrink:0;}
+.seq-pitch{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:60px;flex-shrink:0;}
+.seq-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:50px;flex-shrink:0;}
+.seq-tier{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:1px 6px;border-radius:2px;flex-shrink:0;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.ass-row{padding:14px 16px;margin-bottom:8px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--border);}
+.ass-row.held{border-left-color:var(--green);}
+.ass-row.partial{border-left-color:var(--amber);}
+.ass-row.failed{border-left-color:var(--rose);}
+.ass-name{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.ass-vals{display:flex;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.ass-val-item{display:flex;flex-direction:column;gap:2px;}
+.ass-val-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+.ass-val-num{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;}
+.ass-verdict{font-size:12px;color:var(--mid);line-height:1.6;}
+.ass-verdict strong{color:var(--cream);}
+.log-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px solid var(--border);}
+.log-row:last-child{border-bottom:none;}
+.log-row.current{background:rgba(45,212,160,.04);padding:7px 10px;border-radius:3px;border-bottom:none;margin-bottom:2px;}
+.log-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:20px;flex-shrink:0;}
+.log-label{font-size:12px;color:var(--mid);flex:1;}
+.log-label.current{color:var(--green);}
+.log-mae{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--cream);width:60px;text-align:right;flex-shrink:0;}
+.log-mae.current{color:var(--amber);}
+.wh-section{margin-bottom:32px;}
+.wh-head{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.wh-body{font-size:14px;line-height:1.8;color:var(--mid);}
+.wh-body strong{color:var(--cream);}
+.wh-body p{margin-bottom:12px;}
+.wh-body p:last-child{margin-bottom:0;}
+.wh-nugget{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:16px 18px;margin-bottom:10px;}
+.wh-nugget-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wh-nugget-body{font-size:13px;color:var(--mid);line-height:1.65;}
+.wh-nugget-body strong{color:var(--cream);}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;margin-top:20px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 10px;font-size:10px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>&#8592;</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective &middot; TOR @ ARI &middot; Chase Field &middot; April 19, 2026 &middot; Observation 19</div>
+      <div class="score">TOR 10 &middot; ARI 4</div>
+      <div class="hed">RYNE <span class="red">NELSON</span><span class="role">OBSERVATION 19</span></div>
+      <div class="dek"><em>0.1 IP &middot; 30 pitches &middot; 8 hits &middot; 8 runs.</em> Nelson did not finish the first inning. Eight of ten batters reached base. Every hitter who came to the plate got a hit except for one strikeout and one walk. The model cannot be meaningfully scored on a 30-pitch outing. All three assumptions held. The Jays won 10-4.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Nelson line</div><div class="mi-val red">0.1 IP</div><div class="mi-sub">30 pitches &middot; 8H &middot; 1BB &middot; 1K &middot; 8R</div></div>
+    <div class="mi"><div class="mi-lbl">Model scored</div><div class="mi-val amber">n=1</div><div class="mi-sub">Only Lukes had &ge;2 PA &middot; not meaningful</div></div>
+    <div class="mi"><div class="mi-lbl">Assumptions</div><div class="mi-val" style="color:var(--green);">3 of 3 held</div><div class="mi-sub">Slider 33.3% vs 32.9% expected</div></div>
+    <div class="mi"><div class="mi-lbl">2026 record</div><div class="mi-val green">8-13</div><div class="mi-sub">Arizona 1-2 &middot; first series win</div></div>
+    <div class="mi"><div class="mi-lbl">Final</div><div class="mi-val green">TOR 10 &middot; ARI 4</div><div class="mi-sub">8 runs in first inning</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Study note</div>
+    <div class="gov-txt">Nelson was pulled after 30 pitches, all in the first inning. Only Lukes batted twice against him. The model requires &ge;2 PA to score a hitter. n=1 produces a MAE of 0.754 (naive 0.759) which is not interpretable at this sample. Assumptions are scored normally. Running n after observation 19: ~126 hitter-games.</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">First Inning</div>
+  <div class="tab" onclick="go(1)">Assumption Audit</div>
+  <div class="tab" onclick="go(2)">Study Log</div>
+  <div class="tab" onclick="go(3)">What Happened</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0 -->
+<div class="panel active" id="p0">
+  <div class="lede">Nelson faced 10 batters in the first inning and did not record the third out. Eight hits, one walk, one strikeout. Eight runs scored. Most hitters had one plate appearance, so the model scores only Lukes, who batted twice and went double plus single.</div>
+
+  <div class="callout amber">
+    <strong>Model scoring: n=1, not interpretable.</strong> The model requires &ge;2 PA to score a hitter. Of the 10 batters Nelson faced, only Lukes batted twice. All others had one PA each. With n=1, MAE=0.754 and naive=0.759, champion wins by 0.005. That margin is meaningless at this sample. The assumptions are scoreable. The hitter audit is not.
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:0 14px 8px;border-bottom:1px solid var(--border);margin-bottom:6px;display:flex;gap:12px;">
+      <span style="width:18px;flex-shrink:0;">#</span>
+      <span style="width:160px;flex-shrink:0;">Hitter</span>
+      <span style="width:28px;flex-shrink:0;">H</span>
+      <span style="width:100px;flex-shrink:0;">Result</span>
+      <span style="width:60px;flex-shrink:0;">Pitch</span>
+      <span style="width:50px;flex-shrink:0;">Count</span>
+      <span>Tier</span>
+    </div>
+
+    <div class="seq-row hit">
+      <div class="seq-num">1</div><div class="seq-name">Guerrero Jr.</div><div class="seq-hand">R</div>
+      <div class="seq-evt">Single</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">1-2</div>
+      <div class="seq-tier" style="color:var(--green);background:rgba(45,212,160,.08);">Edge .380</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">2</div><div class="seq-name">Clement, Ernie</div><div class="seq-hand">R</div>
+      <div class="seq-evt">Double</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">1-0</div>
+      <div class="seq-tier" style="color:var(--rose);background:rgba(255,79,106,.06);">Supp .288</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">3</div><div class="seq-name">Lukes, Nathan</div><div class="seq-hand">L</div>
+      <div class="seq-evt">Single</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">1-0</div>
+      <div class="seq-tier">Neut .325</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">4</div><div class="seq-name">Sánchez, Jesús</div><div class="seq-hand">L</div>
+      <div class="seq-evt">Single</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">0-0</div>
+      <div class="seq-tier">Neut .320</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">5</div><div class="seq-name">Jiménez, Eloy</div><div class="seq-hand">R</div>
+      <div class="seq-evt">Single</div><div class="seq-pitch">Slider (SL)</div><div class="seq-count">0-1</div>
+      <div class="seq-tier">Neut .320</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">6</div><div class="seq-name">Giménez, Andrés</div><div class="seq-hand">L</div>
+      <div class="seq-evt">Single</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">2-2</div>
+      <div class="seq-tier">Neut .316</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">7</div><div class="seq-name">Okamoto, Kazuma</div><div class="seq-hand">R</div>
+      <div class="seq-evt">Double</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">1-1</div>
+      <div class="seq-tier">Neut .320</div>
+    </div>
+    <div class="seq-row walk">
+      <div class="seq-num">8</div><div class="seq-name">Straw, Myles</div><div class="seq-hand">R</div>
+      <div class="seq-evt">Walk</div><div class="seq-pitch">4-Seam (FF)</div><div class="seq-count">3-0</div>
+      <div class="seq-tier">Neut .303</div>
+    </div>
+    <div class="seq-row out">
+      <div class="seq-num">9</div><div class="seq-name">Valenzuela</div><div class="seq-hand">L</div>
+      <div class="seq-evt">Strikeout</div><div class="seq-pitch">Slider (SL)</div><div class="seq-count">1-2</div>
+      <div class="seq-tier" style="color:var(--dim);">Not roster</div>
+    </div>
+    <div class="seq-row hit">
+      <div class="seq-num">10</div><div class="seq-name">Lukes, Nathan</div><div class="seq-hand">L</div>
+      <div class="seq-evt">Double</div><div class="seq-pitch">Curveball (CU)</div><div class="seq-count">0-1</div>
+      <div class="seq-tier">Neut .325</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd">Nelson outing</div>
+      <div class="stat-row"><div class="stat-lbl">Innings pitched</div><div class="stat-val red">0.1</div></div>
+      <div class="stat-row"><div class="stat-lbl">Pitches</div><div class="stat-val">30</div></div>
+      <div class="stat-row"><div class="stat-lbl">Batters faced</div><div class="stat-val">10</div></div>
+      <div class="stat-row"><div class="stat-lbl">Hits</div><div class="stat-val red">8</div></div>
+      <div class="stat-row"><div class="stat-lbl">Walks</div><div class="stat-val">1</div></div>
+      <div class="stat-row"><div class="stat-lbl">Strikeouts</div><div class="stat-val">1</div></div>
+      <div class="stat-row"><div class="stat-lbl">Runs allowed</div><div class="stat-val red">8</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Pitch mix (30 pitches)</div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">53.3% (16) &middot; whiff 27.3%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val">26.7% (8) &middot; whiff 33.3%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val">16.7% (5) &middot; whiff 33.3%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Cutter</div><div class="stat-val">3.3% (1)</div></div>
+      <div class="stat-row"><div class="stat-lbl">Changeup</div><div class="stat-val green">0 pitches &middot; assumption held</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1 -->
+<div class="panel" id="p1">
+  <div class="lede">All three assumptions held. The Slider rate to RHH was almost exactly as expected. The BB rate was within tolerance. The Changeup stayed at zero. The assumptions held cleanly. The results did not.</div>
+
+  <div class="ass-row held">
+    <div class="ass-name">Changeup usage &middot; HELD</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">0.0%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--green);">0.0%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--green);">HELD</div></div>
+    </div>
+    <div class="ass-verdict">Zero Changeup pitches in 30 attempts. Consistent with all four 2026 starts. The arsenal was exactly as expected: 4-Seam, Slider, Curveball, trace Cutter.</div>
+  </div>
+
+  <div class="ass-row held">
+    <div class="ass-name">Slider vs RHH &middot; HELD</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">32.9%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--green);">33.3%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--green);">+0.4pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--green);">HELD</div></div>
+    </div>
+    <div class="ass-verdict">5 of 15 RHH pitches were Sliders (33.3%). Near-perfect match to the 32.9% expectation. <strong>The pitch mix against RHH was exactly what the model priced.</strong> Guerrero saw a 4-Seam single on a 1-2 count. Eloy singled on a Slider. The arsenal was not the problem.</div>
+  </div>
+
+  <div class="ass-row held">
+    <div class="ass-name">Walk rate &middot; HELD</div>
+    <div class="ass-vals">
+      <div class="ass-val-item"><div class="ass-val-label">Expected</div><div class="ass-val-num" style="color:var(--mid);">9.4%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Actual</div><div class="ass-val-num" style="color:var(--green);">10.0%</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Delta</div><div class="ass-val-num" style="color:var(--green);">+0.6pp</div></div>
+      <div class="ass-val-item"><div class="ass-val-label">Verdict</div><div class="ass-val-num" style="color:var(--green);">HELD</div></div>
+    </div>
+    <div class="ass-verdict">One walk in 10 PA (Straw, 3-0 count). The walk rate was within the expected range. <strong>The issue tonight was not command — it was contact.</strong> Eight of nine batters who put the ball in play got hits. That is not a walk rate story.</div>
+  </div>
+
+  <div class="callout amber">
+    <strong>All three assumptions held and the outing was still a disaster.</strong> The pitch mix was correct. The walk rate was correct. The Changeup stayed gone. The model's structural read was accurate. The failure was contact quality that the model could not anticipate from pre-game pitch data. Eight hits in nine balls in play is a variance event, not an assumption failure.
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="panel" id="p2">
+  <div class="honest-box">
+    <div class="hb-tag">Study status after observation 19</div>
+    <div class="hb-body">Nineteen observations. Running n: ~126 hitter-games. <strong>This game does not score the model meaningfully.</strong> n=1 (Lukes only) produces a MAE and rho that are not interpretable. The assumptions scored cleanly. The retro memory update for Nelson is minimal: the 2026 profile was exactly what the data described. No new structural signal. If the Jays face him again, the preview inputs are unchanged. The 30-pitch mauling is a contact quality event, not a profile event.</div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Running study metrics after 19 games</div>
+      <div class="stat-row"><div class="stat-lbl">Running n (hitter-games)</div><div class="stat-val">~126</div></div>
+      <div class="stat-row"><div class="stat-lbl">Model scored this game</div><div class="stat-val amber">No &middot; n=1 not interpretable</div></div>
+      <div class="stat-row"><div class="stat-lbl">Assumptions held</div><div class="stat-val green">3 of 3</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 record</div><div class="stat-val green">8-13 &middot; Arizona 1-2</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Retro memory updates</div>
+      <div class="stat-row"><div class="stat-lbl">Nelson profile</div><div class="stat-val green">Unchanged · no new structural signal</div></div>
+      <div class="stat-row"><div class="stat-lbl">Changeup</div><div class="stat-val green">Still zero · 5th consecutive start</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider vs RHH</div><div class="stat-val green">33.3% confirmed · assumption stable</div></div>
+      <div class="stat-row"><div class="stat-lbl">Nelson pitcher ID</div><div class="stat-val green">669194 confirmed</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hd">Season game log &middot; champion MAE</div>
+    <div class="log-row"><div class="log-num">15</div><div class="log-label">Patrick &middot; Apr 15</div><div class="log-mae">0.209</div></div>
+    <div class="log-row"><div class="log-num">16</div><div class="log-label">Sproat &middot; Apr 16</div><div class="log-mae">0.250</div></div>
+    <div class="log-row"><div class="log-num">17</div><div class="log-label">Soroka &middot; Apr 17</div><div class="log-mae">0.360</div></div>
+    <div class="log-row"><div class="log-num">18</div><div class="log-label">Gallen &middot; Apr 18</div><div class="log-mae">0.228</div></div>
+    <div class="log-row current"><div class="log-num">19</div><div class="log-label current">Nelson &middot; Apr 19 &middot; this game</div><div class="log-mae current">not scored</div></div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post &middot; X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro &middot; 4-19-26. TOR 10, ARI 4.<br><br>
+      Ryne Nelson: 0.1 IP, 30 pitches, 8 hits, 8 runs. Pulled without recording the third out in the first inning.<br><br>
+      All three assumptions held. Changeup stayed at zero. Slider to RHH: 33.3% actual vs 32.9% expected. Walk rate: 10.0% vs 9.4% expected.<br><br>
+      The pitch mix was exactly what the model priced. Eight hits in nine balls in play is not an assumption failure. It is variance.<br><br>
+      Model not scored this game (n=1). Running n: ~126 hitter-games.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel &middot; #BlueJays
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="panel" id="p4">
+
+  <div class="wh-section">
+    <div class="wh-head">What Nelson Did</div>
+    <div class="wh-body">
+      <p>He threw 30 pitches and allowed 8 hits. The pitch mix was correct: 53.3% 4-Seam, 26.7% Slider, 16.7% Curveball, trace Cutter. No Changeup. The Slider to RHH was 33.3%, matching the preview assumption almost exactly. The walk rate was 10%, within the expected range.</p>
+      <p>The whiff rates on individual pitches were decent: Slider 33.3%, Curveball 33.3%, 4-Seam 27.3%. The pitches were not flat. Hitters were just putting the ball in play and finding holes. Six of the eight hits were 4-Seamers. The fastball was getting hit hard across the entire lineup order.</p>
+    </div>
+  </div>
+
+  <div class="wh-section">
+    <div class="wh-head">What the Jays Did</div>
+    <div class="wh-body">
+      <p>Eight consecutive plate appearances with a hit or walk before the inning ended. Guerrero singled to start it. Clement doubled. Lukes singled. Sanchez singled. Eloy singled. Gimenez singled. Okamoto doubled. Straw walked on a 3-0 fastball. Valenzuela struck out. Lukes doubled again to bat for the second time in the inning.</p>
+      <p>The lineup went through the order and into the second time around without getting the third out. The eight runs scored were all in the first inning off Nelson. TOR added two more runs off the ARI bullpen later: Okamoto home run in the third, Gimenez sac fly in the fourth.</p>
+    </div>
+  </div>
+
+  <div class="wh-section">
+    <div class="wh-head">Interesting Findings</div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Assumptions held, results did not</div>
+      <div class="wh-nugget-body">The three preview assumptions captured Nelson's profile exactly. Changeup zero. Slider 33.3% to RHH. Walk rate 10%. <strong>The model correctly described the pitcher and the lineup still scored 8 runs in one inning.</strong> This is the clearest illustration of what assumptions measure: pitch mix and command tendencies, not contact quality. Eight hits in nine balls in play is beyond the scope of any pre-game model.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Clement: Suppressed, led off with a double</div>
+      <div class="wh-nugget-body">The model had Clement at .288 Suppressed. He batted second and doubled on a first-pitch 4-Seam. <strong>His career Slider split vs RHP is .243 in 85 PA, which drove the Suppressed call.</strong> Nelson never threw him a Slider. The one pitch Clement saw was a 4-Seam, and the model's Suppressed call was based on a different pitch entirely. One PA is not scoreable but it illustrates the limitation of pre-game tier placements when the actual pitch sequence differs.</div>
+    </div>
+
+    <div class="wh-nugget">
+      <div class="wh-nugget-label">Lukes batted twice</div>
+      <div class="wh-nugget-body">Lukes is the only hitter with &ge;2 PA against Nelson (single and double). exp .325, actual wOBA 1.079, residual +0.754. He is the only scoreable data point and he massively overperformed. <strong>That is not model signal — it is a 2-PA sample in an 8-run inning.</strong> The double came on a first-pitch Curveball (0-1 count). The single came on a first-pitch 4-Seam.</div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant &middot; April 19, 2026 &middot; Observation 19 &middot; V3.2 &middot; LEAGUE_WOBA=0.320 &middot; Not scored (n=1) &middot; Arm Chair Analyst &middot; @scherrology</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+</script>
+</body>
+</html>

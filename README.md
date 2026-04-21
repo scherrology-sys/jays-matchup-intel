@@ -301,7 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-21-26 | LAA | J. Kochanowicz RHP | — | G. Springer (.446) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-21-kochanowicz/) |
+| 4-21-26 | LAA | J. Kochanowicz RHP | — | D. Varsho (.446) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-21-kochanowicz/) |
 | 4-20-26 | LAA | R. Detmers LHP | TOR 5, LAA 2 | T. Heineman (.442) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-20-detmers/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-20-detmers/) |
 | 4-19-26 | ARI | R. Nelson RHP | TOR 10, ARI 4 | D. Schneider (.491) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-19-nelson/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-19-nelson/) |
 | 4-18-26 | ARI | Z. Gallen RHP | ARI 6, TOR 2 | D. Schneider (.439) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-18-gallen/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-18-gallen/) |

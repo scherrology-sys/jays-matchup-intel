@@ -116,7 +116,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div>
       <div class="kicker">TOR @ LAA &middot; Angel Stadium &middot; April 21, 2026 &middot; Observation 21</div>
       <div class="hed">JACK <span class="red">KOCHANOWICZ</span><span class="role">RHP &middot; Los Angeles Angels</span></div>
-      <div class="dek"><em>The Changeup jumped from 17.6% to 27.2% in 2026 and his walk rate followed in the wrong direction.</em> His BB% is 15.2% in 2026 against a career 9.5%. Three Edge hitters: Varsho, Kirk, and Guerrero. Varsho's Changeup split is .575 in 32 PA and that is now the primary LHH pitch. Clement is Suppressed despite being Edge two games ago.</div>
+      <div class="dek"><em>The Changeup jumped from 17.6% to 27.2% in 2026 and his walk rate followed in the wrong direction.</em> His BB% is 15.2% in 2026 against a career 9.5%. Two Edge hitters: Varsho and Guerrero. Varsho's Changeup split is .575 in 32 PA and that is now the primary LHH pitch. Clement is Suppressed despite being Edge two games ago.</div>
     </div>
     <div class="aca">
       <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
@@ -129,7 +129,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
   <div class="meta-inner">
     <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val" style="color:var(--amber);">MODERATE</div><div class="mi-sub">373 pitches &middot; 4 starts 2026</div></div>
     <div class="mi"><div class="mi-lbl">Tier threshold</div><div class="mi-val">&plusmn;0.030</div><div class="mi-sub">Edge > .350 &middot; Suppressed < .290</div></div>
-    <div class="mi"><div class="mi-lbl">Edge hitters</div><div class="mi-val" style="color:var(--green);">Varsho &middot; Kirk &middot; Guerrero</div><div class="mi-sub">3 Edge projections</div></div>
+    <div class="mi"><div class="mi-lbl">Edge hitters</div><div class="mi-val" style="color:var(--green);">Varsho &middot; Guerrero</div><div class="mi-sub">2 Edge projections</div></div>
     <div class="mi"><div class="mi-lbl">2026 BB%</div><div class="mi-val" style="color:var(--rose);">15.2% avg</div><div class="mi-sub">Career 9.5% &middot; range 8.7%&ndash;22.7%</div></div>
     <div class="mi"><div class="mi-lbl">BvP</div><div class="mi-val">Kirk 6PA &middot; Springer 6PA</div><div class="mi-sub">All below MIN_PA=10 per pitch type</div></div>
   </div>
@@ -230,9 +230,6 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
       <div class="tg-body">LHH. Changeup split .575 in 32 PA. <strong>Kochanowicz throws the Changeup 32.3% to LHH in 2026.</strong> That is the primary LHH pitch and Varsho has a .575 split on it. BVP: 3 PA, two singles, wOBA .592. Directional support. Sinker and 4-Seam also entered the computation.</div>
     </div>
     <div class="tg-card best">
-      <div class="tg-tag">Edge &middot; .373</div>
-      <div class="tg-name">Kirk</div>
-      <div class="tg-body">Prior .341. All four RHH pitches entered: Sinker .343 (88 PA), Slider .254 (71 PA), Changeup .542 (19 PA), 4-Seam .403 (85 PA). <strong>Kirk's Changeup split at .542 is the highest of any RHH on the roster.</strong> BVP: 6 PA wOBA .264, caution. On IL currently.</div>
     </div>
     <div class="tg-card best">
       <div class="tg-tag">Edge &middot; .370</div>
@@ -265,7 +262,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
       Jays Matchup Intel 4-21-26. Jack Kochanowicz, RHP. Angel Stadium. Observation 21.<br><br>
       The Changeup jumped from 17.6% career to 27.2% in 2026. It's the best pitch in his file at .312 xwOBA. For LHH it's 32.3% of pitches.<br><br>
       BB% is the story: 15.2% average, range 8.7%-22.7% in four starts. Career is 9.5%. Three starts above 14%.<br><br>
-      Three Edge: Varsho (.382), Kirk (.373), Guerrero (.370). Springer out. Three Suppressed: Gimenez (.216), Straw (.240), Clement (.279).<br><br>
+      Two Edge: Varsho (.382), Guerrero (.370). Springer and Kirk both out. Three Suppressed: Gimenez (.216), Straw (.240), Clement (.279).<br><br>
       Varsho Changeup split: .575 in 32 PA vs RHP. Kochanowicz throws it 32.3% to LHH. That's the matchup.<br><br>
       Clement is Suppressed at .279 — all four RHH pitches entered, BVP confirms (.178 in 5 PA).<br><br>
       MODERATE confidence. Only 2026 Blue Jays hitters used.<br><br>
@@ -301,7 +298,6 @@ mkBars([{n:'Sinker',p:43.2},{n:'Slider',p:23.0},{n:'Changeup',p:21.9},{n:'4-Seam
 const LEAGUE=0.320, THRESH=0.030, K=60;
 const MD=[
   {n:'Varsho',        h:'L',e:0.382,cls:'h',note:'Changeup .575/32PA · 4-Seam .269/91PA · Sinker .283/20PA · Slider .385/19PA · prior .360'},
-  {n:'Kirk',          h:'R',e:0.373,cls:'h',note:'Sinker .343/88PA, Slider .254/71PA, Changeup .542/19PA, 4-Seam .403/85PA · IL · BvP: 6PA wOBA .264'},
   {n:'Guerrero Jr.',  h:'R',e:0.370,cls:'h',note:'Sinker .440/124PA, 4-Seam .408/117PA, Slider .330/81PA, Changeup .255/41PA · BvP: 3PA wOBA .592'},
   {n:'Barger',        h:'L',e:0.337,cls:'n',note:'LHH vs RHP · prior .338 · Changeup + 4-Seam + Sinker entered · BvP: 5PA wOBA .355'},
   {n:'Heineman',      h:'L',e:0.334,cls:'n',note:'LHH (bats L vs RHP) · Changeup/4-Seam/Sinker entered · Slider fallback · prior .316'},

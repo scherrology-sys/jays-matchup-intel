@@ -48,8 +48,6 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 .callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
 .callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
 .callout.amber strong{color:var(--amber);}
-.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
-.callout.green strong{color:var(--green);}
 .callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
 .callout.rose strong{color:var(--rose);}
 .callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
@@ -58,7 +56,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 .abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
 .abar-f{height:100%;border-radius:2px;opacity:.88;}
 .abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:36px;text-align:right;flex-shrink:0;}
-.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:84px;text-align:right;color:var(--dim);flex-shrink:0;}
+.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:90px;text-align:right;color:var(--dim);flex-shrink:0;}
 .mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
 .mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
 .mu-row.h::before{background:var(--green);}
@@ -87,15 +85,6 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 .wff{padding:14px 22px;}.wff+.wff{border-left:1px solid var(--border);}
 .wff-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
 .wff-val{font-size:12px;color:var(--cream);line-height:1.6;}
-.tg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
-.tg-card{background:var(--panel2);border:1px solid var(--border);border-radius:4px;padding:18px;}
-.tg-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
-.tg-name{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;}
-.tg-body{font-size:12px;color:var(--mid);line-height:1.65;}
-.tg-body strong{color:var(--cream);}
-.tg-card.best{border-color:rgba(45,212,160,.2);}.tg-card.best .tg-tag{color:var(--green);}
-.tg-card.watch{border-color:rgba(244,185,66,.18);}.tg-card.watch .tg-tag{color:var(--amber);}
-.tg-card.worst{border-color:rgba(255,79,106,.2);}.tg-card.worst .tg-tag{color:var(--rose);}
 .honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
 .hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
 .hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
@@ -104,7 +93,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 .social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
 .social-body{font-size:14px;line-height:1.85;color:var(--cream);}
 .footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
-@media(max-width:700px){.g2{grid-template-columns:1fr;}.tg-grid{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 12px;font-size:11px;}}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 12px;font-size:11px;}}
 </style>
 </head>
 <body>
@@ -116,7 +105,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
     <div>
       <div class="kicker">TOR @ LAA &middot; Angel Stadium &middot; April 22, 2026 &middot; Observation 22</div>
       <div class="hed">JOS&Eacute; <span class="red">SORIANO</span><span class="role">RHP &middot; Los Angeles Angels</span></div>
-      <div class="dek"><em>98 mph Sinker. Splitter at .218 xwOBA that no Jay has 10 PA against.</em> Soriano's K% jumped to 32.5% in 2026 behind a Splitter and Slider that both sit below .260 xwOBA. The catch: no current Jay has ≥10 qualifying PA vs the Splitter, so it falls back to prior for 17-24% of the pitch mix. Two Edge hitters: Guerrero and Heineman.</div>
+      <div class="dek"><em>Five-pitch arsenal: 98 mph Sinker, Knuckle Curve at .230 xwOBA, Splitter at .218 xwOBA.</em> Soriano's K% jumped to 32.5% in 2026 behind two legitimate put-away pitches. No current Jay has qualifying history against either the KC or the Splitter on the LHH side — combined 39.4% fallback. Three Edge hitters: Guerrero, Heineman, Schneider.</div>
     </div>
     <div class="aca">
       <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
@@ -129,16 +118,16 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
   <div class="meta-inner">
     <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val" style="color:var(--amber);">MODERATE</div><div class="mi-sub">487 pitches &middot; 5 starts 2026</div></div>
     <div class="mi"><div class="mi-lbl">Tier threshold</div><div class="mi-val">&plusmn;0.030</div><div class="mi-sub">Edge > .350 &middot; Suppressed < .290</div></div>
-    <div class="mi"><div class="mi-lbl">Edge hitters</div><div class="mi-val" style="color:var(--green);">Guerrero (.409) &middot; Heineman (.378)</div><div class="mi-sub">2 Edge projections</div></div>
-    <div class="mi"><div class="mi-lbl">2026 K%</div><div class="mi-val" style="color:var(--green);">32.5%</div><div class="mi-sub">Career 22.0% &middot; Splitter driving it</div></div>
-    <div class="mi"><div class="mi-lbl">Splitter</div><div class="mi-val" style="color:var(--amber);">0 PA for any Jay</div><div class="mi-sub">Falls back to prior for all hitters</div></div>
+    <div class="mi"><div class="mi-lbl">Edge hitters</div><div class="mi-val" style="color:var(--green);">Guerrero (.418) &middot; Heineman (.366) &middot; Schneider (.364)</div><div class="mi-sub">3 Edge projections</div></div>
+    <div class="mi"><div class="mi-lbl">2026 K%</div><div class="mi-val" style="color:var(--green);">32.5%</div><div class="mi-sub">Career 22.0% &middot; KC + Splitter driving it</div></div>
+    <div class="mi"><div class="mi-lbl">LHH blind spots</div><div class="mi-val" style="color:var(--amber);">KC 19.7% + FS 19.7% = 39.4%</div><div class="mi-sub">Both fall back to prior</div></div>
   </div>
 </div>
 
 <div class="gov-bar">
   <div class="gov-inner">
     <div class="gov-tag">Research framework</div>
-    <div class="gov-txt">V3.2 locked April 7. LEAGUE_WOBA=0.320, K_PRIOR=60, MIN_PA=10. MODERATE (487 pitches, &plusmn;0.030). Only 2026 Blue Jays hitters (Springer and Kirk excluded). History filtered to p_throws=&quot;R&quot;. No current Jay has &ge;10 PA vs Splitter &mdash; that pitch falls back to wOBA_overall for everyone. BVP file is aggregated summary stats (directional only, below MIN_PA).</div>
+    <div class="gov-txt">V3.2 locked April 7. LEAGUE_WOBA=0.320, K_PRIOR=60, MIN_PA=10. MODERATE (487 pitches, &plusmn;0.030). Complete PT_MAP: FF, SI, KC, FS, SL, CU, CH, FC, ST. Only 2026 Blue Jays (Springer and Kirk excluded). History filtered to p_throws=&quot;R&quot;. Guerrero has 11 PA vs KC (just over MIN_PA, .438 wOBA). All LHH fall back on both KC and Splitter. BVP from savant_data__28_ is aggregated summary stats only, directional.</div>
   </div>
 </div>
 
@@ -153,14 +142,14 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 
 <!-- TAB 0 -->
 <div class="panel active" id="p0">
-  <div class="lede">Soriano is a power Sinker pitcher. The Sinker sits at 97.4 mph and is the foundation of everything he does. In 2026 the 4-Seam has risen to 32.4% of pitches while the Sinker dropped from 59.3% career-weighted to 42.5%. <strong>The Splitter at .218 xwOBA and 37.6% whiff is the best pitch in the file.</strong> His K% jumped from a career 22.0% to 32.5% in five 2026 starts. The Splitter and Slider are generating the strikeouts. The problem for the model: no current Jay has 10 qualifying PA against the Splitter.</div>
+  <div class="lede">Soriano has five active pitches in 2026. The Sinker and Knuckle Curve together account for nearly 58% of his mix. <strong>The Knuckle Curve at .230 xwOBA and 42.8% whiff rate is the second-best pitch in the file</strong> — essentially identical to the Splitter (.218, 37.6%). His K% jumped from a career 22.0% to 32.5% in five 2026 starts on the strength of these two put-away pitches combined with velocity over 97 mph on the Sinker and 4-Seam.</div>
 
   <div class="callout rose">
-    <strong>Splitter blind spot.</strong> The Splitter is 16.9% of LHH pitches and 11.0% of RHH pitches in 2026. No current Jay has &ge;10 PA vs this pitch in the hitter history file. For every hitter, that portion of the mix falls back to their wOBA_overall. The model cannot price the best pitch in Soriano's arsenal. This is the primary source of uncertainty tonight.
+    <strong>Double blind spot for LHH.</strong> The Knuckle Curve is 19.7% of LHH pitches and the Splitter is 19.7%. No current Jay has &ge;10 qualifying PA against either pitch. Together they represent 39.4% of the LHH mix and both fall back to each hitter's wOBA_overall. The model cannot price two of Soriano's best weapons for left-handed hitters.
   </div>
 
-  <div class="callout green">
-    <strong>Velocity context.</strong> 98.3 mph on the 4-Seam, 97.4 mph on the Sinker. Both above 97 mph. This is one of the highest-velocity profiles the Jays have faced this season. The Sinker at 97 mph with significant sink is a different pitch than the Sinkers in the Arizona series.
+  <div class="callout amber">
+    <strong>Guerrero barely clears MIN_PA on KC.</strong> He has 11 PA vs Knuckle Curves from RHP in the hitter history file (.438 wOBA). That clears the MIN_PA=10 threshold and enters the RHH computation at 31.0% weight. It is a thin sample but it counts.
   </div>
 
   <div class="g2" style="margin-bottom:20px;">
@@ -169,18 +158,18 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
       <div id="mix2026"></div>
     </div>
     <div class="card">
-      <div class="card-hd">Career weighted &middot; 2024-25</div>
+      <div class="card-hd">Career weighted</div>
       <div id="mixCareer"></div>
     </div>
   </div>
 
   <div class="g2" style="margin-bottom:20px;">
     <div class="card">
-      <div class="card-hd">2026 &middot; vs LHH (n=155)</div>
+      <div class="card-hd">2026 &middot; vs LHH (n=193)</div>
       <div id="mix2026L"></div>
     </div>
     <div class="card">
-      <div class="card-hd">2026 &middot; vs RHH (n=200)</div>
+      <div class="card-hd">2026 &middot; vs RHH (n=290)</div>
       <div id="mix2026R"></div>
     </div>
   </div>
@@ -188,8 +177,9 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
   <div class="g2" style="margin-bottom:20px;">
     <div class="card">
       <div class="card-hd">Pitch quality &middot; xwOBA (year-weighted)</div>
-      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val" style="color:var(--green);">.218 &middot; 92.5 mph &middot; 37.6% whiff &middot; best pitch</div></div>
-      <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val" style="color:var(--green);">.258 &middot; 90.0 mph &middot; 39.3% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">Splitter</div><div class="stat-val" style="color:var(--green);">.218 &middot; 92.5 mph &middot; 37.6% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">Knuckle Curve</div><div class="stat-val" style="color:var(--green);">.230 &middot; 85.7 mph &middot; 42.8% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val">.258 &middot; 90.0 mph &middot; 39.3% whiff</div></div>
       <div class="stat-row"><div class="stat-lbl">Sinker</div><div class="stat-val">.331 &middot; 97.4 mph &middot; 16.9% whiff</div></div>
       <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">.381 &middot; 98.3 mph &middot; 18.7% whiff</div></div>
     </div>
@@ -207,13 +197,13 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 
 <!-- TAB 1 -->
 <div class="panel" id="p1">
-  <div class="lede">MODERATE confidence. Two Edge hitters: Guerrero and Heineman. Two Suppressed: Straw and Gimenez. The Splitter falls back to prior for every hitter. Barger sits exactly at .350, the threshold boundary &mdash; Neutral. BVP is aggregated summary data only, below MIN_PA for any pitch type, directional signal only.</div>
+  <div class="lede">MODERATE confidence. Three Edge: Guerrero (.418), Heineman (.366), Schneider (.364). Two Suppressed: Straw (.271), Gimenez (.247). The LHH double blind spot affects every left-handed hitter in the lineup.</div>
 
   <div class="callout diag">
-    <strong>Splitter fallback note.</strong> The Splitter is 16.9% of LHH pitches and 11.0% of RHH pitches. No current Jay has &ge;10 PA vs this specific pitch in the 2024-25 hitter history file. All hitters fall back to their wOBA_overall for the Splitter weight. This means the exp_wOBA values are less informed than usual for a pitcher whose best weapon is his Splitter.
+    <strong>LHH double fallback.</strong> KC (19.7%) and Splitter (19.7%) both fall back to prior for Varsho, Barger, Lukes, Heineman, Gimenez, Sanchez. That is 39.4% of what each LHH hitter will face priced entirely from general history, not pitch-specific splits.
   </div>
   <div class="callout diag">
-    <strong>BVP note.</strong> File 28 is an aggregated stat summary (pitches faced, wOBA, BA, SLG). It does not contain pitch-by-pitch events or game dates. All BVP values are below MIN_PA=10 for any individual pitch type. Treated as directional context only and not entered into the computation.
+    <strong>BVP note.</strong> savant_data__28_ is an aggregated summary export (pitches faced, wOBA, BA, SLG). Not pitch-by-pitch. All values are below MIN_PA=10 per pitch type and are not entered into the computation. Directional only: Guerrero .819 wOBA in 10 pitches, Varsho .711 in 9 pitches, Barger .525 in 14 pitches.
   </div>
   <div id="tierDisplay"></div>
 </div>
@@ -225,42 +215,19 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 
 <!-- TAB 3 -->
 <div class="panel" id="p3">
-  <div class="tg-grid">
-    <div class="tg-card best">
-      <div class="tg-tag">Edge &middot; .409</div>
-      <div class="tg-name">Guerrero Jr.</div>
-      <div class="tg-body">Sinker .440/124PA, 4-Seam .408/117PA, Slider .330/81PA all entered. Splitter falls back (0 PA). <strong>BVP directional: wOBA .819 in 10 pitches faced.</strong> His Sinker and 4-Seam splits are both strong and those are the two pitches he will see most at 46.5% and 31.0% of the RHH mix.</div>
-    </div>
-    <div class="tg-card best">
-      <div class="tg-tag">Edge &middot; .378</div>
-      <div class="tg-name">Heineman</div>
-      <div class="tg-body">LHH (bats left vs RHP). Sinker and 4-Seam entered. Splitter and Slider fall back to prior at 24.5% and 3.9% of LHH mix. <strong>His prior vs RHP at .316 anchors the call.</strong> The two pitches that entered &mdash; Sinker and 4-Seam &mdash; are both above his prior, pushing him to Edge.</div>
-    </div>
-    <div class="tg-card watch">
-      <div class="tg-tag">Watch &middot; boundary</div>
-      <div class="tg-name">Barger</div>
-      <div class="tg-body">exp exactly .350 &mdash; the Edge threshold. Neutral by strict definition (Edge is > .350). Sinker .423/42PA and 4-Seam .277/141PA entered. Slider .374/49PA entered. <strong>Splitter falls back at 24.5% of LHH mix.</strong> BVP directional: .525 wOBA in 14 pitches. The Splitter fallback keeps him at Neutral.</div>
-    </div>
-    <div class="tg-card worst">
-      <div class="tg-tag">Suppressed</div>
-      <div class="tg-name">Straw (.264) &middot; Gimenez (.240)</div>
-      <div class="tg-body">Straw: Sinker/4-Seam/Slider all entered at below-average splits for a Sinker-heavy RHH mix. Gimenez: LHH, Sinker .132/24PA is the clearest suppressed signal &mdash; that is a genuine poor performance against Soriano's primary pitch. <strong>Gimenez at .132 wOBA on 24 Sinker PA is a real suppressed signal, not fallback noise.</strong></div>
-    </div>
-  </div>
-
   <div class="honest-box">
     <div class="hb-tag">Observation 22 &middot; assumption audit setup</div>
-    <div class="hb-body">Three items the retro will score: <strong>(1) Does the Splitter hold near 16.9% vs LHH and 11.0% vs RHH?</strong> The most consequential assumption because no hitter has Splitter-specific history. <strong>(2) Does the 4-Seam stay near 32.4%?</strong> Soriano added the 4-Seam significantly in 2026 from a career-weighted 19%. <strong>(3) Does K% stay in the 30-40% range?</strong> The 2026 K% is driven by the Splitter and Slider. Running n: ~142 hitter-games entering observation 22.</div>
+    <div class="hb-body">Three items the retro will score: <strong>(1) Does the KC hold near 19.7% vs LHH and 31.0% vs RHH?</strong> The primary put-away pitch and the most consequential uncertainty. <strong>(2) Does the Splitter hold near 19.7% vs LHH and 7.6% vs RHH?</strong> Second blind spot. <strong>(3) Does K% stay near the 29-39% range?</strong> Running n: ~150 hitter-games entering observation 22.</div>
   </div>
 
   <div class="social">
     <div class="social-tag">Post &middot; X / Twitter</div>
     <div class="social-body">
       Jays Matchup Intel 4-22-26. José Soriano, RHP. Angel Stadium. Observation 22.<br><br>
-      98 mph Sinker. Splitter at .218 xwOBA, 37.6% whiff. K% jumped to 32.5% in 2026.<br><br>
-      The catch: no current Jay has 10 PA vs the Splitter. It falls back to prior for 17-24% of the mix. Model blind spot on the best pitch in his arsenal.<br><br>
-      Two Edge: Guerrero (.409), Heineman (.378). Two Suppressed: Straw (.264), Gimenez (.240). Barger exactly at .350 threshold &mdash; Neutral.<br><br>
-      Gimenez Sinker split: .132 wOBA in 24 PA. That is a real signal against Soriano's primary weapon.<br><br>
+      Five pitches. Two put-away weapons: Knuckle Curve .230 xwOBA, 42.8% whiff. Splitter .218 xwOBA, 37.6% whiff. K% jumped to 32.5% in 2026.<br><br>
+      Double blind spot for LHH: KC and Splitter each 19.7% of the mix. No Jay has qualifying history against either. 39.4% of the LHH pitch diet falls back to prior.<br><br>
+      Three Edge: Guerrero (.418), Heineman (.366), Schneider (.364). Two Suppressed: Straw (.271), Gimenez (.247).<br><br>
+      Guerrero has 11 PA vs KC at .438 &mdash; barely clears MIN_PA. Enters the computation at 31% weight on the RHH side.<br><br>
       MODERATE confidence. Only 2026 Blue Jays hitters used.<br><br>
       scherrology-sys.github.io/jays-matchup-intel &middot; #BlueJays
     </div>
@@ -272,7 +239,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-se
 <div class="footer">Statcast data via Baseball Savant &middot; MODERATE confidence &middot; V3.2 &middot; LEAGUE_WOBA=0.320 &middot; K_PRIOR=60 &middot; MIN_PA=10 &middot; Threshold &plusmn;0.030 &middot; Observation 22 &middot; Arm Chair Analyst &middot; @scherrology</div>
 
 <script>
-const PC={'4-Seam Fastball':'#38bdf8','Sinker':'#818cf8','Splitter':'#f4b942','Slider':'#ff4f6a'};
+const PC={'4-Seam Fastball':'#38bdf8','Sinker':'#818cf8','Splitter':'#f4b942','Slider':'#ff4f6a','Knuckle Curve':'#2dd4a0'};
 function go(i){
   document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
   document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
@@ -286,25 +253,25 @@ function mkBars(items,id,mx){
     c.appendChild(el);
   });
 }
-mkBars([{n:'Sinker',p:42.5,v:'97.4 mph'},{n:'4-Seam Fastball',p:32.4,v:'98.3 mph'},{n:'Splitter',p:16.9,v:'92.5 mph'},{n:'Slider',p:8.2,v:'90.0 mph'}],'mix2026',60);
-mkBars([{n:'Sinker',p:59.3,v:'97.4 mph'},{n:'4-Seam Fastball',p:19.0,v:'98.3 mph'},{n:'Splitter',p:13.5,v:'92.5 mph'},{n:'Slider',p:8.0,v:'90.0 mph'}],'mixCareer',70);
-mkBars([{n:'Sinker',p:37.4},{n:'4-Seam Fastball',p:34.2},{n:'Splitter',p:24.5},{n:'Slider',p:3.9}],'mix2026L',45);
-mkBars([{n:'Sinker',p:46.5},{n:'4-Seam Fastball',p:31.0},{n:'Slider',p:11.5},{n:'Splitter',p:11.0}],'mix2026R',55);
+mkBars([{n:'Sinker',p:31.3,v:'97.4 mph'},{n:'Knuckle Curve',p:26.5,v:'85.7 mph'},{n:'4-Seam Fastball',p:23.8,v:'98.3 mph'},{n:'Splitter',p:12.4,v:'92.5 mph'},{n:'Slider',p:6.0,v:'90.0 mph'}],'mix2026',40);
+mkBars([{n:'Sinker',p:43.6,v:'97.4 mph'},{n:'Knuckle Curve',p:26.4,v:'85.7 mph'},{n:'4-Seam Fastball',p:14.0,v:'98.3 mph'},{n:'Splitter',p:9.9,v:'92.5 mph'},{n:'Slider',p:5.9,v:'90.0 mph'}],'mixCareer',52);
+mkBars([{n:'Sinker',p:30.1},{n:'4-Seam Fastball',p:27.5},{n:'Splitter',p:19.7},{n:'Knuckle Curve',p:19.7},{n:'Slider',p:3.1}],'mix2026L',38);
+mkBars([{n:'Sinker',p:32.1},{n:'Knuckle Curve',p:31.0},{n:'4-Seam Fastball',p:21.4},{n:'Slider',p:7.9},{n:'Splitter',p:7.6}],'mix2026R',40);
 
 const LEAGUE=0.320, THRESH=0.030, K=60;
 const MD=[
-  {n:'Guerrero Jr.',  h:'R',e:0.409,cls:'h',note:'Sinker .440/124PA, 4-Seam .408/117PA, Slider .330/81PA · Splitter fallback (0PA) · BvP directional: .819 wOBA'},
-  {n:'Heineman',      h:'L',e:0.378,cls:'h',note:'LHH · Sinker + 4-Seam entered · Splitter fallback (24.5% LHH mix) · Slider fallback · prior .316'},
-  {n:'Barger',        h:'L',e:0.350,cls:'n',note:'Exactly at threshold (.350) &mdash; Neutral · Sinker .423/42, 4-Seam .277/141, Slider .374/49 · Splitter fallback · BvP: .525/14 pitches'},
-  {n:'Schneider',     h:'R',e:0.343,cls:'n',note:'Sinker .177/19PA, 4-Seam .538/34PA, Slider .428/16PA · Splitter fallback · prior .410'},
-  {n:'Varsho',        h:'L',e:0.301,cls:'n',note:'LHH · Sinker .283/20PA, 4-Seam .269/91PA, Slider .385/19PA · Splitter fallback · BvP: .711/9 pitches'},
-  {n:'Clement',       h:'R',e:0.311,cls:'n',note:'Sinker/4-Seam/Slider all entered · Splitter fallback · prior .283'},
-  {n:'Lukes',         h:'L',e:0.306,cls:'n',note:'LHH · Sinker/4-Seam/Slider entered · Splitter fallback · prior .320'},
+  {n:'Guerrero Jr.',  h:'R',e:0.418,cls:'h',note:'SI .440/124PA · KC .438/11PA (thin) · FF .408/117PA · SL .330/81PA · FS fallback (0PA)'},
+  {n:'Heineman',      h:'L',e:0.366,cls:'h',note:'LHH · SI/FF entered · KC fallback (19.7%) · FS fallback (19.7%) · SL fallback · prior .316'},
+  {n:'Schneider',     h:'R',e:0.364,cls:'h',note:'SI .177/19PA · FF .538/34PA · SL .428/16PA · KC fallback (1PA) · FS fallback · prior .410'},
+  {n:'Barger',        h:'L',e:0.348,cls:'n',note:'LHH · SI .423/42PA · FF .277/141PA · SL .374/49PA · KC+FS fallback · BvP: .525/14 pitches'},
+  {n:'Varsho',        h:'L',e:0.313,cls:'n',note:'LHH · SI .283/20PA · FF .269/91PA · SL .385/19PA · KC+FS fallback · BvP: .711/9 pitches'},
+  {n:'Lukes',         h:'L',e:0.309,cls:'n',note:'LHH · SI/FF/SL entered · KC+FS fallback · prior .320'},
   {n:'Okamoto',       h:'R',e:0.320,cls:'n',note:'No 2024-25 history &mdash; league fallback'},
   {n:'Sánchez',       h:'L',e:0.320,cls:'n',note:'No 2024-25 history &mdash; league fallback'},
   {n:'Jiménez, Eloy', h:'R',e:0.320,cls:'n',note:'No 2024-25 history &mdash; league fallback'},
-  {n:'Straw',         h:'R',e:0.264,cls:'s',note:'Sinker/4-Seam/Slider entered · Splitter fallback · prior .285 · below-avg RHH splits'},
-  {n:'Giménez, A.',   h:'L',e:0.240,cls:'s',note:'LHH · Sinker .132/24PA &mdash; primary suppressed signal · 4-Seam .332/93PA · Slider .235/31PA'},
+  {n:'Clement',       h:'R',e:0.303,cls:'n',note:'SI/FF/SL entered · KC+FS fallback · prior .283'},
+  {n:'Straw',         h:'R',e:0.271,cls:'s',note:'SI/FF/SL entered · KC+FS fallback · below-avg RHH splits · prior .285'},
+  {n:'Giménez, A.',   h:'L',e:0.247,cls:'s',note:'LHH · SI .132/24PA primary signal · FF .332/93PA · SL .235/31PA · KC+FS fallback'},
 ];
 const xMn=0.0,xMx=0.60,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
 const td=document.getElementById('tierDisplay');
@@ -328,18 +295,18 @@ const td=document.getElementById('tierDisplay');
 });
 
 const WF=[
-  {num:1,q:'Does the Splitter appear at its expected rates?',
-   body:'16.9% to LHH, 11.0% to RHH in 2026. No Jay has ≥10 PA against it. <strong>Every hitter in the lineup is seeing the Splitter without any pitch-specific history informing the projection.</strong> If the Splitter appears at the expected rate and generates its career .218 xwOBA, the model has significantly underestimated the quality of this matchup. Watch specifically how many Splitters appear in the first three LHH plate appearances.',
-   th1:'Splitter holds near expected rates. Soriano generates whiffs on it and the 32.5% K% materializes. The lineup struggles with a pitch nobody has reliable history against.',
-   th2:'Splitter rate drops. Sinker and 4-Seam dominate. The lineup faces a pitch profile that the model has strong history on, and the Edge calls for Guerrero and Heineman are better supported.'},
-  {num:2,q:'Can the lineup handle 97-98 mph velocity?',
-   body:'Soriano\'s Sinker sits 97.4 mph and his 4-Seam averages 98.3 mph. These are the highest velocities the Jays have faced this season. <strong>Guerrero\'s Sinker split is .440 in 124 PA, but those PA are against Sinkers across all velocity bands.</strong> A 97 mph Sinker with late movement is a different calibration than an average RHP Sinker.',
-   th1:'Velocity does not matter. Guerrero and Heineman\'s splits against Sinkers hold at their career values regardless of velocity. The Edge calls validate.',
-   th2:'The extra velocity suppresses contact quality. Hitters get the barrel of the bat on the ball less often than the splits suggest. The model\'s Edge calls overstate the matchup.'},
-  {num:3,q:'Does Gimenez struggle against the Sinker?',
-   body:'Gimenez has a .132 wOBA in 24 qualifying PA vs RHP Sinkers. <strong>That is the clearest suppressed signal in tonight\'s preview.</strong> Soriano throws the Sinker 37.4% of the time to LHH. Watch specifically how Gimenez fares against first-pitch Sinkers to confirm or refute the signal.',
-   th1:'Gimenez struggles on the Sinker. The .132/24PA signal holds. Suppressed call validates.',
-   th2:'Gimenez makes contact on the Sinker. Small-sample mean reversion. The suppressed call was directionally right but the magnitude was overstated.'},
+  {num:1,q:'Does the Knuckle Curve appear at its expected rates?',
+   body:'31.0% to RHH and 19.7% to LHH in 2026. <strong>No Jay has qualifying history against it except Guerrero (11 PA, .438 wOBA — just over MIN_PA).</strong> The KC at 42.8% whiff is the primary strikeout pitch. Watch two-strike counts specifically: if Soriano is reaching for the KC in strikeout situations, Guerrero\'s thin KC split becomes the most important number in the file.',
+   th1:'KC holds near expected rates. K% materializes. RHH hitters face 31% of a pitch most have no meaningful history against. Guerrero\'s .438/11PA split becomes the defining data point.',
+   th2:'KC drops. Sinker and 4-Seam dominate. The lineup faces a more familiar fastball-heavy profile and the model\'s splits are better calibrated to reality.'},
+  {num:2,q:'Can LHH hitters handle the Splitter?',
+   body:'19.7% of LHH pitches. No Jay has &ge;10 PA against it. The Splitter falls back to prior for every left-handed hitter. <strong>.218 xwOBA is the best contact-suppression pitch in the file.</strong> If Soriano leans on the Splitter against LHH at the expected rate and it generates its career 37.6% whiff, the LHH projections that relied on prior fallback significantly overstated those hitters\' matchup quality.',
+   th1:'Splitter holds at 19.7%. LHH hitters face a pitch with no history backing their projection. Whiff rates climb and the K% holds high.',
+   th2:'Splitter drops below 10% to LHH. Soriano uses KC instead. The LHH hitters see more of the KC, where at least the movement profile is somewhat captured in general breaking ball history.'},
+  {num:3,q:'Does Gimenez continue to struggle on the Sinker?',
+   body:'Gimenez has a .132 wOBA in 24 qualifying PA vs RHP Sinkers. The Sinker is 30.1% of the LHH mix. <strong>This is the most grounded signal in the file with real history behind it.</strong> The KC and Splitter fallbacks add uncertainty to his total exp_wOBA, but the Sinker is the anchor of the .247 Suppressed call.',
+   th1:'Gimenez struggles on the Sinker again. The .132/24PA signal holds. Suppressed call validates.',
+   th2:'Mean reversion. Gimenez makes contact on the Sinker. Direction may still be correct, magnitude overstated.'},
 ];
 const wc=document.getElementById('wfItems');
 WF.forEach(w=>{

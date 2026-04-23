@@ -301,7 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-22-26 | LAA | J. Soriano RHP | — | V. Guerrero Jr. (.409) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-22-soriano/) |
+| 4-22-26 | LAA | J. Soriano RHP | LAA 7, TOR 3 | V. Guerrero Jr. (.418) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-22-soriano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-22-soriano/) |
 | 4-21-26 | LAA | J. Kochanowicz RHP | TOR 4, LAA 2 | D. Varsho (.382) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-21-kochanowicz/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-21-kochanowicz/) |
 | 4-20-26 | LAA | R. Detmers LHP | TOR 5, LAA 2 | T. Heineman (.442) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-20-detmers/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-20-detmers/) |
 | 4-19-26 | ARI | R. Nelson RHP | TOR 10, ARI 4 | D. Schneider (.491) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-19-nelson/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-19-nelson/) |
@@ -323,9 +323,9 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 10-13 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2 · Milwaukee: TOR 1-2 · Arizona: TOR 1-2 · Anaheim: TOR 2-0**
+**2026 record: 10-14 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2 · Milwaukee: TOR 1-2 · Arizona: TOR 1-2 · Anaheim: TOR 2-1**
 
-*Updated: April 22, 2026*
+*Updated: April 23, 2026*
 
 ---
 

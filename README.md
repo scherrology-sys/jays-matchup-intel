@@ -301,6 +301,7 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
+| 4-23-26 | TOR | G. Williams RHP | — | D. Schneider (.365) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-23-williams/) |
 | 4-22-26 | LAA | J. Soriano RHP | LAA 7, TOR 3 | V. Guerrero Jr. (.418) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-22-soriano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-22-soriano/) |
 | 4-21-26 | LAA | J. Kochanowicz RHP | TOR 4, LAA 2 | D. Varsho (.382) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-21-kochanowicz/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-21-kochanowicz/) |
 | 4-20-26 | LAA | R. Detmers LHP | TOR 5, LAA 2 | T. Heineman (.442) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-20-detmers/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-20-detmers/) |

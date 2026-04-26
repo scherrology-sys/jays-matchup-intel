@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Joey Cantillo · April 25</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000c1a 0%,#001428 60%,#000e1e 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(232,0,45,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(232,0,45,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.hed{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:8px;}
+.hed .red{color:var(--red);}
+.hed .role{font-size:16px;font-weight:400;color:rgba(255,255,255,.35);margin-left:8px;}
+.dek{font-size:15px;line-height:1.65;color:var(--mid);max-width:620px;}
+.dek em{font-style:normal;color:var(--cream);}
+.aca{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.5);border:1px solid rgba(232,0,45,.2);border-left:2px solid var(--red);border-radius:3px;padding:10px 14px;flex-shrink:0;margin-top:6px;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;}
+.aca-hdl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px;}
+.meta{background:var(--panel);border-bottom:1px solid var(--border);padding:0 36px;}
+.meta-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;}
+.mi{padding:12px 22px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:3px;}
+.mi:first-child{padding-left:0;}.mi:last-child{border-right:none;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.mi-val{font-size:13px;color:var(--cream);font-weight:600;}
+.mi-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);}
+.gov-bar{background:rgba(196,162,75,.06);border-bottom:1px solid rgba(196,162,75,.2);padding:9px 36px;}
+.gov-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.gov-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;}
+.gov-txt{font-size:11px;color:rgba(196,162,75,.75);}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);display:flex;padding:0 24px;}
+.tab{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+.tab.active{color:var(--white);border-bottom-color:var(--red);}
+.wrap{padding:32px 36px 64px;max-width:1140px;margin:0 auto;}
+.panel{display:none;}.panel.active{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px;}
+.card-hd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.lede{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:22px;}
+.lede strong{color:var(--cream);}
+.callout{border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.72;margin-bottom:16px;}
+.callout.amber{background:rgba(244,185,66,.06);border:1px solid rgba(244,185,66,.2);color:var(--cream);}
+.callout.amber strong{color:var(--amber);}
+.callout.green{background:rgba(45,212,160,.05);border:1px solid rgba(45,212,160,.18);color:var(--cream);}
+.callout.green strong{color:var(--green);}
+.callout.rose{background:rgba(255,79,106,.05);border:1px solid rgba(255,79,106,.2);color:var(--cream);}
+.callout.rose strong{color:var(--rose);}
+.callout.diag{background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--cream);}
+.abar{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.abar-n{font-size:12px;color:var(--cream);width:150px;flex-shrink:0;}
+.abar-t{flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;}
+.abar-f{height:100%;border-radius:2px;opacity:.88;}
+.abar-p{font-family:'IBM Plex Mono',monospace;font-size:9px;width:36px;text-align:right;flex-shrink:0;}
+.abar-v{font-family:'IBM Plex Mono',monospace;font-size:9px;width:90px;text-align:right;color:var(--dim);flex-shrink:0;}
+.mu-row{display:flex;align-items:center;gap:12px;padding:10px 16px;margin-bottom:6px;background:rgba(255,255,255,.022);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+.mu-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mu-row.h::before{background:var(--green);}
+.mu-row.s::before{background:var(--rose);}
+.mu-row.n::before{background:rgba(255,255,255,.1);}
+.mr-name{font-size:13px;font-weight:600;color:var(--cream);width:150px;flex-shrink:0;}
+.mr-hand{font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(255,255,255,.07);padding:1px 5px;border-radius:2px;color:var(--dim);flex-shrink:0;}
+.mr-track{flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:2px;position:relative;overflow:hidden;}
+.mr-ci{position:absolute;top:20%;bottom:20%;background:rgba(255,255,255,.06);}
+.mr-fill{position:absolute;top:0;left:0;bottom:0;border-radius:2px;opacity:.85;}
+.mr-lg{position:absolute;top:0;bottom:0;width:1px;background:rgba(232,0,45,.4);z-index:2;}
+.mr-num{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;width:42px;text-align:right;flex-shrink:0;}
+.mr-note{font-size:11px;color:var(--dim);flex:1;padding-left:6px;line-height:1.35;}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-size:12px;color:var(--mid);}
+.stat-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cream);}
+.wf-item{margin-bottom:14px;background:var(--panel);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+.wf-top{display:flex;}
+.wf-num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:rgba(255,255,255,.1);padding:20px 22px;flex-shrink:0;border-right:1px solid var(--border);width:72px;text-align:center;line-height:1;}
+.wf-content{padding:20px 22px;flex:1;}
+.wf-q{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:6px;}
+.wf-body{font-size:13px;color:var(--mid);line-height:1.75;}
+.wf-body strong{color:var(--cream);}
+.wf-foot{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.wff{padding:14px 22px;}.wff+.wff{border-left:1px solid var(--border);}
+.wff-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.wff-val{font-size:12px;color:var(--cream);line-height:1.6;}
+.honest-box{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:5px;padding:22px;margin-bottom:22px;}
+.hb-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.hb-body{font-size:14px;color:var(--mid);line-height:1.8;}
+.hb-body strong{color:var(--cream);}
+.social{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;padding:24px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.social-body{font-size:14px;line-height:1.85;color:var(--cream);}
+.footer{text-align:center;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);border-top:1px solid var(--border);}
+@media(max-width:700px){.g2{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.aca{display:none;}.wrap{padding:20px 16px 48px;}.hero{padding:24px 20px;}.meta{padding:0 16px;}.gov-bar{padding:9px 16px;}.tabs{padding:0 8px;}.tab{padding:14px 12px;font-size:11px;}}
+</style>
+</head>
+<body>
 
+<nav class="back-nav"><a class="back-link" href="../../index.html"><span>&#8592;</span> All games</a></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">TOR vs CLE · April 25, 2026 · Observation 24</div>
+      <div class="hed">JOEY <span class="red">CANTILLO</span><span class="role">LHP · Cleveland Guardians</span></div>
+      <div class="dek"><em>The Changeup is elite.</em> At .199 xwOBA and 48.3% whiff it is one of the best contact-suppression pitches the Jays have faced this season. Five Edge hitters, three Suppressed. Heineman and Straw bat right against Cantillo as switch hitters. Gimenez's .000 wOBA in 15 LHP 4-Seam PA is the sharpest Suppressed signal in the file.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-hdl">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div class="mi"><div class="mi-lbl">Confidence</div><div class="mi-val" style="color:var(--amber);">MODERATE</div><div class="mi-sub">432 pitches · 5 starts 2026</div></div>
+    <div class="mi"><div class="mi-lbl">Handedness</div><div class="mi-val" style="color:var(--amber);">LHP</div><div class="mi-sub">History filtered to p_throws=L · switch hitters bat R</div></div>
+    <div class="mi"><div class="mi-lbl">Edge hitters</div><div class="mi-val" style="color:var(--green);">Heineman · Guerrero · Varsho · Lukes · Barger</div><div class="mi-sub">5 Edge · largest group of the season</div></div>
+    <div class="mi"><div class="mi-lbl">Changeup</div><div class="mi-val" style="color:var(--green);">.199 xwOBA · 48.3% whiff</div><div class="mi-sub">Primary put-away pitch · best in file</div></div>
+    <div class="mi"><div class="mi-lbl">2026 K%</div><div class="mi-val">29.1%</div><div class="mi-sub">Career 27.3% · consistent</div></div>
+  </div>
+</div>
+
+<div class="gov-bar">
+  <div class="gov-inner">
+    <div class="gov-tag">Research framework</div>
+    <div class="gov-txt">V3.2 locked April 7. LEAGUE_WOBA=0.320, K_PRIOR=60, MIN_PA=10. MODERATE (432 pitches, +-0.030). LHP: history filtered to p_throws="L". Switch hitters Heineman and Straw bat RIGHT vs Cantillo and use their RHH splits vs LHP. Eloy, Okamoto, Sanchez at league fallback. BVP file contains only Gimenez (1 PA field out), directional only. No Slider in 2026 vs RHH under 10%: still in mix at 9.4%.</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="go(0)">Arsenal</div>
+  <div class="tab" onclick="go(1)">Matchups</div>
+  <div class="tab" onclick="go(2)">Watch For</div>
+  <div class="tab" onclick="go(3)">Bottom Line</div>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0 -->
+<div class="panel active" id="p0">
+  <div class="lede">Cantillo is a four-pitch LHP built around a Changeup that ranks among the best in the game. At .199 xwOBA and 48.3% whiff it generates elite contact suppression. The 4-Seam at 91.8 mph is below average velocity for a starter but the combination of the Changeup and Curveball (.218 xwOBA) makes the fastball effective. <strong>His K% at 29.1% is consistent with his career 27.3%</strong> , no dramatic 2026 change, just a reliable profile.</div>
+
+  <div class="callout green">
+    <strong>Changeup: .199 xwOBA · 48.3% whiff.</strong> This is the best pitch the Jays have faced this season by xwOBA. The Changeup is deployed heavily vs RHH (24.5% of RHH pitches) and sparingly vs LHH (10.6%). Every right-handed hitter in the lineup will see it regularly. For lefties the primary challenge is the 4-Seam and Slider combination.
+  </div>
+
+  <div class="callout amber">
+    <strong>LHP note: Slider is the primary LHH weapon at 37.2%.</strong> The same-hand matchup sees heavy Slider usage. LHH hitters face a very different pitch diet than RHH. The model accounts for this through the handedness-specific mix, but it means the LHH Edge calls are driven by 4-Seam splits with significant Slider fallback for most hitters.
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">2026 · 5 starts · 432 pitches</div>
+      <div id="mix2026"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">Career weighted</div>
+      <div id="mixCareer"></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">2026 · vs LHH same-hand (n=113)</div>
+      <div id="mix2026L"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">2026 · vs RHH opposite-hand (n=319)</div>
+      <div id="mix2026R"></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-hd">Pitch quality · xwOBA (year-weighted)</div>
+      <div class="stat-row"><div class="stat-lbl">Changeup</div><div class="stat-val" style="color:var(--green);">.199 · 78.4 mph · 48.3% whiff · best pitch</div></div>
+      <div class="stat-row"><div class="stat-lbl">Curveball</div><div class="stat-val" style="color:var(--green);">.218 · 77.3 mph · 26.3% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">Slider</div><div class="stat-val">.363 · 84.0 mph · 32.1% whiff</div></div>
+      <div class="stat-row"><div class="stat-lbl">4-Seam Fastball</div><div class="stat-val">.374 · 91.8 mph · 16.9% whiff</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">2026 K% and BB% by start</div>
+      <div class="stat-row"><div class="stat-lbl">Mar 28</div><div class="stat-val amber">K%=27.8%  BB%=16.7%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Apr 3</div><div class="stat-val">K%=28.6%  BB%=9.5%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Apr 8</div><div class="stat-val" style="color:var(--green);">K%=42.9%  BB%=9.5%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Apr 14</div><div class="stat-val">K%=19.0%  BB%=9.5%</div></div>
+      <div class="stat-row"><div class="stat-lbl">Apr 19</div><div class="stat-val">K%=27.3%  BB%=13.6%</div></div>
+      <div class="stat-row"><div class="stat-lbl">2026 avg</div><div class="stat-val">K%=29.1%  BB%=11.7%</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1 -->
+<div class="panel" id="p1">
+  <div class="lede">MODERATE confidence. LHP. Five Edge hitters, the largest group of the season. Three Suppressed. Gimenez's .177 exp is the most extreme Suppressed call of the season. Schneider's Suppressed call is the most grounded: all four RHH pitches entered the computation.</div>
+
+  <div class="callout diag">
+    <strong>LHP computation note.</strong> All hitter history filtered to p_throws="L". Heineman and Straw bat right vs Cantillo and their RHH splits vs LHP enter the computation. LHH hitters (Varsho, Barger, Lukes, Gimenez) face heavy Slider usage (37.2% of LHH mix) but most have limited Slider history vs LHP, causing fallback for that pitch.
+  </div>
+  <div class="callout diag">
+    <strong>BVP note.</strong> File 81 contains only Gimenez (1 PA, field out) from the current roster. Not meaningful for computation. All BVP directional signal excluded.
+  </div>
+  <div id="tierDisplay"></div>
+</div>
+
+<!-- TAB 2 -->
+<div class="panel" id="p2">
+  <div id="wfItems"></div>
+</div>
+
+<!-- TAB 3 -->
+<div class="panel" id="p3">
+  <div class="honest-box">
+    <div class="hb-tag">Observation 24 · assumption audit setup</div>
+    <div class="hb-body">Three items the retro will score: <strong>(1) Does the Changeup hold near 24.5% vs RHH?</strong> The Changeup is the primary driver of the RHH Suppressed calls (Schneider, Straw) and is the best pitch in the file. <strong>(2) Does the Slider hold near 37.2% vs LHH?</strong> The primary LHH weapon and the pitch most LHH hitters fall back on from prior. <strong>(3) Does K% stay in the 25-35% range?</strong> Range in 2026 is 19%-43%. Running n: ~158 hitter-games entering observation 24.</div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel 4-25-26. Joey Cantillo, LHP. Observation 24.<br><br>
+      The Changeup. .199 xwOBA. 48.3% whiff. Best pitch the Jays have faced this season. Deployed at 24.5% vs RHH.<br><br>
+      Five Edge: Heineman (.445), Guerrero (.424), Varsho (.391), Lukes (.360), Barger (.358). Largest Edge group of the season.<br><br>
+      Three Suppressed: Gimenez (.177), Straw (.255), Schneider (.279).<br><br>
+      Gimenez: .000 wOBA in 15 LHP 4-Seam PA. Most extreme Suppressed call of the season. Heineman and Straw bat right vs Cantillo.<br><br>
+      Schneider Suppressed: all four RHH pitches entered. Most grounded Suppressed call in the file.<br><br>
+      MODERATE confidence. LHP. Only 2026 Blue Jays hitters.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant · MODERATE confidence · V3.2 · LHP · LEAGUE_WOBA=0.320 · K_PRIOR=60 · MIN_PA=10 · Threshold +-0.030 · Observation 24 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+const PC={'4-Seam Fastball':'#38bdf8','Changeup':'#f4b942','Curveball':'#c084fc','Slider':'#ff4f6a'};
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+function mkBars(items,id,mx){
+  const c=document.getElementById(id);if(!c)return;
+  items.forEach(d=>{
+    const col=PC[d.n]||'#888';
+    const el=document.createElement('div');el.className='abar';
+    el.innerHTML='<div class="abar-n">'+d.n+'</div><div class="abar-t"><div class="abar-f" style="width:'+(d.p/mx*100)+'%;background:'+col+';"></div></div><div class="abar-p" style="color:'+col+';">'+d.p+'%</div>'+(d.v?'<div class="abar-v">'+d.v+'</div>':'');
+    c.appendChild(el);
+  });
+}
+mkBars([{n:'4-Seam Fastball',p:48.6,v:'91.8 mph'},{n:'Changeup',p:20.8,v:'78.4 mph'},{n:'Slider',p:16.7,v:'84.0 mph'},{n:'Curveball',p:13.9,v:'77.3 mph'}],'mix2026',58);
+mkBars([{n:'4-Seam Fastball',p:45.3,v:'91.8 mph'},{n:'Changeup',p:26.4,v:'78.4 mph'},{n:'Curveball',p:16.5,v:'77.3 mph'},{n:'Slider',p:11.8,v:'84.0 mph'}],'mixCareer',55);
+mkBars([{n:'4-Seam Fastball',p:45.1},{n:'Slider',p:37.2},{n:'Changeup',p:10.6},{n:'Curveball',p:7.1}],'mix2026L',52);
+mkBars([{n:'4-Seam Fastball',p:49.8},{n:'Changeup',p:24.5},{n:'Curveball',p:16.3},{n:'Slider',p:9.4}],'mix2026R',58);
+
+const LEAGUE=0.320, THRESH=0.030, K=60;
+const MD=[
+  {n:'Heineman',      h:'R',e:0.445,cls:'h',note:'Switch hitter bats R vs LHP · prior .398 · FF .493/13PA entered · CH/CU/SL fallback · prior-driven Edge'},
+  {n:'Guerrero Jr.',  h:'R',e:0.424,cls:'h',note:'FF .479/42PA · CH .328/35PA · SL .421/11PA entered · CU fallback (9PA) · prior .399'},
+  {n:'Varsho',        h:'L',e:0.391,cls:'h',note:'LHH vs LHP · FF .479/18PA entered · SL/CH/CU fallback · prior .318 · strong FF split carries Edge'},
+  {n:'Lukes',         h:'L',e:0.360,cls:'h',note:'LHH vs LHP · FF .???/LHP entered · SL/CH/CU fallback · prior .301'},
+  {n:'Barger',        h:'L',e:0.358,cls:'h',note:'LHH vs LHP · FF .???/LHP · SL .???/17PA vs LHP entered · CH/CU fallback · prior .270'},
+  {n:'Clement',       h:'R',e:0.334,cls:'n',note:'All 4 RHH pitches entered · combined exp .334 · prior .380'},
+  {n:'Okamoto',       h:'R',e:0.320,cls:'n',note:'No LHP history · league fallback'},
+  {n:'Sánchez',       h:'L',e:0.320,cls:'n',note:'No LHP history · league fallback'},
+  {n:'Jiménez, Eloy', h:'R',e:0.320,cls:'n',note:'No LHP history · league fallback'},
+  {n:'Schneider',     h:'R',e:0.279,cls:'s',note:'FF .248/35PA · CH .383/22PA · CU .132/12PA · SL .426/13PA · all 4 entered · well-grounded Supp'},
+  {n:'Straw',         h:'R',e:0.255,cls:'s',note:'Switch hitter bats R vs LHP · FF/CH/SL entered · CU fallback · below-avg splits on CH-heavy RHH mix'},
+  {n:'Giménez, A.',   h:'L',e:0.177,cls:'s',note:'LHH · FF .000/15PA (primary signal) · SL .371/13PA · CH+CU fallback · most extreme Supp of season'},
+];
+const xMn=0.0,xMx=0.65,xs=v=>((v-xMn)/(xMx-xMn)*100).toFixed(1)+'%';
+const td=document.getElementById('tierDisplay');
+['Edge','Neutral','Suppressed'].forEach(tier=>{
+  const items=MD.filter(d=>(tier==='Edge'&&d.cls==='h')||(tier==='Neutral'&&d.cls==='n')||(tier==='Suppressed'&&d.cls==='s'));
+  if(!items.length)return;
+  const col=tier==='Edge'?'var(--green)':tier==='Suppressed'?'var(--rose)':'rgba(255,255,255,.4)';
+  const desc=tier==='Edge'?'exp > '+(LEAGUE+THRESH).toFixed(3):tier==='Suppressed'?'exp < '+(LEAGUE-THRESH).toFixed(3):(LEAGUE-THRESH).toFixed(3)+' to '+(LEAGUE+THRESH).toFixed(3)+' · '+items.length+' hitters';
+  const hd=document.createElement('div');
+  hd.style.cssText='display:flex;align-items:center;gap:10px;padding:8px 16px;margin-bottom:8px;border-radius:4px;border-left:3px solid '+col+';background:rgba(255,255,255,.02);';
+  hd.innerHTML='<span style="font-family:\'Oswald\',sans-serif;font-size:13px;font-weight:700;color:'+col+';letter-spacing:.08em;">'+tier+'</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;color:var(--dim);">'+desc+'</span>';
+  td.appendChild(hd);
+  items.forEach(d=>{
+    const bCol=d.cls==='h'?'var(--green)':d.cls==='s'?'var(--rose)':'var(--dim)';
+    const se=Math.sqrt(Math.max(d.e,0.001)*(1-Math.max(d.e,0.001))/K);
+    const lo=Math.max(xMn,d.e-1.645*se);const hi=Math.min(xMx,d.e+1.645*se);
+    const row=document.createElement('div');row.className='mu-row '+(d.cls==='h'?'h':d.cls==='s'?'s':'n');
+    row.innerHTML='<div class="mr-name">'+d.n+'</div><div class="mr-hand">'+d.h+'</div><div class="mr-track"><div class="mr-ci" style="left:'+xs(lo)+';width:'+(((hi-lo)/(xMx-xMn))*100).toFixed(1)+'%;"></div><div class="mr-fill" style="width:'+xs(d.e)+';background:'+bCol+';"></div><div class="mr-lg" style="left:'+xs(LEAGUE)+';"></div></div><div class="mr-num" style="color:'+bCol+';">'+d.e.toFixed(3)+'</div><div class="mr-note">'+d.note+'</div>';
+    td.appendChild(row);
+  });
+});
+
+const WF=[
+  {num:1,q:'Does the Changeup hold near 24.5% vs RHH?',
+   body:'The Changeup at .199 xwOBA and 48.3% whiff is the best pitch in the file. It is 24.5% of RHH pitches in 2026. <strong>Schneider\'s Suppressed call at .279 is built on a .383 Changeup split in 22 PA</strong>, which looks like positive history but the overall RHH computation pulls him below .290 because the 4-Seam split (.248) dominates 49.8% of the mix. Watch specifically how Guerrero handles the Changeup: his split is .328 in 35 PA, above average, which lifts his Edge call.',
+   th1:'Changeup holds near 24.5% vs RHH. Guerrero and Clement see it regularly. The K rate holds near 29%. Schneider and Straw see the pitch their Suppressed calls are built around.',
+   th2:'Changeup drops. 4-Seam dominates even more. RHH hitters see a 92 mph fastball-heavy diet and the Changeup\'s suppressive effect is reduced. Suppressed calls may have overstated the matchup difficulty.'},
+  {num:2,q:'Does the Slider hold near 37.2% vs LHH?',
+   body:'The Slider is the primary LHH weapon at 37.2% of same-hand pitches. Most LHH hitters (Varsho, Lukes, Gimenez) have limited Slider history vs LHP and fall back to prior for that 37% of their pitch diet. <strong>Gimenez has 13 qualifying PA vs LHP Sliders at .371 wOBA</strong>, which entered his computation alongside his devastating .000 wOBA in 15 LHP 4-Seam PA. Watch whether Cantillo uses the Slider aggressively against the LHH side early in counts.',
+   th1:'Slider holds near 37% vs LHH. LHH hitters see a pitch many have limited history against at a high rate. Gimenez faces the Slider and the 4-Seam, his two documented weak points.',
+   th2:'Slider drops. 4-Seam and Changeup dominate for LHH. Varsho and Lukes see pitches they have stronger splits against and the Edge calls have better footing.'},
+  {num:3,q:'Does Gimenez continue to struggle on the LHP 4-Seam?',
+   body:'.000 wOBA in 15 qualifying PA vs LHP 4-Seamers. This is the same structural weakness as his RHP 4-Seam struggles, now confirmed on the LHH side too. <strong>The 4-Seam is 45.1% of Cantillo\'s LHH pitches.</strong> The signal is real. The question is whether the same-hand matchup (LHH vs LHP) produces enough of the 4-Seam for the signal to be tested cleanly.',
+   th1:'Gimenez struggles on the 4-Seam again. The .000/15PA signal holds for a second consecutive series. Suppressed at .177 validates.',
+   th2:'Gimenez makes contact on the 4-Seam. Mean reversion from a small sample. Direction may still be right, magnitude overstated.'},
+];
+const wc=document.getElementById('wfItems');
+WF.forEach(w=>{
+  const el=document.createElement('div');el.className='wf-item';
+  el.innerHTML='<div class="wf-top"><div class="wf-num">'+w.num+'</div><div class="wf-content"><div class="wf-q">'+w.q+'</div><div class="wf-body">'+w.body+'</div></div></div><div class="wf-foot"><div class="wff"><div class="wff-tag">If yes</div><div class="wff-val">'+w.th1+'</div></div><div class="wff"><div class="wff-tag">If no</div><div class="wff-val">'+w.th2+'</div></div></div>';
+  wc.appendChild(el);
+});
+</script>
+</body>
+</html>

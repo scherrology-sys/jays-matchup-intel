@@ -2,7 +2,7 @@
 # Jays Matchup Intel V3.2
 # Retro Runner · TOR vs CLE · April 25, 2026
 # Pitcher: Joey Cantillo (LHP) · ID: 676282
-# Result: TOR 5, CLE 2 · Observation 24
+# Result: TOR 5, CLE 3 · Observation 24
 # @scherrology | Arm Chair Analyst
 # =============================================================================
 # source("analysis/jays_matchup_intel_v3_2.R")

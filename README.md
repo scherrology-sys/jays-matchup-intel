@@ -301,7 +301,8 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 
 | Date | Opp | Pitcher | Result | Top Pick | Links |
 |------|-----|---------|--------|----------|-------|
-| 4-25-26 | TOR | J. Cantillo LHP | — | T. Heineman (.445) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-25-cantillo/) |
+| 4-26-26 | TOR | S. Cecconi RHP | — | V. Guerrero Jr. (.361) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-26-cecconi/) |
+| 4-25-26 | TOR | J. Cantillo LHP | TOR 5, CLE 2 | T. Heineman (.445) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-25-cantillo/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-25-cantillo/) |
 | 4-24-26 | TOR | G. Williams RHP | CLE 8, TOR 6 | D. Schneider (.365) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-24-williams/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-24-williams/) |
 | 4-22-26 | LAA | J. Soriano RHP | LAA 7, TOR 3 | V. Guerrero Jr. (.418) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-22-soriano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-22-soriano/) |
 | 4-21-26 | LAA | J. Kochanowicz RHP | TOR 4, LAA 2 | D. Varsho (.382) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-04-21-kochanowicz/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-04-21-kochanowicz/) |
@@ -325,9 +326,9 @@ Input data: [Baseball Savant](https://baseballsavant.mlb.com) Statcast pitch-lev
 | 3-31-26 | COL | R. Feltner RHP | TOR 5, COL 1 | G. Springer (.42) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-31-feltner/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-31-feltner/) |
 | 3-30-26 | COL | T. Sugano RHP | COL 14, TOR 5 | G. Springer (.40) | [Preview](https://scherrology-sys.github.io/jays-matchup-intel/games/2026-03-30-sugano/) · [Retro](https://scherrology-sys.github.io/jays-matchup-intel/retro/2026-03-30-sugano/) |
 
-**2026 record: 10-15 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2 · Milwaukee: TOR 1-2 · Arizona: TOR 1-2 · Anaheim: TOR 2-1**
+**2026 record: 11-15 · Colorado: TOR 1-2 · Chicago White Sox: TOR 0-3 · Los Angeles Dodgers: TOR 1-2 · Minnesota: TOR 1-2 · Milwaukee: TOR 1-2 · Arizona: TOR 1-2 · Anaheim: TOR 2-1**
 
-*Updated: April 25, 2026*
+*Updated: April 26, 2026*
 
 ---
 

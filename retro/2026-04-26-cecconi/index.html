@@ -1,1 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jays Matchup Intel · Retro · Slade Cecconi · April 26</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000e20;--panel:#071e3d;--panel2:#0b2245;--red:#E8002D;--white:#fff;--cream:#ddeaf8;--gold:#C4A24B;--dim:#6a8fb5;--mid:#9ab8d4;--border:rgba(255,255,255,.07);--green:#2dd4a0;--amber:#f4b942;--rose:#ff4f6a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--white);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+.back-nav{background:#000;border-bottom:1px solid var(--border);padding:8px 28px;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--cream);}
+.back-link span{color:var(--red);}
+.hero{background:linear-gradient(155deg,#000e22 0%,#001630 60%,#000e20 100%);padding:36px 36px 30px;position:relative;border-bottom:1px solid rgba(45,212,160,.25);}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),rgba(45,212,160,.3) 50%,transparent);}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.score-big{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;color:var(--green);letter-spacing:.04em;margin-bottom:14px;line-height:1;}
+.hed{font-family:'Oswald',sans-serif;font-size:38px;font-weight:700;line-height:1;margin-bottom:14px;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;}
+.hed .name{color:var(--red);}
+.hed .obs{font-size:14px;font-weight:500;color:var(--dim);letter-spacing:.18em;text-transform:uppercase;}
+.dek{font-size:15px;line-height:1.6;color:var(--cream);max-width:760px;font-weight:300;}
+.dek em{color:var(--white);font-weight:400;}
+.aca{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:8px 12px;}
+.aca svg{flex-shrink:0;}
+.aca-name{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:var(--white);}
+.aca-handle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);}
+.meta{background:#000814;padding:18px 36px;border-bottom:1px solid var(--border);}
+.meta-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;}
+.mi-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.mi-val{font-family:'Oswald',sans-serif;font-size:21px;font-weight:600;color:var(--white);line-height:1.1;}
+.mi-sub{font-size:10px;color:var(--mid);margin-top:3px;line-height:1.35;}
+.studynote{background:#000814;padding:18px 36px;border-bottom:1px solid var(--border);}
+.studynote-inner{max-width:1140px;margin:0 auto;display:flex;gap:18px;align-items:flex-start;}
+.studynote-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);flex-shrink:0;padding-top:2px;}
+.studynote-body{font-size:13px;line-height:1.6;color:var(--cream);}
+.studynote-body strong{color:var(--white);}
+.tab-bar{background:#000814;padding:0 36px;border-bottom:1px solid var(--border);display:flex;gap:0;overflow-x:auto;}
+.tab{padding:13px 18px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);background:transparent;border:none;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.tab.active{color:var(--white);border-bottom-color:var(--green);}
+.tab:hover{color:var(--cream);}
+.wrap{max-width:1140px;margin:0 auto;padding:30px 36px 50px;}
+.panel{display:none;}
+.panel.active{display:block;}
+.lede{font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.65;color:var(--cream);margin-bottom:22px;font-weight:300;}
+.lede strong{color:var(--white);font-weight:600;}
+.callout{padding:16px 20px;border-radius:6px;margin-bottom:18px;font-size:13.5px;line-height:1.6;}
+.callout.rose{background:rgba(255,79,106,.08);border-left:3px solid var(--rose);}
+.callout.green{background:rgba(45,212,160,.08);border-left:3px solid var(--green);}
+.callout.amber{background:rgba(244,185,66,.08);border-left:3px solid var(--amber);}
+.callout strong{color:var(--white);font-weight:600;display:block;margin-bottom:6px;}
+.callout.rose strong{color:var(--rose);}
+.callout.green strong{color:var(--green);}
+.callout.amber strong{color:var(--amber);}
+.section-title{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:26px 0 12px;}
+.kvgrid{background:var(--panel);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:18px;}
+.kv-row{display:grid;grid-template-columns:1.6fr 1fr;padding:14px 18px;border-bottom:1px solid var(--border);align-items:center;gap:16px;}
+.kv-row:last-child{border-bottom:none;}
+.kv-name{font-family:'Oswald',sans-serif;font-size:13.5px;font-weight:500;color:var(--white);letter-spacing:.02em;}
+.kv-name .desc{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:300;color:var(--mid);margin-top:3px;letter-spacing:0;text-transform:none;}
+.kv-val{font-family:'IBM Plex Mono',monospace;font-size:15px;text-align:right;color:var(--white);}
+.kv-val.green{color:var(--green);}
+.kv-val.rose{color:var(--rose);}
+.kv-val.amber{color:var(--amber);}
+.hitter-row{display:grid;grid-template-columns:1.6fr 36px 100px 70px 70px 50px 1.4fr;padding:13px 18px;border-bottom:1px solid var(--border);align-items:center;gap:12px;background:var(--panel);}
+.hitter-row.head{background:rgba(0,0,0,.3);font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+.hitter-row:first-of-type{border-radius:8px 8px 0 0;}
+.hitter-row:last-of-type{border-radius:0 0 8px 8px;border-bottom:none;}
+.hitter-row.over{background:linear-gradient(90deg,rgba(45,212,160,.08),var(--panel) 30%);}
+.hitter-row.under{background:linear-gradient(90deg,rgba(255,79,106,.08),var(--panel) 30%);}
+.hr-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;color:var(--white);}
+.hr-hand{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mid);text-align:center;}
+.hr-tier{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:left;font-weight:500;}
+.hr-tier.edge{color:var(--green);}
+.hr-tier.neutral{color:var(--gold);}
+.hr-tier.suppressed{color:var(--rose);}
+.hr-tier.np{color:var(--mid);}
+.hr-num{font-family:'IBM Plex Mono',monospace;font-size:13px;text-align:right;color:var(--white);}
+.hr-num.green{color:var(--green);}
+.hr-num.rose{color:var(--rose);}
+.hr-events{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--mid);line-height:1.45;font-weight:300;}
+.hr-events .hi{color:var(--cream);}
+.assumption-block{background:var(--panel);border:1px solid var(--border);border-radius:8px;margin-bottom:18px;overflow:hidden;}
+.assumption-head{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:rgba(0,0,0,.2);}
+.assumption-head.failed{border-left:4px solid var(--rose);}
+.assumption-head.partial{border-left:4px solid var(--amber);}
+.assumption-head.held{border-left:4px solid var(--green);}
+.assumption-title{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--white);}
+.assumption-verdict{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
+.assumption-verdict.failed{color:var(--rose);}
+.assumption-verdict.partial{color:var(--amber);}
+.assumption-verdict.held{color:var(--green);}
+.assumption-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:14px 20px;border-bottom:1px solid var(--border);gap:18px;}
+.ag-cell .ag-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.ag-cell .ag-val{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--white);}
+.assumption-body{padding:16px 20px;font-size:13.5px;line-height:1.6;color:var(--cream);}
+.assumption-body strong{color:var(--white);}
+.gamelog{background:var(--panel);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:18px;}
+.gl-row{display:grid;grid-template-columns:50px 1.5fr 130px;padding:12px 18px;border-bottom:1px solid var(--border);align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+.gl-row.head{background:rgba(0,0,0,.3);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+.gl-row:last-child{border-bottom:none;}
+.gl-row.this{background:rgba(45,212,160,.08);}
+.gl-num{color:var(--dim);}
+.gl-name{color:var(--white);font-family:'IBM Plex Sans',sans-serif;font-size:13px;}
+.gl-mark{text-align:right;}
+.gl-mark.win{color:var(--green);}
+.gl-mark.loss{color:var(--rose);}
+.gl-mark.this{color:var(--amber);font-weight:600;}
+.wh-nugget{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:14px;border-left:3px solid var(--green);}
+.wh-nugget-label{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;color:var(--white);margin-bottom:8px;letter-spacing:.02em;}
+.wh-nugget-body{font-size:14px;line-height:1.65;color:var(--cream);font-weight:300;}
+.wh-nugget-body strong{color:var(--white);font-weight:600;}
+.social{background:rgba(255,255,255,.04);border-left:3px solid var(--white);border-radius:6px;padding:16px 20px;margin-top:18px;}
+.social-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.social-body{font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.7;color:var(--cream);font-weight:300;}
+.social-body strong{color:var(--white);font-weight:500;}
+.footer{padding:20px 36px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border-top:1px solid var(--border);}
+@media (max-width:780px){.hero-inner{grid-template-columns:1fr;}.meta-inner{grid-template-columns:repeat(2,1fr);}.studynote-inner{flex-direction:column;gap:8px;}.assumption-grid{grid-template-columns:repeat(2,1fr);}.hitter-row{grid-template-columns:1fr;gap:6px;}.hitter-row.head{display:none;}.gl-row{grid-template-columns:30px 1.5fr 90px;gap:10px;font-size:11px;}.tab{padding:11px 13px;font-size:9px;letter-spacing:.12em;}.kv-row{grid-template-columns:1fr;gap:6px;}.kv-val{text-align:left;}}
+</style>
+</head>
+<body>
 
+<div class="back-nav"><a href="../../index.html" class="back-link"><span>◂</span> All games</a></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Retrospective · TOR vs CLE · April 26, 2026 · Observation 25</div>
+      <div class="score-big">TOR 4 · CLE 2</div>
+      <div class="hed">
+        <span class="name">SLADE CECCONI</span>
+        <span class="obs">Observation 25</span>
+      </div>
+      <div class="dek"><em>5.2 IP · 6H · 2ER · 1BB · 5K · 1HR · all three assumptions partial · Vlad 3-for-3 with two strikes.</em> Cecconi went heavy Cutter to RHH at 46.3%. Vlad squared one up for a double in the 6th, Sánchez followed with a 2-run HR on a 3-2 hanging Curveball. Naive beats champion by 0.014. rho +0.231, second positive in a row.</div>
+    </div>
+    <div class="aca">
+      <svg width="28" height="28" viewBox="0 0 300 300" fill="none"><path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.41-116.59 81.8 116.59H300L178.57 127.15zm-36.18 41.19-11.87-16.64L36.16 19.54H76.8l76.26 106.89 11.87 16.64 99.06 138.89h-40.64l-80.96-113.62z" fill="white"/></svg>
+      <div><div class="aca-name">Arm Chair Analyst</div><div class="aca-handle">@scherrology</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-inner">
+    <div>
+      <div class="mi-lbl">Cecconi line</div>
+      <div class="mi-val">5.2 IP</div>
+      <div class="mi-sub">6H · 2ER · 1BB · 5K · 1HR · 90 pitches</div>
+    </div>
+    <div>
+      <div class="mi-lbl">Champion MAE</div>
+      <div class="mi-val">0.325</div>
+      <div class="mi-sub">naive: 0.311 · naive wins by 0.014</div>
+    </div>
+    <div>
+      <div class="mi-lbl">Assumptions</div>
+      <div class="mi-val">3 partial</div>
+      <div class="mi-sub">Cutter +6.1pp · CB-LHH -8.4pp · BB% -6.2pp</div>
+    </div>
+    <div>
+      <div class="mi-lbl">Spearman rho</div>
+      <div class="mi-val">+0.231</div>
+      <div class="mi-sub">positive ranking signal</div>
+    </div>
+    <div>
+      <div class="mi-lbl">2026 record</div>
+      <div class="mi-val">12-15</div>
+      <div class="mi-sub">CLE series 2-1</div>
+    </div>
+  </div>
+</div>
+
+<div class="studynote">
+  <div class="studynote-inner">
+    <div class="studynote-tag">Study note</div>
+    <div class="studynote-body">7 scoreable hitters. Heineman, Barger and Lukes did not play; Straw had 1 PA vs reliever only and is not scored. Pinango and Valenzuela are not in the preview pool, flagged as no expectation. Cutter usage rate: 30.0% actual vs 23.9% expected, PARTIAL. Curveball to LHH: 16.7% actual vs 25.1% expected, PARTIAL. BB rate: 4.2% actual vs 10.4% expected, PARTIAL. All three directionally correct, none held outright. Running n: ~174 hitter-games.</div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab active" onclick="go(0)">H1 / H2 Test</button>
+  <button class="tab" onclick="go(1)">What the Model Saw</button>
+  <button class="tab" onclick="go(2)">Assumption Audit</button>
+  <button class="tab" onclick="go(3)">Study Log</button>
+  <button class="tab" onclick="go(4)">What Happened</button>
+</div>
+
+<div class="wrap">
+
+<!-- TAB 0: H1 / H2 TEST -->
+<div class="panel active" id="p0">
+
+  <div class="lede">Naive wins by 0.014, the third loss in the past four games. The margin is wider than the recent string of 0.001-0.030 misses. <strong>But rho came back at +0.231, second positive game in a row.</strong> Vlad's Edge call was perfect direction and anchored the rank correlation. Clement's Suppressed call did not hold. Sánchez Neutral fallback hit a 2-run HR.</div>
+
+  <div class="callout rose">
+    <strong>H1 · Champion vs Naive · DOES NOT SUPPORT</strong>
+    Champion MAE: 0.325 · Naive MAE: 0.311 · Naive wins by 0.014.<br>
+    Three losses in the last four games. The misses concentrated on Schneider (exp .335, actual 0), Sosa and Okamoto (both Neutral, both 0), and Sánchez who broke from Neutral with a HR. The Cutter spike to RHH and the BB% collapse changed exposure for the Suppressed group in ways the model could not anticipate from the prior alone.
+  </div>
+
+  <div class="callout green">
+    <strong>H2 · Ranking signal · SUPPORTS</strong>
+    Spearman rho: +0.231 · Positive ranking signal.<br>
+    Second positive rho in a row (Cantillo +0.217). Vlad anchored rank 1 in both predicted and actual. Even with the middle of the order (Sánchez, Schneider, Okamoto, Sosa) producing variance, the top of the order held. Ranking continues to be the more reliable signal than calibration.
+  </div>
+
+  <div class="section-title">H1 · Game error</div>
+  <div class="kvgrid">
+    <div class="kv-row">
+      <div class="kv-name">Champion MAE
+        <span class="desc">Mean absolute error · 7 scoreable hitters · pitch-mix model</span>
+      </div>
+      <div class="kv-val">0.325</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Naive-1 MAE (LEAGUE_WOBA=0.320)
+        <span class="desc">Hitter prior wOBA · no pitch-mix weighting</span>
+      </div>
+      <div class="kv-val">0.311</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Bias (mean residual)
+        <span class="desc">Positive = model under-predicted</span>
+      </div>
+      <div class="kv-val">+0.012</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Game-level MAE
+        <span class="desc">Lineup mean exp vs lineup mean actual</span>
+      </div>
+      <div class="kv-val green">0.013</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Scoreable hitters
+        <span class="desc">PA &ge; 2 vs Cecconi, in preview pool</span>
+      </div>
+      <div class="kv-val">7</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">H1 verdict
+        <span class="desc">Does the champion beat naive on MAE?</span>
+      </div>
+      <div class="kv-val rose">DOES NOT SUPPORT (0.014 margin)</div>
+    </div>
+  </div>
+
+  <div class="section-title">Game context</div>
+  <div class="kvgrid">
+    <div class="kv-row">
+      <div class="kv-name">Final score</div>
+      <div class="kv-val">TOR 4, CLE 2 (Jays win)</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Vlad Edge call
+        <span class="desc">3-for-3, all on 2-2 counts, three pitch types</span>
+      </div>
+      <div class="kv-val">exp .361 · actual 1.016 · resid +0.655</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Clement Suppressed call
+        <span class="desc">Did not hold; doubled on a 0-2 Sweeper in the 1st</span>
+      </div>
+      <div class="kv-val rose">.278 exp · .424 actual · did not hold</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Sánchez Neutral fallback
+        <span class="desc">Sac fly + HR on 3-2 hanging Curveball</span>
+      </div>
+      <div class="kv-val">.320 exp · .700 actual · broke high</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Cutter usage tonight</div>
+      <div class="kv-val amber">30.0% · expected 23.9% (PARTIAL)</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Curveball to LHH tonight</div>
+      <div class="kv-val amber">16.7% · expected 25.1% (PARTIAL)</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">BB% tonight</div>
+      <div class="kv-val amber">4.2% · expected 10.4% (PARTIAL)</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB 1: WHAT THE MODEL SAW -->
+<div class="panel" id="p1">
+
+  <div class="lede">Seven scoreable hitters. <strong>Vlad Edge validated, Clement Suppressed did not hold, Varsho Edge missed.</strong> Sánchez Neutral fallback delivered a 2-run HR. Schneider, Okamoto, Sosa all went zero from the Neutral bucket. The middle of the order produced the variance.</div>
+
+  <div class="hitter-row head">
+    <div>Hitter</div>
+    <div>H</div>
+    <div>Tier · Exp</div>
+    <div>Actual</div>
+    <div>Resid</div>
+    <div>PA</div>
+    <div>Outcomes</div>
+  </div>
+
+  <div class="hitter-row over">
+    <div class="hr-name">Guerrero Jr., Vladimir</div>
+    <div class="hr-hand">R</div>
+    <div class="hr-tier edge">Edge · .361</div>
+    <div class="hr-num">1.016</div>
+    <div class="hr-num green">+0.655</div>
+    <div class="hr-num">3</div>
+    <div class="hr-events"><span class="hi">Single, single, double</span> · all 2-2 counts, three pitch types</div>
+  </div>
+
+  <div class="hitter-row over">
+    <div class="hr-name">Sánchez, Jesús</div>
+    <div class="hr-hand">L</div>
+    <div class="hr-tier neutral">Neutral · .320</div>
+    <div class="hr-num">0.700</div>
+    <div class="hr-num green">+0.380</div>
+    <div class="hr-num">3</div>
+    <div class="hr-events"><span class="hi">Sac fly, field out, HR</span> · 3-2 hanging Curveball, scored Vlad</div>
+  </div>
+
+  <div class="hitter-row over">
+    <div class="hr-name">Clement, Ernie</div>
+    <div class="hr-hand">R</div>
+    <div class="hr-tier suppressed">Supp · .278</div>
+    <div class="hr-num">0.424</div>
+    <div class="hr-num green">+0.146</div>
+    <div class="hr-num">3</div>
+    <div class="hr-events"><span class="hi">Double, field out, field out</span> · 0-2 Sweeper double in the 1st</div>
+  </div>
+
+  <div class="hitter-row under">
+    <div class="hr-name">Varsho, Daulton</div>
+    <div class="hr-hand">L</div>
+    <div class="hr-tier edge">Edge · .351</div>
+    <div class="hr-num">0.232</div>
+    <div class="hr-num rose">-0.119</div>
+    <div class="hr-num">3</div>
+    <div class="hr-events"><span class="hi">Walk, field out, K</span> · low-Cutter LHH diet, Edge missed</div>
+  </div>
+
+  <div class="hitter-row under">
+    <div class="hr-name">Sosa, Lenyn</div>
+    <div class="hr-hand">R</div>
+    <div class="hr-tier neutral">Neutral · .320</div>
+    <div class="hr-num">0.000</div>
+    <div class="hr-num rose">-0.320</div>
+    <div class="hr-num">3</div>
+    <div class="hr-events"><span class="hi">K, field out, field out</span> · K on 2-2 Curveball</div>
+  </div>
+
+  <div class="hitter-row under">
+    <div class="hr-name">Okamoto, Kazuma</div>
+    <div class="hr-hand">R</div>
+    <div class="hr-tier neutral">Neutral · .320</div>
+    <div class="hr-num">0.000</div>
+    <div class="hr-num rose">-0.320</div>
+    <div class="hr-num">3</div>
+    <div class="hr-events"><span class="hi">K, field out, field out</span> · K on 1-2 4-Seam at 94.7</div>
+  </div>
+
+  <div class="hitter-row under">
+    <div class="hr-name">Schneider, Davis</div>
+    <div class="hr-hand">R</div>
+    <div class="hr-tier neutral">Neutral · .335</div>
+    <div class="hr-num">0.000</div>
+    <div class="hr-num rose">-0.335</div>
+    <div class="hr-num">2</div>
+    <div class="hr-events"><span class="hi">Field out, field out</span> · low-leverage at-bats vs Cutter</div>
+  </div>
+
+  <div class="hitter-row" style="margin-top:14px;border-top:2px solid var(--border);border-radius:8px;">
+    <div class="hr-name">Pinango, Yohendrick</div>
+    <div class="hr-hand">L</div>
+    <div class="hr-tier np">No expectation</div>
+    <div class="hr-num">0.444</div>
+    <div class="hr-num" style="color:var(--dim);">n/a</div>
+    <div class="hr-num">2</div>
+    <div class="hr-events"><span class="hi">Single, field out</span> · not in preview pool</div>
+  </div>
+
+  <div class="hitter-row" style="border-radius:0 0 8px 8px;">
+    <div class="hr-name">Valenzuela, Brandon</div>
+    <div class="hr-hand">L</div>
+    <div class="hr-tier np">No expectation</div>
+    <div class="hr-num">0.000</div>
+    <div class="hr-num" style="color:var(--dim);">n/a</div>
+    <div class="hr-num">2</div>
+    <div class="hr-events"><span class="hi">K, K</span> · debut, two strikeouts vs Cecconi</div>
+  </div>
+
+  <div class="callout amber" style="margin-top:18px;">
+    <strong>Not scored</strong>
+    Heineman, Barger and Lukes did not play. Straw had 1 PA vs the reliever only, no PA vs Cecconi. Pinango and Valenzuela are not in the preview pool and are flagged as no expectation, excluded from MAE scoring. Both flagged for the next roster check.
+  </div>
+
+</div>
+
+<!-- TAB 2: ASSUMPTION AUDIT -->
+<div class="panel" id="p2">
+
+  <div class="lede">Three assumptions, all PARTIAL. <strong>Direction right on every one. Magnitude off by 6 to 8 percentage points.</strong> No assumption HELD outright, no assumption FAILED outright. The Cutter spiked to RHH, the Curveball to LHH was thinner than priced, and the BB% collapsed back to career-norm despite the 2026 elevation.</div>
+
+  <div class="assumption-block">
+    <div class="assumption-head partial">
+      <div class="assumption-title">Cutter usage rate · PARTIAL</div>
+      <div class="assumption-verdict partial">+6.1pp</div>
+    </div>
+    <div class="assumption-grid">
+      <div class="ag-cell"><div class="ag-lbl">Expected</div><div class="ag-val">23.9%</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Actual</div><div class="ag-val">30.0% (27/90)</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Tolerance</div><div class="ag-val">&plusmn;5pp</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Verdict</div><div class="ag-val" style="color:var(--amber);">PARTIAL</div></div>
+    </div>
+    <div class="assumption-body">
+      Cecconi went Cutter-heavier than career-weighted prior, especially against RHH where he threw 25 of his 54 right-side pitches as Cutters (46.3% of RHH mix). <strong>The pitch was used as a chase weapon: 17 of 27 Cutters out of zone (37% zone rate), 23.1% whiff on 13 swings.</strong> The RHH Suppressed calls (Clement) leaned partly on the Cutter being a meaningful piece of the mix. The Cutter showed up at scale, but Vlad squared one up for a 2-2 single in the 3rd and the Suppressed call on Clement did not hold (he opened the game with a 0-2 Sweeper double instead). Memory note: widen tolerance to &plusmn;7pp on next Cecconi preview.
+    </div>
+  </div>
+
+  <div class="assumption-block">
+    <div class="assumption-head partial">
+      <div class="assumption-title">Curveball to LHH · PARTIAL</div>
+      <div class="assumption-verdict partial">-8.4pp</div>
+    </div>
+    <div class="assumption-grid">
+      <div class="ag-cell"><div class="ag-lbl">Expected</div><div class="ag-val">25.1%</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Actual</div><div class="ag-val">16.7% (6/36)</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Tolerance</div><div class="ag-val">&plusmn;5pp</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Verdict</div><div class="ag-val" style="color:var(--amber);">PARTIAL</div></div>
+    </div>
+    <div class="assumption-body">
+      Cecconi threw the Curveball to LHH less than expected, but every single one was high-leverage. <strong>9 total Curveballs, 4 of them ended at-bats: 2 strikeouts (Sosa, Valenzuela), 1 single (Vlad in the 1st on a 2-2 line drive), 1 home run (Sánchez on a 3-2 hanger).</strong> Frequency was lower, leverage was higher. The Barger Suppressed call rested heavily on her .118 Curveball split in 28 PA at 25.1% expected mix; she did not play, so the most exposed test of the assumption never ran. Memory note: hold tolerance, but flag low-frequency Curveballs as still high-leverage.
+    </div>
+  </div>
+
+  <div class="assumption-block">
+    <div class="assumption-head partial">
+      <div class="assumption-title">BB rate · PARTIAL</div>
+      <div class="assumption-verdict partial">-6.2pp</div>
+    </div>
+    <div class="assumption-grid">
+      <div class="ag-cell"><div class="ag-lbl">Expected</div><div class="ag-val">10.4%</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Actual</div><div class="ag-val">4.2% (1/24)</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Tolerance</div><div class="ag-val">&plusmn;5pp</div></div>
+      <div class="ag-cell"><div class="ag-lbl">Verdict</div><div class="ag-val" style="color:var(--amber);">PARTIAL</div></div>
+    </div>
+    <div class="assumption-body">
+      One walk in 24 PA. <strong>The 2026 elevation of his walk rate to 10.4% did not show up tonight.</strong> First-pitch strike rate 62.5%, average for him. The Jays did not work counts the way the assumption setup hoped they would. This is the third low-walk start in his last five outings, and the prior should fall back toward career 6.1% rather than the 2026 jump to 10.4%. Memory note: revert BB% prior toward career norm for the next Cecconi preview.
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB 3: STUDY LOG -->
+<div class="panel" id="p3">
+
+  <div class="lede">Twenty-five observations. Running n: ~174 hitter-games. <strong>Three losses in the last four games on H1, but rho is back to back positive.</strong> The recent pattern: champion is matching naive on calibration, beating naive on ranking. Whether the gap closes as in-season data accumulates is the open question.</div>
+
+  <div class="section-title">Running study metrics after 25 games</div>
+  <div class="kvgrid">
+    <div class="kv-row">
+      <div class="kv-name">Running n (hitter-games)</div>
+      <div class="kv-val">~174</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">H1 this game</div>
+      <div class="kv-val rose">DOES NOT SUPPORT · 0.014 margin</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">H2 this game</div>
+      <div class="kv-val green">SUPPORTS · rho +0.231</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Recent H1 losses</div>
+      <div class="kv-val">3 of last 4 (obs 22, 24, 25)</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Recent rho positive</div>
+      <div class="kv-val green">2 of last 2 (obs 24, 25)</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Bayesian challenger threshold</div>
+      <div class="kv-val">~26 hitter-games away (n=200)</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">2026 record</div>
+      <div class="kv-val">12-15 · CLE series 2-1</div>
+    </div>
+  </div>
+
+  <div class="section-title">Retro memory updates</div>
+  <div class="kvgrid">
+    <div class="kv-row">
+      <div class="kv-name">Cutter usage rate</div>
+      <div class="kv-val amber">PARTIAL · 30.0% actual vs 23.9% expected</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Curveball to LHH</div>
+      <div class="kv-val amber">PARTIAL · 16.7% actual vs 25.1% expected</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">BB rate</div>
+      <div class="kv-val amber">PARTIAL · 4.2% actual vs 10.4% expected</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Cecconi pitcher ID</div>
+      <div class="kv-val">677944 confirmed</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Archetype</div>
+      <div class="kv-val">RHP_FC_heavy</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Vlad two-strike note</div>
+      <div class="kv-val green">3-for-3 on 2-2, three pitch types · log positive</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Sánchez Neutral fallback HR</div>
+      <div class="kv-val amber">4th in last 7 games · pattern threshold</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-name">Roster check</div>
+      <div class="kv-val">Pinango + Valenzuela not in preview pool · review</div>
+    </div>
+  </div>
+
+  <div class="section-title">Season game log · champion MAE</div>
+  <div class="gamelog">
+    <div class="gl-row head">
+      <div>Obs</div>
+      <div>Game</div>
+      <div>MAE · result</div>
+    </div>
+    <div class="gl-row">
+      <div class="gl-num">21</div>
+      <div class="gl-name">Kochanowicz · Apr 21</div>
+      <div class="gl-mark win">0.179 ✓</div>
+    </div>
+    <div class="gl-row">
+      <div class="gl-num">22</div>
+      <div class="gl-name">Soriano · Apr 22</div>
+      <div class="gl-mark loss">0.232 ✗</div>
+    </div>
+    <div class="gl-row">
+      <div class="gl-num">23</div>
+      <div class="gl-name">Williams · Apr 24</div>
+      <div class="gl-mark loss">0.312 ✗</div>
+    </div>
+    <div class="gl-row">
+      <div class="gl-num">24</div>
+      <div class="gl-name">Cantillo · Apr 25</div>
+      <div class="gl-mark loss">0.225 ✗</div>
+    </div>
+    <div class="gl-row this">
+      <div class="gl-num">25</div>
+      <div class="gl-name">Cecconi · Apr 26 · this game</div>
+      <div class="gl-mark this">0.325 ✗</div>
+    </div>
+  </div>
+
+  <div class="social">
+    <div class="social-tag">Post · X / Twitter</div>
+    <div class="social-body">
+      Jays Matchup Intel retro · 4-26-26. <strong>TOR 4, CLE 2. Jays win.</strong><br><br>
+      Cecconi: 5.2 IP, 6H, 2ER, 1BB, 5K, 1HR. 90 pitches.<br><br>
+      Cutter usage 30.0% vs 23.9% expected. Curveball to LHH 16.7% vs 25.1%. BB% 4.2% vs 10.4%. All three assumptions PARTIAL. Direction right on every one, magnitude off.<br><br>
+      Naive beats champion by 0.014. rho +0.231, second positive in a row.<br><br>
+      Vlad: 3-for-3, all on 2-2 counts, three different pitch types. Curveball single, Cutter single, 4-Seam double. Best two-strike approach in the lineup.<br><br>
+      Sánchez: sac fly + 2-run HR on a 3-2 hanging Curveball. 4th HR in 7 games from a Neutral fallback hitter. Pattern is reaching a threshold.<br><br>
+      Game-level MAE 0.013. Lineup mean exp 0.326, actual 0.339. Aggregate near-perfect, distribution missed.<br><br>
+      Running n: ~174 hitter-games, 25 observations.<br><br>
+      scherrology-sys.github.io/jays-matchup-intel · #BlueJays
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB 4: WHAT HAPPENED -->
+<div class="panel" id="p4">
+
+  <div class="lede">Cecconi went 5.2 innings, gave up 6 hits and 2 earned runs, and the lineup turned over on him in the 6th. <strong>Two innings produced all four runs.</strong> The first (Vlad RBI single, Sánchez sac fly), and the sixth (Vlad double, Sánchez 2-run HR). Bullpen held it for 2.1 innings.</div>
+
+  <div class="wh-nugget">
+    <div class="wh-nugget-label">What Cecconi did</div>
+    <div class="wh-nugget-body">90 pitches over 5.2 innings. <strong>Five-pitch arsenal: 4-Seam at 42.2%, Cutter at 30.0%, Curveball and Sinker at 10.0%, Sweeper at 7.8%.</strong> The Slider and Changeup the preview said were gone stayed gone, zero of either. Cutter usage was the structural story: he threw it 46.3% to RHH (25 of 54 right-side pitches), used it as a chase pitch with only 37% zone rate. Velocity stable across innings, 4-Seam sat 93-94 mph from the first inning to the last. First-pitch strike rate 62.5%, league average.</div>
+  </div>
+
+  <div class="wh-nugget">
+    <div class="wh-nugget-label">Vlad's two-strike masterclass</div>
+    <div class="wh-nugget-body">Three at-bats vs Cecconi. <strong>Three hits. All on 2-2 counts. All on different pitch types.</strong> Curveball at 68.6 mph for a line drive single in the 1st. Cutter at 88.6 mph for a ground ball single in the 3rd. 4-Seam at 94.3 mph for a sharp double to center in the 6th. He hit every offering Cecconi gave him with two strikes. The double in the 6th set up Sánchez's HR. This is the most reliable thing in the lineup right now and worth logging as a flagged positive signal for the Cecconi archetype.</div>
+  </div>
+
+  <div class="wh-nugget">
+    <div class="wh-nugget-label">The Curveball paradox</div>
+    <div class="wh-nugget-body">Cecconi threw 9 Curveballs total. <strong>Four of them ended at-bats. Two strikeouts (Sosa 2-2, Valenzuela 1-2). One single (Vlad). One home run (Sánchez, 3-2 hanger at 69.8 mph).</strong> Whiff rate on the pitch was 25%. Damage rate was 22%. Same pitch, opposite outcomes, depending on whose hand it landed in. This is exactly the kind of small-sample, high-leverage scenario that justifies pitch-type splits over aggregate K rates.</div>
+  </div>
+
+  <div class="wh-nugget">
+    <div class="wh-nugget-label">Sánchez and the fallback HR pattern</div>
+    <div class="wh-nugget-body">Sánchez sat at .320 Neutral, a fallback value because his prior-season splits did not enter the computation. <strong>He hit a 3-2 hanging Curveball over the wall in the 6th for a 2-run shot, his 4th HR of the year.</strong> This is the 4th HR in the past 7 games from a hitter the model bucketed as Neutral fallback. Cantillo had Okamoto. Williams had Okamoto and Sánchez. Cecconi has Sánchez. The fallback bucket is producing real damage at a rate that is now worth surfacing as a pattern, not just a one-off.</div>
+  </div>
+
+  <div class="wh-nugget">
+    <div class="wh-nugget-label">Lineup-level near-perfect, distribution missed</div>
+    <div class="wh-nugget-body">Mean exp_wOBA across the 7 scoreable hitters was 0.326. Mean actual was 0.339. <strong>Game-level MAE 0.013, the closest of the season.</strong> The model knew almost exactly how much offense the Jays would generate against Cecconi in aggregate. It did not know which hitters would do it. Vlad way over, Sánchez way over, Schneider/Okamoto/Sosa way under. This is the cleanest single-game illustration of the validation guardrail: the prediction holds at the unit it was built for (the lineup), and the hitter-level distribution remains the open frontier.</div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="footer">Statcast data via Baseball Savant · April 26, 2026 · Observation 25 · V3.2 · RHP · LEAGUE_WOBA=0.320 · Arm Chair Analyst · @scherrology</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+</script>
+</body>
+</html>
